@@ -10,14 +10,32 @@ var hrstart = process.hrtime();
 // Define node class
 //
 
+function Site(site) {
+  this.filename = site.getFileName();
+  this.line = site.getLineNumber();
+  this.column = site.getColumnNumber();
+}
+
+function nstime(relative) {
+  var t = process.hrtime(relative);
+  return t[0] * 1e9 + t[1];
+}
+
+function callSites() {
+  return chain.callSite({ extend: false, filter: true, slice: 2 })
+    .map(function (site) {
+      return new Site(site);
+    });
+}
+
 function Node(name) {
   this.name = name;
   this._relativeTime = process.hrtime();
-  this._init = this._getTime(hrstart);
+  this._init = nstime(hrstart);
   this._before = 0;
   this._after = 0;
   this.children = [];
-  this.stack = this._callSites();
+  this.stack = callSites();
 }
 
 Node.prototype.add = function (handle) {
@@ -27,29 +45,11 @@ Node.prototype.add = function (handle) {
 };
 
 Node.prototype.before = function () {
-  this._before = this._getTime(this._relativeTime);
+  this._before = nstime(this._relativeTime);
 };
 
 Node.prototype.after = function () {
-  this._after = this._getTime(this._relativeTime);
-};
-
-Node.prototype._getTime = function (relative) {
-  var t = process.hrtime(relative);
-  return t[0] * 1e9 + t[1];
-};
-
-function Site(site) {
-  this.filename = site.getFileName();
-  this.line = site.getLineNumber();
-  this.column = site.getColumnNumber();
-}
-
-Node.prototype._callSites = function () {
-  return chain.callSite({ extend: false, filter: true, slice: 2 })
-    .map(function (site) {
-      return new Site(site);
-    });
+  this._after = nstime(this._relativeTime);
 };
 
 Node.prototype.toJSON = function () {
@@ -63,10 +63,10 @@ Node.prototype.toJSON = function () {
   };
 };
 
-Node.prototype.exit = function () {
+Node.prototype.rootFinished = function () {
   this._init = 0;
   this._before = 0;
-  this._after = this._getTime(hrstart);
+  this._after = nstime(hrstart);
 };
 
 //
@@ -92,11 +92,18 @@ function asyncAfter() {
   state = root;
 }
 
+// The root job is done when process.nextTick is called
+process.nextTick(function () {
+  root.rootFinished();
+});
+
 //
 // Print result
 //
 
 process.on('exit', function () {
-  root.exit();
-  fs.writeFileSync('./dprof.json', JSON.stringify(root, null, 1));
+  fs.writeFileSync('./dprof.json', JSON.stringify({
+    'total': nstime(hrstart),
+    'root': root
+  }, null, 1));
 });
