@@ -1,0 +1,24 @@
+{
+  "name": "dynamicprof",
+  "description": "Dynamic profiling for node",
+  "version": "1.0.0",
+  "author": "Andreas Madsen <amwebdk@gmail.com>",
+  "main": "./dynamicprof.js",
+  "scripts": {
+    "test": "tap test.js"
+  },
+  "repository" : {
+    "type": "git",
+    "url": "git://github.com/AndreasMadsen/dynamicprof.git"
+  },
+  "keywords": [
+    "async_wrap",
+    "dynamic",
+    "profilling",
+    "tooling"
+  ],
+  "devDependencies": {
+    "tap": "0.6.x"
+  },
+  "license": "MIT"
+}
