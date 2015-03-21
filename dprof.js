@@ -1,6 +1,7 @@
 'use strict';
 
 var asyncWrap = require('./async_wrap.js');
+var chain = require('stack-chain');
 var fs = require('fs');
 
 var hrstart = process.hrtime();
@@ -16,6 +17,7 @@ function Node(name) {
   this._before = 0;
   this._after = 0;
   this.children = [];
+  this.stack = this._callSites();
 }
 
 Node.prototype.add = function (handle) {
@@ -37,13 +39,27 @@ Node.prototype._getTime = function (relative) {
   return t[0] * 1e9 + t[1];
 };
 
+function Site(site) {
+  this.filename = site.getFileName();
+  this.line = site.getLineNumber();
+  this.column = site.getColumnNumber();
+}
+
+Node.prototype._callSites = function () {
+  return chain.callSite({ extend: false, filter: true, slice: 2 })
+    .map(function (site) {
+      return new Site(site);
+    });
+};
+
 Node.prototype.toJSON = function () {
   return {
     name: this.name,
     init: this._init,
     before: this._before,
     after: this._after,
-    children: this.children
+    children: this.children,
+    stack: this.stack
   };
 };
 
