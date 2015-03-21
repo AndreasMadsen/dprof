@@ -1,11 +1,11 @@
 {
-  "name": "dynamicprof",
+  "name": "dprof",
   "description": "Dynamic profiling for node",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "author": "Andreas Madsen <amwebdk@gmail.com>",
-  "main": "./dynamicprof.js",
+  "main": "./dprof.js",
   "scripts": {
-    "test": "tap test.js"
+    "test": "tap test/test.js"
   },
   "repository" : {
     "type": "git",

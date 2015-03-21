@@ -1,7 +1,7 @@
 'use strict';
 
 var fs = require('fs');
-require('./dynamicprof.js');
+require('../dprof.js');
 
 setTimeout(function () {
 
@@ -12,7 +12,6 @@ setTimeout(function () {
     var a = new Buffer(10);
     fs.read(fd, a, 0, 10, 0, function (err2) {
       if (err2) throw err2;
-      fs.writeSync(1, a.inspect() + '\n');
 
       count += 1;
       if (count === 2) close();
@@ -21,7 +20,6 @@ setTimeout(function () {
     var b = new Buffer(10);
     fs.read(fd, b, 0, 10, 10, function (err2) {
       if (err2) throw err2;
-      fs.writeSync(1, b.inspect() + '\n');
 
       count += 1;
       if (count === 2) close();
@@ -34,8 +32,7 @@ setTimeout(function () {
     }
   });
 
-  fs.readdir(__dirname, function (err, list) {
+  fs.readdir(__dirname, function (err) {
     if (err) throw err;
-    fs.writeSync(1, JSON.stringify(list, null, ' ') + '\n');
   });
 }, 1);

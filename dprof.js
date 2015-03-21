@@ -82,5 +82,5 @@ function asyncAfter() {
 
 process.on('exit', function () {
   root.exit();
-  fs.writeFileSync('./prof.json', JSON.stringify(root, null, 1));
+  fs.writeFileSync('./dprof.json', JSON.stringify(root, null, 1));
 });
