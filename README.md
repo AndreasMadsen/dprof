@@ -10,8 +10,8 @@ npm install dprof
 
 ## Example
 
-Add `dprof` to the beginning of you script to profile it. When done a `dprof.json` file is created in your working directory. Inspect this file
-to know more about your program (UI inspector is coming, ask @emilbayes).
+Add `dprof` to the beginning of you script to profile it. When done a `dprof.json` file is created in your working directory.
+You can inspect the file or run `cat dprof.json | dprof > dprof.html` to get a svg view.
 
 ```javascript
 require('dprof');
