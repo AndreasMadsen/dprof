@@ -1,6 +1,6 @@
 #dprof
 
-> Sync but mostly async profiling done dynamically
+> Sync but mostly async profiling and visualizing done dynamically
 
 ## Installation
 
@@ -10,8 +10,9 @@ npm install dprof
 
 ## Example
 
-Add `dprof` to the beginning of you script to profile it. When done a `dprof.json` file is created in your working directory.
-You can inspect the file or run `cat dprof.json | dprof > dprof.html` to get a svg view.
+Add `dprof` to the beginning of you script to profile it. When done a `dprof.json`
+file is created in your working directory. You can inspect the file or run
+`cat dprof.json | dprof > dprof.html` to get a svg view.
 
 ```javascript
 require('dprof');
@@ -35,6 +36,50 @@ fs.open(__filename, function (err, fd) {
 
   });
 });
+```
+
+## Visualizer
+
+```shell
+dprof.json | dprof > dprof.html
+```
+
+The visualizer is very much WIP, you are welcome to contribute with a better
+one. The format is described below:
+
+## Format
+
+The format of `dprof.json` is simple, there is an initial part:
+```javascript
+{
+  total: Number, // execution time in nanoseconds
+  root: Node
+}
+```
+
+Each `Node` then have the format:
+
+```javascript
+{
+  name: String,    // Handle name of the async operation
+  stack: [         // Contains the stack leading up to the async operation
+    {
+      filename: String,
+      column: Number,
+      line: Number
+    }, ...
+  ],
+  init: Number,    // Timestamp for when the async operation is requested,
+                   // relative to process start in nanoseconds.
+  before: Number,  // Time passed from `init` until the async callback is
+                   // called. Also in nanoseconds.
+  after: Number    // Time passed from `init` until the async callback is
+                   // is completed. Also in nanoseconds.
+
+  children: [      // Shows async operations created in the callback
+    Node, ...
+  ]
+}
 ```
 
 ## License
