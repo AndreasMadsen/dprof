@@ -53,9 +53,9 @@ one.
 
 ![Visualizer](https://github.com/AndreasMadsen/dprof/blob/master/visualizer.png)
 
-Blue: time spend waiting for async response
-Red: time spend doing callback (sync)
-Black: Indicates when the async request was made.
+* Blue: time spend waiting for async response
+* Red: time spend doing callback (sync)
+* Black: Indicates when the async request was made.
 
 ## Format
 
