@@ -21,7 +21,7 @@ require('dprof');
 
 var fs = require('fs');
 
-fs.open(__filename, function (err, fd) {
+fs.open(__filename, 'r', function (err, fd) {
 
   var count = 0;
   var a = new Buffer(10);
@@ -34,9 +34,11 @@ fs.open(__filename, function (err, fd) {
     if (++count === 2) close();
   });
 
-  fs.close(fd, function (err) {
+  function close() {
+    fs.close(fd, function (err) {
 
-  });
+    });
+  }
 });
 ```
 
