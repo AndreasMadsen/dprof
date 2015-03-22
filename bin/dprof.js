@@ -1,4 +1,4 @@
-#!/bin/env node
+#!/usr/bin/env node
 
 var endpoint = require('endpoint');
 var extend = require('util-extend');
@@ -9,7 +9,11 @@ process.stdin.pipe(endpoint(function (err, dprof) {
 
   var content = new Node(dprof.root, dprof.total, 1, new State(), new Root());
 
-  var svg = new Element('svg').attr({ xmlns: 'http://www.w3.org/2000/svg', width: 1000 });
+  var svg = new Element('svg').attr({
+    xmlns: 'http://www.w3.org/2000/svg',
+    width: '100%',
+    viewBox: '0 0 1000 ' + content.state.y
+  });
 
   process.stdout.write(svg.start() + '\n');
   process.stdout.write(content.stringify() + '\n');
@@ -26,9 +30,9 @@ function State() {
 
 function Node(node, total, depth, state, parent) {
   this.name = node.name;
-  this.init = Math.floor(node.init / total * 1000);
-  this.before = Math.floor((node.init + node.before) / total * 1000);
-  this.after = Math.floor((node.init + node.after) / total * 1000);
+  this.init = node.init / total * 1000;
+  this.before = (node.init + node.before) / total * 1000;
+  this.after = (node.init + node.after) / total * 1000;
   this.stack = node.stack;
 
   this.depth = depth;
