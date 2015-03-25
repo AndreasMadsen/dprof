@@ -2,10 +2,18 @@
 
 var endpoint = require('endpoint');
 var extend = require('util-extend');
+var version = require('../package.json').version;
 
 process.stdin.pipe(endpoint(function (err, dprof) {
   if (err) throw err;
   dprof = JSON.parse(dprof);
+
+  // Check version match
+  if (dprof.version !== version) {
+    console.error('dprof.json was generated with version ' + dprof.version +
+                  ', the visualizer is version ' + version);
+    process.exit(1);
+  }
 
   var content = new Node(dprof.root, dprof.total, 1, new State(), new Root());
 
@@ -31,8 +39,8 @@ function State() {
 function Node(node, total, depth, state, parent) {
   this.name = node.name;
   this.init = node.init / total * 1000;
-  this.before = (node.init + node.before) / total * 1000;
-  this.after = (node.init + node.after) / total * 1000;
+  this.before = node.before / total * 1000;
+  this.after = node.after / total * 1000;
   this.stack = node.stack;
 
   this.depth = depth;

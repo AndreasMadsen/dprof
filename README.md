@@ -62,6 +62,7 @@ one.
 The format of `dprof.json` is simple, there is an initial part:
 ```javascript
 {
+  version: String, // the version of dprof there generated this JSON file
   total: Number, // execution time in nanoseconds
   root: Node
 }
@@ -79,12 +80,11 @@ Each `Node` then have the format:
       line: Number
     }, ...
   ],
-  init: Number,    // Timestamp for when the async operation is requested,
-                   // relative to process start in nanoseconds.
-  before: Number,  // Time passed from `init` until the async callback is
-                   // called. Also in nanoseconds.
-  after: Number    // Time passed from `init` until the async callback is
-                   // is completed. Also in nanoseconds.
+  init: Number,    // Timestamp for when the async operation is requested.
+  before: Number,  // Timestamp for when the callback is about to be called.
+  after: Number    // Timestamp for when the callback is finished.
+                   // All timestamps are relative to the process startup time
+                   // and the unit is nanoseconds.
 
   children: [      // Shows async operations created in the callback
     Node, ...
