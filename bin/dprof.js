@@ -1,127 +1,74 @@
 #!/usr/bin/env node
 
+var http = require('http');
+var fs = require('fs');
+var path = require('path');
+
 var endpoint = require('endpoint');
-var extend = require('util-extend');
+var async = require('async');
+
 var version = require('../package.json').version;
+var server = http.createServer();
 
-process.stdin.pipe(endpoint(function (err, dprof) {
+var files = {
+  index: path.resolve(__dirname, '..', 'visualizer', 'index.html'),
+  visualizer: path.resolve(__dirname, '..', 'visualizer', 'visualizer.js'),
+  d3: path.resolve(require.resolve('d3'), '../d3.js')
+};
+
+async.parallel([
+  function (done) {
+    process.stdin.pipe(endpoint(done));
+    process.stdin.unref();
+
+    var noStdin = setTimeout(done, 100);
+    process.stdin.once('data', function () {
+      clearTimeout(noStdin);
+    });
+  },
+  function (done) {
+    server.listen(0xd0f, '127.0.0.1', done);
+  }
+], function (err, content) {
   if (err) throw err;
-  dprof = JSON.parse(dprof);
+  var dprof = content[0];
 
-  // Check version match
-  if (dprof.version !== version) {
-    console.error('dprof.json was generated with version ' + dprof.version +
-                  ', the visualizer is version ' + version);
+  if (!dprof) {
+    console.error('no file piped to stdin');
     process.exit(1);
   }
 
-  var content = new Node(dprof.root, dprof.total, 1, new State(), new Root());
+  var dumpVersion = JSON.parse(dprof).version;
+  if (dumpVersion !== version) {
+    console.error('dump file was made with dprof version ' + dumpVersion);
+    console.error('dprof visualizer is version ' + version);
+    console.error('versions much match');
 
-  var svg = new Element('svg').attr({
-    xmlns: 'http://www.w3.org/2000/svg',
-    width: '100%',
-    viewBox: '0 0 1000 ' + content.state.y
-  });
-
-  process.stdout.write(svg.start() + '\n');
-  process.stdout.write(content.stringify() + '\n');
-  process.stdout.write(svg.end());
-}));
-
-function Root() {
-  this.top = 0;
-}
-
-function State() {
-  this.y = 0;
-}
-
-function Node(node, total, depth, state, parent) {
-  this.name = node.name;
-  this.init = node.init / total * 1000;
-  this.before = node.before / total * 1000;
-  this.after = node.after / total * 1000;
-  this.stack = node.stack;
-
-  this.depth = depth;
-  this.state = state;
-  this.parent = parent;
-  this.top = state.y;
-
-  this.elems = [];
-  this.elems.push(new Element('rect').attr({
-    x: this.init,
-    y: this.top,
-    width: this.before - this.init,
-    height: 20,
-    fill: 'SteelBlue',
-    style: 'shape-rendering: crispEdges'
-  }));
-  this.elems.push(new Element('rect').attr({
-    x: this.before,
-    y: this.top,
-    width: this.after - this.before,
-    height: 20,
-    fill: 'IndianRed',
-    style: 'shape-rendering: crispEdges'
-  }));
-  this.elems.push(new Element('line').attr({
-    x1: this.init,
-    y1: this.parent.top + 20,
-    x2: this.init,
-    y2: this.top + 20,
-    style: 'stroke: #000; stroke-width: 2px'
-  }));
-
-  this.state.y += 20;
-  this.children = node.children.map(function (child) {
-    return new Node(child, total, depth + 1, state, this);
-  }, this);
-}
-
-Node.prototype._indent = function () {
-  var s = '';
-  for (var i = 0; i < this.depth; i++) {
-    s += '  ';
+    process.exit(1);
   }
-  return s;
-};
 
-Node.prototype.stringify = function () {
-  var content = [];
-  this.elems.forEach(function (elem) {
-    content.push(this._indent() + elem.singleton());
-  }, this);
-  this.children.forEach(function (child) {
-    content.push(child.stringify());
-  }, this);
+  console.log('server ready on http://localhost:3343');
 
-  return content.join('\n');
-};
+  var datadump = Buffer.concat([
+    new Buffer('window.datadump = '), content[0], new Buffer(';')
+  ]);
 
-function Element(name) {
-  this._name = name;
-  this._attr = {};
-}
-
-Element.prototype.attr = function (attr) {
-  extend(this._attr, attr);
-  return this;
-};
-
-Element.prototype.start = function () {
-  var start = '<' + this._name;
-  Object.keys(this._attr).forEach(function (k) {
-    start += ' ' + k + '="' + this._attr[k] + '"';
-  }, this);
-  start += '>';
-  return start;
-};
-
-Element.prototype.end = function () {
-  return '</' + this._name + '>';
-};
-
-Element.prototype.singleton = function () {
-  return this.start() + this.end();
-};
+  server.on('request', function (req, res) {
+    if (req.url === '/dump.js') {
+      res.setHeader('content-type', 'application/javascript');
+      res.end(datadump);
+    } else if (req.url === '/visualizer.js') {
+      res.setHeader('content-type', 'application/javascript');
+      fs.createReadStream(files.visualizer).pipe(res);
+    } else if (req.url === '/d3.js') {
+      res.setHeader('content-type', 'application/javascript');
+      fs.createReadStream(files.d3).pipe(res);
+    } else if (req.url === '/favicon.ico') {
+      res.statusCode = 404;
+      res.end();
+    } else {
+      res.setHeader('content-type', 'text/html');
+      fs.createReadStream(files.index).pipe(res);
+    }
+  });
+});
