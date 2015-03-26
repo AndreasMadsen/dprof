@@ -26,10 +26,10 @@
     .attr('transform', 'translate(0, 24)')
     .call(xAxis);
 
-  window.addEventListener('resize', function () {
+  function updateTicks() {
     xScale.range([10, window.innerWidth - 10]);
     ticks.select('.x.axis').call(xAxis);
-  });
+  }
 
   // Flatten datastructure
   function Flatten(data) {
@@ -67,7 +67,7 @@
 
   var flatten = new Flatten(dump);
 
-  function draw() {
+  function drawTimelines() {
     // Update content height
     content.style('height', flatten.totalHeight());
 
@@ -82,42 +82,44 @@
     barEnter.append('path')
       .attr('class', function (d, i) {
         return 'background ' + (i % 2 ? 'even' : 'odd');
-      })
-      .attr('d', backgroundPath);
-    function backgroundPath(d) {
-      return `M${xScale(0)} ${d.top}` + // Move to
-             `H${xScale(flatten.total)}`; // Horizontal line to
-    }
+      });
+    bar.select('.background')
+      .attr('d', function (d) {
+        return `M${xScale(0)} ${d.top}` + // Move to
+               `H${xScale(flatten.total)}`; // Horizontal line to
+      });
 
     barEnter.filter(function(d) { return d.parent; }).append('path')
-        .attr('class', 'init')
-        .attr('d', initPath);
-    function initPath(d) {
-      // Add half after to top1. Add haft befor before top2
-      return `M${xScale(d.init) - 1} ${d.parent.top + 6}` + // Move to
-             `V${d.top + 3}`; // Vertical line to
-    }
+      .attr('class', 'init');
+    bar.select('.init')
+      .attr('d', function (d) {
+        // Add half after to top1. Add haft befor before top2
+        return `M${xScale(d.init) - 1} ${d.parent.top + 6}` + // Move to
+               `V${d.top + 3}`; // Vertical line to
+      });
 
     barEnter.append('path')
-        .attr('class', 'before')
-        .attr('d', beforePath);
-    function beforePath(d) {
-      return `M${xScale(d.init)} ${d.top}` + // Move to
-             `H${xScale(d.before)}`; // Horizontal line to
-    }
+      .attr('class', 'before');
+    bar.select('.before')
+      .attr('d', function (d) {
+        return `M${xScale(d.init)} ${d.top}` + // Move to
+               `H${xScale(d.before)}`; // Horizontal line to
+      });
 
     barEnter.append('path')
-        .attr('class', 'after')
-        .attr('d', afterPath);
-    function afterPath(d) {
-      return `M${xScale(d.before)} ${d.top}` + // Move to
-             `H${xScale(d.after)}`; // Horizontal line to
-    }
+      .attr('class', 'after');
+    bar.select('.after')
+      .attr('d', function (d) {
+        return `M${xScale(d.before)} ${d.top}` + // Move to
+               `H${xScale(d.after)}`; // Horizontal line to
+      });
   }
-  draw();
+  drawTimelines();
 
+  // handle resize
   window.addEventListener('resize', function () {
-    draw();
+    updateTicks();
+    drawTimelines();
   });
 
 })(window.datadump, window.d3);
