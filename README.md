@@ -14,7 +14,7 @@ npm install -g dprof
 * Add `require('dprof')` to the beginning of you script to profile it.
 * Run the script, when done a `dprof.json` is created in your `cwd`.
 * To start the visualizer run `cat dprof.json | dprof`
-* Now open http://localhost:3343 in your browser
+* Now open [http://localhost:3343](http://localhost:3343) in your browser
 
 ```javascript
 require('dprof');
