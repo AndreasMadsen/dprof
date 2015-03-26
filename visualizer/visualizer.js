@@ -54,7 +54,7 @@
   // Set stats
   //
     info.select('#stats')
-      .text(`version: ${flatten.version}\ntime: ${flatten.total} ${timeUnit}`);
+      .text(`dprof version: ${flatten.version}\ntime: ${flatten.total} ${timeUnit}`);
 
   //
   // Setup scale
@@ -148,12 +148,13 @@
     var node = row.datum();
 
     // Show only the last 6 callsites
-    var stacktrace = node.stack.slice(-7).map(function (site) {
-      return site.filename + ':' + site.line + ':' + site.column;
+    var stacktrace = node.stack.slice(-6).map(function (site) {
+      return ' at ' + site.filename + ':' + site.line + ':' + site.column;
     }).join('\n');
 
     info.select('#stacktrace')
-      .text('STACKTRACE:\n\n' + stacktrace);
+      .text('HANDLE NAME: ' + node.name + '\n' +
+            'STACKTRACE:\n' + stacktrace);
 
     row.select('.background')
       .classed('selected', true);
