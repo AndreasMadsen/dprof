@@ -1,6 +1,86 @@
 <!DOCTYPE html>
 <meta charset="utf8">
 <title>dprof visualizer</title>
-<script src="/d3.js" charset="utf8"></script>
-<script src="/dump.js" charset="utf8"></script>
-<script src="/visualizer.js" charset="utf8"></script>
+
+<style>
+  /* general page layout */
+  html, body {
+    margin: 0;
+    height: 100%;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  section#info {
+    flex: 0 0 119px;
+    background: #F3F3F3;
+    border-bottom: 1px solid #666;
+  }
+  div#content-box {
+    flex-grow: 1;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  svg {
+    display: block;
+    width: 100%;
+  }
+  svg#ticks {
+    flex: 0 0 25px;
+  }
+  svg#content {
+    box-sizing: border-box;
+    height: 0px; /* default will be overwriten dynamically */
+  }
+
+  /* chart style */
+  .axis text {
+    font: 10px sans-serif;
+  }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+
+  .timeline path {
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    shape-rendering: crispEdges;
+  }
+
+  .timeline .background {
+    stroke-width: 20px;
+  }
+  .timeline .background.odd {
+    stroke: #F3F3F3;
+  }
+
+  .timeline .init {
+    stroke-width: 2px;
+    stroke: rgba(0, 0, 0, 0.7);
+  }
+  .timeline .before {
+    stroke-width: 6px;
+    stroke: SteelBlue;
+  }
+  .timeline .after {
+    stroke-width: 12px;
+    stroke: IndianRed;
+  }
+</style>
+
+<script src="/d3.js" charset="utf8" defer></script>
+<script src="/dump.js" charset="utf8" defer></script>
+
+<section id="info"></section>
+<svg id="ticks"></svg>
+<div id="content-box">
+  <svg id="content"></svg>
+</div>
+
+
+<script src="/visualizer.js" charset="utf8" defer></script>
