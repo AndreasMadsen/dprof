@@ -13,8 +13,8 @@ npm install -g dprof
 
 * Add `require('dprof')` to the beginning of you script to profile it.
 * Run the script, when done a `dprof.json` is created in your `cwd`.
-* To generate a html visualization run `cat dprof.json | dprof > dprof.html`
-* Now open `dprof.html` in your browser
+* To start the visualizer run `cat dprof.json | dprof`
+* Now open http://localhost:3343 in your browser
 
 ```javascript
 require('dprof');
@@ -45,11 +45,10 @@ fs.open(__filename, 'r', function (err, fd) {
 ## Visualizer
 
 ```shell
-dprof.json | dprof > dprof.html
+cat dprof.json | dprof
 ```
 
-The visualizer is very much WIP, you are welcome to contribute with a better
-one.
+The visualizer is WIP, you are welcome to contribute with major changes to the existing one.
 
 ![Visualizer](https://github.com/AndreasMadsen/dprof/blob/master/visualizer.png)
 
