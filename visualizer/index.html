@@ -34,6 +34,28 @@
     height: 0px; /* default will be overwriten dynamically */
   }
 
+  /* info style */
+  section#info {
+    font-family: monospace;
+    font-size: 8pt;
+  }
+  section#info #stacktrace {
+    float: left;
+    width: 70%;
+    height: 119px;
+    white-space: pre-wrap;
+    padding: 15px 10px 5px 10px;
+    box-sizing: border-box;
+  }
+  section#info #stats {
+    float: right;
+    width: 30%;
+    height: 119px;
+    white-space: pre-wrap;
+    padding: 15px 10px 5px 10px;
+    box-sizing: border-box;
+  }
+
   /* chart style */
   .axis text {
     font: 10px sans-serif;
@@ -58,6 +80,9 @@
   .timeline .background.odd {
     stroke: #F3F3F3;
   }
+  .timeline .background.selected {
+    stroke: #D0D0D0;
+  }
 
   .timeline .init {
     stroke-width: 2px;
@@ -76,7 +101,10 @@
 <script src="/d3.js" charset="utf8" defer></script>
 <script src="/dump.js" charset="utf8" defer></script>
 
-<section id="info"></section>
+<section id="info">
+  <div id="stacktrace"></div>
+  <div id="stats"></div>
+</section>
 <svg id="ticks"></svg>
 <div id="content-box">
   <svg id="content"></svg>
