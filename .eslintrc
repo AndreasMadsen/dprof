@@ -8,6 +8,10 @@
     "no-underscore-dangle": 0,
     "no-use-before-define": [1, "nofunc"],
     "no-new-func": 0,
-    "no-shadow": 0
+    "no-shadow": 0,
+    "no-process-exit": 0
+  },
+  "ecmaFeatures": {
+    "templateStrings": true
   }
 }

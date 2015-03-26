@@ -18,7 +18,7 @@ function Site(site) {
 }
 
 function callSites() {
-  return chain.callSite({ extend: false, filter: true, slice: 2 })
+  return chain.callSite({ extend: false, filter: true, slice: 4 })
     .map(function (site) {
       return new Site(site);
     });
