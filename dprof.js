@@ -32,8 +32,8 @@ function timestamp() {
 function Node(name) {
   this.name = name;
   this._init = timestamp();
-  this._before = 0;
-  this._after = 0;
+  this._before = Infinity;
+  this._after = Infinity;
   this.children = [];
   this.stack = callSites();
 }

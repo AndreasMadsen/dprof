@@ -21,6 +21,13 @@
     this.insert(null, data.root);
   }
 
+  function unpackFloat(float) {
+    // JSON.stringify converts Infinity to null, which is wired
+    // because Infinity is a part of the double type. So convert
+    // it back, but use a real number, aka the total process time.
+    return float === null ? dump.total : float;
+  }
+
   function Node(parent, node, index) {
     // Meta
     this.index = index; // related to top position
@@ -32,9 +39,9 @@
     this.stack = node.stack;
 
     // Position
-    this.init = node.init / timeScale;
-    this.before = node.before / timeScale;
-    this.after = node.after / timeScale;
+    this.init = unpackFloat(node.init) / timeScale;
+    this.before = unpackFloat(node.before) / timeScale;
+    this.after = unpackFloat(node.after) / timeScale;
     this.top = this.index * timelineHeight + timelineHeight / 2;
   }
 
