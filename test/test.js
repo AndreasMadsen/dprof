@@ -9,11 +9,14 @@ var fs = require('fs');
 
 var dprofPath = path.resolve(__dirname, 'dprof.json');
 
-fs.unlinkSync(dprofPath);
+try {
+  fs.unlinkSync(dprofPath);
+} catch (e) {}
 
 test('simple', function (t) {
+  console.log(path.resolve(__dirname, 'scripts', 'example.js'));
   var proc = spawn(process.execPath, [
-    path.resolve(__dirname, 'profile_this.js')
+    path.resolve(__dirname, 'scripts', 'example.js')
   ], {
     cwd: __dirname
   });

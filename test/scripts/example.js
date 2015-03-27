@@ -1,7 +1,7 @@
 'use strict';
+require('../../dprof.js');
 
 var fs = require('fs');
-require('../dprof.js');
 
 setTimeout(function () {
 
