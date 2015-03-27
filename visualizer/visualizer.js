@@ -54,7 +54,7 @@
   // Set stats
   //
     info.select('#stats')
-      .text(`dprof version: ${flatten.version}\ntime: ${flatten.total} ${timeUnit}`);
+      .text(`dprof version: ${flatten.version}\ntime: ${flatten.total.toFixed(8)} ${timeUnit}`);
 
   //
   // Setup scale
