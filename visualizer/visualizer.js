@@ -53,8 +53,13 @@
   //
   // Set stats
   //
+  function drawState(text) {
     info.select('#stats')
-      .text(`dprof version: ${flatten.version}\ntime: ${flatten.total.toFixed(8)} ${timeUnit}`);
+      .text(`dprof version: ${flatten.version}\n` +
+            `time: ${flatten.total.toFixed(8)} ${timeUnit}\n\n` +
+            text);
+  }
+  drawState('');
 
   //
   // Setup scale
@@ -147,16 +152,26 @@
     var node = row.datum();
 
     // Show only the last 6 callsites
-    var stacktrace = node.stack.slice(-6).map(function (site) {
+    var stacktrace = node.stack.slice(-7).map(function (site) {
       return ' at ' + site.filename + ':' + site.line + ':' + site.column;
     }).join('\n');
 
     info.select('#stacktrace')
-      .text('HANDLE NAME: ' + node.name + '\n' +
-            'STACKTRACE:\n' + stacktrace);
+      .text('STACKTRACE:\n' + stacktrace);
 
     row.select('.background')
       .classed('selected', true);
+
+    function toms(sec, size) {
+      var ms = sec * timeScale / 1e6;
+      var str = ms.toFixed(15);
+      return str.slice(0, size);
+    }
+
+    drawState(`handle: ${node.name}\n` +
+              `start: ${node.init.toFixed(8)} ${timeUnit}\n` +
+              `wait: ${toms(node.before - node.init, 11)} ms\n` +
+              `callback: ${toms(node.after - node.before, 7)} ms`);
   });
 
   //
