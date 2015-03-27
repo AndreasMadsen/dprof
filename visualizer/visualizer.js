@@ -137,8 +137,7 @@
   content.on('click', function () {
     // Calculate the index of the row there was clicked on
     var rowIndex = Math.floor((
-      d3.event.y + content.node().parentNode.scrollTop -
-      content.node().getBoundingClientRect().top
+      d3.event.y - content.node().getBoundingClientRect().top
     ) / timelineHeight);
 
     content.selectAll('g .background')
