@@ -1,21 +1,70 @@
 'use strict';
 
-module.exports = function (asyncInit, asyncBefore, asyncAfter) {
-  // Right now async_wrap is an internal C++ module,
-  // thus require doesn't work.
+var asyncWrap = process.binding('async_wrap');
+var chain = require('stack-chain');
 
-  var asyncWrap = process.binding('async_wrap');
+Error.stackTraceLimit = Infinity;
 
-  // Think of `CallInitHook` as the property name
-  // and `kCallInitHook` as the way to access it
-  var kCallInitHook = 0;
-  var asyncHooksObject = {};
+var kCallInitHook = 0;
 
-  // Enable async wrap
-  asyncWrap.setupHooks(asyncHooksObject,
-    asyncInit, asyncBefore, asyncAfter);
+function AsyncWrap() {
+  this.enabled = false;
+  this.wrapSettings = {};
+  this.skip = 0;
+}
 
-  // Enable init events (default 0)
-  // Must be set after `async_wrap.setupHooks` is called
-  asyncHooksObject[kCallInitHook] = 1;
+function NextTickWrap() {}
+
+AsyncWrap.prototype.setup = function (init, before, after) {
+  asyncWrap.setupHooks(this.wrapSettings, init, before, after);
+
+  // Overwrite next tick
+  var self = this;
+  var nextTick = process.nextTick;
+  process.nextTick = function (callback) {
+    var enabled = self.enabled;
+    var handle = new NextTickWrap();
+
+    if (enabled) {
+      self.skip += 1;
+      init.call(handle);
+      self.skip -= 1;
+    }
+
+    nextTick.call(process, function () {
+      if (enabled) before.call(handle);
+      callback();
+      if (enabled) after.call(handle);
+    });
+  };
+
+  // Enable
+  this.enable();
 };
+
+AsyncWrap.prototype.enable = function () {
+  this.enabled = true;
+  this.wrapSettings[kCallInitHook] = 1;
+};
+
+AsyncWrap.prototype.disable = function () {
+  this.enabled = false;
+  this.wrapSettings[kCallInitHook] = 0;
+};
+
+AsyncWrap.prototype.stackTrace = function (skip) {
+  var limit = Error.stackTraceLimit;
+  var slice = skip + this.skip;
+
+  Error.stackTraceLimit = 7 + slice;
+  var stack = chain.callSite({
+    extend: false,
+    filter: true,
+    slice: skip + this.skip
+  });
+  Error.stackTraceLimit = limit;
+
+  return stack;
+};
+
+module.exports = new AsyncWrap();

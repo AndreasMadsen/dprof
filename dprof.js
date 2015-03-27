@@ -1,7 +1,6 @@
 'use strict';
 
 var asyncWrap = require('./async_wrap.js');
-var chain = require('stack-chain');
 var fs = require('fs');
 
 var version = require('./package.json').version;
@@ -17,29 +16,24 @@ function Site(site) {
   this.column = site.getColumnNumber();
 }
 
-function callSites() {
-  return chain.callSite({ extend: false, filter: true, slice: 4 })
-    .map(function (site) {
-      return new Site(site);
-    });
-}
-
 function timestamp() {
   var t = process.hrtime(processStart);
   return t[0] * 1e9 + t[1];
 }
 
-function Node(name) {
+function Node(name, stack) {
   this.name = name;
   this._init = timestamp();
   this._before = Infinity;
   this._after = Infinity;
   this.children = [];
-  this.stack = callSites();
+  this.stack = stack.map(function (site) {
+    return new Site(site);
+  });
 }
 
 Node.prototype.add = function (handle) {
-  var node = new Node(handle.constructor.name);
+  var node = new Node(handle.constructor.name, asyncWrap.stackTrace(3));
   this.children.push(node);
   return node;
 };
@@ -73,9 +67,9 @@ Node.prototype.rootFinished = function () {
 // Setup hooks
 //
 
-asyncWrap(asyncInit, asyncBefore, asyncAfter);
+asyncWrap.setup(asyncInit, asyncBefore, asyncAfter);
 
-var root = new Node('root');
+var root = new Node('root', asyncWrap.stackTrace(2));
 var state = root;
 
 function asyncInit() {
@@ -93,12 +87,11 @@ function asyncAfter() {
 }
 
 // The root job is done when process.nextTick is called
-// TODO: in the current version of node nextTick doesn't invoke async_wrap,
-// however in the future it will be nessarry to use an IGNORE flag, or
-// disable async_wrap before this call.
+asyncWrap.disable();
 process.nextTick(function () {
   root.rootFinished();
 });
+asyncWrap.enable();
 
 //
 // Print result

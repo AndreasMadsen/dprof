@@ -159,7 +159,7 @@
     var node = row.datum();
 
     // Show only the last 6 callsites
-    var stacktrace = node.stack.slice(-7).map(function (site) {
+    var stacktrace = node.stack.map(function (site) {
       return ' at ' + site.filename + ':' + site.line + ':' + site.column;
     }).join('\n');
 
