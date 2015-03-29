@@ -3,6 +3,7 @@
 (function (dump, d3) {
   // Get elements
   var info = d3.select('#info');
+  var overview = d3.select('#overview');
   var ticks = d3.select('#ticks');
   var content = d3.select('#content');
 
@@ -55,6 +56,34 @@
     return this.nodes[this.nodes.length - 1].top + timelineHeight / 2;
   };
 
+  Flatten.prototype._calcDeltas = function (name, delta) {
+    return this.nodes.map(function (node) {
+      return { 'time': node[name], 'delta': delta };
+    });
+  };
+
+  Flatten.prototype.overview = function () {
+    // This will give an overview of the concurrency in the process timespan.
+
+    // Create an array of deltas
+    var deltas = this._calcDeltas('init', +1)
+      .concat(this._calcDeltas('after', -1))
+      .sort(function (a, b) {
+        return a.time - b.time;
+      });
+
+    // Now do a communicative sum of the deltas
+    var concurrency = 0;
+    return deltas.map(function (change) {
+      concurrency += change.delta;
+
+      return {
+        'time': change.time,
+        'concurrency': concurrency
+      };
+    });
+  };
+
   var flatten = new Flatten(dump);
 
   //
@@ -92,8 +121,62 @@
   }
 
   //
+  // Set overview
+  //
+  var xOverview = d3.scale.linear()
+    .range([10, window.innerWidth - 10])
+    .domain([0, flatten.total]);
+
+  var overviewNodes = flatten.overview();
+  var yOverview = d3.scale.linear()
+    .range([overview.node().clientHeight, 10])
+    .domain([
+      0,
+      Math.max.apply(null, overviewNodes.map(function (change) {
+        return change.concurrency;
+      }))
+    ]);
+
+  // Area
+  var area = d3.svg.area()
+    .interpolate('step-after')
+    .x(function(d) { return xOverview(d.time); })
+    .y0(70)
+    .y1(function(d) { return yOverview(d.concurrency); });
+
+  var overviewPath = overview.append('path')
+    .datum(overviewNodes);
+
+  // Brush
+  var brush = d3.svg.brush()
+    .x(xOverview)
+    .on('brush', function () {
+      xScale.domain(brush.empty() ? xOverview.domain() : brush.extent());
+      drawTimelines();
+    });
+
+  var gBrush = overview.append('g')
+    .attr('class', 'brush')
+    .call(brush);
+
+  gBrush.selectAll('rect')
+    .attr('height', overview.node().clientHeight + 1);
+
+  // Draw
+  function drawOverview() {
+    xOverview.range([10, window.innerWidth - 10]);
+    overviewPath.attr('d', area);
+    if (!brush.empty()) brush.extent(brush.extent());
+    gBrush.call(brush);
+  }
+
+  drawOverview();
+
+  //
   // Draw timeline
   //
+
+  // This is called when the brush is used or the window is resized
   function drawTimelines() {
     // Update content height
     content.style('height', flatten.totalHeight());
@@ -186,6 +269,7 @@
   //
   window.addEventListener('resize', function () {
     updateTicks();
+    drawOverview();
     drawTimelines();
   });
 

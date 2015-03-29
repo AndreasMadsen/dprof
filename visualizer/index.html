@@ -26,6 +26,11 @@
     display: block;
     width: 100%;
   }
+  svg#overview {
+    flex: 0 0 69px;
+    background: #F3F3F3;
+    border-bottom: 1px solid #000;
+  }
   svg#ticks {
     flex: 0 0 25px;
   }
@@ -54,6 +59,23 @@
     white-space: pre-wrap;
     padding: 15px 10px 5px 10px;
     box-sizing: border-box;
+  }
+
+  /* overview style */
+  svg#overview path {
+    fill: SteelBlue;
+    shape-rendering: crispEdges;
+  }
+
+  svg#overview .brush {
+    stroke: #fff;
+    fill: #000;
+    fill-opacity: .125;
+    shape-rendering: crispEdges;
+  }
+
+  svg#overview .brush rect {
+    transform: translateY(-1px);
   }
 
   /* chart style */
@@ -105,6 +127,7 @@
   <div id="stacktrace"></div>
   <div id="stats"></div>
 </section>
+<svg id="overview"></svg>
 <svg id="ticks"></svg>
 <div id="content-box">
   <svg id="content"></svg>
