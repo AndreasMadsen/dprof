@@ -152,6 +152,8 @@
     .x(xOverview)
     .on('brush', function () {
       xScale.domain(brush.empty() ? xOverview.domain() : brush.extent());
+
+      updateTicks();
       drawTimelines();
     });
 
