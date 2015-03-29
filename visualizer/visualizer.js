@@ -108,7 +108,13 @@
   var xAxis = d3.svg.axis()
       .scale(xScale)
       .orient('top')
-      .tickFormat(function (d) { return (d ? xFormat(d) : '0'); });
+      .tickFormat(function (d) {
+        if (Math.floor(d) === d) {
+          return d.toString();
+        } else {
+          return xFormat(d);
+        }
+      });
 
   ticks.append('g')
     .attr('class', 'x axis')
@@ -116,6 +122,7 @@
     .call(xAxis);
 
   function updateTicks() {
+    xFormat = xScale.tickFormat();
     xScale.range([10, window.innerWidth - 10]);
     ticks.select('.x.axis').call(xAxis);
   }
