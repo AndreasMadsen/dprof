@@ -4,15 +4,19 @@ var http = require('http');
 var fs = require('fs');
 var path = require('path');
 
+var browserify = require('browserify');
+var startpoint = require('startpoint');
 var endpoint = require('endpoint');
 var async = require('async');
 
 var version = require('../package.json').version;
 var server = http.createServer();
 
+var basedir = path.resolve(__dirname, '..', 'visualizer');
 var files = {
-  index: path.resolve(__dirname, '..', 'visualizer', 'index.html'),
-  visualizer: path.resolve(__dirname, '..', 'visualizer', 'visualizer.js'),
+  index: path.resolve(basedir, 'index.html'),
+  dump: path.resolve(basedir, 'dump.js'),
+  visualizer: path.resolve(basedir, 'visualizer.js'),
   d3: path.resolve(require.resolve('d3'), '../d3.js')
 };
 
@@ -50,19 +54,23 @@ async.parallel([
   console.log('server ready on http://localhost:3343');
 
   var datadump = Buffer.concat([
-    new Buffer('window.datadump = '), content[0], new Buffer(';')
+    new Buffer('module.exports = '), content[0], new Buffer(';')
   ]);
 
+  var b = browserify({
+    'basedir': basedir,
+    'debug': true,
+    'noParse': [files.d3, files.dump]
+  });
+  b.require(startpoint(datadump), {
+    'file': files.dump
+  });
+  b.add(files.visualizer);
+
   server.on('request', function (req, res) {
-    if (req.url === '/dump.js') {
+    if (req.url === '/visualizer.js') {
       res.setHeader('content-type', 'application/javascript');
-      res.end(datadump);
-    } else if (req.url === '/visualizer.js') {
-      res.setHeader('content-type', 'application/javascript');
-      fs.createReadStream(files.visualizer).pipe(res);
-    } else if (req.url === '/d3.js') {
-      res.setHeader('content-type', 'application/javascript');
-      fs.createReadStream(files.d3).pipe(res);
+      b.bundle().pipe(res);
     } else if (req.url === '/favicon.ico') {
       res.statusCode = 404;
       res.end();
