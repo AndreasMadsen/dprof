@@ -1,7 +1,8 @@
 /*eslint-env browser */
 
 var d3 = require('d3');
-var flatten = require('./flatten');
+var flatten = require('./flatten.js');
+var stats = require('./stats.js');
 
 // Get elements
 var info = d3.select('#info');
@@ -17,13 +18,7 @@ var timelineHeight = 20;
 //
 // Set stats
 //
-function drawState(text) {
-  info.select('#stats')
-    .text(`dprof version: ${flatten.version}\n` +
-          `time: ${flatten.total.toFixed(8)} ${timeUnit}\n\n` +
-          text);
-}
-drawState('');
+stats.draw();
 
 //
 // Setup scale
@@ -190,16 +185,8 @@ content.on('click', function () {
   row.select('.background')
     .classed('selected', true);
 
-  function toms(sec, size) {
-    var ms = sec * timeScale / 1e6;
-    var str = ms.toFixed(15);
-    return str.slice(0, size);
-  }
-
-  drawState(`handle: ${node.name}\n` +
-            `start: ${node.init.toFixed(8)} ${timeUnit}\n` +
-            `wait: ${toms(node.before - node.init, 11)} ms\n` +
-            `callback: ${toms(node.after - node.before, 7)} ms`);
+  stats.setNode(node);
+  stats.draw();
 });
 
 //
