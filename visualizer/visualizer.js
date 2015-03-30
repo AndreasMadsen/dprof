@@ -2,10 +2,10 @@
 
 var d3 = require('d3');
 var flatten = require('./flatten.js');
+var overview = require('./overview.js');
 var info = require('./info.js');
 
 // Get elements
-var overview = d3.select('#overview');
 var ticks = d3.select('#ticks');
 var content = d3.select('#content');
 
@@ -13,9 +13,10 @@ var content = d3.select('#content');
 var timelineHeight = 20;
 
 //
-// Set stats
+// Do initial draw
 //
 info.draw();
+overview.draw();
 
 //
 // Setup scale
@@ -46,60 +47,6 @@ function updateTicks() {
   xScale.range([10, window.innerWidth - 10]);
   ticks.select('.x.axis').call(xAxis);
 }
-
-//
-// Set overview
-//
-var xOverview = d3.scale.linear()
-  .range([10, window.innerWidth - 10])
-  .domain([0, flatten.total]);
-
-var overviewNodes = flatten.overview();
-var yOverview = d3.scale.linear()
-  .range([overview.node().clientHeight, 10])
-  .domain([
-    0,
-    Math.max.apply(null, overviewNodes.map(function (change) {
-      return change.concurrency;
-    }))
-  ]);
-
-// Area
-var area = d3.svg.area()
-  .interpolate('step-after')
-  .x(function(d) { return xOverview(d.time); })
-  .y0(70)
-  .y1(function(d) { return yOverview(d.concurrency); });
-
-var overviewPath = overview.append('path')
-  .datum(overviewNodes);
-
-// Brush
-var brush = d3.svg.brush()
-  .x(xOverview)
-  .on('brush', function () {
-    xScale.domain(brush.empty() ? xOverview.domain() : brush.extent());
-
-    updateTicks();
-    drawTimelines();
-  });
-
-var gBrush = overview.append('g')
-  .attr('class', 'brush')
-  .call(brush);
-
-gBrush.selectAll('rect')
-  .attr('height', overview.node().clientHeight + 1);
-
-// Draw
-function drawOverview() {
-  xOverview.range([10, window.innerWidth - 10]);
-  overviewPath.attr('d', area);
-  if (!brush.empty()) brush.extent(brush.extent());
-  gBrush.call(brush);
-}
-
-drawOverview();
 
 //
 // Draw timeline
@@ -183,6 +130,14 @@ content.on('click', function () {
 //
 window.addEventListener('resize', function () {
   updateTicks();
-  drawOverview();
+  overview.draw();
+  drawTimelines();
+});
+
+
+// Update graph when the brush is used
+overview.on('brush', function (domain) {
+  xScale.domain(domain);
+  updateTicks();
   drawTimelines();
 });
