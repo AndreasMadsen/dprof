@@ -2,23 +2,20 @@
 
 var d3 = require('d3');
 var flatten = require('./flatten.js');
-var stats = require('./stats.js');
+var info = require('./info.js');
 
 // Get elements
-var info = d3.select('#info');
 var overview = d3.select('#overview');
 var ticks = d3.select('#ticks');
 var content = d3.select('#content');
 
 // Settings
-var timeScale = 1e9; // seconds
-var timeUnit = 'sec';
 var timelineHeight = 20;
 
 //
 // Set stats
 //
-stats.draw();
+info.draw();
 
 //
 // Setup scale
@@ -174,19 +171,11 @@ content.on('click', function () {
   var row = content.selectAll(`g:nth-child(${rowIndex + 1})`);
   var node = row.datum();
 
-  // Show only the last 6 callsites
-  var stacktrace = node.stack.map(function (site) {
-    return ' at ' + site.filename + ':' + site.line + ':' + site.column;
-  }).join('\n');
-
-  info.select('#stacktrace')
-    .text('STACKTRACE:\n' + stacktrace);
-
   row.select('.background')
     .classed('selected', true);
 
-  stats.setNode(node);
-  stats.draw();
+  info.setNode(node);
+  info.draw();
 });
 
 //
