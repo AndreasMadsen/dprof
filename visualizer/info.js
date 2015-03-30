@@ -1,6 +1,6 @@
 
 var d3 = require('d3');
-var flatten = require('./flatten');
+var flatten = require('./flatten.js');
 
 function StatsLayout() {
   var info = d3.select('#info');

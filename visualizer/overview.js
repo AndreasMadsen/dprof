@@ -3,7 +3,7 @@
 var d3 = require('d3');
 var inherits = require('inherits');
 var events = require('events');
-var flatten = require('./flatten');
+var flatten = require('./flatten.js');
 
 function OverviewLayout() {
   var self = this;
@@ -52,7 +52,7 @@ function OverviewLayout() {
     .call(this._brush);
 
   // Add +1 (really +2 including the border from .clientHeight) to hide
-  // the white border on the top and bottom of the brush rect. 
+  // the white border on the top and bottom of the brush rect.
   this._brushElem.selectAll('rect')
     .attr('height', this._overviewElem.node().clientHeight + 1);
 }
@@ -65,7 +65,7 @@ OverviewLayout.prototype.draw = function () {
   // the window size change
   if (!this._brush.empty()) this._brush.extent(this._brush.extent());
 
-  // Update elements
+  // Redraw elements
   this._areaElem.attr('d', this._area);
   this._brushElem.call(this._brush);
 };
