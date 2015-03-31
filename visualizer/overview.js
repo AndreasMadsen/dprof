@@ -39,13 +39,7 @@ function OverviewLayout() {
   // Brush
   this._brush = d3.svg.brush()
     .x(this._xScale)
-    .on('brush', function () {
-      // get new brush domain
-      var domain = self._xScale.domain();
-      if (!self._brush.empty()) domain = self._brush.extent();
-
-      self.emit('brush', domain);
-    });
+    .on('brush', this._onbrush.bind(this));
 
   this._brushElem = this._overviewElem.append('g')
     .attr('class', 'brush')
@@ -57,6 +51,14 @@ function OverviewLayout() {
     .attr('height', this._overviewElem.node().clientHeight + 1);
 }
 inherits(OverviewLayout, events.EventEmitter);
+
+OverviewLayout.prototype._onbrush = function () {
+  // get new brush domain
+  var domain = this._xScale.domain();
+  if (!this._brush.empty()) domain = this._brush.extent();
+
+  this.emit('brush', domain);
+};
 
 OverviewLayout.prototype.draw = function () {
   // Update the range if the window size changed

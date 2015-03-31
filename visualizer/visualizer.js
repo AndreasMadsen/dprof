@@ -27,4 +27,6 @@ overview.on('brush', function (domain) {
 timeline.on('click', function (node) {
   info.setNode(node);
   info.draw();
+
+  timeline.highlightNode(node);
 });

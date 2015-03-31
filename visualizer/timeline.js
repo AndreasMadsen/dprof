@@ -48,25 +48,27 @@ TimelineLayout.prototype.setDomain = function (domain) {
   this._xTickFormat = this._xScale.tickFormat();
 };
 
-TimelineLayout.prototype._onclick = function () {
+TimelineLayout.prototype.highlightNode = function (node) {
+  // Toggle selected class
+  this._contentElem.selectAll('g .background')
+    .classed('selected', false);
+
+  this._contentElem.select(`g:nth-child(${node.index + 1}) .background`)
+    .classed('selected', true);
+};
+
+TimelineLayout.prototype._getClickedNode = function () {
   // Calculate the index of the row there was clicked on
   var rowIndex = Math.floor((
     d3.event.y - this._contentElem.node().getBoundingClientRect().top
   ) / timelineHeight);
 
-  // Select row element and node
-  var row = this._contentElem.selectAll(`g:nth-child(${rowIndex + 1})`);
-  var node = row.datum();
+  // Select node
+  return flatten.nodes[rowIndex];
+};
 
-  // Toggle selected class
-  this._contentElem.selectAll('g .background')
-    .classed('selected', false);
-
-  row.select('.background')
-    .classed('selected', true);
-
-  // Nofify
-  this.emit('click', node);
+TimelineLayout.prototype._onclick = function () {
+  this.emit('click', this._getClickedNode());
 };
 
 TimelineLayout.prototype._calcInitLine = function (node) {
