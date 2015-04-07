@@ -60,6 +60,10 @@ OverviewLayout.prototype._onbrush = function () {
   this.emit('brush', domain);
 };
 
+OverviewLayout.prototype.setDomain = function (domain) {
+  this._brush.extent(domain);
+};
+
 OverviewLayout.prototype.draw = function () {
   // Update the range if the window size changed
   this._xScale.range([10, window.innerWidth - 10]);

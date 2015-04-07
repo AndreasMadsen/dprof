@@ -12,14 +12,21 @@ function TimelineLayout() {
 
   this._ticksElem = d3.select('#ticks');
   this._contentElem = d3.select('#content');
+  this._containerElem = d3.select('#content-box');
 
-  // The x range depends on the window size, so set that in .draw
+  // Define scale for timeline
+  this._xZoom = 1;
+  this._xOffset = 0;
   this._xScale = d3.scale.linear()
     .domain([0, flatten.total]);
-  this._xTickFormat = this._xScale.tickFormat();
+
+  // The x range depends on the window size, so set that in .draw
+  this._xTickScale = d3.scale.linear()
+    .domain([0, flatten.total]);
+  this._xTickFormat = this._xTickScale.tickFormat();
 
   this._xAxis = d3.svg.axis()
-    .scale(this._xScale)
+    .scale(this._xTickScale)
     .orient('top')
     .tickFormat(function (d) {
       if (Math.floor(d) === d) {
@@ -39,13 +46,32 @@ function TimelineLayout() {
 
   // Handle mouse click
   this._contentElem.on('click', this._onclick.bind(this));
+
+  // Handle scoll
+  this._scollSet = false;
+  var prevHorizontalScroll = 0;
+  var scrollTimeout = null;
+  this._containerElem.on('scroll', function onscroll() {
+    if (prevHorizontalScroll !== this.scrollLeft && !self._scollSet) {
+      prevHorizontalScroll = this.scrollLeft;
+      clearTimeout(scrollTimeout);
+      self._onhscroll();
+      scrollTimeout = setTimeout(onscroll.bind(this), 50);
+    } else if (self._scollSet) {
+      self._scollSet = false;
+    }
+  });
 }
 inherits(TimelineLayout, events.EventEmitter);
 
 TimelineLayout.prototype.setDomain = function (domain) {
-  // Update domain and refit the tick format function
-  this._xScale.domain(domain);
-  this._xTickFormat = this._xScale.tickFormat();
+  // Update tick domain and refit the tick format function
+  this._xTickScale.domain(domain);
+  this._xTickFormat = this._xTickScale.tickFormat();
+
+  // Calculate zoom factor
+  this._xZoom = flatten.total / (domain[1] - domain[0]);
+  this._xOffset = domain[0];
 };
 
 TimelineLayout.prototype.highlightNode = function (node) {
@@ -69,6 +95,22 @@ TimelineLayout.prototype._getClickedNode = function () {
 
 TimelineLayout.prototype._onclick = function () {
   this.emit('click', this._getClickedNode());
+};
+
+TimelineLayout.prototype._onhscroll = function () {
+  // Calculate the domain, from the scoll position
+  var elem = this._containerElem.node();
+  var domain = [
+    this._xScale.invert(elem.scrollLeft + 10),
+    this._xScale.invert(elem.scrollLeft + window.innerWidth - 10)
+  ];
+
+  // Do a fast update and redraw of the ticks
+  this._xTickScale.domain(domain);
+  this._xAxisElem.call(this._xAxis);
+
+  // Notify that the view area have changed on the horizontal axis
+  this.emit('hscroll', domain);
 };
 
 TimelineLayout.prototype._calcInitLine = function (node) {
@@ -137,11 +179,21 @@ TimelineLayout.prototype._drawTimelines = function () {
 };
 
 TimelineLayout.prototype.draw = function () {
-  // Update the range if the window size changed
-  this._xScale.range([10, window.innerWidth - 10]);
+  // Update axis
+  this._xTickScale.range([10, window.innerWidth - 10]);
+  this._xAxisElem.call(this._xAxis);
+
+  // Update content range
+  var rangeWidth = window.innerWidth - 20;
+  var svgWidth = rangeWidth * this._xZoom + 20;
+  this._xScale.range([10, svgWidth - 10]);
+  this._contentElem.style('width', svgWidth);
+  // When setting scrollLeft the scoll event will fire, this can
+  // create an evil recursion, so ignore the next scoll event (scollSet = true).
+  this._scollSet = true;
+  this._containerElem.node().scrollLeft = this._xScale(this._xOffset) - 10;
 
   // Redraw elements
-  this._xAxisElem.call(this._xAxis);
   this._drawTimelines();
 };
 

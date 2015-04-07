@@ -30,3 +30,8 @@ timeline.on('click', function (node) {
 
   timeline.highlightNode(node);
 });
+
+timeline.on('hscroll', function (domain) {
+  overview.setDomain(domain);
+  overview.draw();
+});
