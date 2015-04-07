@@ -184,9 +184,10 @@ TimelineLayout.prototype.draw = function () {
   this._xAxisElem.call(this._xAxis);
 
   // Update content range
-  var timelineWidth = window.innerWidth * this._xZoom;
-  this._xScale.range([10, timelineWidth - 10]);
-  this._contentElem.style('width', timelineWidth);
+  var rangeWidth = window.innerWidth - 20;
+  var svgWidth = rangeWidth * this._xZoom + 20;
+  this._xScale.range([10, svgWidth - 10]);
+  this._contentElem.style('width', svgWidth);
   // When setting scrollLeft the scoll event will fire, this can
   // create an evil recursion, so ignore the next scoll event (scollSet = true).
   this._scollSet = true;
