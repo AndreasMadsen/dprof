@@ -14,6 +14,9 @@ function TimelineLayout() {
   this._contentElem = d3.select('#content');
   this._containerElem = d3.select('#content-box');
 
+  // Current node list
+  this._nodes = flatten.nodes();
+
   // Define scale for timeline
   this._xZoom = 1;
   this._xOffset = 0;
@@ -39,10 +42,6 @@ function TimelineLayout() {
   this._xAxisElem = this._ticksElem.append('g')
     .attr('class', 'x axis')
     .attr('transform', 'translate(0, 24)');
-
-  // Set content height
-  var totalHeight = flatten.nodes[flatten.nodes.length - 1].top + 0.5;
-  this._contentElem.style('height', totalHeight * timelineHeight);
 
   // Handle mouse click
   this._contentElem.on('click', this._onclick.bind(this));
@@ -90,7 +89,7 @@ TimelineLayout.prototype._getClickedNode = function () {
   ) / timelineHeight);
 
   // Select node
-  return flatten.nodes[rowIndex];
+  return this._nodes[rowIndex];
 };
 
 TimelineLayout.prototype._onclick = function () {
@@ -126,17 +125,17 @@ TimelineLayout.prototype._calcInitLine = function (node) {
 };
 
 TimelineLayout.prototype._calcBackgroundLine = function (node) {
-   return `M${this._xScale(0)} ${node.top * timelineHeight}` + // Move to
-          `H${this._xScale(flatten.total)}`; // Horizontal line to
+  return `M${this._xScale(0)} ${node.top * timelineHeight} ` + // Move to
+         `H${this._xScale(flatten.total)}`; // Horizontal line to
 };
 
 TimelineLayout.prototype._calcBeforeLine = function (node) {
-  return `M${this._xScale(node.init)} ${node.top * timelineHeight}` + // Move to
+  return `M${this._xScale(node.init)} ${node.top * timelineHeight} ` + // Move to
          `H${this._xScale(node.before)}`; // Horizontal line to
 };
 
 TimelineLayout.prototype._calcAfterLine = function (node) {
-  return `M${this._xScale(node.before)} ${node.top * timelineHeight}` + // Move to
+  return `M${this._xScale(node.before)} ${node.top * timelineHeight} ` + // Move to
          `H${this._xScale(node.after)}`; // Horizontal line to
 };
 
@@ -144,7 +143,7 @@ TimelineLayout.prototype._drawTimelines = function () {
   // Insert data dump
   var bar = this._contentElem
     .selectAll('g')
-      .data(flatten.nodes, function (d) { return d.id; });
+      .data(this._nodes, function (d) { return d.id; });
   var barEnter = bar
     .enter().append('g')
       .attr('class', 'timeline');
@@ -192,6 +191,10 @@ TimelineLayout.prototype.draw = function () {
   // create an evil recursion, so ignore the next scoll event (scollSet = true).
   this._scollSet = true;
   this._containerElem.node().scrollLeft = this._xScale(this._xOffset) - 10;
+
+  // Set content height
+  var totalHeight = this._nodes[this._nodes.length - 1].top + 0.5;
+  this._contentElem.style('height', totalHeight * timelineHeight);
 
   // Redraw elements
   this._drawTimelines();

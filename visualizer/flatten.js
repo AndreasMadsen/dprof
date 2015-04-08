@@ -15,17 +15,21 @@ function unpackTime(float) {
 // Flatten datastructure
 //
 function Flatten(data) {
-  this.nodes = [];
+  this.tree = new Node(null, data.root, 0);
+  this.allNodes = this.nodes();
+
   this.total = unpackTime(data.total) * ns2s;
   this.version = data.version;
-  this.insert(null, data.root);
 }
+
+var idCounter = 0;
 
 function Node(parent, node, index) {
   // Meta
-  this.index = index; // related to top position
+  this.index = idCounter; // related to top position
   this.id = index; // d3 id, doesn't change
   this.parent = parent;
+  this.collapsed = false;
 
   // Info
   this.name = node.name;
@@ -35,17 +39,46 @@ function Node(parent, node, index) {
   this.init = unpackTime(node.init) * ns2s;
   this.before = unpackTime(node.before) * ns2s;
   this.after = unpackTime(node.after) * ns2s;
+  this.total = 0;
   this.top = this.index + 0.5;
+
+  // Children
+  var totals = [this.after];
+  this.children = node.children.map(function (child) {
+    child = new Node(this, child, ++idCounter);
+    totals.push(node.total);
+    return child;
+  }, this);
+
+  // Update total, to be the max of the childrens total and the before time
+  // of this node.
+  this.total = Math.max.apply(null, totals);
 }
 
-Flatten.prototype.insert = function (parent, node) {
-  var struct = new Node(parent, node, this.nodes.length);
-  this.nodes.push(struct);
-  node.children.forEach(this.insert.bind(this, struct));
+Node.prototype.setIndex = function (index) {
+  this.index = index;
+  this.top = index + 0.5;
+};
+
+Node.prototype.toggleCollapsed = function () {
+  this.collapsed = !this.collapsed;
+};
+
+Flatten.prototype.nodes = function () {
+  // Flatten out the nodes, removed children of collapsed nodes and calculate
+  // index.
+  var nodes = [];
+  (function recursive(node) {
+    node.setIndex(nodes.length);
+    nodes.push(node);
+    if (!node.collapsed) node.children.forEach(recursive);
+  })(this.tree);
+
+  return nodes;
 };
 
 Flatten.prototype._calcDeltas = function (name, delta) {
-  return this.nodes.map(function (node) {
+  return this.allNodes.map(function (node) {
     return { 'time': node[name], 'delta': delta };
   });
 };
