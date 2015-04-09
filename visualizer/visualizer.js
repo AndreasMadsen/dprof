@@ -3,6 +3,7 @@
 var info = require('./info.js');
 var overview = require('./overview.js');
 var timeline = require('./timeline.js');
+var flatten = require('./flatten.js');
 
 //
 // Do initial draw
@@ -29,6 +30,12 @@ timeline.on('click', function (node) {
   info.draw();
 
   timeline.highlightNode(node);
+});
+
+timeline.on('dblclick', function (node) {
+  node.toggleCollapsed();
+  timeline.setNodes(flatten.nodes());
+  timeline.draw();
 });
 
 timeline.on('hscroll', function (domain) {
