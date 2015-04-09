@@ -46,7 +46,7 @@ function Node(parent, node, index) {
   var totals = [this.after];
   this.children = node.children.map(function (child) {
     child = new Node(this, child, ++idCounter);
-    totals.push(node.total);
+    totals.push(child.total);
     return child;
   }, this);
 
