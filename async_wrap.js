@@ -20,7 +20,7 @@ AsyncWrap.prototype.setup = function (init, before, after) {
   // Overwrite next tick
   var self = this;
   var nextTick = process.nextTick;
-  process.nextTick = function (callback) {
+  process.nextTick = function () {
     var enabled = self.enabled;
     var handle = new NextTickWrap();
 
@@ -30,11 +30,14 @@ AsyncWrap.prototype.setup = function (init, before, after) {
       self.skip -= 1;
     }
 
-    nextTick.call(process, function () {
+    var args = Array.from(arguments);
+    var callback = args[0];
+    args[0] = function () {
       if (enabled) before.call(handle);
-      callback();
+      callback.apply(null, arguments);
       if (enabled) after.call(handle);
-    });
+    };
+    nextTick.apply(process, args);
   };
 
   // Enable
