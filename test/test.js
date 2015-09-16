@@ -9,39 +9,46 @@ var fs = require('fs');
 
 var dprofPath = path.resolve(__dirname, 'dprof.json');
 
-try {
-  fs.unlinkSync(dprofPath);
-} catch (e) {}
+function testScript(filename, expectedStdout) {
+  test('simple', function (t) {
+    // remove drof.json
+    fs.unlink(dprofPath, function () {
 
-test('simple', function (t) {
-  console.log(path.resolve(__dirname, 'scripts', 'example.js'));
-  var proc = spawn(process.execPath, [
-    path.resolve(__dirname, 'scripts', 'example.js')
-  ], {
-    cwd: __dirname
-  });
+      // run script
+      var proc = spawn(process.execPath, [
+        path.resolve(__dirname, 'scripts', filename + '.js')
+      ], {
+        cwd: __dirname
+      });
 
-  async.parallel([
-    function (done) {
-      proc.stderr.pipe(endpoint(function (err, buf) {
+      // check stderr and stdout
+      async.parallel([
+        function (done) {
+          proc.stderr.pipe(endpoint(function (err, buf) {
+            t.ifError(err);
+            t.equal(buf.toString(), '');
+            done(null);
+          }));
+        },
+        function (done) {
+          proc.stdout.pipe(endpoint(function (err, buf) {
+            t.ifError(err);
+            t.equal(buf.toString(), expectedStdout);
+            done(null);
+          }));
+        }
+      ], function (err) {
         t.ifError(err);
-        t.equal(buf.toString(), '');
-        done(null);
-      }));
-    },
-    function (done) {
-      proc.stdout.pipe(endpoint(function (err, buf) {
-        t.ifError(err);
-        t.equal(buf.toString(), '');
-        done(null);
-      }));
-    }
-  ], function (err) {
-    t.ifError(err);
-    fs.readFile(dprofPath, function (err, content) {
-      t.ifError(err);
-      console.log(content.toString());
-      t.end();
+
+        // check dprof.json
+        fs.readFile(dprofPath, function (err, content) {
+          t.ifError(err);
+          t.end();
+        });
+      });
     });
   });
-});
+}
+
+testScript('example', '');
+testScript('console-log', 'hallo world\n');
