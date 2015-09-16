@@ -9,14 +9,13 @@ var kCallInitHook = 0;
 
 function AsyncWrap() {
   this.enabled = false;
-  this.wrapSettings = {};
   this.skip = 0;
 }
 
 function NextTickWrap() {}
 
 AsyncWrap.prototype.setup = function (init, before, after) {
-  asyncWrap.setupHooks(this.wrapSettings, init, before, after);
+  asyncWrap.setupHooks(init, before, after);
 
   // Overwrite next tick
   var self = this;
@@ -44,12 +43,12 @@ AsyncWrap.prototype.setup = function (init, before, after) {
 
 AsyncWrap.prototype.enable = function () {
   this.enabled = true;
-  this.wrapSettings[kCallInitHook] = 1;
+  asyncWrap.enable();
 };
 
 AsyncWrap.prototype.disable = function () {
   this.enabled = false;
-  this.wrapSettings[kCallInitHook] = 0;
+  asyncWrap.disable();
 };
 
 AsyncWrap.prototype.stackTrace = function (skip) {
