@@ -20,7 +20,12 @@ interpreted({
 
   test: function (name, content, callback) {
     const scriptPath = path.resolve(SCRIPTS_DIR, name + '.js');
-    const proc = spawn(process.execPath, [scriptPath], { cwd: __dirname });
+    const proc = spawn(process.execPath, [
+      '--stack_trace_limit=100', scriptPath
+    ], {
+      cwd: __dirname,
+      env: Object.assign({ NODE_DPROF_DEBUG: '1' }, process.env)
+    });
 
     async.parallel({
       stderr(done) {

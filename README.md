@@ -45,7 +45,7 @@ fs.open(__filename, 'r', function (err, fd) {
 ## Visualizer
 
 ```shell
-cat dprof.json | dprof
+gzcat dprof.json.gz | dprof
 ```
 
 The visualizer is WIP, you are welcome to contribute with major changes to the existing one.
@@ -58,7 +58,11 @@ The visualizer is WIP, you are welcome to contribute with major changes to the e
 
 ## Format
 
-The format of `dprof.json` is simple, there is an initial part:
+The `dprof.json.gz` file is a GZIP compressed JSON file. It is possible
+to get an uncompressed file, just set the environment variable `NODE_DPROF_DEBUG`.
+
+The format `dprof.json` is simple, there is an initial part:
+
 ```javascript
 {
   version: String, // the version of dprof there generated this JSON file

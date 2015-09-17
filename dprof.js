@@ -1,6 +1,7 @@
 'use strict';
 
 const asyncWrap = require('./async_wrap.js');
+const zlib = require('zlib');
 const fs = require('fs');
 
 const version = require('./package.json').version;
@@ -104,9 +105,15 @@ asyncWrap.enable();
 //
 
 process.on('exit', function () {
-  fs.writeFileSync('./dprof.json', JSON.stringify({
+  const data = {
     'total': timestamp(),
     'version': version,
     'root': root
-  }, null, 1));
+  };
+
+  if (process.env.NODE_DPROF_DEBUG) {
+    fs.writeFileSync('./dprof.json', JSON.stringify(data, null, 1));
+  } else {
+    fs.writeFileSync('./dprof.json.gz', zlib.gzipSync(JSON.stringify(data)));
+  }
 });
