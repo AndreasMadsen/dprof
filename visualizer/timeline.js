@@ -1,14 +1,15 @@
 /*eslint-env browser */
+'use strict';
 
-var d3 = require('d3');
-var inherits = require('inherits');
-var events = require('events');
-var flatten = require('./flatten.js');
+const d3 = require('d3');
+const inherits = require('inherits');
+const events = require('events');
+const flatten = require('./flatten.js');
 
-var timelineHeight = 20;
+const timelineHeight = 20;
 
 function TimelineLayout() {
-  var self = this;
+  const self = this;
 
   this._ticksElem = d3.select('#ticks');
   this._contentElem = d3.select('#content');
@@ -49,8 +50,8 @@ function TimelineLayout() {
 
   // Handle scoll
   this._scollSet = false;
-  var prevHorizontalScroll = 0;
-  var scrollTimeout = null;
+  let prevHorizontalScroll = 0;
+  let scrollTimeout = null;
   this._containerElem.on('scroll', function onscroll() {
     if (prevHorizontalScroll !== this.scrollLeft && !self._scollSet) {
       prevHorizontalScroll = this.scrollLeft;
@@ -89,7 +90,7 @@ TimelineLayout.prototype.highlightNode = function (node) {
 
 TimelineLayout.prototype._getClickedNode = function () {
   // Calculate the index of the row there was clicked on
-  var rowIndex = Math.floor((
+  const rowIndex = Math.floor((
     d3.event.y - this._contentElem.node().getBoundingClientRect().top
   ) / timelineHeight);
 
@@ -107,8 +108,8 @@ TimelineLayout.prototype._ondblclick = function () {
 
 TimelineLayout.prototype._onhscroll = function () {
   // Calculate the domain, from the scoll position
-  var elem = this._containerElem.node();
-  var domain = [
+  const elem = this._containerElem.node();
+  const domain = [
     this._xScale.invert(elem.scrollLeft + 10),
     this._xScale.invert(elem.scrollLeft + window.innerWidth - 10)
   ];
@@ -157,7 +158,7 @@ TimelineLayout.prototype._calcTotalLine = function (node) {
 
 TimelineLayout.prototype._drawTimelines = function () {
   // Setup d3 selection
-  var bar = this._contentElem
+  const bar = this._contentElem
     .selectAll('g')
       .data(this._nodes, function (d) { return d.id; });
 
@@ -167,7 +168,7 @@ TimelineLayout.prototype._drawTimelines = function () {
 
   //
   // Insert groups
-  var barEnter = bar
+  const barEnter = bar
     .enter().append('g')
       .attr('class', 'timeline');
 
@@ -218,8 +219,8 @@ TimelineLayout.prototype.draw = function () {
   this._xAxisElem.call(this._xAxis);
 
   // Update content range
-  var rangeWidth = window.innerWidth - 20;
-  var svgWidth = rangeWidth * this._xZoom + 20;
+  const rangeWidth = window.innerWidth - 20;
+  const svgWidth = rangeWidth * this._xZoom + 20;
   this._xScale.range([10, svgWidth - 10]);
   this._contentElem.style('width', svgWidth);
   // When setting scrollLeft the scoll event will fire, this can
@@ -228,7 +229,7 @@ TimelineLayout.prototype.draw = function () {
   this._containerElem.node().scrollLeft = this._xScale(this._xOffset) - 10;
 
   // Set content height
-  var totalHeight = this._nodes[this._nodes.length - 1].top + 0.5;
+  const totalHeight = this._nodes[this._nodes.length - 1].top + 0.5;
   this._contentElem.style('height', totalHeight * timelineHeight);
 
   // Redraw elements

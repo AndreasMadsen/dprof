@@ -1,9 +1,10 @@
+'use strict';
 
-var d3 = require('d3');
-var flatten = require('./flatten.js');
+const d3 = require('d3');
+const flatten = require('./flatten.js');
 
 function StatsLayout() {
-  var info = d3.select('#info');
+  const info = d3.select('#info');
   this._statsElem = info.select('#stats');
   this._traceElem = info.select('#stacktrace');
   this._node = null;
@@ -18,14 +19,14 @@ StatsLayout.prototype.setNode = function (node) {
 };
 
 function toms(sec, size) {
-  var ms = sec * 1e3;
-  var str = ms.toFixed(15);
+  const ms = sec * 1e3;
+  const str = ms.toFixed(15);
   return str.slice(0, size);
 }
 
 StatsLayout.prototype.draw = function () {
-  var stats = this._constantStats;
-  var trace = '';
+  let stats = this._constantStats;
+  let trace = '';
 
   if (this._node !== null) {
     stats += '\n' +

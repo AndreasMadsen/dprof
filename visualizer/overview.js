@@ -1,12 +1,13 @@
 /*eslint-env browser */
+'use strict';
 
-var d3 = require('d3');
-var inherits = require('inherits');
-var events = require('events');
-var flatten = require('./flatten.js');
+const d3 = require('d3');
+const inherits = require('inherits');
+const events = require('events');
+const flatten = require('./flatten.js');
 
 function OverviewLayout() {
-  var self = this;
+  const self = this;
 
   this._overviewElem = d3.select('#overview');
   this._overviewNodes = flatten.overview();
@@ -15,7 +16,7 @@ function OverviewLayout() {
   this._xScale = d3.scale.linear()
     .domain([0, flatten.total]);
 
-  var maxConcurrency = Math.max.apply(null,
+  const maxConcurrency = Math.max.apply(null,
     this._overviewNodes.map(function (change) {
       return change.concurrency;
     })
@@ -54,7 +55,7 @@ inherits(OverviewLayout, events.EventEmitter);
 
 OverviewLayout.prototype._onbrush = function () {
   // get new brush domain
-  var domain = this._xScale.domain();
+  let domain = this._xScale.domain();
   if (!this._brush.empty()) domain = this._brush.extent();
 
   this.emit('brush', domain);

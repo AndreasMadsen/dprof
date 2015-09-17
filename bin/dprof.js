@@ -1,19 +1,20 @@
 #!/usr/bin/env node
+'use strict';
 
-var http = require('http');
-var fs = require('fs');
-var path = require('path');
+const http = require('http');
+const fs = require('fs');
+const path = require('path');
 
-var browserify = require('browserify');
-var startpoint = require('startpoint');
-var endpoint = require('endpoint');
-var async = require('async');
+const browserify = require('browserify');
+const startpoint = require('startpoint');
+const endpoint = require('endpoint');
+const async = require('async');
 
-var version = require('../package.json').version;
-var server = http.createServer();
+const version = require('../package.json').version;
+const server = http.createServer();
 
-var basedir = path.resolve(__dirname, '..', 'visualizer');
-var files = {
+const basedir = path.resolve(__dirname, '..', 'visualizer');
+const files = {
   index: path.resolve(basedir, 'index.html'),
   dump: path.resolve(basedir, 'dump.js'),
   visualizer: path.resolve(basedir, 'visualizer.js'),
@@ -25,7 +26,7 @@ async.parallel([
     process.stdin.pipe(endpoint(done));
     process.stdin.unref();
 
-    var noStdin = setTimeout(done, 100);
+    const noStdin = setTimeout(done, 100);
     process.stdin.once('data', function () {
       clearTimeout(noStdin);
     });
@@ -35,14 +36,14 @@ async.parallel([
   }
 ], function (err, content) {
   if (err) throw err;
-  var dprof = content[0];
+  const dprof = content[0];
 
   if (!dprof) {
     console.error('no file piped to stdin');
     process.exit(1);
   }
 
-  var dumpVersion = JSON.parse(dprof).version;
+  const dumpVersion = JSON.parse(dprof).version;
   if (dumpVersion !== version) {
     console.error('dump file was made with dprof version ' + dumpVersion);
     console.error('dprof visualizer is version ' + version);
@@ -53,11 +54,11 @@ async.parallel([
 
   console.log('server ready on http://localhost:3343');
 
-  var datadump = Buffer.concat([
+  const datadump = Buffer.concat([
     new Buffer('module.exports = '), content[0], new Buffer(';')
   ]);
 
-  var b = browserify({
+  const b = browserify({
     'basedir': basedir,
     'debug': true,
     'noParse': [files.d3, files.dump]

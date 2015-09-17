@@ -1,8 +1,8 @@
+'use strict';
 
-var dump = require('./dump.js');
+const dump = require('./dump.js');
 
-var ns2s = 1e-9;
-
+const ns2s = 1e-9;
 
 function unpackTime(float) {
   // JSON.stringify converts Infinity to null, which is wired
@@ -22,7 +22,7 @@ function Flatten(data) {
   this.version = data.version;
 }
 
-var idCounter = 0;
+let idCounter = 0;
 
 function Node(parent, node, index) {
   // Meta
@@ -43,7 +43,7 @@ function Node(parent, node, index) {
   this.top = this.index + 0.5;
 
   // Children
-  var totals = [this.after];
+  const totals = [this.after];
   this.children = node.children.map(function (child) {
     child = new Node(this, child, ++idCounter);
     totals.push(child.total);
@@ -67,7 +67,7 @@ Node.prototype.toggleCollapsed = function () {
 Flatten.prototype.nodes = function () {
   // Flatten out the nodes, removed children of collapsed nodes and calculate
   // index.
-  var nodes = [];
+  const nodes = [];
   (function recursive(node) {
     node.setIndex(nodes.length);
     nodes.push(node);
@@ -87,14 +87,14 @@ Flatten.prototype.overview = function () {
   // This will give an overview of the concurrency in the process timespan.
 
   // Create an array of deltas
-  var deltas = this._calcDeltas('init', +1)
+  const deltas = this._calcDeltas('init', +1)
     .concat(this._calcDeltas('after', -1))
     .sort(function (a, b) {
       return a.time - b.time;
     });
 
   // Now do a communicative sum of the deltas
-  var concurrency = 0;
+  let concurrency = 0;
   return deltas.map(function (change) {
     concurrency += change.delta;
 

@@ -23,6 +23,7 @@
   "dependencies": {
     "d3": "3.5.x",
     "async": "1.4.x",
+    "inherits": "2.0.x",
     "endpoint": "0.4.x",
     "browserify": "11.1.x",
     "startpoint": "0.3.x",

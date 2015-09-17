@@ -1,9 +1,10 @@
 /*eslint-env browser */
+'use strict';
 
-var info = require('./info.js');
-var overview = require('./overview.js');
-var timeline = require('./timeline.js');
-var flatten = require('./flatten.js');
+const info = require('./info.js');
+const overview = require('./overview.js');
+const timeline = require('./timeline.js');
+const flatten = require('./flatten.js');
 
 //
 // Do initial draw
