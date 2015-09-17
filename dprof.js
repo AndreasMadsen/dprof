@@ -6,6 +6,11 @@ const fs = require('fs');
 const version = require('./package.json').version;
 const processStart = process.hrtime();
 
+// Change the default stackTraceLimit if it haven't allready been overwritten
+if (process.execArgv.indexOf('--stack_trace_limit') === -1 && Error.stackTraceLimit === 10) {
+  Error.stackTraceLimit = 8;
+}
+
 //
 // Define node class
 //

@@ -3,8 +3,6 @@
 const asyncWrap = process.binding('async_wrap');
 const chain = require('stack-chain');
 
-Error.stackTraceLimit = Infinity;
-
 function AsyncWrap() {
   this.enabled = false;
   this.skip = 0;
@@ -56,11 +54,11 @@ AsyncWrap.prototype.stackTrace = function (skip) {
   const limit = Error.stackTraceLimit;
   const slice = skip + this.skip;
 
-  Error.stackTraceLimit = 7 + slice;
+  Error.stackTraceLimit = limit + slice;
   const stack = chain.callSite({
     extend: false,
     filter: true,
-    slice: skip + this.skip
+    slice: slice
   });
   Error.stackTraceLimit = limit;
 
