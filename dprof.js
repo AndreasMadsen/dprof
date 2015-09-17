@@ -1,10 +1,10 @@
 'use strict';
 
-var asyncWrap = require('./async_wrap.js');
-var fs = require('fs');
+const asyncWrap = require('./async_wrap.js');
+const fs = require('fs');
 
-var version = require('./package.json').version;
-var processStart = process.hrtime();
+const version = require('./package.json').version;
+const processStart = process.hrtime();
 
 //
 // Define node class
@@ -17,7 +17,7 @@ function Site(site) {
 }
 
 function timestamp() {
-  var t = process.hrtime(processStart);
+  const t = process.hrtime(processStart);
   return t[0] * 1e9 + t[1];
 }
 
@@ -33,7 +33,7 @@ function Node(name, stack) {
 }
 
 Node.prototype.add = function (handle) {
-  var node = new Node(handle.constructor.name, asyncWrap.stackTrace(3));
+  const node = new Node(handle.constructor.name, asyncWrap.stackTrace(3));
   this.children.push(node);
   return node;
 };
@@ -69,8 +69,8 @@ Node.prototype.rootFinished = function () {
 
 asyncWrap.setup(asyncInit, asyncBefore, asyncAfter);
 
-var root = new Node('root', asyncWrap.stackTrace(2));
-var state = root;
+const root = new Node('root', asyncWrap.stackTrace(2));
+let state = root;
 
 function asyncInit() {
   this._dprofState = state.add(this);

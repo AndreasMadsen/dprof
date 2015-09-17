@@ -1,0 +1,443 @@
+{
+	"stdout": "'use strict';\nrequire('../../dprof.js');\n\nvar fs = require('fs');\n\nfs.createReadStream(__filename).pipe(process.stdout);\n",
+	"stderr": "",
+	"dump": {
+		"total": 17996224,
+		"version": "0.10.1",
+		"root": {
+			"name": "root",
+			"init": 0,
+			"before": 0,
+			"after": 12985115,
+			"children": [
+				{
+					"name": "FSReqWrap",
+					"init": 3031181,
+					"before": 13810440,
+					"after": 14475341,
+					"children": [
+						{
+							"name": "FSReqWrap",
+							"init": 14331304,
+							"before": 14491908,
+							"after": 16410577,
+							"children": [
+								{
+									"name": "NextTickWrap",
+									"init": 15646990,
+									"before": 16457665,
+									"after": 16565915,
+									"children": [],
+									"stack": [
+										{
+											"filename": "_stream_writable.js",
+											"line": 335,
+											"column": 15
+										},
+										{
+											"filename": "_stream_writable.js",
+											"line": 89,
+											"column": 5
+										},
+										{
+											"filename": "net.js",
+											"line": 684,
+											"column": 5
+										},
+										{
+											"filename": "net.js",
+											"line": 694,
+											"column": 8
+										},
+										{
+											"filename": "_stream_writable.js",
+											"line": 292,
+											"column": 12
+										},
+										{
+											"filename": "_stream_writable.js",
+											"line": 278,
+											"column": 5
+										},
+										{
+											"filename": "_stream_writable.js",
+											"line": 207,
+											"column": 11
+										}
+									]
+								},
+								{
+									"name": "FSReqWrap",
+									"init": 15967590,
+									"before": 16701214,
+									"after": 17095379,
+									"children": [
+										{
+											"name": "NextTickWrap",
+											"init": 17074517,
+											"before": 17097718,
+											"after": 17782808,
+											"children": [
+												{
+													"name": "FSReqWrap",
+													"init": 17434152,
+													"before": 17799193,
+													"after": 17857624,
+													"children": [],
+													"stack": [
+														{
+															"filename": "fs.js",
+															"line": 514,
+															"column": 11
+														},
+														{
+															"filename": "fs.js",
+															"line": 1773,
+															"column": 8
+														},
+														{
+															"filename": "fs.js",
+															"line": 1770,
+															"column": 3
+														},
+														{
+															"filename": "fs.js",
+															"line": 1754,
+															"column": 8
+														},
+														{
+															"filename": "fs.js",
+															"line": 1669,
+															"column": 12
+														},
+														{
+															"filename": "events.js",
+															"line": 72,
+															"column": 20
+														},
+														{
+															"filename": "events.js",
+															"line": 166,
+															"column": 7
+														}
+													]
+												}
+											],
+											"stack": [
+												{
+													"filename": "_stream_readable.js",
+													"line": 884,
+													"column": 13
+												},
+												{
+													"filename": "_stream_readable.js",
+													"line": 277,
+													"column": 7
+												},
+												{
+													"filename": "_stream_readable.js",
+													"line": 733,
+													"column": 26
+												},
+												{
+													"filename": "_stream_readable.js",
+													"line": 412,
+													"column": 3
+												},
+												{
+													"filename": "_stream_readable.js",
+													"line": 405,
+													"column": 7
+												},
+												{
+													"filename": "_stream_readable.js",
+													"line": 390,
+													"column": 3
+												},
+												{
+													"filename": "_stream_readable.js",
+													"line": 129,
+													"column": 5
+												}
+											]
+										}
+									],
+									"stack": [
+										{
+											"filename": "fs.js",
+											"line": 582,
+											"column": 11
+										},
+										{
+											"filename": "fs.js",
+											"line": 1726,
+											"column": 6
+										},
+										{
+											"filename": "_stream_readable.js",
+											"line": 328,
+											"column": 10
+										},
+										{
+											"filename": "_stream_readable.js",
+											"line": 147,
+											"column": 16
+										},
+										{
+											"filename": "_stream_readable.js",
+											"line": 110,
+											"column": 10
+										},
+										{
+											"filename": "fs.js",
+											"line": 1744,
+											"column": 12
+										},
+										{
+											"filename": "fs.js",
+											"line": 576,
+											"column": 17
+										}
+									]
+								},
+								{
+									"name": "NextTickWrap",
+									"init": 16314237,
+									"before": 16570224,
+									"after": 16684774,
+									"children": [],
+									"stack": [
+										{
+											"filename": "_stream_readable.js",
+											"line": 425,
+											"column": 13
+										},
+										{
+											"filename": "_stream_readable.js",
+											"line": 160,
+											"column": 7
+										},
+										{
+											"filename": "_stream_readable.js",
+											"line": 110,
+											"column": 10
+										},
+										{
+											"filename": "fs.js",
+											"line": 1744,
+											"column": 12
+										},
+										{
+											"filename": "fs.js",
+											"line": 576,
+											"column": 17
+										}
+									]
+								}
+							],
+							"stack": [
+								{
+									"filename": "fs.js",
+									"line": 582,
+									"column": 11
+								},
+								{
+									"filename": "fs.js",
+									"line": 1726,
+									"column": 6
+								},
+								{
+									"filename": "fs.js",
+									"line": 1697,
+									"column": 12
+								},
+								{
+									"filename": "events.js",
+									"line": 260,
+									"column": 16
+								},
+								{
+									"filename": "events.js",
+									"line": 77,
+									"column": 13
+								},
+								{
+									"filename": "events.js",
+									"line": 169,
+									"column": 7
+								},
+								{
+									"filename": "fs.js",
+									"line": 1688,
+									"column": 10
+								}
+							]
+						}
+					],
+					"stack": [
+						{
+							"filename": "fs.js",
+							"line": 540,
+							"column": 11
+						},
+						{
+							"filename": "fs.js",
+							"line": 1678,
+							"column": 6
+						},
+						{
+							"filename": "fs.js",
+							"line": 1665,
+							"column": 10
+						},
+						{
+							"filename": "fs.js",
+							"line": 1613,
+							"column": 10
+						},
+						{
+							"filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/tty.js",
+							"line": 6,
+							"column": 4
+						},
+						{
+							"filename": "module.js",
+							"line": 434,
+							"column": 26
+						},
+						{
+							"filename": "module.js",
+							"line": 452,
+							"column": 10
+						}
+					]
+				},
+				{
+					"name": "Pipe",
+					"init": 11717616,
+					"before": null,
+					"after": null,
+					"children": [],
+					"stack": [
+						{
+							"filename": "net.js",
+							"line": 30,
+							"column": 31
+						},
+						{
+							"filename": "net.js",
+							"line": 128,
+							"column": 20
+						},
+						{
+							"filename": "node.js",
+							"line": 593,
+							"column": 18
+						},
+						{
+							"filename": "node.js",
+							"line": 619,
+							"column": 16
+						},
+						{
+							"filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/tty.js",
+							"line": 6,
+							"column": 45
+						},
+						{
+							"filename": "module.js",
+							"line": 434,
+							"column": 26
+						},
+						{
+							"filename": "module.js",
+							"line": 452,
+							"column": 10
+						}
+					]
+				},
+				{
+					"name": "NextTickWrap",
+					"init": 12608699,
+					"before": 13058862,
+					"after": 13635473,
+					"children": [],
+					"stack": [
+						{
+							"filename": "_stream_readable.js",
+							"line": 701,
+							"column": 13
+						},
+						{
+							"filename": "_stream_readable.js",
+							"line": 693,
+							"column": 5
+						},
+						{
+							"filename": "_stream_readable.js",
+							"line": 660,
+							"column": 10
+						},
+						{
+							"filename": "_stream_readable.js",
+							"line": 522,
+							"column": 7
+						},
+						{
+							"filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/tty.js",
+							"line": 6,
+							"column": 33
+						},
+						{
+							"filename": "module.js",
+							"line": 434,
+							"column": 26
+						},
+						{
+							"filename": "module.js",
+							"line": 452,
+							"column": 10
+						}
+					]
+				}
+			],
+			"stack": [
+				{
+					"filename": "module.js",
+					"line": 434,
+					"column": 26
+				},
+				{
+					"filename": "module.js",
+					"line": 452,
+					"column": 10
+				},
+				{
+					"filename": "module.js",
+					"line": 355,
+					"column": 32
+				},
+				{
+					"filename": "module.js",
+					"line": 310,
+					"column": 12
+				},
+				{
+					"filename": "module.js",
+					"line": 365,
+					"column": 17
+				},
+				{
+					"filename": "module.js",
+					"line": 384,
+					"column": 17
+				},
+				{
+					"filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/tty.js",
+					"line": 2,
+					"column": 1
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,225 @@
+{
+	"stdout": "",
+	"stderr": "",
+	"dump": {
+		"total": 4858647,
+		"version": "0.10.1",
+		"root": {
+			"name": "root",
+			"init": 0,
+			"before": 0,
+			"after": 2868755,
+			"children": [
+				{
+					"name": "Timer",
+					"init": 2265450,
+					"before": 3021503,
+					"after": 3872325,
+					"children": [
+						{
+							"name": "FSReqWrap",
+							"init": 3400437,
+							"before": 3956759,
+							"after": 4390702,
+							"children": [
+								{
+									"name": "FSReqWrap",
+									"init": 4282272,
+									"before": 4446877,
+									"after": 4495317,
+									"children": [],
+									"stack": [
+										{
+											"filename": "fs.js",
+											"line": 582,
+											"column": 11
+										},
+										{
+											"filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js",
+											"line": 13,
+											"column": 8
+										},
+										{
+											"filename": "fs.js",
+											"line": 82,
+											"column": 15
+										}
+									]
+								},
+								{
+									"name": "FSReqWrap",
+									"init": 4366661,
+									"before": 4498678,
+									"after": 4620920,
+									"children": [
+										{
+											"name": "FSReqWrap",
+											"init": 4610303,
+											"before": 4661521,
+											"after": 4705701,
+											"children": [],
+											"stack": [
+												{
+													"filename": "fs.js",
+													"line": 514,
+													"column": 11
+												},
+												{
+													"filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js",
+													"line": 29,
+													"column": 10
+												},
+												{
+													"filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js",
+													"line": 25,
+													"column": 24
+												},
+												{
+													"filename": "fs.js",
+													"line": 576,
+													"column": 17
+												}
+											]
+										}
+									],
+									"stack": [
+										{
+											"filename": "fs.js",
+											"line": 582,
+											"column": 11
+										},
+										{
+											"filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js",
+											"line": 21,
+											"column": 8
+										},
+										{
+											"filename": "fs.js",
+											"line": 82,
+											"column": 15
+										}
+									]
+								}
+							],
+							"stack": [
+								{
+									"filename": "fs.js",
+									"line": 540,
+									"column": 11
+								},
+								{
+									"filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js",
+									"line": 8,
+									"column": 6
+								},
+								{
+									"filename": "timers.js",
+									"line": 89,
+									"column": 15
+								}
+							]
+						},
+						{
+							"name": "FSReqWrap",
+							"init": 3787040,
+							"before": 4402506,
+							"after": 4438511,
+							"children": [],
+							"stack": [
+								{
+									"filename": "fs.js",
+									"line": 808,
+									"column": 11
+								},
+								{
+									"filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js",
+									"line": 35,
+									"column": 6
+								},
+								{
+									"filename": "timers.js",
+									"line": 89,
+									"column": 15
+								}
+							]
+						}
+					],
+					"stack": [
+						{
+							"filename": "timers.js",
+							"line": 39,
+							"column": 12
+						},
+						{
+							"filename": "timers.js",
+							"line": 164,
+							"column": 5
+						},
+						{
+							"filename": "timers.js",
+							"line": 211,
+							"column": 11
+						},
+						{
+							"filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js",
+							"line": 6,
+							"column": 1
+						},
+						{
+							"filename": "module.js",
+							"line": 434,
+							"column": 26
+						},
+						{
+							"filename": "module.js",
+							"line": 452,
+							"column": 10
+						},
+						{
+							"filename": "module.js",
+							"line": 355,
+							"column": 32
+						}
+					]
+				}
+			],
+			"stack": [
+				{
+					"filename": "module.js",
+					"line": 434,
+					"column": 26
+				},
+				{
+					"filename": "module.js",
+					"line": 452,
+					"column": 10
+				},
+				{
+					"filename": "module.js",
+					"line": 355,
+					"column": 32
+				},
+				{
+					"filename": "module.js",
+					"line": 310,
+					"column": 12
+				},
+				{
+					"filename": "module.js",
+					"line": 365,
+					"column": 17
+				},
+				{
+					"filename": "module.js",
+					"line": 384,
+					"column": 17
+				},
+				{
+					"filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js",
+					"line": 2,
+					"column": 1
+				}
+			]
+		}
+	}
+}

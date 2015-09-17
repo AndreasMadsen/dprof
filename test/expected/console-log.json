@@ -1,0 +1,185 @@
+{
+	"stdout": "hallo world\n",
+	"stderr": "",
+	"dump": {
+		"total": 15024480,
+		"version": "0.10.1",
+		"root": {
+			"name": "root",
+			"init": 0,
+			"before": 0,
+			"after": 14490442,
+			"children": [
+				{
+					"name": "Pipe",
+					"init": 10346426,
+					"before": null,
+					"after": null,
+					"children": [],
+					"stack": [
+						{
+							"filename": "net.js",
+							"line": 30,
+							"column": 31
+						},
+						{
+							"filename": "net.js",
+							"line": 128,
+							"column": 20
+						},
+						{
+							"filename": "node.js",
+							"line": 593,
+							"column": 18
+						},
+						{
+							"filename": "node.js",
+							"line": 619,
+							"column": 16
+						},
+						{
+							"filename": "console.js",
+							"line": 92,
+							"column": 37
+						},
+						{
+							"filename": "node.js",
+							"line": 942,
+							"column": 5
+						},
+						{
+							"filename": "node.js",
+							"line": 890,
+							"column": 18
+						}
+					]
+				},
+				{
+					"name": "Pipe",
+					"init": 11920131,
+					"before": null,
+					"after": null,
+					"children": [],
+					"stack": [
+						{
+							"filename": "net.js",
+							"line": 30,
+							"column": 31
+						},
+						{
+							"filename": "net.js",
+							"line": 128,
+							"column": 20
+						},
+						{
+							"filename": "node.js",
+							"line": 593,
+							"column": 18
+						},
+						{
+							"filename": "node.js",
+							"line": 634,
+							"column": 16
+						},
+						{
+							"filename": "console.js",
+							"line": 92,
+							"column": 53
+						},
+						{
+							"filename": "node.js",
+							"line": 942,
+							"column": 5
+						},
+						{
+							"filename": "node.js",
+							"line": 890,
+							"column": 18
+						}
+					]
+				},
+				{
+					"name": "NextTickWrap",
+					"init": 14134535,
+					"before": 14570402,
+					"after": 14716826,
+					"children": [],
+					"stack": [
+						{
+							"filename": "_stream_writable.js",
+							"line": 335,
+							"column": 15
+						},
+						{
+							"filename": "_stream_writable.js",
+							"line": 89,
+							"column": 5
+						},
+						{
+							"filename": "net.js",
+							"line": 684,
+							"column": 5
+						},
+						{
+							"filename": "net.js",
+							"line": 694,
+							"column": 8
+						},
+						{
+							"filename": "_stream_writable.js",
+							"line": 292,
+							"column": 12
+						},
+						{
+							"filename": "_stream_writable.js",
+							"line": 278,
+							"column": 5
+						},
+						{
+							"filename": "_stream_writable.js",
+							"line": 207,
+							"column": 11
+						}
+					]
+				}
+			],
+			"stack": [
+				{
+					"filename": "module.js",
+					"line": 434,
+					"column": 26
+				},
+				{
+					"filename": "module.js",
+					"line": 452,
+					"column": 10
+				},
+				{
+					"filename": "module.js",
+					"line": 355,
+					"column": 32
+				},
+				{
+					"filename": "module.js",
+					"line": 310,
+					"column": 12
+				},
+				{
+					"filename": "module.js",
+					"line": 365,
+					"column": 17
+				},
+				{
+					"filename": "module.js",
+					"line": 384,
+					"column": 17
+				},
+				{
+					"filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/console-log.js",
+					"line": 2,
+					"column": 1
+				}
+			]
+		}
+	}
+}
