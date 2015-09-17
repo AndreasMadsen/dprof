@@ -16,9 +16,10 @@ if (process.execArgv.indexOf('--stack_trace_limit') === -1 && Error.stackTraceLi
 //
 
 function Site(site) {
+  this.description = site.toString();
   this.filename = site.getFileName();
   this.line = site.getLineNumber();
-  this.column = site.getColumnNumber();
+  this.collum = site.getColumnNumber();
 }
 
 function timestamp() {

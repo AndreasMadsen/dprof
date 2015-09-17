@@ -35,10 +35,9 @@ StatsLayout.prototype.draw = function () {
       `wait: ${toms(this._node.before - this._node.init, 11)} ms\n` +
       `callback: ${toms(this._node.after - this._node.before, 7)} ms`;
 
-    trace += 'STACKTRACE:\n' +
-      this._node.stack.map(function (site) {
-        return ' at ' + site.filename + ':' + site.line + ':' + site.column;
-      }).join('\n');
+    trace += this._node.stack.map(function (site) {
+      return ' at ' + site.description;
+    }).join('\n');
   }
 
   this._statsElem.text(stats);

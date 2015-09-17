@@ -74,6 +74,7 @@ Each `Node` then have the format:
   name: String,    // Handle name of the async operation
   stack: [         // Contains the stack leading up to the async operation
     {
+      description: String,
       filename: String,
       column: Number,
       line: Number

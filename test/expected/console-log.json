@@ -2,182 +2,420 @@
 	"stdout": "hallo world\n",
 	"stderr": "",
 	"dump": {
-		"total": 15024480,
+		"total": 15536281,
 		"version": "0.10.1",
 		"root": {
 			"name": "root",
 			"init": 0,
 			"before": 0,
-			"after": 14490442,
+			"after": 14992642,
 			"children": [
 				{
 					"name": "Pipe",
-					"init": 10346426,
+					"init": 10783889,
 					"before": null,
 					"after": null,
 					"children": [],
 					"stack": [
 						{
+							"description": "createHandle (net.js:30:31)",
 							"filename": "net.js",
 							"line": 30,
-							"column": 31
+							"collum": 31
 						},
 						{
+							"description": "new Socket (net.js:128:20)",
 							"filename": "net.js",
 							"line": 128,
-							"column": 20
+							"collum": 20
 						},
 						{
+							"description": "createWritableStdioStream (node.js:593:18)",
 							"filename": "node.js",
 							"line": 593,
-							"column": 18
+							"collum": 18
 						},
 						{
+							"description": "process.stdout (node.js:619:16)",
 							"filename": "node.js",
 							"line": 619,
-							"column": 16
+							"collum": 16
 						},
 						{
+							"description": "console.js:92:37",
 							"filename": "console.js",
 							"line": 92,
-							"column": 37
+							"collum": 37
 						},
 						{
+							"description": "NativeModule.compile (node.js:942:5)",
 							"filename": "node.js",
 							"line": 942,
-							"column": 5
+							"collum": 5
 						},
 						{
+							"description": "Function.NativeModule.require (node.js:890:18)",
 							"filename": "node.js",
 							"line": 890,
-							"column": 18
+							"collum": 18
+						},
+						{
+							"description": "node.js:181:27",
+							"filename": "node.js",
+							"line": 181,
+							"collum": 27
+						},
+						{
+							"description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/console-log.js:4:1)",
+							"filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/console-log.js",
+							"line": 4,
+							"collum": 1
+						},
+						{
+							"description": "Module._compile (module.js:434:26)",
+							"filename": "module.js",
+							"line": 434,
+							"collum": 26
+						},
+						{
+							"description": "Object.Module._extensions..js (module.js:452:10)",
+							"filename": "module.js",
+							"line": 452,
+							"collum": 10
+						},
+						{
+							"description": "Module.load (module.js:355:32)",
+							"filename": "module.js",
+							"line": 355,
+							"collum": 32
+						},
+						{
+							"description": "Function.Module._load (module.js:310:12)",
+							"filename": "module.js",
+							"line": 310,
+							"collum": 12
+						},
+						{
+							"description": "Function.Module.runMain (module.js:475:10)",
+							"filename": "module.js",
+							"line": 475,
+							"collum": 10
+						},
+						{
+							"description": "startup (node.js:117:18)",
+							"filename": "node.js",
+							"line": 117,
+							"collum": 18
+						},
+						{
+							"description": "node.js:951:3",
+							"filename": "node.js",
+							"line": 951,
+							"collum": 3
 						}
 					]
 				},
 				{
 					"name": "Pipe",
-					"init": 11920131,
+					"init": 12216775,
 					"before": null,
 					"after": null,
 					"children": [],
 					"stack": [
 						{
+							"description": "createHandle (net.js:30:31)",
 							"filename": "net.js",
 							"line": 30,
-							"column": 31
+							"collum": 31
 						},
 						{
+							"description": "new Socket (net.js:128:20)",
 							"filename": "net.js",
 							"line": 128,
-							"column": 20
+							"collum": 20
 						},
 						{
+							"description": "createWritableStdioStream (node.js:593:18)",
 							"filename": "node.js",
 							"line": 593,
-							"column": 18
+							"collum": 18
 						},
 						{
+							"description": "process.stderr (node.js:634:16)",
 							"filename": "node.js",
 							"line": 634,
-							"column": 16
+							"collum": 16
 						},
 						{
+							"description": "console.js:92:53",
 							"filename": "console.js",
 							"line": 92,
-							"column": 53
+							"collum": 53
 						},
 						{
+							"description": "NativeModule.compile (node.js:942:5)",
 							"filename": "node.js",
 							"line": 942,
-							"column": 5
+							"collum": 5
 						},
 						{
+							"description": "Function.NativeModule.require (node.js:890:18)",
 							"filename": "node.js",
 							"line": 890,
-							"column": 18
+							"collum": 18
+						},
+						{
+							"description": "node.js:181:27",
+							"filename": "node.js",
+							"line": 181,
+							"collum": 27
+						},
+						{
+							"description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/console-log.js:4:1)",
+							"filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/console-log.js",
+							"line": 4,
+							"collum": 1
+						},
+						{
+							"description": "Module._compile (module.js:434:26)",
+							"filename": "module.js",
+							"line": 434,
+							"collum": 26
+						},
+						{
+							"description": "Object.Module._extensions..js (module.js:452:10)",
+							"filename": "module.js",
+							"line": 452,
+							"collum": 10
+						},
+						{
+							"description": "Module.load (module.js:355:32)",
+							"filename": "module.js",
+							"line": 355,
+							"collum": 32
+						},
+						{
+							"description": "Function.Module._load (module.js:310:12)",
+							"filename": "module.js",
+							"line": 310,
+							"collum": 12
+						},
+						{
+							"description": "Function.Module.runMain (module.js:475:10)",
+							"filename": "module.js",
+							"line": 475,
+							"collum": 10
+						},
+						{
+							"description": "startup (node.js:117:18)",
+							"filename": "node.js",
+							"line": 117,
+							"collum": 18
+						},
+						{
+							"description": "node.js:951:3",
+							"filename": "node.js",
+							"line": 951,
+							"collum": 3
 						}
 					]
 				},
 				{
 					"name": "NextTickWrap",
-					"init": 14134535,
-					"before": 14570402,
-					"after": 14716826,
+					"init": 14363527,
+					"before": 15073624,
+					"after": 15197489,
 					"children": [],
 					"stack": [
 						{
+							"description": "onwrite (_stream_writable.js:335:15)",
 							"filename": "_stream_writable.js",
 							"line": 335,
-							"column": 15
+							"collum": 15
 						},
 						{
+							"description": "WritableState.onwrite (_stream_writable.js:89:5)",
 							"filename": "_stream_writable.js",
 							"line": 89,
-							"column": 5
+							"collum": 5
 						},
 						{
+							"description": "Socket._writeGeneric (net.js:684:5)",
 							"filename": "net.js",
 							"line": 684,
-							"column": 5
+							"collum": 5
 						},
 						{
+							"description": "Socket._write (net.js:694:8)",
 							"filename": "net.js",
 							"line": 694,
-							"column": 8
+							"collum": 8
 						},
 						{
+							"description": "doWrite (_stream_writable.js:292:12)",
 							"filename": "_stream_writable.js",
 							"line": 292,
-							"column": 12
+							"collum": 12
 						},
 						{
+							"description": "writeOrBuffer (_stream_writable.js:278:5)",
 							"filename": "_stream_writable.js",
 							"line": 278,
-							"column": 5
+							"collum": 5
 						},
 						{
+							"description": "Socket.Writable.write (_stream_writable.js:207:11)",
 							"filename": "_stream_writable.js",
 							"line": 207,
-							"column": 11
+							"collum": 11
+						},
+						{
+							"description": "Socket.write (net.js:618:40)",
+							"filename": "net.js",
+							"line": 618,
+							"collum": 40
+						},
+						{
+							"description": "Console.log (console.js:36:16)",
+							"filename": "console.js",
+							"line": 36,
+							"collum": 16
+						},
+						{
+							"description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/console-log.js:4:9)",
+							"filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/console-log.js",
+							"line": 4,
+							"collum": 9
+						},
+						{
+							"description": "Module._compile (module.js:434:26)",
+							"filename": "module.js",
+							"line": 434,
+							"collum": 26
+						},
+						{
+							"description": "Object.Module._extensions..js (module.js:452:10)",
+							"filename": "module.js",
+							"line": 452,
+							"collum": 10
+						},
+						{
+							"description": "Module.load (module.js:355:32)",
+							"filename": "module.js",
+							"line": 355,
+							"collum": 32
+						},
+						{
+							"description": "Function.Module._load (module.js:310:12)",
+							"filename": "module.js",
+							"line": 310,
+							"collum": 12
+						},
+						{
+							"description": "Function.Module.runMain (module.js:475:10)",
+							"filename": "module.js",
+							"line": 475,
+							"collum": 10
+						},
+						{
+							"description": "startup (node.js:117:18)",
+							"filename": "node.js",
+							"line": 117,
+							"collum": 18
+						},
+						{
+							"description": "node.js:951:3",
+							"filename": "node.js",
+							"line": 951,
+							"collum": 3
 						}
 					]
 				}
 			],
 			"stack": [
 				{
+					"description": "Module._compile (module.js:434:26)",
 					"filename": "module.js",
 					"line": 434,
-					"column": 26
+					"collum": 26
 				},
 				{
+					"description": "Object.Module._extensions..js (module.js:452:10)",
 					"filename": "module.js",
 					"line": 452,
-					"column": 10
+					"collum": 10
 				},
 				{
+					"description": "Module.load (module.js:355:32)",
 					"filename": "module.js",
 					"line": 355,
-					"column": 32
+					"collum": 32
 				},
 				{
+					"description": "Function.Module._load (module.js:310:12)",
 					"filename": "module.js",
 					"line": 310,
-					"column": 12
+					"collum": 12
 				},
 				{
+					"description": "Module.require (module.js:365:17)",
 					"filename": "module.js",
 					"line": 365,
-					"column": 17
+					"collum": 17
 				},
 				{
+					"description": "require (module.js:384:17)",
 					"filename": "module.js",
 					"line": 384,
-					"column": 17
+					"collum": 17
 				},
 				{
+					"description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/console-log.js:2:1)",
 					"filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/console-log.js",
 					"line": 2,
-					"column": 1
+					"collum": 1
+				},
+				{
+					"description": "Module._compile (module.js:434:26)",
+					"filename": "module.js",
+					"line": 434,
+					"collum": 26
+				},
+				{
+					"description": "Object.Module._extensions..js (module.js:452:10)",
+					"filename": "module.js",
+					"line": 452,
+					"collum": 10
+				},
+				{
+					"description": "Module.load (module.js:355:32)",
+					"filename": "module.js",
+					"line": 355,
+					"collum": 32
+				},
+				{
+					"description": "Function.Module._load (module.js:310:12)",
+					"filename": "module.js",
+					"line": 310,
+					"collum": 12
+				},
+				{
+					"description": "Function.Module.runMain (module.js:475:10)",
+					"filename": "module.js",
+					"line": 475,
+					"collum": 10
+				},
+				{
+					"description": "startup (node.js:117:18)",
+					"filename": "node.js",
+					"line": 117,
+					"collum": 18
+				},
+				{
+					"description": "node.js:951:3",
+					"filename": "node.js",
+					"line": 951,
+					"collum": 3
 				}
 			]
 		}
