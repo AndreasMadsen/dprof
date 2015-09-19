@@ -4,13 +4,6 @@ const dump = require('./dump.js');
 
 const ns2s = 1e-9;
 
-function unpackTime(float) {
-  // JSON.stringify converts Infinity to null, which is wired
-  // because Infinity is a part of the double type. So convert
-  // it back, but use a real number, aka the total process time.
-  return (float === null ? dump.total : float);
-}
-
 //
 // Flatten datastructure
 //
@@ -18,7 +11,7 @@ function Flatten(data) {
   this.tree = new Node(null, data.root, 0);
   this.allNodes = this.nodes();
 
-  this.total = unpackTime(data.total) * ns2s;
+  this.total = data.total * ns2s;
   this.version = data.version;
 }
 
@@ -36,21 +29,34 @@ function Node(parent, node, index) {
   this.stack = node.stack;
 
   // Position
-  this.init = unpackTime(node.init) * ns2s;
-  this.before = unpackTime(node.before) * ns2s;
-  this.after = unpackTime(node.after) * ns2s;
+  this.init = node.init * ns2s;
+  this.before = [];
+  this.after = [];
+
+  // If no before event was fired, set it to the process lifespan
+  if (node.before.length === 0) {
+    this.before = [dump.total * ns2s];
+    this.after = [dump.total * ns2s];
+  } else {
+    this.before = node.before.map((v) => v * ns2s);
+    this.after = node.after.map((v) => v * ns2s);
+  }
+
+  this.end = Math.max.apply(null, this.after);
+
   this.total = 0;
   this.top = this.index + 0.5;
 
-  // Children
-  const totals = [this.after];
+  // Create children note and maintain an array containing the total lifespan
+  // for each child.
+  const totals = [this.end];
   this.children = node.children.map(function (child) {
     child = new Node(this, child, ++idCounter);
     totals.push(child.total);
     return child;
   }, this);
 
-  // Update total, to be the max of the childrens total and the before time
+  // Update total, to be the max of the childrens total and the after time
   // of this node.
   this.total = Math.max.apply(null, totals);
 }
@@ -77,9 +83,15 @@ Flatten.prototype.nodes = function () {
   return nodes;
 };
 
-Flatten.prototype._calcDeltas = function (name, delta) {
+Flatten.prototype._calcInitDeltas = function () {
   return this.allNodes.map(function (node) {
-    return { 'time': node[name], 'delta': delta };
+    return { 'time': node.init, 'delta': +1 };
+  });
+};
+
+Flatten.prototype._calcAfterDeltas = function () {
+  return this.allNodes.map(function (node) {
+    return { 'time': node.end, 'delta': -1 };
   });
 };
 
@@ -87,8 +99,8 @@ Flatten.prototype.overview = function () {
   // This will give an overview of the concurrency in the process timespan.
 
   // Create an array of deltas
-  const deltas = this._calcDeltas('init', +1)
-    .concat(this._calcDeltas('after', -1))
+  const deltas = this._calcInitDeltas()
+    .concat(this._calcAfterDeltas())
     .sort(function (a, b) {
       return a.time - b.time;
     });

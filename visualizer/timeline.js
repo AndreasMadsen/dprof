@@ -140,19 +140,29 @@ TimelineLayout.prototype._calcBackgroundLine = function (node) {
 };
 
 TimelineLayout.prototype._calcBeforeLine = function (node) {
-  return `M${this._xScale(node.init)} ${node.top * timelineHeight} ` + // Move to
-         `H${this._xScale(node.before)}`; // Horizontal line to
+  const path = [];
+  let prevTime = node.init;
+  for (let i = 0; i < node.before.length; i++) {
+    path.push(`M${this._xScale(prevTime)} ${node.top * timelineHeight} ` + // Move to
+              `H${this._xScale(node.before[i])}`); // Horizontal line to
+    prevTime = node.after[i];
+  }
+  return path.join(' ');
 };
 
 TimelineLayout.prototype._calcAfterLine = function (node) {
-  return `M${this._xScale(node.before)} ${node.top * timelineHeight} ` + // Move to
-         `H${this._xScale(node.after)}`; // Horizontal line to
+  const path = [];
+  for (let i = 0; i < node.before.length; i++) {
+    path.push(`M${this._xScale(node.before[i])} ${node.top * timelineHeight} ` + // Move to
+              `H${this._xScale(node.after[i])}`); // Horizontal line to
+  }
+  return path.join(' ');
 };
 
 TimelineLayout.prototype._calcTotalLine = function (node) {
   if (!node.collapsed) return '';
 
-  return `M${this._xScale(node.after)} ${node.top * timelineHeight} ` + // Move to
+  return `M${this._xScale(node.end)} ${node.top * timelineHeight} ` + // Move to
          `H${this._xScale(node.total)}`; // Horizontal line to
 };
 

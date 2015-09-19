@@ -62,7 +62,7 @@ interpreted({
         );
       },
       update: function (actual) {
-        return JSON.stringify(actual, null, '\t');
+        return JSON.stringify(actual, null, 1);
       }
     }
   }

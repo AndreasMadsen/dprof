@@ -31,8 +31,8 @@ function timestamp() {
 function Node(name, stack) {
   this.name = name;
   this._init = timestamp();
-  this._before = Infinity;
-  this._after = Infinity;
+  this._before = [];
+  this._after = [];
   this.children = [];
   this.stack = stack.map(function (site) {
     return new Site(site);
@@ -46,11 +46,11 @@ Node.prototype.add = function (handle) {
 };
 
 Node.prototype.before = function () {
-  this._before = timestamp();
+  this._before.push(timestamp());
 };
 
 Node.prototype.after = function () {
-  this._after = timestamp();
+  this._after.push(timestamp());
 };
 
 Node.prototype.toJSON = function () {
@@ -59,15 +59,14 @@ Node.prototype.toJSON = function () {
     init: this._init,
     before: this._before,
     after: this._after,
-    children: this.children,
-    stack: this.stack
+    stack: this.stack,
+    children: this.children
   };
 };
 
-Node.prototype.rootFinished = function () {
+Node.prototype.rootIntialize = function () {
   this._init = 0;
-  this._before = 0;
-  this.after();
+  this._before.push(0);
 };
 
 //
@@ -77,6 +76,7 @@ Node.prototype.rootFinished = function () {
 asyncWrap.setup(asyncInit, asyncBefore, asyncAfter);
 
 const root = new Node('root', asyncWrap.stackTrace(2));
+      root.rootIntialize();
 let state = root;
 
 function asyncInit() {
@@ -96,7 +96,7 @@ function asyncAfter() {
 // The root job is done when process.nextTick is called
 asyncWrap.disable();
 process.nextTick(function () {
-  root.rootFinished();
+  root.after();
 });
 asyncWrap.enable();
 
@@ -105,6 +105,10 @@ asyncWrap.enable();
 //
 
 process.on('exit', function () {
+  // even though zlib is sync, it still fires async_wrap events,
+  // so disable asyncWrap just to be sure.
+  asyncWrap.disable();
+
   const data = {
     'total': timestamp(),
     'version': version,

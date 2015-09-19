@@ -29,11 +29,20 @@ StatsLayout.prototype.draw = function () {
   let trace = '';
 
   if (this._node !== null) {
+    let prevSyncTime = this._node.init;
+    let wait = 0;
+    let callback = 0;
+    for (let i = 0; i < this._node.before.length; i++) {
+      wait += this._node.before[i] - prevSyncTime;
+      callback += this._node.after[i] - this._node.before[i];
+      prevSyncTime = this._node.after[i];
+    }
+
     stats += '\n' +
       `handle: ${this._node.name}\n` +
       `start: ${this._node.init.toFixed(8)} sec\n` +
-      `wait: ${toms(this._node.before - this._node.init, 11)} ms\n` +
-      `callback: ${toms(this._node.after - this._node.before, 7)} ms`;
+      `wait: ${toms(wait, 11)} ms\n` +
+      `callback: ${toms(callback, 7)} ms`;
 
     trace += this._node.stack.map(function (site) {
       return ' at ' + site.description;
