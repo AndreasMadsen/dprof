@@ -9,7 +9,7 @@ const server = net.createServer(function (socket) {
 
 server.listen(0, 'localhost', function () {
   const addr = server.address();
-  const socket = net.connect(addr.port, addr.host, function () {
+  const socket = net.connect(addr.port, addr.address, function () {
     socket.once('readable', function () {
       socket.read();
       socket.once('readable', server.close.bind(server));

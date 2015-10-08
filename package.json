@@ -31,7 +31,8 @@
     "util-extend": "1.0.x"
   },
   "devDependencies": {
-    "tap": "1.4.x"
+    "tap": "1.4.x",
+    "interpreted": "0.6.x"
   },
   "license": "MIT"
 }

@@ -2,7 +2,7 @@
  "stdout": "hallo world\n",
  "stderr": "",
  "dump": {
-  "total": 14757883,
+  "total": 34912534,
   "version": "0.10.1",
   "root": {
    "name": "root",
@@ -11,43 +11,43 @@
     0
    ],
    "after": [
-    14273352
+    34115424
    ],
    "stack": [
     {
-     "description": "Module._compile (module.js:434:26)",
+     "description": "Module._compile (module.js:425:26)",
      "filename": "module.js",
-     "line": 434,
+     "line": 425,
      "collum": 26
     },
     {
-     "description": "Object.Module._extensions..js (module.js:452:10)",
+     "description": "Object.Module._extensions..js (module.js:432:10)",
      "filename": "module.js",
-     "line": 452,
+     "line": 432,
      "collum": 10
     },
     {
-     "description": "Module.load (module.js:355:32)",
+     "description": "Module.load (module.js:356:32)",
      "filename": "module.js",
-     "line": 355,
+     "line": 356,
      "collum": 32
     },
     {
-     "description": "Function.Module._load (module.js:310:12)",
+     "description": "Function.Module._load (module.js:311:12)",
      "filename": "module.js",
-     "line": 310,
+     "line": 311,
      "collum": 12
     },
     {
-     "description": "Module.require (module.js:365:17)",
+     "description": "Module.require (module.js:366:17)",
      "filename": "module.js",
-     "line": 365,
+     "line": 366,
      "collum": 17
     },
     {
-     "description": "require (module.js:384:17)",
+     "description": "require (module.js:385:17)",
      "filename": "module.js",
-     "line": 384,
+     "line": 385,
      "collum": 17
     },
     {
@@ -57,52 +57,52 @@
      "collum": 1
     },
     {
-     "description": "Module._compile (module.js:434:26)",
+     "description": "Module._compile (module.js:425:26)",
      "filename": "module.js",
-     "line": 434,
+     "line": 425,
      "collum": 26
     },
     {
-     "description": "Object.Module._extensions..js (module.js:452:10)",
+     "description": "Object.Module._extensions..js (module.js:432:10)",
      "filename": "module.js",
-     "line": 452,
+     "line": 432,
      "collum": 10
     },
     {
-     "description": "Module.load (module.js:355:32)",
+     "description": "Module.load (module.js:356:32)",
      "filename": "module.js",
-     "line": 355,
+     "line": 356,
      "collum": 32
     },
     {
-     "description": "Function.Module._load (module.js:310:12)",
+     "description": "Function.Module._load (module.js:311:12)",
      "filename": "module.js",
-     "line": 310,
+     "line": 311,
      "collum": 12
     },
     {
-     "description": "Function.Module.runMain (module.js:475:10)",
+     "description": "Function.Module.runMain (module.js:457:10)",
      "filename": "module.js",
-     "line": 475,
+     "line": 457,
      "collum": 10
     },
     {
-     "description": "startup (node.js:117:18)",
+     "description": "startup (node.js:134:18)",
      "filename": "node.js",
-     "line": 117,
+     "line": 134,
      "collum": 18
     },
     {
-     "description": "node.js:951:3",
+     "description": "node.js:961:3",
      "filename": "node.js",
-     "line": 951,
+     "line": 961,
      "collum": 3
     }
    ],
    "children": [
     {
      "name": "Pipe",
-     "init": 10433615,
+     "init": 24801519,
      "before": [],
      "after": [],
      "stack": [
@@ -119,15 +119,15 @@
        "collum": 20
       },
       {
-       "description": "createWritableStdioStream (node.js:593:18)",
+       "description": "createWritableStdioStream (node.js:603:18)",
        "filename": "node.js",
-       "line": 593,
+       "line": 603,
        "collum": 18
       },
       {
-       "description": "process.stdout (node.js:619:16)",
+       "description": "process.stdout (node.js:629:16)",
        "filename": "node.js",
-       "line": 619,
+       "line": 629,
        "collum": 16
       },
       {
@@ -137,21 +137,21 @@
        "collum": 37
       },
       {
-       "description": "NativeModule.compile (node.js:942:5)",
+       "description": "NativeModule.compile (node.js:952:5)",
        "filename": "node.js",
-       "line": 942,
+       "line": 952,
        "collum": 5
       },
       {
-       "description": "Function.NativeModule.require (node.js:890:18)",
+       "description": "Function.NativeModule.require (node.js:900:18)",
        "filename": "node.js",
-       "line": 890,
+       "line": 900,
        "collum": 18
       },
       {
-       "description": "node.js:181:27",
+       "description": "node.js:198:27",
        "filename": "node.js",
-       "line": 181,
+       "line": 198,
        "collum": 27
       },
       {
@@ -161,45 +161,45 @@
        "collum": 1
       },
       {
-       "description": "Module._compile (module.js:434:26)",
+       "description": "Module._compile (module.js:425:26)",
        "filename": "module.js",
-       "line": 434,
+       "line": 425,
        "collum": 26
       },
       {
-       "description": "Object.Module._extensions..js (module.js:452:10)",
+       "description": "Object.Module._extensions..js (module.js:432:10)",
        "filename": "module.js",
-       "line": 452,
+       "line": 432,
        "collum": 10
       },
       {
-       "description": "Module.load (module.js:355:32)",
+       "description": "Module.load (module.js:356:32)",
        "filename": "module.js",
-       "line": 355,
+       "line": 356,
        "collum": 32
       },
       {
-       "description": "Function.Module._load (module.js:310:12)",
+       "description": "Function.Module._load (module.js:311:12)",
        "filename": "module.js",
-       "line": 310,
+       "line": 311,
        "collum": 12
       },
       {
-       "description": "Function.Module.runMain (module.js:475:10)",
+       "description": "Function.Module.runMain (module.js:457:10)",
        "filename": "module.js",
-       "line": 475,
+       "line": 457,
        "collum": 10
       },
       {
-       "description": "startup (node.js:117:18)",
+       "description": "startup (node.js:134:18)",
        "filename": "node.js",
-       "line": 117,
+       "line": 134,
        "collum": 18
       },
       {
-       "description": "node.js:951:3",
+       "description": "node.js:961:3",
        "filename": "node.js",
-       "line": 951,
+       "line": 961,
        "collum": 3
       }
      ],
@@ -207,7 +207,7 @@
     },
     {
      "name": "Pipe",
-     "init": 11774850,
+     "init": 27403505,
      "before": [],
      "after": [],
      "stack": [
@@ -224,15 +224,15 @@
        "collum": 20
       },
       {
-       "description": "createWritableStdioStream (node.js:593:18)",
+       "description": "createWritableStdioStream (node.js:603:18)",
        "filename": "node.js",
-       "line": 593,
+       "line": 603,
        "collum": 18
       },
       {
-       "description": "process.stderr (node.js:634:16)",
+       "description": "process.stderr (node.js:644:16)",
        "filename": "node.js",
-       "line": 634,
+       "line": 644,
        "collum": 16
       },
       {
@@ -242,21 +242,21 @@
        "collum": 53
       },
       {
-       "description": "NativeModule.compile (node.js:942:5)",
+       "description": "NativeModule.compile (node.js:952:5)",
        "filename": "node.js",
-       "line": 942,
+       "line": 952,
        "collum": 5
       },
       {
-       "description": "Function.NativeModule.require (node.js:890:18)",
+       "description": "Function.NativeModule.require (node.js:900:18)",
        "filename": "node.js",
-       "line": 890,
+       "line": 900,
        "collum": 18
       },
       {
-       "description": "node.js:181:27",
+       "description": "node.js:198:27",
        "filename": "node.js",
-       "line": 181,
+       "line": 198,
        "collum": 27
       },
       {
@@ -266,45 +266,45 @@
        "collum": 1
       },
       {
-       "description": "Module._compile (module.js:434:26)",
+       "description": "Module._compile (module.js:425:26)",
        "filename": "module.js",
-       "line": 434,
+       "line": 425,
        "collum": 26
       },
       {
-       "description": "Object.Module._extensions..js (module.js:452:10)",
+       "description": "Object.Module._extensions..js (module.js:432:10)",
        "filename": "module.js",
-       "line": 452,
+       "line": 432,
        "collum": 10
       },
       {
-       "description": "Module.load (module.js:355:32)",
+       "description": "Module.load (module.js:356:32)",
        "filename": "module.js",
-       "line": 355,
+       "line": 356,
        "collum": 32
       },
       {
-       "description": "Function.Module._load (module.js:310:12)",
+       "description": "Function.Module._load (module.js:311:12)",
        "filename": "module.js",
-       "line": 310,
+       "line": 311,
        "collum": 12
       },
       {
-       "description": "Function.Module.runMain (module.js:475:10)",
+       "description": "Function.Module.runMain (module.js:457:10)",
        "filename": "module.js",
-       "line": 475,
+       "line": 457,
        "collum": 10
       },
       {
-       "description": "startup (node.js:117:18)",
+       "description": "startup (node.js:134:18)",
        "filename": "node.js",
-       "line": 117,
+       "line": 134,
        "collum": 18
       },
       {
-       "description": "node.js:951:3",
+       "description": "node.js:961:3",
        "filename": "node.js",
-       "line": 951,
+       "line": 961,
        "collum": 3
       }
      ],
@@ -312,12 +312,12 @@
     },
     {
      "name": "NextTickWrap",
-     "init": 13829247,
+     "init": 32752835,
      "before": [
-      14366797
+      34430700
      ],
      "after": [
-      14490268
+      34579866
      ],
      "stack": [
       {
@@ -381,45 +381,45 @@
        "collum": 9
       },
       {
-       "description": "Module._compile (module.js:434:26)",
+       "description": "Module._compile (module.js:425:26)",
        "filename": "module.js",
-       "line": 434,
+       "line": 425,
        "collum": 26
       },
       {
-       "description": "Object.Module._extensions..js (module.js:452:10)",
+       "description": "Object.Module._extensions..js (module.js:432:10)",
        "filename": "module.js",
-       "line": 452,
+       "line": 432,
        "collum": 10
       },
       {
-       "description": "Module.load (module.js:355:32)",
+       "description": "Module.load (module.js:356:32)",
        "filename": "module.js",
-       "line": 355,
+       "line": 356,
        "collum": 32
       },
       {
-       "description": "Function.Module._load (module.js:310:12)",
+       "description": "Function.Module._load (module.js:311:12)",
        "filename": "module.js",
-       "line": 310,
+       "line": 311,
        "collum": 12
       },
       {
-       "description": "Function.Module.runMain (module.js:475:10)",
+       "description": "Function.Module.runMain (module.js:457:10)",
        "filename": "module.js",
-       "line": 475,
+       "line": 457,
        "collum": 10
       },
       {
-       "description": "startup (node.js:117:18)",
+       "description": "startup (node.js:134:18)",
        "filename": "node.js",
-       "line": 117,
+       "line": 134,
        "collum": 18
       },
       {
-       "description": "node.js:951:3",
+       "description": "node.js:961:3",
        "filename": "node.js",
-       "line": 951,
+       "line": 961,
        "collum": 3
       }
      ],
