@@ -79,8 +79,12 @@ const root = new Node('root', asyncWrap.stackTrace(2));
       root.rootIntialize();
 let state = root;
 
-function asyncInit() {
-  this._dprofState = state.add(this);
+function asyncInit(provider, parent) {
+  if (parent) {
+    this._dprofState = parent._dprofState.add(this, provider, parent);
+  } else {
+    this._dprofState = state.add(this, provider, parent);
+  }
 }
 
 function asyncBefore() {
