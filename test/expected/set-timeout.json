@@ -1,0 +1,228 @@
+{
+ "stdout": "",
+ "stderr": "",
+ "dump": {
+  "total": 15810683,
+  "version": "0.10.1",
+  "root": {
+   "name": "root",
+   "init": 0,
+   "before": [
+    0
+   ],
+   "after": [
+    4078906
+   ],
+   "stack": [
+    {
+     "description": "Module._compile (module.js:425:26)",
+     "filename": "module.js",
+     "line": 425,
+     "collum": 26
+    },
+    {
+     "description": "Object.Module._extensions..js (module.js:432:10)",
+     "filename": "module.js",
+     "line": 432,
+     "collum": 10
+    },
+    {
+     "description": "Module.load (module.js:356:32)",
+     "filename": "module.js",
+     "line": 356,
+     "collum": 32
+    },
+    {
+     "description": "Function.Module._load (module.js:311:12)",
+     "filename": "module.js",
+     "line": 311,
+     "collum": 12
+    },
+    {
+     "description": "Module.require (module.js:366:17)",
+     "filename": "module.js",
+     "line": 366,
+     "collum": 17
+    },
+    {
+     "description": "require (module.js:385:17)",
+     "filename": "module.js",
+     "line": 385,
+     "collum": 17
+    },
+    {
+     "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout.js:2:1)",
+     "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout.js",
+     "line": 2,
+     "collum": 1
+    },
+    {
+     "description": "Module._compile (module.js:425:26)",
+     "filename": "module.js",
+     "line": 425,
+     "collum": 26
+    },
+    {
+     "description": "Object.Module._extensions..js (module.js:432:10)",
+     "filename": "module.js",
+     "line": 432,
+     "collum": 10
+    },
+    {
+     "description": "Module.load (module.js:356:32)",
+     "filename": "module.js",
+     "line": 356,
+     "collum": 32
+    },
+    {
+     "description": "Function.Module._load (module.js:311:12)",
+     "filename": "module.js",
+     "line": 311,
+     "collum": 12
+    },
+    {
+     "description": "Function.Module.runMain (module.js:457:10)",
+     "filename": "module.js",
+     "line": 457,
+     "collum": 10
+    },
+    {
+     "description": "startup (node.js:134:18)",
+     "filename": "node.js",
+     "line": 134,
+     "collum": 18
+    },
+    {
+     "description": "node.js:961:3",
+     "filename": "node.js",
+     "line": 961,
+     "collum": 3
+    }
+   ],
+   "children": [
+    {
+     "name": "TimeoutWrap",
+     "init": 3135404,
+     "before": [
+      15415270
+     ],
+     "after": [
+      15469339
+     ],
+     "stack": [
+      {
+       "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout.js:4:1)",
+       "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout.js",
+       "line": 4,
+       "collum": 1
+      },
+      {
+       "description": "Module._compile (module.js:425:26)",
+       "filename": "module.js",
+       "line": 425,
+       "collum": 26
+      },
+      {
+       "description": "Object.Module._extensions..js (module.js:432:10)",
+       "filename": "module.js",
+       "line": 432,
+       "collum": 10
+      },
+      {
+       "description": "Module.load (module.js:356:32)",
+       "filename": "module.js",
+       "line": 356,
+       "collum": 32
+      },
+      {
+       "description": "Function.Module._load (module.js:311:12)",
+       "filename": "module.js",
+       "line": 311,
+       "collum": 12
+      },
+      {
+       "description": "Function.Module.runMain (module.js:457:10)",
+       "filename": "module.js",
+       "line": 457,
+       "collum": 10
+      },
+      {
+       "description": "startup (node.js:134:18)",
+       "filename": "node.js",
+       "line": 134,
+       "collum": 18
+      },
+      {
+       "description": "node.js:961:3",
+       "filename": "node.js",
+       "line": 961,
+       "collum": 3
+      }
+     ],
+     "children": []
+    },
+    {
+     "name": "TimeoutWrap",
+     "init": 3686478,
+     "before": [
+      15501599
+     ],
+     "after": [
+      15521280
+     ],
+     "stack": [
+      {
+       "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout.js:8:1)",
+       "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout.js",
+       "line": 8,
+       "collum": 1
+      },
+      {
+       "description": "Module._compile (module.js:425:26)",
+       "filename": "module.js",
+       "line": 425,
+       "collum": 26
+      },
+      {
+       "description": "Object.Module._extensions..js (module.js:432:10)",
+       "filename": "module.js",
+       "line": 432,
+       "collum": 10
+      },
+      {
+       "description": "Module.load (module.js:356:32)",
+       "filename": "module.js",
+       "line": 356,
+       "collum": 32
+      },
+      {
+       "description": "Function.Module._load (module.js:311:12)",
+       "filename": "module.js",
+       "line": 311,
+       "collum": 12
+      },
+      {
+       "description": "Function.Module.runMain (module.js:457:10)",
+       "filename": "module.js",
+       "line": 457,
+       "collum": 10
+      },
+      {
+       "description": "startup (node.js:134:18)",
+       "filename": "node.js",
+       "line": 134,
+       "collum": 18
+      },
+      {
+       "description": "node.js:961:3",
+       "filename": "node.js",
+       "line": 961,
+       "collum": 3
+      }
+     ],
+     "children": []
+    }
+   ]
+  }
+ }
+}

@@ -2,39 +2,63 @@
 
 const asyncWrap = process.binding('async_wrap');
 const chain = require('stack-chain');
+const timers = require('timers');
 
 function AsyncWrap() {
   this.enabled = false;
   this.skip = 0;
+
+  this.init = function noopInit() {}
+  this.before = function noopBefore() {}
+  this.after = function noopAfter() {}
 }
 
 function NextTickWrap() {}
+function ImmediateWrap() {}
+function TimeoutWrap() {}
+function InvervalWrap() {}
 
-AsyncWrap.prototype.setup = function (init, before, after) {
-  asyncWrap.setupHooks(init, before, after);
-
-  // Overwrite next tick
+AsyncWrap.prototype.wrap = function (object, name, Constructor) {
   const self = this;
-  const nextTick = process.nextTick;
-  process.nextTick = function () {
+  const old = object[name];
+  object[name] = function () {
     const enabled = self.enabled;
-    const handle = new NextTickWrap();
+    const handle = new Constructor();
 
     if (enabled) {
       self.skip += 1;
-      init.call(handle);
+      self.init.call(handle);
       self.skip -= 1;
     }
 
     const args = Array.from(arguments);
     const callback = args[0];
     args[0] = function () {
-      if (enabled) before.call(handle);
+      if (enabled) self.before.call(handle);
       callback.apply(null, arguments);
-      if (enabled) after.call(handle);
+      if (enabled) self.after.call(handle);
     };
-    nextTick.apply(process, args);
+    old.apply(object, args);
   };
+}
+
+AsyncWrap.prototype.setup = function (init, before, after) {
+  this.init = init;
+  this.before = before;
+  this.after = after;
+
+  asyncWrap.setupHooks(init, before, after);
+
+  // Overwrite methods that async_wrap don't handle properly
+  this.wrap(process, 'nextTick', NextTickWrap);
+
+  this.wrap(timers, 'setImmediate', ImmediateWrap);
+  this.wrap(timers, 'setTimeout', TimeoutWrap);
+  this.wrap(timers, 'setInterval', InvervalWrap);
+
+  global.setImmediate = timers.setImmediate;
+  global.setTimeout = timers.setTimeout;
+  global.setInterval = timers.setInterval;
 
   // Enable
   this.enable();

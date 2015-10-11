@@ -1,5 +1,6 @@
 'use strict';
 
+const providers = process.binding('async_wrap').Providers;
 const asyncWrap = require('./async_wrap.js');
 const zlib = require('zlib');
 const fs = require('fs');
@@ -80,6 +81,11 @@ const root = new Node('root', asyncWrap.stackTrace(2));
 let state = root;
 
 function asyncInit(provider, parent) {
+  if (provider === providers.TIMERWRAP) {
+    this._dprofIgnore = true;
+    return;
+  }
+
   if (parent) {
     this._dprofState = parent._dprofState.add(this, provider, parent);
   } else {
@@ -88,11 +94,15 @@ function asyncInit(provider, parent) {
 }
 
 function asyncBefore() {
+  if (this._dprofIgnore) return;
+
   this._dprofState.before();
   state = this._dprofState;
 }
 
 function asyncAfter() {
+  if (this._dprofIgnore) return;
+  
   this._dprofState.after();
   state = root;
 }
