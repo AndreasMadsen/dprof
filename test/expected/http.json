@@ -2,7 +2,7 @@
  "stdout": "",
  "stderr": "",
  "dump": {
-  "total": 67553146,
+  "total": 60238338,
   "version": "0.10.1",
   "root": {
    "name": "root",
@@ -11,7 +11,7 @@
     0
    ],
    "after": [
-    22227931
+    17948955
    ],
    "stack": [
     {
@@ -102,12 +102,12 @@
    "children": [
     {
      "name": "GetAddrInfoReqWrap",
-     "init": 21242691,
+     "init": 17264876,
      "before": [
-      23962618
+      19273685
      ],
      "after": [
-      31339963
+      25249602
      ],
      "stack": [
       {
@@ -180,12 +180,12 @@
      "children": [
       {
        "name": "TCP",
-       "init": 29513209,
+       "init": 24120779,
        "before": [
-        45632740
+        39493523
        ],
        "after": [
-        49007027
+        43573388
        ],
        "stack": [
         {
@@ -228,24 +228,24 @@
        "children": [
         {
          "name": "TCP",
-         "init": 45594838,
+         "init": 39460496,
          "before": [
-          61923351
+          55432917
          ],
          "after": [
-          62258807
+          55645931
          ],
          "stack": [],
          "children": []
         },
         {
          "name": "NextTickWrap",
-         "init": 48597971,
+         "init": 43247776,
          "before": [
-          49026591
+          43578732
          ],
          "after": [
-          49283455
+          43880136
          ],
          "stack": [
           {
@@ -297,12 +297,12 @@
       },
       {
        "name": "NextTickWrap",
-       "init": 31032935,
+       "init": 25071955,
        "before": [
-        31441027
+        25309115
        ],
        "after": [
-        41241515
+        34502762
        ],
        "stack": [
         {
@@ -339,14 +339,14 @@
        "children": [
         {
          "name": "TCP",
-         "init": 38088777,
+         "init": 30274505,
          "before": [
-          62295106,
-          67076928
+          55674331,
+          59794728
          ],
          "after": [
-          65232108,
-          67393079
+          57915571,
+          60092185
          ],
          "stack": [
           {
@@ -422,9 +422,9 @@
            "collum": 10
           },
           {
-           "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:38:16)",
+           "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:39:16)",
            "filename": "/Users/Andreas/Sites/node_modules/dprof/async_wrap.js",
-           "line": 38,
+           "line": 39,
            "collum": 16
           },
           {
@@ -443,12 +443,12 @@
          "children": [
           {
            "name": "NextTickWrap",
-           "init": 63877626,
+           "init": 56849059,
            "before": [
-            65239978
+            57920755
            ],
            "after": [
-            66079943
+            58689728
            ],
            "stack": [
             {
@@ -539,12 +539,12 @@
            "children": [
             {
              "name": "NextTickWrap",
-             "init": 65775802,
+             "init": 58409451,
              "before": [
-              66320249
+              58911032
              ],
              "after": [
-              66998764
+              59717513
              ],
              "stack": [
               {
@@ -572,9 +572,9 @@
                "collum": 3
               },
               {
-               "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:38:16)",
+               "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:39:16)",
                "filename": "/Users/Andreas/Sites/node_modules/dprof/async_wrap.js",
-               "line": 38,
+               "line": 39,
                "collum": 16
               },
               {
@@ -593,12 +593,12 @@
              "children": [
               {
                "name": "ShutdownWrap",
-               "init": 66539523,
+               "init": 59116421,
                "before": [
-                67066115
+                59784338
                ],
                "after": [
-                67073056
+                59790671
                ],
                "stack": [
                 {
@@ -674,9 +674,9 @@
                  "collum": 12
                 },
                 {
-                 "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:38:16)",
+                 "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:39:16)",
                  "filename": "/Users/Andreas/Sites/node_modules/dprof/async_wrap.js",
-                 "line": 38,
+                 "line": 39,
                  "collum": 16
                 },
                 {
@@ -696,12 +696,12 @@
               },
               {
                "name": "NextTickWrap",
-               "init": 66942497,
+               "init": 59656854,
                "before": [
-                67012248
+                59731400
                ],
                "after": [
-                67053897
+                59772653
                ],
                "stack": [
                 {
@@ -741,9 +741,9 @@
                  "collum": 12
                 },
                 {
-                 "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:38:16)",
+                 "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:39:16)",
                  "filename": "/Users/Andreas/Sites/node_modules/dprof/async_wrap.js",
-                 "line": 38,
+                 "line": 39,
                  "collum": 16
                 },
                 {
@@ -765,12 +765,12 @@
             },
             {
              "name": "NextTickWrap",
-             "init": 65878154,
+             "init": 58504798,
              "before": [
-              67001823
+              59720720
              ],
              "after": [
-              67003615
+              59722657
              ],
              "stack": [
               {
@@ -798,9 +798,9 @@
                "collum": 3
               },
               {
-               "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:38:16)",
+               "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:39:16)",
                "filename": "/Users/Andreas/Sites/node_modules/dprof/async_wrap.js",
-               "line": 38,
+               "line": 39,
                "collum": 16
               },
               {
@@ -820,12 +820,12 @@
             },
             {
              "name": "NextTickWrap",
-             "init": 65955666,
+             "init": 58578009,
              "before": [
-              67004965
+              59726337
              ],
              "after": [
-              67008524
+              59727622
              ],
              "stack": [
               {
@@ -847,9 +847,9 @@
                "collum": 12
               },
               {
-               "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:38:16)",
+               "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:39:16)",
                "filename": "/Users/Andreas/Sites/node_modules/dprof/async_wrap.js",
-               "line": 38,
+               "line": 39,
                "collum": 16
               },
               {
@@ -871,12 +871,12 @@
           },
           {
            "name": "NextTickWrap",
-           "init": 64546907,
+           "init": 57411169,
            "before": [
-            66085747
+            58695046
            ],
            "after": [
-            66197946
+            58801365
            ],
            "stack": [
             {
@@ -944,12 +944,12 @@
           },
           {
            "name": "NextTickWrap",
-           "init": 64823085,
+           "init": 57595914,
            "before": [
-            66203493
+            58805894
            ],
            "after": [
-            66307415
+            58898469
            ],
            "stack": [
             {
@@ -1022,12 +1022,12 @@
            "children": [
             {
              "name": "NextTickWrap",
-             "init": 66270746,
+             "init": 58863379,
              "before": [
-              67009815
+              59728829
              ],
              "after": [
-              67010891
+              59729974
              ],
              "stack": [
               {
@@ -1055,9 +1055,9 @@
                "collum": 3
               },
               {
-               "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:38:16)",
+               "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:39:16)",
                "filename": "/Users/Andreas/Sites/node_modules/dprof/async_wrap.js",
-               "line": 38,
+               "line": 39,
                "collum": 16
               },
               {
@@ -1079,12 +1079,12 @@
           },
           {
            "name": "NextTickWrap",
-           "init": 65169863,
+           "init": 57858563,
            "before": [
-            66310114
+            58901094
            ],
            "after": [
-            66318608
+            58909433
            ],
            "stack": [
             {
@@ -1118,12 +1118,12 @@
         },
         {
          "name": "NextTickWrap",
-         "init": 39296427,
+         "init": 31611502,
          "before": [
-          41251835
+          34511876
          ],
          "after": [
-          41860436
+          35022683
          ],
          "stack": [
           {
@@ -1205,9 +1205,9 @@
            "collum": 10
           },
           {
-           "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:38:16)",
+           "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:39:16)",
            "filename": "/Users/Andreas/Sites/node_modules/dprof/async_wrap.js",
-           "line": 38,
+           "line": 39,
            "collum": 16
           },
           {
@@ -1226,12 +1226,12 @@
          "children": [
           {
            "name": "TCPConnectWrap",
-           "init": 41711211,
+           "init": 34876707,
            "before": [
-            49316760
+            43931628
            ],
            "after": [
-            50479577
+            45334561
            ],
            "stack": [
             {
@@ -1247,9 +1247,9 @@
              "collum": 9
             },
             {
-             "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:38:16)",
+             "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:39:16)",
              "filename": "/Users/Andreas/Sites/node_modules/dprof/async_wrap.js",
-             "line": 38,
+             "line": 39,
              "collum": 16
             },
             {
@@ -1271,12 +1271,12 @@
         },
         {
          "name": "NextTickWrap",
-         "init": 39830457,
+         "init": 32248641,
          "before": [
-          41943973
+          35112470
          ],
          "after": [
-          44514875
+          38244040
          ],
          "stack": [
           {
@@ -1340,9 +1340,9 @@
            "collum": 10
           },
           {
-           "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:38:16)",
+           "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:39:16)",
            "filename": "/Users/Andreas/Sites/node_modules/dprof/async_wrap.js",
-           "line": 38,
+           "line": 39,
            "collum": 16
           },
           {
@@ -1361,12 +1361,12 @@
          "children": [
           {
            "name": "NextTickWrap",
-           "init": 42622445,
+           "init": 35903521,
            "before": [
-            44525482
+            38261509
            ],
            "after": [
-            45381246
+            39335500
            ],
            "stack": [
             {
@@ -1400,9 +1400,9 @@
              "collum": 5
             },
             {
-             "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:38:16)",
+             "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:39:16)",
              "filename": "/Users/Andreas/Sites/node_modules/dprof/async_wrap.js",
-             "line": 38,
+             "line": 39,
              "collum": 16
             },
             {
@@ -1428,12 +1428,12 @@
     },
     {
      "name": "NextTickWrap",
-     "init": 54908447,
+     "init": 49891962,
      "before": [
-      57179463
+      52255962
      ],
      "after": [
-      58938814
+      53508441
      ],
      "stack": [
       {
@@ -1488,12 +1488,12 @@
      "children": [
       {
        "name": "NextTickWrap",
-       "init": 57423636,
+       "init": 52431506,
        "before": [
-        61314527
+        55047121
        ],
        "after": [
-        61689729
+        55282218
        ],
        "stack": [
         {
@@ -1539,9 +1539,9 @@
          "collum": 10
         },
         {
-         "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:38:16)",
+         "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:39:16)",
          "filename": "/Users/Andreas/Sites/node_modules/dprof/async_wrap.js",
-         "line": 38,
+         "line": 39,
          "collum": 16
         },
         {
@@ -1560,12 +1560,12 @@
        "children": [
         {
          "name": "NextTickWrap",
-         "init": 61404295,
+         "init": 55103133,
          "before": [
-          61772958
+          55338636
          ],
          "after": [
-          61777616
+          55341418
          ],
          "stack": [
           {
@@ -1587,9 +1587,9 @@
            "collum": 12
           },
           {
-           "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:38:16)",
+           "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:39:16)",
            "filename": "/Users/Andreas/Sites/node_modules/dprof/async_wrap.js",
-           "line": 38,
+           "line": 39,
            "collum": 16
           },
           {
@@ -1609,12 +1609,12 @@
         },
         {
          "name": "NextTickWrap",
-         "init": 61539736,
+         "init": 55188433,
          "before": [
-          61780065
+          55342769
          ],
          "after": [
-          61782434
+          55344019
          ],
          "stack": [
           {
@@ -1642,9 +1642,9 @@
            "collum": 3
           },
           {
-           "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:38:16)",
+           "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:39:16)",
            "filename": "/Users/Andreas/Sites/node_modules/dprof/async_wrap.js",
-           "line": 38,
+           "line": 39,
            "collum": 16
           },
           {
@@ -1664,12 +1664,12 @@
         },
         {
          "name": "NextTickWrap",
-         "init": 61645440,
+         "init": 55255223,
          "before": [
-          61784758
+          55345240
          ],
          "after": [
-          61787009
+          55346383
          ],
          "stack": [
           {
@@ -1691,9 +1691,9 @@
            "collum": 12
           },
           {
-           "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:38:16)",
+           "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:39:16)",
            "filename": "/Users/Andreas/Sites/node_modules/dprof/async_wrap.js",
-           "line": 38,
+           "line": 39,
            "collum": 16
           },
           {
@@ -1717,12 +1717,12 @@
     },
     {
      "name": "NextTickWrap",
-     "init": 55922836,
+     "init": 50719031,
      "before": [
-      59011957
+      53554414
      ],
      "after": [
-      60911296
+      54795922
      ],
      "stack": [
       {
@@ -1807,12 +1807,12 @@
      "children": [
       {
        "name": "ShutdownWrap",
-       "init": 59361276,
+       "init": 53785515,
        "before": [
-        61813080
+        55364271
        ],
        "after": [
-        61906235
+        55422193
        ],
        "stack": [
         {
@@ -1846,9 +1846,9 @@
          "collum": 3
         },
         {
-         "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:38:16)",
+         "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:39:16)",
          "filename": "/Users/Andreas/Sites/node_modules/dprof/async_wrap.js",
-         "line": 38,
+         "line": 39,
          "collum": 16
         },
         {
@@ -1868,7 +1868,7 @@
       },
       {
        "name": "Pipe",
-       "init": 60339731,
+       "init": 54404737,
        "before": [],
        "after": [],
        "stack": [
@@ -1939,9 +1939,9 @@
          "collum": 3
         },
         {
-         "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:38:16)",
+         "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:39:16)",
          "filename": "/Users/Andreas/Sites/node_modules/dprof/async_wrap.js",
-         "line": 38,
+         "line": 39,
          "collum": 16
         },
         {
@@ -1963,12 +1963,12 @@
     },
     {
      "name": "NextTickWrap",
-     "init": 56772197,
+     "init": 51855177,
      "before": [
-      60922679
+      54803174
      ],
      "after": [
-      61309255
+      55043956
      ],
      "stack": [
       {
@@ -2005,12 +2005,12 @@
      "children": [
       {
        "name": "NextTickWrap",
-       "init": 61219470,
+       "init": 54991316,
        "before": [
-        61693923
+        55284832
        ],
        "after": [
-        61767948
+        55335382
        ],
        "stack": [
         {
@@ -2044,9 +2044,9 @@
          "collum": 3
         },
         {
-         "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:38:16)",
+         "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:39:16)",
          "filename": "/Users/Andreas/Sites/node_modules/dprof/async_wrap.js",
-         "line": 38,
+         "line": 39,
          "collum": 16
         },
         {

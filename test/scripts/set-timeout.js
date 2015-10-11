@@ -2,9 +2,7 @@
 require('../../dprof.js');
 
 setTimeout(function () {
+  setTimeout(function () { }, 10)
 
-}, 10)
-
-setTimeout(function () {
-
+  setTimeout(function () { }, 10)
 }, 10)

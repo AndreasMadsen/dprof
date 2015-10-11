@@ -26,8 +26,9 @@ AsyncWrap.prototype.wrap = function (object, name, Constructor) {
     const handle = new Constructor();
 
     if (enabled) {
+      // TODO: setTimout leaks a call site, is chain.filter the only way?
       self.skip += 1;
-      self.init.call(handle);
+      self.init.call(handle, 0, null);
       self.skip -= 1;
     }
 

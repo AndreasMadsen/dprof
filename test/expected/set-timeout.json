@@ -2,7 +2,7 @@
  "stdout": "",
  "stderr": "",
  "dump": {
-  "total": 15810683,
+  "total": 31066243,
   "version": "0.10.1",
   "root": {
    "name": "root",
@@ -11,7 +11,7 @@
     0
    ],
    "after": [
-    4078906
+    3332633
    ],
    "stack": [
     {
@@ -102,12 +102,12 @@
    "children": [
     {
      "name": "TimeoutWrap",
-     "init": 3135404,
+     "init": 2761752,
      "before": [
-      15415270
+      16728103
      ],
      "after": [
-      15469339
+      17677540
      ],
      "stack": [
       {
@@ -159,68 +159,70 @@
        "collum": 3
       }
      ],
-     "children": []
-    },
-    {
-     "name": "TimeoutWrap",
-     "init": 3686478,
-     "before": [
-      15501599
-     ],
-     "after": [
-      15521280
-     ],
-     "stack": [
+     "children": [
       {
-       "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout.js:8:1)",
-       "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout.js",
-       "line": 8,
-       "collum": 1
+       "name": "TimeoutWrap",
+       "init": 16941892,
+       "before": [
+        30524396
+       ],
+       "after": [
+        30603985
+       ],
+       "stack": [
+        {
+         "description": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout.js:5:3",
+         "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout.js",
+         "line": 5,
+         "collum": 3
+        },
+        {
+         "description": "args.(anonymous function) [as _onTimeout] (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:39:16)",
+         "filename": "/Users/Andreas/Sites/node_modules/dprof/async_wrap.js",
+         "line": 39,
+         "collum": 16
+        },
+        {
+         "description": "Timer.listOnTimeout (timers.js:92:15)",
+         "filename": "timers.js",
+         "line": 92,
+         "collum": 15
+        }
+       ],
+       "children": []
       },
       {
-       "description": "Module._compile (module.js:425:26)",
-       "filename": "module.js",
-       "line": 425,
-       "collum": 26
-      },
-      {
-       "description": "Object.Module._extensions..js (module.js:432:10)",
-       "filename": "module.js",
-       "line": 432,
-       "collum": 10
-      },
-      {
-       "description": "Module.load (module.js:356:32)",
-       "filename": "module.js",
-       "line": 356,
-       "collum": 32
-      },
-      {
-       "description": "Function.Module._load (module.js:311:12)",
-       "filename": "module.js",
-       "line": 311,
-       "collum": 12
-      },
-      {
-       "description": "Function.Module.runMain (module.js:457:10)",
-       "filename": "module.js",
-       "line": 457,
-       "collum": 10
-      },
-      {
-       "description": "startup (node.js:134:18)",
-       "filename": "node.js",
-       "line": 134,
-       "collum": 18
-      },
-      {
-       "description": "node.js:961:3",
-       "filename": "node.js",
-       "line": 961,
-       "collum": 3
+       "name": "TimeoutWrap",
+       "init": 17537503,
+       "before": [
+        30612983
+       ],
+       "after": [
+        30632005
+       ],
+       "stack": [
+        {
+         "description": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout.js:7:3",
+         "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout.js",
+         "line": 7,
+         "collum": 3
+        },
+        {
+         "description": "args.(anonymous function) [as _onTimeout] (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:39:16)",
+         "filename": "/Users/Andreas/Sites/node_modules/dprof/async_wrap.js",
+         "line": 39,
+         "collum": 16
+        },
+        {
+         "description": "Timer.listOnTimeout (timers.js:92:15)",
+         "filename": "timers.js",
+         "line": 92,
+         "collum": 15
+        }
+       ],
+       "children": []
       }
-     ],
-     "children": []
+     ]
     }
    ]
   }

@@ -2,7 +2,7 @@
  "stdout": "",
  "stderr": "",
  "dump": {
-  "total": 5582549,
+  "total": 5582453,
   "version": "0.10.1",
   "root": {
    "name": "root",
@@ -11,7 +11,7 @@
     0
    ],
    "after": [
-    3348442
+    3321374
    ],
    "stack": [
     {
@@ -102,12 +102,12 @@
    "children": [
     {
      "name": "TimeoutWrap",
-     "init": 2783099,
+     "init": 2758198,
      "before": [
-      3648076
+      3621390
      ],
      "after": [
-      4466931
+      4470207
      ],
      "stack": [
       {
@@ -162,12 +162,12 @@
      "children": [
       {
        "name": "FSReqWrap",
-       "init": 3896319,
+       "init": 3822971,
        "before": [
-        4532681
+        4534485
        ],
        "after": [
-        4916673
+        4917542
        ],
        "stack": [
         {
@@ -183,9 +183,9 @@
          "collum": 6
         },
         {
-         "description": "args.(anonymous function) [as _onTimeout] (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:38:16)",
+         "description": "args.(anonymous function) [as _onTimeout] (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:39:16)",
          "filename": "/Users/Andreas/Sites/node_modules/dprof/async_wrap.js",
-         "line": 38,
+         "line": 39,
          "collum": 16
         },
         {
@@ -198,12 +198,12 @@
        "children": [
         {
          "name": "FSReqWrap",
-         "init": 4764163,
+         "init": 4761712,
          "before": [
-          4974119
+          4975076
          ],
          "after": [
-          5021716
+          5035809
          ],
          "stack": [
           {
@@ -229,12 +229,12 @@
         },
         {
          "name": "FSReqWrap",
-         "init": 4870996,
+         "init": 4868334,
          "before": [
-          5025214
+          5039692
          ],
          "after": [
-          5283415
+          5312786
          ],
          "stack": [
           {
@@ -259,12 +259,12 @@
          "children": [
           {
            "name": "FSReqWrap",
-           "init": 5135738,
+           "init": 5151933,
            "before": [
-            5330148
+            5334730
            ],
            "after": [
-            5387753
+            5362102
            ],
            "stack": [
             {
@@ -300,12 +300,12 @@
       },
       {
        "name": "FSReqWrap",
-       "init": 4365275,
+       "init": 4372932,
        "before": [
-        4930593
+        4932074
        ],
        "after": [
-        4965479
+        4966359
        ],
        "stack": [
         {
@@ -321,9 +321,9 @@
          "collum": 6
         },
         {
-         "description": "args.(anonymous function) [as _onTimeout] (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:38:16)",
+         "description": "args.(anonymous function) [as _onTimeout] (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:39:16)",
          "filename": "/Users/Andreas/Sites/node_modules/dprof/async_wrap.js",
-         "line": 38,
+         "line": 39,
          "collum": 16
         },
         {
