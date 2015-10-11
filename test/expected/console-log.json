@@ -2,7 +2,7 @@
  "stdout": "hallo world\n",
  "stderr": "",
  "dump": {
-  "total": 34912534,
+  "total": 14539127,
   "version": "0.10.1",
   "root": {
    "name": "root",
@@ -11,7 +11,7 @@
     0
    ],
    "after": [
-    34115424
+    14096974
    ],
    "stack": [
     {
@@ -102,7 +102,7 @@
    "children": [
     {
      "name": "Pipe",
-     "init": 24801519,
+     "init": 10324006,
      "before": [],
      "after": [],
      "stack": [
@@ -207,7 +207,7 @@
     },
     {
      "name": "Pipe",
-     "init": 27403505,
+     "init": 11507130,
      "before": [],
      "after": [],
      "stack": [
@@ -312,12 +312,12 @@
     },
     {
      "name": "NextTickWrap",
-     "init": 32752835,
+     "init": 13653230,
      "before": [
-      34430700
+      14166965
      ],
      "after": [
-      34579866
+      14282131
      ],
      "stack": [
       {

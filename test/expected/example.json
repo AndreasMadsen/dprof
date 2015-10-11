@@ -2,7 +2,7 @@
  "stdout": "",
  "stderr": "",
  "dump": {
-  "total": 12285658,
+  "total": 5582549,
   "version": "0.10.1",
   "root": {
    "name": "root",
@@ -11,7 +11,7 @@
     0
    ],
    "after": [
-    7796032
+    3348442
    ],
    "stack": [
     {
@@ -101,27 +101,15 @@
    ],
    "children": [
     {
-     "name": "Timer",
-     "init": 6818483,
+     "name": "TimeoutWrap",
+     "init": 2783099,
      "before": [
-      8062528
+      3648076
      ],
      "after": [
-      9848199
+      4466931
      ],
      "stack": [
-      {
-       "description": "Object.exports.active (timers.js:42:12)",
-       "filename": "timers.js",
-       "line": 42,
-       "collum": 12
-      },
-      {
-       "description": "exports.setTimeout (timers.js:205:11)",
-       "filename": "timers.js",
-       "line": 205,
-       "collum": 11
-      },
       {
        "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js:6:1)",
        "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js",
@@ -174,12 +162,12 @@
      "children": [
       {
        "name": "FSReqWrap",
-       "init": 8508669,
+       "init": 3896319,
        "before": [
-        9883693
+        4532681
        ],
        "after": [
-        10506738
+        4916673
        ],
        "stack": [
         {
@@ -189,10 +177,16 @@
          "collum": 11
         },
         {
-         "description": "null._onTimeout (/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js:8:6)",
+         "description": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js:8:6",
          "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js",
          "line": 8,
          "collum": 6
+        },
+        {
+         "description": "args.(anonymous function) [as _onTimeout] (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:38:16)",
+         "filename": "/Users/Andreas/Sites/node_modules/dprof/async_wrap.js",
+         "line": 38,
+         "collum": 16
         },
         {
          "description": "Timer.listOnTimeout (timers.js:92:15)",
@@ -204,12 +198,12 @@
        "children": [
         {
          "name": "FSReqWrap",
-         "init": 10251803,
+         "init": 4764163,
          "before": [
-          10961604
+          4974119
          ],
          "after": [
-          11111885
+          5021716
          ],
          "stack": [
           {
@@ -235,12 +229,12 @@
         },
         {
          "name": "FSReqWrap",
-         "init": 10416035,
+         "init": 4870996,
          "before": [
-          11120324
+          5025214
          ],
          "after": [
-          11713675
+          5283415
          ],
          "stack": [
           {
@@ -265,12 +259,12 @@
          "children": [
           {
            "name": "FSReqWrap",
-           "init": 11399567,
+           "init": 5135738,
            "before": [
-            11728960
+            5330148
            ],
            "after": [
-            11772637
+            5387753
            ],
            "stack": [
             {
@@ -306,12 +300,12 @@
       },
       {
        "name": "FSReqWrap",
-       "init": 9393600,
+       "init": 4365275,
        "before": [
-        10532844
+        4930593
        ],
        "after": [
-        10942034
+        4965479
        ],
        "stack": [
         {
@@ -321,10 +315,16 @@
          "collum": 11
         },
         {
-         "description": "null._onTimeout (/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js:35:6)",
+         "description": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js:35:6",
          "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js",
          "line": 35,
          "collum": 6
+        },
+        {
+         "description": "args.(anonymous function) [as _onTimeout] (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:38:16)",
+         "filename": "/Users/Andreas/Sites/node_modules/dprof/async_wrap.js",
+         "line": 38,
+         "collum": 16
         },
         {
          "description": "Timer.listOnTimeout (timers.js:92:15)",

@@ -2,7 +2,7 @@
  "stdout": "'use strict';\nrequire('../../dprof.js');\n\nvar fs = require('fs');\n\nfs.createReadStream(__filename).pipe(process.stdout);\n",
  "stderr": "",
  "dump": {
-  "total": 34389275,
+  "total": 17618182,
   "version": "0.10.1",
   "root": {
    "name": "root",
@@ -11,7 +11,7 @@
     0
    ],
    "after": [
-    26022856
+    13031002
    ],
    "stack": [
     {
@@ -102,12 +102,12 @@
    "children": [
     {
      "name": "FSReqWrap",
-     "init": 6004981,
+     "init": 3248145,
      "before": [
-      27006896
+      13751467
      ],
      "after": [
-      28333598
+      14410788
      ],
      "stack": [
       {
@@ -186,12 +186,12 @@
      "children": [
       {
        "name": "FSReqWrap",
-       "init": 27949936,
+       "init": 14205203,
        "before": [
-        28371582
+        14427701
        ],
        "after": [
-        31762703
+        16321403
        ],
        "stack": [
         {
@@ -246,12 +246,12 @@
        "children": [
         {
          "name": "NextTickWrap",
-         "init": 30280429,
+         "init": 15510185,
          "before": [
-          31857630
+          16371664
          ],
          "after": [
-          32093871
+          16473560
          ],
          "stack": [
           {
@@ -349,12 +349,12 @@
         },
         {
          "name": "FSReqWrap",
-         "init": 31323887,
+         "init": 16093178,
          "before": [
-          32228751
+          16533921
          ],
          "after": [
-          32860358
+          16829082
          ],
          "stack": [
           {
@@ -403,12 +403,12 @@
          "children": [
           {
            "name": "NextTickWrap",
-           "init": 32757100,
+           "init": 16783314,
            "before": [
-            32866697
+            16831756
            ],
            "after": [
-            34043567
+            17460038
            ],
            "stack": [
             {
@@ -475,12 +475,12 @@
            "children": [
             {
              "name": "FSReqWrap",
-             "init": 33491295,
+             "init": 17170342,
              "before": [
-              34073829
+              17471148
              ],
              "after": [
-              34150220
+              17507965
              ],
              "stack": [
               {
@@ -532,9 +532,9 @@
                "collum": 12
               },
               {
-               "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:33:16)",
+               "description": "args.(anonymous function) (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:38:16)",
                "filename": "/Users/Andreas/Sites/node_modules/dprof/async_wrap.js",
-               "line": 33,
+               "line": 38,
                "collum": 16
               },
               {
@@ -558,12 +558,12 @@
         },
         {
          "name": "NextTickWrap",
-         "init": 31621907,
+         "init": 16257319,
          "before": [
-          32104178
+          16477865
          ],
          "after": [
-          32200457
+          16521761
          ],
          "stack": [
           {
@@ -605,7 +605,7 @@
     },
     {
      "name": "Pipe",
-     "init": 22924696,
+     "init": 11540243,
      "before": [],
      "after": [],
      "stack": [
@@ -686,12 +686,12 @@
     },
     {
      "name": "NextTickWrap",
-     "init": 24989086,
+     "init": 12492558,
      "before": [
-      26115736
+      13101058
      ],
      "after": [
-      26729582
+      13590304
      ],
      "stack": [
       {
