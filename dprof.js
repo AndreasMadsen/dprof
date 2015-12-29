@@ -1,7 +1,7 @@
 'use strict';
 
-const providers = process.binding('async_wrap').Providers;
-const asyncWrap = require('./async_wrap.js');
+const asyncHook = require('async-hook');
+const chain = require('stack-chain');
 const zlib = require('zlib');
 const fs = require('fs');
 
@@ -32,6 +32,7 @@ function timestamp() {
 function Node(name, stack) {
   this.name = name;
   this._init = timestamp();
+  this._destroy = Infinity;
   this._before = [];
   this._after = [];
   this.children = [];
@@ -40,8 +41,22 @@ function Node(name, stack) {
   });
 }
 
+function getCallSites(skip) {
+  const limit = Error.stackTraceLimit;
+
+  Error.stackTraceLimit = limit + skip;
+  const stack = chain.callSite({
+    extend: false,
+    filter: true,
+    slice: skip
+  });
+  Error.stackTraceLimit = limit;
+
+  return stack;
+}
+
 Node.prototype.add = function (handle) {
-  const node = new Node(handle.constructor.name, asyncWrap.stackTrace(3));
+  const node = new Node(handle.constructor.name, getCallSites(3));
   this.children.push(node);
   return node;
 };
@@ -54,10 +69,15 @@ Node.prototype.after = function () {
   this._after.push(timestamp());
 };
 
+Node.prototype.destroy = function () {
+  this._destroy = timestamp();
+};
+
 Node.prototype.toJSON = function () {
   return {
     name: this.name,
     init: this._init,
+    destroy: this._destroy,
     before: this._before,
     after: this._after,
     stack: this.stack,
@@ -73,46 +93,55 @@ Node.prototype.rootIntialize = function () {
 //
 // Setup hooks
 //
+asyncHook.addHooks({
+  init: asyncInit,
+  pre: asyncBefore,
+  post: asyncAfter,
+  destroy: asyncDestroy
+});
 
-asyncWrap.setup(asyncInit, asyncBefore, asyncAfter);
-
-const root = new Node('root', asyncWrap.stackTrace(2));
+const root = new Node('root', getCallSites(2));
       root.rootIntialize();
-let state = root;
 
-function asyncInit(provider, parent) {
-  if (provider === providers.TIMERWRAP) {
-    this._dprofIgnore = true;
-    return;
-  }
+const stateMap = new Map();
+let currState = root;
 
-  if (parent) {
-    this._dprofState = parent._dprofState.add(this, provider, parent);
-  } else {
-    this._dprofState = state.add(this, provider, parent);
-  }
+function asyncInit(uid, handle, provider, parentUid) {
+  // get parent state
+  const state = (parentUid === null ? currState : stateMap.get(parentUid));
+
+  // add new state node
+  stateMap.set(uid, state.add(handle));
 }
 
-function asyncBefore() {
-  if (this._dprofIgnore) return;
+function asyncBefore(uid) {
+  const state = stateMap.get(uid);
 
-  this._dprofState.before();
-  state = this._dprofState;
+  state.before();
+  currState = state;
 }
 
-function asyncAfter() {
-  if (this._dprofIgnore) return;
-  
-  this._dprofState.after();
-  state = root;
+function asyncAfter(uid) {
+  const state = stateMap.get(uid);
+
+  state.after();
+  currState = root;
+}
+
+function asyncDestroy(uid) {
+  const state = stateMap.get(uid);
+
+  state.destroy();
+  stateMap.delete(uid);
 }
 
 // The root job is done when process.nextTick is called
-asyncWrap.disable();
+asyncHook.disable();
 process.nextTick(function () {
   root.after();
+  root.destroy();
 });
-asyncWrap.enable();
+asyncHook.enable();
 
 //
 // Print result
@@ -121,7 +150,7 @@ asyncWrap.enable();
 process.on('exit', function () {
   // even though zlib is sync, it still fires async_wrap events,
   // so disable asyncWrap just to be sure.
-  asyncWrap.disable();
+  asyncHook.disable();
 
   const data = {
     'total': timestamp(),

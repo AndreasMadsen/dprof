@@ -2,52 +2,53 @@
  "stdout": "",
  "stderr": "",
  "dump": {
-  "total": 31066243,
-  "version": "0.10.1",
+  "total": 35100679,
+  "version": "0.11.1",
   "root": {
    "name": "root",
    "init": 0,
+   "destroy": 4756694,
    "before": [
     0
    ],
    "after": [
-    3332633
+    4740869
    ],
    "stack": [
     {
-     "description": "Module._compile (module.js:425:26)",
+     "description": "Module._compile (module.js:398:26)",
      "filename": "module.js",
-     "line": 425,
+     "line": 398,
      "collum": 26
     },
     {
-     "description": "Object.Module._extensions..js (module.js:432:10)",
+     "description": "Object.Module._extensions..js (module.js:405:10)",
      "filename": "module.js",
-     "line": 432,
+     "line": 405,
      "collum": 10
     },
     {
-     "description": "Module.load (module.js:356:32)",
+     "description": "Module.load (module.js:344:32)",
      "filename": "module.js",
-     "line": 356,
+     "line": 344,
      "collum": 32
     },
     {
-     "description": "Function.Module._load (module.js:311:12)",
+     "description": "Function.Module._load (module.js:301:12)",
      "filename": "module.js",
-     "line": 311,
+     "line": 301,
      "collum": 12
     },
     {
-     "description": "Module.require (module.js:366:17)",
+     "description": "Module.require (module.js:354:17)",
      "filename": "module.js",
-     "line": 366,
+     "line": 354,
      "collum": 17
     },
     {
-     "description": "require (module.js:385:17)",
-     "filename": "module.js",
-     "line": 385,
+     "description": "require (internal/module.js:12:17)",
+     "filename": "internal/module.js",
+     "line": 12,
      "collum": 17
     },
     {
@@ -57,57 +58,58 @@
      "collum": 1
     },
     {
-     "description": "Module._compile (module.js:425:26)",
+     "description": "Module._compile (module.js:398:26)",
      "filename": "module.js",
-     "line": 425,
+     "line": 398,
      "collum": 26
     },
     {
-     "description": "Object.Module._extensions..js (module.js:432:10)",
+     "description": "Object.Module._extensions..js (module.js:405:10)",
      "filename": "module.js",
-     "line": 432,
+     "line": 405,
      "collum": 10
     },
     {
-     "description": "Module.load (module.js:356:32)",
+     "description": "Module.load (module.js:344:32)",
      "filename": "module.js",
-     "line": 356,
+     "line": 344,
      "collum": 32
     },
     {
-     "description": "Function.Module._load (module.js:311:12)",
+     "description": "Function.Module._load (module.js:301:12)",
      "filename": "module.js",
-     "line": 311,
+     "line": 301,
      "collum": 12
     },
     {
-     "description": "Function.Module.runMain (module.js:457:10)",
+     "description": "Function.Module.runMain (module.js:430:10)",
      "filename": "module.js",
-     "line": 457,
+     "line": 430,
      "collum": 10
     },
     {
-     "description": "startup (node.js:134:18)",
+     "description": "startup (node.js:141:18)",
      "filename": "node.js",
-     "line": 134,
+     "line": 141,
      "collum": 18
     },
     {
-     "description": "node.js:961:3",
+     "description": "node.js:980:3",
      "filename": "node.js",
-     "line": 961,
+     "line": 980,
      "collum": 3
     }
    ],
    "children": [
     {
      "name": "TimeoutWrap",
-     "init": 2761752,
+     "init": 3180365,
+     "destroy": 20013172,
      "before": [
-      16728103
+      17349352
      ],
      "after": [
-      17677540
+      19691745
      ],
      "stack": [
       {
@@ -117,70 +119,65 @@
        "collum": 1
       },
       {
-       "description": "Module._compile (module.js:425:26)",
+       "description": "Module._compile (module.js:398:26)",
        "filename": "module.js",
-       "line": 425,
+       "line": 398,
        "collum": 26
       },
       {
-       "description": "Object.Module._extensions..js (module.js:432:10)",
+       "description": "Object.Module._extensions..js (module.js:405:10)",
        "filename": "module.js",
-       "line": 432,
+       "line": 405,
        "collum": 10
       },
       {
-       "description": "Module.load (module.js:356:32)",
+       "description": "Module.load (module.js:344:32)",
        "filename": "module.js",
-       "line": 356,
+       "line": 344,
        "collum": 32
       },
       {
-       "description": "Function.Module._load (module.js:311:12)",
+       "description": "Function.Module._load (module.js:301:12)",
        "filename": "module.js",
-       "line": 311,
+       "line": 301,
        "collum": 12
       },
       {
-       "description": "Function.Module.runMain (module.js:457:10)",
+       "description": "Function.Module.runMain (module.js:430:10)",
        "filename": "module.js",
-       "line": 457,
+       "line": 430,
        "collum": 10
       },
       {
-       "description": "startup (node.js:134:18)",
+       "description": "startup (node.js:141:18)",
        "filename": "node.js",
-       "line": 134,
+       "line": 141,
        "collum": 18
       },
       {
-       "description": "node.js:961:3",
+       "description": "node.js:980:3",
        "filename": "node.js",
-       "line": 961,
+       "line": 980,
        "collum": 3
       }
      ],
      "children": [
       {
        "name": "TimeoutWrap",
-       "init": 16941892,
+       "init": 17625294,
+       "destroy": 34358479,
        "before": [
-        30524396
+        34235594
        ],
        "after": [
-        30603985
+        34316481
        ],
        "stack": [
         {
-         "description": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout.js:5:3",
+         "description": "null.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout.js:5:3)",
          "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout.js",
          "line": 5,
          "collum": 3
-        },
-        {
-         "description": "args.(anonymous function) [as _onTimeout] (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:39:16)",
-         "filename": "/Users/Andreas/Sites/node_modules/dprof/async_wrap.js",
-         "line": 39,
-         "collum": 16
         },
         {
          "description": "Timer.listOnTimeout (timers.js:92:15)",
@@ -193,25 +190,20 @@
       },
       {
        "name": "TimeoutWrap",
-       "init": 17537503,
+       "init": 19331396,
+       "destroy": 34430123,
        "before": [
-        30612983
+        34370498
        ],
        "after": [
-        30632005
+        34397334
        ],
        "stack": [
         {
-         "description": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout.js:7:3",
+         "description": "null.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout.js:7:3)",
          "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout.js",
          "line": 7,
          "collum": 3
-        },
-        {
-         "description": "args.(anonymous function) [as _onTimeout] (/Users/Andreas/Sites/node_modules/dprof/async_wrap.js:39:16)",
-         "filename": "/Users/Andreas/Sites/node_modules/dprof/async_wrap.js",
-         "line": 39,
-         "collum": 16
         },
         {
          "description": "Timer.listOnTimeout (timers.js:92:15)",

@@ -139,30 +139,40 @@ TimelineLayout.prototype._calcBackgroundLine = function (node) {
          `H${this._xScale(flatten.total)}`; // Horizontal line to
 };
 
-TimelineLayout.prototype._calcBeforeLine = function (node) {
+TimelineLayout.prototype._calcWaitLine = function (node) {
   const path = [];
+
+  // Between (init - before) and (after - before)
   let prevTime = node.init;
   for (let i = 0; i < node.before.length; i++) {
     path.push(`M${this._xScale(prevTime)} ${node.top * timelineHeight} ` + // Move to
               `H${this._xScale(node.before[i])}`); // Horizontal line to
     prevTime = node.after[i];
   }
+
+  // Between (init/after - destroy)
+  path.push(`M${this._xScale(prevTime)} ${node.top * timelineHeight} ` + // Move to
+            `H${this._xScale(node.destroy)}`); // Horizontal line to
+
   return path.join(' ');
 };
 
-TimelineLayout.prototype._calcAfterLine = function (node) {
+TimelineLayout.prototype._calcCallbackLine = function (node) {
   const path = [];
+
+  // Between (before - after)
   for (let i = 0; i < node.before.length; i++) {
     path.push(`M${this._xScale(node.before[i])} ${node.top * timelineHeight} ` + // Move to
               `H${this._xScale(node.after[i])}`); // Horizontal line to
   }
+
   return path.join(' ');
 };
 
 TimelineLayout.prototype._calcTotalLine = function (node) {
   if (!node.collapsed) return '';
 
-  return `M${this._xScale(node.end)} ${node.top * timelineHeight} ` + // Move to
+  return `M${this._xScale(node.destroy)} ${node.top * timelineHeight} ` + // Move to
          `H${this._xScale(node.total)}`; // Horizontal line to
 };
 
@@ -202,15 +212,15 @@ TimelineLayout.prototype._drawTimelines = function () {
 
   // Draw before line
   barEnter.append('path')
-    .attr('class', 'before');
-  bar.select('.before')
-    .attr('d', this._calcBeforeLine.bind(this));
+    .attr('class', 'wait');
+  bar.select('.wait')
+    .attr('d', this._calcWaitLine.bind(this));
 
   // Draw after line
   barEnter.append('path')
-    .attr('class', 'after');
-  bar.select('.after')
-    .attr('d', this._calcAfterLine.bind(this));
+    .attr('class', 'callback');
+  bar.select('.callback')
+    .attr('d', this._calcCallbackLine.bind(this));
 
   // Draw after line
   barEnter.append('path')

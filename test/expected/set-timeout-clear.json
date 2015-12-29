@@ -1,18 +1,18 @@
 {
- "stdout": "hallo world\n",
+ "stdout": "",
  "stderr": "",
  "dump": {
-  "total": 16601504,
+  "total": 112350058,
   "version": "0.11.1",
   "root": {
    "name": "root",
    "init": 0,
-   "destroy": 15659396,
+   "destroy": 6527869,
    "before": [
     0
    ],
    "after": [
-    15643913
+    6507804
    ],
    "stack": [
     {
@@ -52,8 +52,8 @@
      "collum": 17
     },
     {
-     "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/console-log.js:2:1)",
-     "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/console-log.js",
+     "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout-clear.js:2:1)",
+     "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout-clear.js",
      "line": 2,
      "collum": 1
     },
@@ -102,287 +102,141 @@
    ],
    "children": [
     {
-     "name": "Pipe",
-     "init": 11102922,
-     "destroy": null,
+     "name": "TimeoutWrap",
+     "init": 3775284,
+     "destroy": 19540863,
      "before": [],
      "after": [],
      "stack": [
       {
-       "description": "createHandle (net.js:30:31)",
-       "filename": "net.js",
-       "line": 30,
-       "collum": 31
-      },
-      {
-       "description": "new Socket (net.js:128:20)",
-       "filename": "net.js",
-       "line": 128,
-       "collum": 20
-      },
-      {
-       "description": "createWritableStdioStream (node.js:619:18)",
-       "filename": "node.js",
-       "line": 619,
-       "collum": 18
-      },
-      {
-       "description": "process.stdout (node.js:645:16)",
-       "filename": "node.js",
-       "line": 645,
-       "collum": 16
-      },
-      {
-       "description": "console.js:93:37",
-       "filename": "console.js",
-       "line": 93,
-       "collum": 37
-      },
-      {
-       "description": "NativeModule.compile (node.js:971:5)",
-       "filename": "node.js",
-       "line": 971,
-       "collum": 5
-      },
-      {
-       "description": "Function.NativeModule.require (node.js:916:18)",
-       "filename": "node.js",
-       "line": 916,
-       "collum": 18
-      },
-      {
-       "description": "node.js:214:27",
-       "filename": "node.js",
-       "line": 214,
-       "collum": 27
-      },
-      {
-       "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/console-log.js:4:1)",
-       "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/console-log.js",
+       "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout-clear.js:4:15)",
+       "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout-clear.js",
        "line": 4,
-       "collum": 1
-      },
-      {
-       "description": "Module._compile (module.js:398:26)",
-       "filename": "module.js",
-       "line": 398,
-       "collum": 26
-      },
-      {
-       "description": "Object.Module._extensions..js (module.js:405:10)",
-       "filename": "module.js",
-       "line": 405,
-       "collum": 10
-      },
-      {
-       "description": "Module.load (module.js:344:32)",
-       "filename": "module.js",
-       "line": 344,
-       "collum": 32
-      },
-      {
-       "description": "Function.Module._load (module.js:301:12)",
-       "filename": "module.js",
-       "line": 301,
-       "collum": 12
-      },
-      {
-       "description": "Function.Module.runMain (module.js:430:10)",
-       "filename": "module.js",
-       "line": 430,
-       "collum": 10
-      },
-      {
-       "description": "startup (node.js:141:18)",
-       "filename": "node.js",
-       "line": 141,
-       "collum": 18
-      },
-      {
-       "description": "node.js:980:3",
-       "filename": "node.js",
-       "line": 980,
-       "collum": 3
-      }
-     ],
-     "children": []
-    },
-    {
-     "name": "Pipe",
-     "init": 12900430,
-     "destroy": null,
-     "before": [],
-     "after": [],
-     "stack": [
-      {
-       "description": "createHandle (net.js:30:31)",
-       "filename": "net.js",
-       "line": 30,
-       "collum": 31
-      },
-      {
-       "description": "new Socket (net.js:128:20)",
-       "filename": "net.js",
-       "line": 128,
-       "collum": 20
-      },
-      {
-       "description": "createWritableStdioStream (node.js:619:18)",
-       "filename": "node.js",
-       "line": 619,
-       "collum": 18
-      },
-      {
-       "description": "process.stderr (node.js:660:16)",
-       "filename": "node.js",
-       "line": 660,
-       "collum": 16
-      },
-      {
-       "description": "console.js:93:53",
-       "filename": "console.js",
-       "line": 93,
-       "collum": 53
-      },
-      {
-       "description": "NativeModule.compile (node.js:971:5)",
-       "filename": "node.js",
-       "line": 971,
-       "collum": 5
-      },
-      {
-       "description": "Function.NativeModule.require (node.js:916:18)",
-       "filename": "node.js",
-       "line": 916,
-       "collum": 18
-      },
-      {
-       "description": "node.js:214:27",
-       "filename": "node.js",
-       "line": 214,
-       "collum": 27
-      },
-      {
-       "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/console-log.js:4:1)",
-       "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/console-log.js",
-       "line": 4,
-       "collum": 1
-      },
-      {
-       "description": "Module._compile (module.js:398:26)",
-       "filename": "module.js",
-       "line": 398,
-       "collum": 26
-      },
-      {
-       "description": "Object.Module._extensions..js (module.js:405:10)",
-       "filename": "module.js",
-       "line": 405,
-       "collum": 10
-      },
-      {
-       "description": "Module.load (module.js:344:32)",
-       "filename": "module.js",
-       "line": 344,
-       "collum": 32
-      },
-      {
-       "description": "Function.Module._load (module.js:301:12)",
-       "filename": "module.js",
-       "line": 301,
-       "collum": 12
-      },
-      {
-       "description": "Function.Module.runMain (module.js:430:10)",
-       "filename": "module.js",
-       "line": 430,
-       "collum": 10
-      },
-      {
-       "description": "startup (node.js:141:18)",
-       "filename": "node.js",
-       "line": 141,
-       "collum": 18
-      },
-      {
-       "description": "node.js:980:3",
-       "filename": "node.js",
-       "line": 980,
-       "collum": 3
-      }
-     ],
-     "children": []
-    },
-    {
-     "name": "NextTickWrap",
-     "init": 15230376,
-     "destroy": 16176727,
-     "before": [
-      15952129
-     ],
-     "after": [
-      16115273
-     ],
-     "stack": [
-      {
-       "description": "onwrite (_stream_writable.js:335:15)",
-       "filename": "_stream_writable.js",
-       "line": 335,
        "collum": 15
       },
       {
-       "description": "WritableState.onwrite (_stream_writable.js:89:5)",
-       "filename": "_stream_writable.js",
-       "line": 89,
-       "collum": 5
+       "description": "Module._compile (module.js:398:26)",
+       "filename": "module.js",
+       "line": 398,
+       "collum": 26
       },
       {
-       "description": "Socket._writeGeneric (net.js:684:5)",
-       "filename": "net.js",
-       "line": 684,
-       "collum": 5
+       "description": "Object.Module._extensions..js (module.js:405:10)",
+       "filename": "module.js",
+       "line": 405,
+       "collum": 10
       },
       {
-       "description": "Socket._write (net.js:694:8)",
-       "filename": "net.js",
-       "line": 694,
-       "collum": 8
+       "description": "Module.load (module.js:344:32)",
+       "filename": "module.js",
+       "line": 344,
+       "collum": 32
       },
       {
-       "description": "doWrite (_stream_writable.js:292:12)",
-       "filename": "_stream_writable.js",
-       "line": 292,
+       "description": "Function.Module._load (module.js:301:12)",
+       "filename": "module.js",
+       "line": 301,
        "collum": 12
       },
       {
-       "description": "writeOrBuffer (_stream_writable.js:278:5)",
-       "filename": "_stream_writable.js",
-       "line": 278,
-       "collum": 5
+       "description": "Function.Module.runMain (module.js:430:10)",
+       "filename": "module.js",
+       "line": 430,
+       "collum": 10
       },
       {
-       "description": "Socket.Writable.write (_stream_writable.js:207:11)",
-       "filename": "_stream_writable.js",
-       "line": 207,
-       "collum": 11
+       "description": "startup (node.js:141:18)",
+       "filename": "node.js",
+       "line": 141,
+       "collum": 18
       },
       {
-       "description": "Socket.write (net.js:618:40)",
-       "filename": "net.js",
-       "line": 618,
-       "collum": 40
+       "description": "node.js:980:3",
+       "filename": "node.js",
+       "line": 980,
+       "collum": 3
+      }
+     ],
+     "children": []
+    },
+    {
+     "name": "TimeoutWrap",
+     "init": 5853390,
+     "destroy": 20137479,
+     "before": [
+      19042532
+     ],
+     "after": [
+      20102505
+     ],
+     "stack": [
+      {
+       "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout-clear.js:6:1)",
+       "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout-clear.js",
+       "line": 6,
+       "collum": 1
       },
       {
-       "description": "Console.log (console.js:36:16)",
-       "filename": "console.js",
-       "line": 36,
-       "collum": 16
+       "description": "Module._compile (module.js:398:26)",
+       "filename": "module.js",
+       "line": 398,
+       "collum": 26
       },
       {
-       "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/console-log.js:4:9)",
-       "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/console-log.js",
-       "line": 4,
-       "collum": 9
+       "description": "Object.Module._extensions..js (module.js:405:10)",
+       "filename": "module.js",
+       "line": 405,
+       "collum": 10
+      },
+      {
+       "description": "Module.load (module.js:344:32)",
+       "filename": "module.js",
+       "line": 344,
+       "collum": 32
+      },
+      {
+       "description": "Function.Module._load (module.js:301:12)",
+       "filename": "module.js",
+       "line": 301,
+       "collum": 12
+      },
+      {
+       "description": "Function.Module.runMain (module.js:430:10)",
+       "filename": "module.js",
+       "line": 430,
+       "collum": 10
+      },
+      {
+       "description": "startup (node.js:141:18)",
+       "filename": "node.js",
+       "line": 141,
+       "collum": 18
+      },
+      {
+       "description": "node.js:980:3",
+       "filename": "node.js",
+       "line": 980,
+       "collum": 3
+      }
+     ],
+     "children": []
+    },
+    {
+     "name": "TimeoutWrap",
+     "init": 6244350,
+     "destroy": 111869245,
+     "before": [
+      111747401
+     ],
+     "after": [
+      111824150
+     ],
+     "stack": [
+      {
+       "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout-clear.js:10:1)",
+       "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout-clear.js",
+       "line": 10,
+       "collum": 1
       },
       {
        "description": "Module._compile (module.js:398:26)",

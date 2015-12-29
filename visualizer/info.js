@@ -37,6 +37,7 @@ StatsLayout.prototype.draw = function () {
       callback += this._node.after[i] - this._node.before[i];
       prevSyncTime = this._node.after[i];
     }
+    wait += this._node.destroy - prevSyncTime;
 
     stats += '\n' +
       `handle: ${this._node.name}\n` +

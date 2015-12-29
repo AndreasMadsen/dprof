@@ -28,28 +28,22 @@ function Node(parent, node, index) {
   this.name = node.name;
   this.stack = node.stack;
 
-  // Position
+  // Convert init time
   this.init = node.init * ns2s;
-  this.before = [];
-  this.after = [];
 
-  // If no before event was fired, set it to the process lifespan
-  if (node.before.length === 0) {
-    this.before = [dump.total * ns2s];
-    this.after = [dump.total * ns2s];
-  } else {
-    this.before = node.before.map((v) => v * ns2s);
-    this.after = node.after.map((v) => v * ns2s);
-  }
+  // If the node wasn't destroyed set the destroy time to the total lifetime
+  this.destroy = (node.destroy === null) ? dump.total * ns2s : node.destroy * ns2s;
 
-  this.end = Math.max.apply(null, this.after);
+  // Convert before and after time
+  this.before = node.before.map((v) => v * ns2s);
+  this.after = node.after.map((v) => v * ns2s);
 
   this.total = 0;
   this.top = this.index + 0.5;
 
-  // Create children note and maintain an array containing the total lifespan
+  // Create children and maintain an array containing the total lifespan
   // for each child.
-  const totals = [this.end];
+  const totals = [this.destroy];
   this.children = node.children.map(function (child) {
     child = new Node(this, child, ++idCounter);
     totals.push(child.total);
@@ -58,7 +52,7 @@ function Node(parent, node, index) {
 
   // Update total, to be the max of the childrens total and the after time
   // of this node.
-  this.total = Math.max.apply(null, totals);
+  this.total = Math.max(...totals);
 }
 
 Node.prototype.setIndex = function (index) {
@@ -91,7 +85,7 @@ Flatten.prototype._calcInitDeltas = function () {
 
 Flatten.prototype._calcAfterDeltas = function () {
   return this.allNodes.map(function (node) {
-    return { 'time': node.end, 'delta': -1 };
+    return { 'time': node.destroy, 'delta': -1 };
   });
 };
 
