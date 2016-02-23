@@ -2,54 +2,54 @@
  "stdout": "",
  "stderr": "",
  "dump": {
-  "total": 11390361,
-  "version": "0.11.1",
+  "total": 11446757,
+  "version": "0.13.0",
   "root": {
    "name": "root",
    "init": 0,
-   "destroy": 4663977,
+   "destroy": 7253015,
    "before": [
     0
    ],
    "after": [
-    4644537
+    7215457
    ],
    "stack": [
     {
-     "description": "Module._compile (module.js:398:26)",
+     "description": "Module._compile (module.js:413:34)",
      "filename": "module.js",
-     "line": 398,
-     "collum": 26
+     "line": 413,
+     "collum": 34
     },
     {
-     "description": "Object.Module._extensions..js (module.js:405:10)",
+     "description": "Object.Module._extensions..js (module.js:422:10)",
      "filename": "module.js",
-     "line": 405,
+     "line": 422,
      "collum": 10
     },
     {
-     "description": "Module.load (module.js:344:32)",
+     "description": "Module.load (module.js:357:32)",
      "filename": "module.js",
-     "line": 344,
+     "line": 357,
      "collum": 32
     },
     {
-     "description": "Function.Module._load (module.js:301:12)",
+     "description": "Function.Module._load (module.js:314:12)",
      "filename": "module.js",
-     "line": 301,
+     "line": 314,
      "collum": 12
     },
     {
-     "description": "Module.require (module.js:354:17)",
+     "description": "Module.require (module.js:367:17)",
      "filename": "module.js",
-     "line": 354,
+     "line": 367,
      "collum": 17
     },
     {
-     "description": "require (internal/module.js:12:17)",
+     "description": "require (internal/module.js:16:19)",
      "filename": "internal/module.js",
-     "line": 12,
-     "collum": 17
+     "line": 16,
+     "collum": 19
     },
     {
      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js:2:1)",
@@ -58,33 +58,33 @@
      "collum": 1
     },
     {
-     "description": "Module._compile (module.js:398:26)",
+     "description": "Module._compile (module.js:413:34)",
      "filename": "module.js",
-     "line": 398,
-     "collum": 26
+     "line": 413,
+     "collum": 34
     },
     {
-     "description": "Object.Module._extensions..js (module.js:405:10)",
+     "description": "Object.Module._extensions..js (module.js:422:10)",
      "filename": "module.js",
-     "line": 405,
+     "line": 422,
      "collum": 10
     },
     {
-     "description": "Module.load (module.js:344:32)",
+     "description": "Module.load (module.js:357:32)",
      "filename": "module.js",
-     "line": 344,
+     "line": 357,
      "collum": 32
     },
     {
-     "description": "Function.Module._load (module.js:301:12)",
+     "description": "Function.Module._load (module.js:314:12)",
      "filename": "module.js",
-     "line": 301,
+     "line": 314,
      "collum": 12
     },
     {
-     "description": "Function.Module.runMain (module.js:430:10)",
+     "description": "Function.Module.runMain (module.js:447:10)",
      "filename": "module.js",
-     "line": 430,
+     "line": 447,
      "collum": 10
     },
     {
@@ -94,22 +94,22 @@
      "collum": 18
     },
     {
-     "description": "node.js:980:3",
+     "description": "node.js:933:3",
      "filename": "node.js",
-     "line": 980,
+     "line": 933,
      "collum": 3
     }
    ],
    "children": [
     {
      "name": "TimeoutWrap",
-     "init": 3122325,
-     "destroy": 9764099,
+     "init": 5505486,
+     "destroy": 9638408,
      "before": [
-      7137777
+      7908521
      ],
      "after": [
-      8812714
+      9356149
      ],
      "stack": [
       {
@@ -119,33 +119,33 @@
        "collum": 1
       },
       {
-       "description": "Module._compile (module.js:398:26)",
+       "description": "Module._compile (module.js:413:34)",
        "filename": "module.js",
-       "line": 398,
-       "collum": 26
+       "line": 413,
+       "collum": 34
       },
       {
-       "description": "Object.Module._extensions..js (module.js:405:10)",
+       "description": "Object.Module._extensions..js (module.js:422:10)",
        "filename": "module.js",
-       "line": 405,
+       "line": 422,
        "collum": 10
       },
       {
-       "description": "Module.load (module.js:344:32)",
+       "description": "Module.load (module.js:357:32)",
        "filename": "module.js",
-       "line": 344,
+       "line": 357,
        "collum": 32
       },
       {
-       "description": "Function.Module._load (module.js:301:12)",
+       "description": "Function.Module._load (module.js:314:12)",
        "filename": "module.js",
-       "line": 301,
+       "line": 314,
        "collum": 12
       },
       {
-       "description": "Function.Module.runMain (module.js:430:10)",
+       "description": "Function.Module.runMain (module.js:447:10)",
        "filename": "module.js",
-       "line": 430,
+       "line": 447,
        "collum": 10
       },
       {
@@ -155,22 +155,22 @@
        "collum": 18
       },
       {
-       "description": "node.js:980:3",
+       "description": "node.js:933:3",
        "filename": "node.js",
-       "line": 980,
+       "line": 933,
        "collum": 3
       }
      ],
      "children": [
       {
        "name": "FSReqWrap",
-       "init": 7578130,
-       "destroy": 10518940,
+       "init": 8213740,
+       "destroy": 10454953,
        "before": [
-        9950880
+        9810521
        ],
        "after": [
-        10502378
+        10436675
        ],
        "stack": [
         {
@@ -195,13 +195,13 @@
        "children": [
         {
          "name": "FSReqWrap",
-         "init": 10317367,
-         "destroy": 10794466,
+         "init": 10204244,
+         "destroy": 10795718,
          "before": [
-          10718757
+          10717631
          ],
          "after": [
-          10788438
+          10791110
          ],
          "stack": [
           {
@@ -227,13 +227,13 @@
         },
         {
          "name": "FSReqWrap",
-         "init": 10442661,
-         "destroy": 11012513,
+         "init": 10382223,
+         "destroy": 11031630,
          "before": [
-          10800501
+          10800986
          ],
          "after": [
-          11006911
+          11027099
          ],
          "stack": [
           {
@@ -258,13 +258,13 @@
          "children": [
           {
            "name": "FSReqWrap",
-           "init": 10944425,
-           "destroy": 11107690,
+           "init": 10960457,
+           "destroy": 11130254,
            "before": [
-            11053209
+            11076548
            ],
            "after": [
-            11101057
+            11125054
            ],
            "stack": [
             {
@@ -300,13 +300,13 @@
       },
       {
        "name": "FSReqWrap",
-       "init": 8527419,
-       "destroy": 10582790,
+       "init": 8980292,
+       "destroy": 10575270,
        "before": [
-        10534940
+        10532748
        ],
        "after": [
-        10576887
+        10570000
        ],
        "stack": [
         {

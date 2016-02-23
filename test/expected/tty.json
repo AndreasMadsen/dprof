@@ -2,54 +2,54 @@
  "stdout": "'use strict';\nrequire('../../dprof.js');\n\nvar fs = require('fs');\n\nfs.createReadStream(__filename).pipe(process.stdout);\n",
  "stderr": "",
  "dump": {
-  "total": 20777337,
-  "version": "0.11.1",
+  "total": 19410006,
+  "version": "0.13.0",
   "root": {
    "name": "root",
    "init": 0,
-   "destroy": 15620272,
+   "destroy": 14084219,
    "before": [
     0
    ],
    "after": [
-    15604459
+    14053333
    ],
    "stack": [
     {
-     "description": "Module._compile (module.js:398:26)",
+     "description": "Module._compile (module.js:413:34)",
      "filename": "module.js",
-     "line": 398,
-     "collum": 26
+     "line": 413,
+     "collum": 34
     },
     {
-     "description": "Object.Module._extensions..js (module.js:405:10)",
+     "description": "Object.Module._extensions..js (module.js:422:10)",
      "filename": "module.js",
-     "line": 405,
+     "line": 422,
      "collum": 10
     },
     {
-     "description": "Module.load (module.js:344:32)",
+     "description": "Module.load (module.js:357:32)",
      "filename": "module.js",
-     "line": 344,
+     "line": 357,
      "collum": 32
     },
     {
-     "description": "Function.Module._load (module.js:301:12)",
+     "description": "Function.Module._load (module.js:314:12)",
      "filename": "module.js",
-     "line": 301,
+     "line": 314,
      "collum": 12
     },
     {
-     "description": "Module.require (module.js:354:17)",
+     "description": "Module.require (module.js:367:17)",
      "filename": "module.js",
-     "line": 354,
+     "line": 367,
      "collum": 17
     },
     {
-     "description": "require (internal/module.js:12:17)",
+     "description": "require (internal/module.js:16:19)",
      "filename": "internal/module.js",
-     "line": 12,
-     "collum": 17
+     "line": 16,
+     "collum": 19
     },
     {
      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/tty.js:2:1)",
@@ -58,33 +58,33 @@
      "collum": 1
     },
     {
-     "description": "Module._compile (module.js:398:26)",
+     "description": "Module._compile (module.js:413:34)",
      "filename": "module.js",
-     "line": 398,
-     "collum": 26
+     "line": 413,
+     "collum": 34
     },
     {
-     "description": "Object.Module._extensions..js (module.js:405:10)",
+     "description": "Object.Module._extensions..js (module.js:422:10)",
      "filename": "module.js",
-     "line": 405,
+     "line": 422,
      "collum": 10
     },
     {
-     "description": "Module.load (module.js:344:32)",
+     "description": "Module.load (module.js:357:32)",
      "filename": "module.js",
-     "line": 344,
+     "line": 357,
      "collum": 32
     },
     {
-     "description": "Function.Module._load (module.js:301:12)",
+     "description": "Function.Module._load (module.js:314:12)",
      "filename": "module.js",
-     "line": 301,
+     "line": 314,
      "collum": 12
     },
     {
-     "description": "Function.Module.runMain (module.js:430:10)",
+     "description": "Function.Module.runMain (module.js:447:10)",
      "filename": "module.js",
-     "line": 430,
+     "line": 447,
      "collum": 10
     },
     {
@@ -94,22 +94,22 @@
      "collum": 18
     },
     {
-     "description": "node.js:980:3",
+     "description": "node.js:933:3",
      "filename": "node.js",
-     "line": 980,
+     "line": 933,
      "collum": 3
     }
    ],
    "children": [
     {
      "name": "FSReqWrap",
-     "init": 4568839,
-     "destroy": 17544799,
+     "init": 3960254,
+     "destroy": 15915499,
      "before": [
-      16793104
+      15165738
      ],
      "after": [
-      17527792
+      15895920
      ],
      "stack": [
       {
@@ -119,21 +119,21 @@
        "collum": 11
       },
       {
-       "description": "ReadStream.open (fs.js:1756:6)",
+       "description": "ReadStream.open (fs.js:1752:6)",
        "filename": "fs.js",
-       "line": 1756,
+       "line": 1752,
        "collum": 6
       },
       {
-       "description": "new ReadStream (fs.js:1743:10)",
+       "description": "new ReadStream (fs.js:1739:10)",
        "filename": "fs.js",
-       "line": 1743,
+       "line": 1739,
        "collum": 10
       },
       {
-       "description": "Object.fs.createReadStream (fs.js:1691:10)",
+       "description": "Object.fs.createReadStream (fs.js:1687:10)",
        "filename": "fs.js",
-       "line": 1691,
+       "line": 1687,
        "collum": 10
       },
       {
@@ -143,33 +143,33 @@
        "collum": 4
       },
       {
-       "description": "Module._compile (module.js:398:26)",
+       "description": "Module._compile (module.js:413:34)",
        "filename": "module.js",
-       "line": 398,
-       "collum": 26
+       "line": 413,
+       "collum": 34
       },
       {
-       "description": "Object.Module._extensions..js (module.js:405:10)",
+       "description": "Object.Module._extensions..js (module.js:422:10)",
        "filename": "module.js",
-       "line": 405,
+       "line": 422,
        "collum": 10
       },
       {
-       "description": "Module.load (module.js:344:32)",
+       "description": "Module.load (module.js:357:32)",
        "filename": "module.js",
-       "line": 344,
+       "line": 357,
        "collum": 32
       },
       {
-       "description": "Function.Module._load (module.js:301:12)",
+       "description": "Function.Module._load (module.js:314:12)",
        "filename": "module.js",
-       "line": 301,
+       "line": 314,
        "collum": 12
       },
       {
-       "description": "Function.Module.runMain (module.js:430:10)",
+       "description": "Function.Module.runMain (module.js:447:10)",
        "filename": "module.js",
-       "line": 430,
+       "line": 447,
        "collum": 10
       },
       {
@@ -179,22 +179,22 @@
        "collum": 18
       },
       {
-       "description": "node.js:980:3",
+       "description": "node.js:933:3",
        "filename": "node.js",
-       "line": 980,
+       "line": 933,
        "collum": 3
       }
      ],
      "children": [
       {
        "name": "FSReqWrap",
-       "init": 17252576,
-       "destroy": 19652752,
+       "init": 15615402,
+       "destroy": 18112781,
        "before": [
-        17558299
+        15934639
        ],
        "after": [
-        19434657
+        17922782
        ],
        "stack": [
         {
@@ -204,39 +204,39 @@
          "collum": 11
         },
         {
-         "description": "ReadStream._read (fs.js:1804:6)",
+         "description": "ReadStream._read (fs.js:1800:6)",
          "filename": "fs.js",
-         "line": 1804,
+         "line": 1800,
          "collum": 6
         },
         {
-         "description": "ReadStream.<anonymous> (fs.js:1775:12)",
+         "description": "ReadStream.<anonymous> (fs.js:1771:12)",
          "filename": "fs.js",
-         "line": 1775,
+         "line": 1771,
          "collum": 12
         },
         {
-         "description": "ReadStream.g (events.js:260:16)",
+         "description": "ReadStream.g (events.js:273:16)",
          "filename": "events.js",
-         "line": 260,
+         "line": 273,
          "collum": 16
         },
         {
-         "description": "emitOne (events.js:77:13)",
+         "description": "emitOne (events.js:90:13)",
          "filename": "events.js",
-         "line": 77,
+         "line": 90,
          "collum": 13
         },
         {
-         "description": "ReadStream.emit (events.js:169:7)",
+         "description": "ReadStream.emit (events.js:182:7)",
          "filename": "events.js",
-         "line": 169,
+         "line": 182,
          "collum": 7
         },
         {
-         "description": "fs.js:1766:10",
+         "description": "fs.js:1762:10",
          "filename": "fs.js",
-         "line": 1766,
+         "line": 1762,
          "collum": 10
         },
         {
@@ -249,19 +249,19 @@
        "children": [
         {
          "name": "NextTickWrap",
-         "init": 18699720,
-         "destroy": 19585670,
+         "init": 17065340,
+         "destroy": 18051015,
          "before": [
-          19481079
+          17944369
          ],
          "after": [
-          19580643
+          18046980
          ],
          "stack": [
           {
-           "description": "onwrite (_stream_writable.js:335:15)",
+           "description": "onwrite (_stream_writable.js:344:15)",
            "filename": "_stream_writable.js",
-           "line": 335,
+           "line": 344,
            "collum": 15
           },
           {
@@ -271,75 +271,75 @@
            "collum": 5
           },
           {
-           "description": "Socket._writeGeneric (net.js:684:5)",
+           "description": "Socket._writeGeneric (net.js:688:5)",
            "filename": "net.js",
-           "line": 684,
+           "line": 688,
            "collum": 5
           },
           {
-           "description": "Socket._write (net.js:694:8)",
+           "description": "Socket._write (net.js:698:8)",
            "filename": "net.js",
-           "line": 694,
+           "line": 698,
            "collum": 8
           },
           {
-           "description": "doWrite (_stream_writable.js:292:12)",
+           "description": "doWrite (_stream_writable.js:301:12)",
            "filename": "_stream_writable.js",
-           "line": 292,
+           "line": 301,
            "collum": 12
           },
           {
-           "description": "writeOrBuffer (_stream_writable.js:278:5)",
+           "description": "writeOrBuffer (_stream_writable.js:287:5)",
            "filename": "_stream_writable.js",
-           "line": 278,
+           "line": 287,
            "collum": 5
           },
           {
-           "description": "Socket.Writable.write (_stream_writable.js:207:11)",
+           "description": "Socket.Writable.write (_stream_writable.js:215:11)",
            "filename": "_stream_writable.js",
-           "line": 207,
+           "line": 215,
            "collum": 11
           },
           {
-           "description": "Socket.write (net.js:618:40)",
+           "description": "Socket.write (net.js:624:40)",
            "filename": "net.js",
-           "line": 618,
+           "line": 624,
            "collum": 40
           },
           {
-           "description": "ReadStream.ondata (_stream_readable.js:528:20)",
+           "description": "ReadStream.ondata (_stream_readable.js:536:20)",
            "filename": "_stream_readable.js",
-           "line": 528,
+           "line": 536,
            "collum": 20
           },
           {
-           "description": "emitOne (events.js:77:13)",
+           "description": "emitOne (events.js:90:13)",
            "filename": "events.js",
-           "line": 77,
+           "line": 90,
            "collum": 13
           },
           {
-           "description": "ReadStream.emit (events.js:169:7)",
+           "description": "ReadStream.emit (events.js:182:7)",
            "filename": "events.js",
-           "line": 169,
+           "line": 182,
            "collum": 7
           },
           {
-           "description": "readableAddChunk (_stream_readable.js:146:16)",
+           "description": "readableAddChunk (_stream_readable.js:153:18)",
            "filename": "_stream_readable.js",
-           "line": 146,
-           "collum": 16
+           "line": 153,
+           "collum": 18
           },
           {
-           "description": "ReadStream.Readable.push (_stream_readable.js:110:10)",
+           "description": "ReadStream.Readable.push (_stream_readable.js:111:10)",
            "filename": "_stream_readable.js",
-           "line": 110,
+           "line": 111,
            "collum": 10
           },
           {
-           "description": "onread (fs.js:1822:12)",
+           "description": "onread (fs.js:1818:12)",
            "filename": "fs.js",
-           "line": 1822,
+           "line": 1818,
            "collum": 12
           },
           {
@@ -353,13 +353,13 @@
         },
         {
          "name": "FSReqWrap",
-         "init": 19198938,
-         "destroy": 20580000,
+         "init": 17678163,
+         "destroy": 19209458,
          "before": [
-          19662147
+          18122043
          ],
          "after": [
-          19957718
+          18421704
          ],
          "stack": [
           {
@@ -369,33 +369,33 @@
            "collum": 11
           },
           {
-           "description": "ReadStream._read (fs.js:1804:6)",
+           "description": "ReadStream._read (fs.js:1800:6)",
            "filename": "fs.js",
-           "line": 1804,
+           "line": 1800,
            "collum": 6
           },
           {
-           "description": "ReadStream.Readable.read (_stream_readable.js:328:10)",
+           "description": "ReadStream.Readable.read (_stream_readable.js:336:10)",
            "filename": "_stream_readable.js",
-           "line": 328,
+           "line": 336,
            "collum": 10
           },
           {
-           "description": "readableAddChunk (_stream_readable.js:147:16)",
+           "description": "readableAddChunk (_stream_readable.js:154:18)",
            "filename": "_stream_readable.js",
-           "line": 147,
-           "collum": 16
+           "line": 154,
+           "collum": 18
           },
           {
-           "description": "ReadStream.Readable.push (_stream_readable.js:110:10)",
+           "description": "ReadStream.Readable.push (_stream_readable.js:111:10)",
            "filename": "_stream_readable.js",
-           "line": 110,
+           "line": 111,
            "collum": 10
           },
           {
-           "description": "onread (fs.js:1822:12)",
+           "description": "onread (fs.js:1818:12)",
            "filename": "fs.js",
-           "line": 1822,
+           "line": 1818,
            "collum": 12
           },
           {
@@ -408,67 +408,67 @@
          "children": [
           {
            "name": "NextTickWrap",
-           "init": 19914515,
-           "destroy": 20574878,
+           "init": 18376766,
+           "destroy": 19204821,
            "before": [
-            19962071
+            18424970
            ],
            "after": [
-            20569869
+            19201138
            ],
            "stack": [
             {
-             "description": "endReadable (_stream_readable.js:896:13)",
+             "description": "endReadable (_stream_readable.js:904:13)",
              "filename": "_stream_readable.js",
-             "line": 896,
+             "line": 904,
              "collum": 13
             },
             {
-             "description": "ReadStream.Readable.read (_stream_readable.js:277:7)",
+             "description": "ReadStream.Readable.read (_stream_readable.js:285:7)",
              "filename": "_stream_readable.js",
-             "line": 277,
+             "line": 285,
              "collum": 7
             },
             {
-             "description": "flow (_stream_readable.js:743:26)",
+             "description": "flow (_stream_readable.js:751:26)",
              "filename": "_stream_readable.js",
-             "line": 743,
+             "line": 751,
              "collum": 26
             },
             {
-             "description": "emitReadable_ (_stream_readable.js:412:3)",
+             "description": "emitReadable_ (_stream_readable.js:420:3)",
              "filename": "_stream_readable.js",
-             "line": 412,
+             "line": 420,
              "collum": 3
             },
             {
-             "description": "emitReadable (_stream_readable.js:405:7)",
+             "description": "emitReadable (_stream_readable.js:413:7)",
              "filename": "_stream_readable.js",
-             "line": 405,
+             "line": 413,
              "collum": 7
             },
             {
-             "description": "onEofChunk (_stream_readable.js:390:3)",
+             "description": "onEofChunk (_stream_readable.js:398:3)",
              "filename": "_stream_readable.js",
-             "line": 390,
+             "line": 398,
              "collum": 3
             },
             {
-             "description": "readableAddChunk (_stream_readable.js:129:5)",
+             "description": "readableAddChunk (_stream_readable.js:130:5)",
              "filename": "_stream_readable.js",
-             "line": 129,
+             "line": 130,
              "collum": 5
             },
             {
-             "description": "ReadStream.Readable.push (_stream_readable.js:110:10)",
+             "description": "ReadStream.Readable.push (_stream_readable.js:111:10)",
              "filename": "_stream_readable.js",
-             "line": 110,
+             "line": 111,
              "collum": 10
             },
             {
-             "description": "onread (fs.js:1822:12)",
+             "description": "onread (fs.js:1818:12)",
              "filename": "fs.js",
-             "line": 1822,
+             "line": 1818,
              "collum": 12
             },
             {
@@ -481,13 +481,13 @@
            "children": [
             {
              "name": "FSReqWrap",
-             "init": 20278745,
-             "destroy": 20633909,
+             "init": 18915783,
+             "destroy": 19259859,
              "before": [
-              20589351
+              19218408
              ],
              "after": [
-              20630135
+              19257080
              ],
              "stack": [
               {
@@ -497,58 +497,58 @@
                "collum": 11
               },
               {
-               "description": "close (fs.js:1851:8)",
+               "description": "close (fs.js:1847:8)",
                "filename": "fs.js",
-               "line": 1851,
+               "line": 1847,
                "collum": 8
               },
               {
-               "description": "ReadStream.close (fs.js:1848:3)",
+               "description": "ReadStream.close (fs.js:1844:3)",
                "filename": "fs.js",
-               "line": 1848,
+               "line": 1844,
                "collum": 3
               },
               {
-               "description": "ReadStream.destroy (fs.js:1832:8)",
+               "description": "ReadStream.destroy (fs.js:1828:8)",
                "filename": "fs.js",
-               "line": 1832,
+               "line": 1828,
                "collum": 8
               },
               {
-               "description": "ReadStream.<anonymous> (fs.js:1747:12)",
+               "description": "ReadStream.<anonymous> (fs.js:1743:12)",
                "filename": "fs.js",
-               "line": 1747,
+               "line": 1743,
                "collum": 12
               },
               {
-               "description": "emitNone (events.js:72:20)",
+               "description": "emitNone (events.js:85:20)",
                "filename": "events.js",
-               "line": 72,
+               "line": 85,
                "collum": 20
               },
               {
-               "description": "ReadStream.emit (events.js:166:7)",
+               "description": "ReadStream.emit (events.js:179:7)",
                "filename": "events.js",
-               "line": 166,
+               "line": 179,
                "collum": 7
               },
               {
-               "description": "endReadableNT (_stream_readable.js:905:12)",
+               "description": "endReadableNT (_stream_readable.js:913:12)",
                "filename": "_stream_readable.js",
-               "line": 905,
+               "line": 913,
                "collum": 12
               },
               {
-               "description": "nextTickCallbackWith2Args (node.js:455:9)",
+               "description": "_combinedTickCallback (node.js:377:13)",
                "filename": "node.js",
-               "line": 455,
-               "collum": 9
+               "line": 377,
+               "collum": 13
               },
               {
-               "description": "process._tickCallback (node.js:369:17)",
+               "description": "process._tickCallback (node.js:401:11)",
                "filename": "node.js",
-               "line": 369,
-               "collum": 17
+               "line": 401,
+               "collum": 11
               }
              ],
              "children": []
@@ -559,37 +559,37 @@
         },
         {
          "name": "NextTickWrap",
-         "init": 19370311,
-         "destroy": 19646585,
+         "init": 17854934,
+         "destroy": 18106782,
          "before": [
-          19591098
+          18054689
          ],
          "after": [
-          19642707
+          18104335
          ],
          "stack": [
           {
-           "description": "maybeReadMore (_stream_readable.js:425:13)",
+           "description": "maybeReadMore (_stream_readable.js:433:13)",
            "filename": "_stream_readable.js",
-           "line": 425,
+           "line": 433,
            "collum": 13
           },
           {
-           "description": "readableAddChunk (_stream_readable.js:160:7)",
+           "description": "readableAddChunk (_stream_readable.js:168:7)",
            "filename": "_stream_readable.js",
-           "line": 160,
+           "line": 168,
            "collum": 7
           },
           {
-           "description": "ReadStream.Readable.push (_stream_readable.js:110:10)",
+           "description": "ReadStream.Readable.push (_stream_readable.js:111:10)",
            "filename": "_stream_readable.js",
-           "line": 110,
+           "line": 111,
            "collum": 10
           },
           {
-           "description": "onread (fs.js:1822:12)",
+           "description": "onread (fs.js:1818:12)",
            "filename": "fs.js",
-           "line": 1822,
+           "line": 1818,
            "collum": 12
           },
           {
@@ -607,33 +607,33 @@
     },
     {
      "name": "Pipe",
-     "init": 13814938,
+     "init": 12360814,
      "destroy": null,
      "before": [],
      "after": [],
      "stack": [
       {
-       "description": "createHandle (net.js:30:31)",
+       "description": "createHandle (net.js:32:31)",
        "filename": "net.js",
-       "line": 30,
+       "line": 32,
        "collum": 31
       },
       {
-       "description": "new Socket (net.js:128:20)",
+       "description": "new Socket (net.js:130:20)",
        "filename": "net.js",
-       "line": 128,
+       "line": 130,
        "collum": 20
       },
       {
-       "description": "createWritableStdioStream (node.js:619:18)",
+       "description": "createWritableStdioStream (node.js:571:18)",
        "filename": "node.js",
-       "line": 619,
+       "line": 571,
        "collum": 18
       },
       {
-       "description": "process.stdout (node.js:645:16)",
+       "description": "process.stdout (node.js:597:16)",
        "filename": "node.js",
-       "line": 645,
+       "line": 597,
        "collum": 16
       },
       {
@@ -643,33 +643,33 @@
        "collum": 45
       },
       {
-       "description": "Module._compile (module.js:398:26)",
+       "description": "Module._compile (module.js:413:34)",
        "filename": "module.js",
-       "line": 398,
-       "collum": 26
+       "line": 413,
+       "collum": 34
       },
       {
-       "description": "Object.Module._extensions..js (module.js:405:10)",
+       "description": "Object.Module._extensions..js (module.js:422:10)",
        "filename": "module.js",
-       "line": 405,
+       "line": 422,
        "collum": 10
       },
       {
-       "description": "Module.load (module.js:344:32)",
+       "description": "Module.load (module.js:357:32)",
        "filename": "module.js",
-       "line": 344,
+       "line": 357,
        "collum": 32
       },
       {
-       "description": "Function.Module._load (module.js:301:12)",
+       "description": "Function.Module._load (module.js:314:12)",
        "filename": "module.js",
-       "line": 301,
+       "line": 314,
        "collum": 12
       },
       {
-       "description": "Function.Module.runMain (module.js:430:10)",
+       "description": "Function.Module.runMain (module.js:447:10)",
        "filename": "module.js",
-       "line": 430,
+       "line": 447,
        "collum": 10
       },
       {
@@ -679,9 +679,9 @@
        "collum": 18
       },
       {
-       "description": "node.js:980:3",
+       "description": "node.js:933:3",
        "filename": "node.js",
-       "line": 980,
+       "line": 933,
        "collum": 3
       }
      ],
@@ -689,37 +689,37 @@
     },
     {
      "name": "NextTickWrap",
-     "init": 15148497,
-     "destroy": 16511899,
+     "init": 13451917,
+     "destroy": 14897292,
      "before": [
-      15917793
+      14304723
      ],
      "after": [
-      16443096
+      14834241
      ],
      "stack": [
       {
-       "description": "resume (_stream_readable.js:711:13)",
+       "description": "resume (_stream_readable.js:719:13)",
        "filename": "_stream_readable.js",
-       "line": 711,
+       "line": 719,
        "collum": 13
       },
       {
-       "description": "ReadStream.Readable.resume (_stream_readable.js:703:5)",
+       "description": "ReadStream.Readable.resume (_stream_readable.js:711:5)",
        "filename": "_stream_readable.js",
-       "line": 703,
+       "line": 711,
        "collum": 5
       },
       {
-       "description": "ReadStream.Readable.on (_stream_readable.js:670:10)",
+       "description": "ReadStream.Readable.on (_stream_readable.js:678:10)",
        "filename": "_stream_readable.js",
-       "line": 670,
+       "line": 678,
        "collum": 10
       },
       {
-       "description": "ReadStream.Readable.pipe (_stream_readable.js:525:7)",
+       "description": "ReadStream.Readable.pipe (_stream_readable.js:533:7)",
        "filename": "_stream_readable.js",
-       "line": 525,
+       "line": 533,
        "collum": 7
       },
       {
@@ -729,33 +729,33 @@
        "collum": 33
       },
       {
-       "description": "Module._compile (module.js:398:26)",
+       "description": "Module._compile (module.js:413:34)",
        "filename": "module.js",
-       "line": 398,
-       "collum": 26
+       "line": 413,
+       "collum": 34
       },
       {
-       "description": "Object.Module._extensions..js (module.js:405:10)",
+       "description": "Object.Module._extensions..js (module.js:422:10)",
        "filename": "module.js",
-       "line": 405,
+       "line": 422,
        "collum": 10
       },
       {
-       "description": "Module.load (module.js:344:32)",
+       "description": "Module.load (module.js:357:32)",
        "filename": "module.js",
-       "line": 344,
+       "line": 357,
        "collum": 32
       },
       {
-       "description": "Function.Module._load (module.js:301:12)",
+       "description": "Function.Module._load (module.js:314:12)",
        "filename": "module.js",
-       "line": 301,
+       "line": 314,
        "collum": 12
       },
       {
-       "description": "Function.Module.runMain (module.js:430:10)",
+       "description": "Function.Module.runMain (module.js:447:10)",
        "filename": "module.js",
-       "line": 430,
+       "line": 447,
        "collum": 10
       },
       {
@@ -765,9 +765,9 @@
        "collum": 18
       },
       {
-       "description": "node.js:980:3",
+       "description": "node.js:933:3",
        "filename": "node.js",
-       "line": 980,
+       "line": 933,
        "collum": 3
       }
      ],
