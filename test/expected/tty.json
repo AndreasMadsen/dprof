@@ -2,17 +2,17 @@
  "stdout": "'use strict';\nrequire('../../dprof.js');\n\nvar fs = require('fs');\n\nfs.createReadStream(__filename).pipe(process.stdout);\n",
  "stderr": "",
  "dump": {
-  "total": 19410006,
-  "version": "0.13.0",
+  "total": 19301385,
+  "version": "0.14.0",
   "root": {
    "name": "root",
    "init": 0,
-   "destroy": 14084219,
+   "destroy": 14012221,
    "before": [
     0
    ],
    "after": [
-    14053333
+    13981188
    ],
    "stack": [
     {
@@ -103,13 +103,13 @@
    "children": [
     {
      "name": "FSReqWrap",
-     "init": 3960254,
-     "destroy": 15915499,
+     "init": 3961588,
+     "destroy": 15843980,
      "before": [
-      15165738
+      15091286
      ],
      "after": [
-      15895920
+      15823838
      ],
      "stack": [
       {
@@ -188,13 +188,13 @@
      "children": [
       {
        "name": "FSReqWrap",
-       "init": 15615402,
-       "destroy": 18112781,
+       "init": 15543979,
+       "destroy": 18013184,
        "before": [
-        15934639
+        15862662
        ],
        "after": [
-        17922782
+        17822912
        ],
        "stack": [
         {
@@ -249,13 +249,13 @@
        "children": [
         {
          "name": "NextTickWrap",
-         "init": 17065340,
-         "destroy": 18051015,
+         "init": 16984435,
+         "destroy": 17951584,
          "before": [
-          17944369
+          17845266
          ],
          "after": [
-          18046980
+          17947499
          ],
          "stack": [
           {
@@ -353,13 +353,13 @@
         },
         {
          "name": "FSReqWrap",
-         "init": 17678163,
-         "destroy": 19209458,
+         "init": 17585308,
+         "destroy": 19102245,
          "before": [
-          18122043
+          18022125
          ],
          "after": [
-          18421704
+          18318395
          ],
          "stack": [
           {
@@ -408,13 +408,13 @@
          "children": [
           {
            "name": "NextTickWrap",
-           "init": 18376766,
-           "destroy": 19204821,
+           "init": 18273762,
+           "destroy": 19097805,
            "before": [
-            18424970
+            18321789
            ],
            "after": [
-            19201138
+            19094201
            ],
            "stack": [
             {
@@ -481,13 +481,13 @@
            "children": [
             {
              "name": "FSReqWrap",
-             "init": 18915783,
-             "destroy": 19259859,
+             "init": 18807908,
+             "destroy": 19155670,
              "before": [
-              19218408
+              19111034
              ],
              "after": [
-              19257080
+              19152867
              ],
              "stack": [
               {
@@ -559,13 +559,13 @@
         },
         {
          "name": "NextTickWrap",
-         "init": 17854934,
-         "destroy": 18106782,
+         "init": 17755926,
+         "destroy": 18007987,
          "before": [
-          18054689
+          17955238
          ],
          "after": [
-          18104335
+          18005432
          ],
          "stack": [
           {
@@ -607,7 +607,7 @@
     },
     {
      "name": "Pipe",
-     "init": 12360814,
+     "init": 12323506,
      "destroy": null,
      "before": [],
      "after": [],
@@ -689,13 +689,13 @@
     },
     {
      "name": "NextTickWrap",
-     "init": 13451917,
-     "destroy": 14897292,
+     "init": 13414760,
+     "destroy": 14821785,
      "before": [
-      14304723
+      14234426
      ],
      "after": [
-      14834241
+      14759276
      ],
      "stack": [
       {

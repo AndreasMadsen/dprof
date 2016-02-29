@@ -2,17 +2,17 @@
  "stdout": "",
  "stderr": "",
  "dump": {
-  "total": 58183308,
-  "version": "0.13.0",
+  "total": 53496081,
+  "version": "0.14.0",
   "root": {
    "name": "root",
    "init": 0,
-   "destroy": 24119700,
+   "destroy": 19823951,
    "before": [
     0
    ],
    "after": [
-    24068052
+    19777160
    ],
    "stack": [
     {
@@ -103,13 +103,13 @@
    "children": [
     {
      "name": "GetAddrInfoReqWrap",
-     "init": 23060487,
-     "destroy": 42760332,
+     "init": 18836557,
+     "destroy": 37877697,
      "before": [
-      25802165
+      21324901
      ],
      "after": [
-      33212395
+      28525160
      ],
      "stack": [
       {
@@ -182,13 +182,13 @@
      "children": [
       {
        "name": "TCP",
-       "init": 31704290,
-       "destroy": 57678170,
+       "init": 27051874,
+       "destroy": 52985331,
        "before": [
-        42854409
+        37967095
        ],
        "after": [
-        45160812
+        40289868
        ],
        "stack": [
         {
@@ -231,26 +231,26 @@
        "children": [
         {
          "name": "TCP",
-         "init": 42833161,
-         "destroy": 53750404,
+         "init": 37949810,
+         "destroy": 49047962,
          "before": [
-          53572325
+          48865080
          ],
          "after": [
-          53746849
+          49040687
          ],
          "stack": [],
          "children": []
         },
         {
          "name": "NextTickWrap",
-         "init": 45005113,
-         "destroy": 45303047,
+         "init": 40135980,
+         "destroy": 40430297,
          "before": [
-          45166404
+          40295308
          ],
          "after": [
-          45299733
+          40426947
          ],
          "stack": [
           {
@@ -302,13 +302,13 @@
       },
       {
        "name": "NextTickWrap",
-       "init": 32881592,
-       "destroy": 40011131,
+       "init": 28204701,
+       "destroy": 35187238,
        "before": [
-        33270006
+        28582023
        ],
        "after": [
-        39936053
+        35113188
        ],
        "stack": [
         {
@@ -345,15 +345,15 @@
        "children": [
         {
          "name": "TCP",
-         "init": 37491248,
-         "destroy": 58073533,
+         "init": 32759076,
+         "destroy": 53385376,
          "before": [
-          53784801,
-          57753653
+          49078885,
+          53025274
          ],
          "after": [
-          55533213,
-          58069388
+          50785558,
+          53381504
          ],
          "stack": [
           {
@@ -444,13 +444,13 @@
          "children": [
           {
            "name": "NextTickWrap",
-           "init": 54599488,
-           "destroy": 56133203,
+           "init": 49873807,
+           "destroy": 51400981,
            "before": [
-            55537322
+            50789471
            ],
            "after": [
-            56129708
+            51397654
            ],
            "stack": [
             {
@@ -541,13 +541,13 @@
            "children": [
             {
              "name": "NextTickWrap",
-             "init": 55768951,
-             "destroy": 57404975,
+             "init": 51037765,
+             "destroy": 52639297,
              "before": [
-              56444241
+              51714285
              ],
              "after": [
-              57402122
+              52636677
              ],
              "stack": [
               {
@@ -590,13 +590,13 @@
              "children": [
               {
                "name": "ShutdownWrap",
-               "init": 56753663,
-               "destroy": 57693643,
+               "init": 52018791,
+               "destroy": 53022222,
                "before": [
-                57683980
+                53011493
                ],
                "after": [
-                57691649
+                53019790
                ],
                "stack": [
                 {
@@ -688,13 +688,13 @@
               },
               {
                "name": "NextTickWrap",
-               "init": 57352712,
-               "destroy": 57669122,
+               "init": 52588710,
+               "destroy": 52874609,
                "before": [
-                57598353
+                52819118
                ],
                "after": [
-                57663340
+                52871742
                ],
                "stack": [
                 {
@@ -752,13 +752,13 @@
             },
             {
              "name": "NextTickWrap",
-             "init": 55920214,
-             "destroy": 57411433,
+             "init": 51188622,
+             "destroy": 52645523,
              "before": [
-              57408046
+              52642310
              ],
              "after": [
-              57410196
+              52644300
              ],
              "stack": [
               {
@@ -802,13 +802,13 @@
             },
             {
              "name": "NextTickWrap",
-             "init": 56038433,
-             "destroy": 57420895,
+             "init": 51307577,
+             "destroy": 52657941,
              "before": [
-              57415767
+              52651674
              ],
              "after": [
-              57419575
+              52653385
              ],
              "stack": [
               {
@@ -848,13 +848,13 @@
           },
           {
            "name": "NextTickWrap",
-           "init": 55098033,
-           "destroy": 56230751,
+           "init": 50366121,
+           "destroy": 51498182,
            "before": [
-            56136750
+            51407843
            ],
            "after": [
-            56224800
+            51495428
            ],
            "stack": [
             {
@@ -922,13 +922,13 @@
           },
           {
            "name": "NextTickWrap",
-           "init": 55256433,
-           "destroy": 56426774,
+           "init": 50515587,
+           "destroy": 51693864,
            "before": [
-            56233680
+            51501058
            ],
            "after": [
-            56423939
+            51691170
            ],
            "stack": [
             {
@@ -1001,13 +1001,13 @@
            "children": [
             {
              "name": "NextTickWrap",
-             "init": 56386786,
-             "destroy": 57592095,
+             "init": 51654834,
+             "destroy": 52814703,
              "before": [
-              57422556
+              52659784
              ],
              "after": [
-              57427816
+              52665097
              ],
              "stack": [
               {
@@ -1053,13 +1053,13 @@
           },
           {
            "name": "NextTickWrap",
-           "init": 55497295,
-           "destroy": 56442373,
+           "init": 50750548,
+           "destroy": 51711926,
            "before": [
-            56430160
+            51697255
            ],
            "after": [
-            56440769
+            51707187
            ],
            "stack": [
             {
@@ -1093,13 +1093,13 @@
         },
         {
          "name": "NextTickWrap",
-         "init": 38492634,
-         "destroy": 40517726,
+         "init": 33743949,
+         "destroy": 35688449,
          "before": [
-          40157268
+          35330391
          ],
          "after": [
-          40505433
+          35676708
          ],
          "stack": [
           {
@@ -1196,13 +1196,13 @@
          "children": [
           {
            "name": "TCPConnectWrap",
-           "init": 40378038,
-           "destroy": 45975214,
+           "init": 35542219,
+           "destroy": 41103500,
            "before": [
-            45316324
+            40445859
            ],
            "after": [
-            45970469
+            41098872
            ],
            "stack": [
             {
@@ -1236,13 +1236,13 @@
         },
         {
          "name": "NextTickWrap",
-         "init": 38819797,
-         "destroy": 42149127,
+         "init": 34062987,
+         "destroy": 37269953,
          "before": [
-          40528312
+          35698324
          ],
          "after": [
-          42145162
+          37266220
          ],
          "stack": [
           {
@@ -1339,13 +1339,13 @@
          "children": [
           {
            "name": "NextTickWrap",
-           "init": 40951158,
-           "destroy": 42752958,
+           "init": 36108780,
+           "destroy": 37870584,
            "before": [
-            42154004
+            37274294
            ],
            "after": [
-            42749200
+            37866887
            ],
            "stack": [
             {
@@ -1401,13 +1401,13 @@
     },
     {
      "name": "NextTickWrap",
-     "init": 48504000,
-     "destroy": 51643182,
+     "init": 43777154,
+     "destroy": 46927554,
      "before": [
-      50323960
+      45717857
      ],
      "after": [
-      51625402
+      46910272
      ],
      "stack": [
       {
@@ -1462,13 +1462,13 @@
      "children": [
       {
        "name": "NextTickWrap",
-       "init": 50486594,
-       "destroy": 53428804,
+       "init": 45879819,
+       "destroy": 48694191,
        "before": [
-        53189569
+        48459748
        ],
        "after": [
-        53426332
+        48691796
        ],
        "stack": [
         {
@@ -1529,13 +1529,13 @@
        "children": [
         {
          "name": "NextTickWrap",
-         "init": 53252051,
-         "destroy": 53493353,
+         "init": 48522648,
+         "destroy": 48759200,
          "before": [
-          53488990
+          48755130
          ],
          "after": [
-          53492132
+          48757954
          ],
          "stack": [
           {
@@ -1573,13 +1573,13 @@
         },
         {
          "name": "NextTickWrap",
-         "init": 53335213,
-         "destroy": 53497630,
+         "init": 48606472,
+         "destroy": 48763432,
          "before": [
-          53495000
+          48760787
          ],
          "after": [
-          53496442
+          48762234
          ],
          "stack": [
           {
@@ -1623,13 +1623,13 @@
         },
         {
          "name": "NextTickWrap",
-         "init": 53402053,
-         "destroy": 53503446,
+         "init": 48669186,
+         "destroy": 48769554,
          "before": [
-          53499006
+          48764880
          ],
          "after": [
-          53500389
+          48768277
          ],
          "stack": [
           {
@@ -1671,13 +1671,13 @@
     },
     {
      "name": "NextTickWrap",
-     "init": 49298386,
-     "destroy": 52832336,
+     "init": 44617553,
+     "destroy": 48108056,
      "before": [
-      51667882
+      46952020
      ],
      "after": [
-      52828153
+      48104188
      ],
      "stack": [
       {
@@ -1762,13 +1762,13 @@
      "children": [
       {
        "name": "ShutdownWrap",
-       "init": 51924356,
-       "destroy": 53568877,
+       "init": 47201102,
+       "destroy": 48861846,
        "before": [
-        53513253
+        48778388
        ],
        "after": [
-        53565770
+        48858636
        ],
        "stack": [
         {
@@ -1818,7 +1818,7 @@
       },
       {
        "name": "Pipe",
-       "init": 52485753,
+       "init": 47765704,
        "destroy": null,
        "before": [],
        "after": [],
@@ -1908,13 +1908,13 @@
     },
     {
      "name": "NextTickWrap",
-     "init": 50004972,
-     "destroy": 53186319,
+     "init": 45400631,
+     "destroy": 48456514,
      "before": [
-      52836887
+      48112800
      ],
      "after": [
-      53183242
+      48453627
      ],
      "stack": [
       {
@@ -1951,13 +1951,13 @@
      "children": [
       {
        "name": "NextTickWrap",
-       "init": 53084542,
-       "destroy": 53484613,
+       "init": 48359361,
+       "destroy": 48752506,
        "before": [
-        53431793
+        48697040
        ],
        "after": [
-        53482166
+        48747715
        ],
        "stack": [
         {
