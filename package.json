@@ -1,7 +1,7 @@
 {
   "name": "dprof",
   "description": "Dynamic profiling for node",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "author": "Andreas Madsen <amwebdk@gmail.com>",
   "main": "./dprof.js",
   "bin": {
