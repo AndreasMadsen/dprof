@@ -75,8 +75,8 @@ Each `Node` then have the format:
 
 ```javascript
 {
-  name: String,    // Handle name of the async operation
-  stack: [         // Contains the stack leading up to the async operation
+  name: String,      // Handle name of the async operation
+  stack: [           // Contains the stack leading up to the async operation
     {
       description: String,
       filename: String,
@@ -84,13 +84,15 @@ Each `Node` then have the format:
       line: Number
     }, ...
   ],
-  init: Number,    // Timestamp for when the async operation is requested.
-  before: Number,  // Timestamp for when the callback is about to be called.
-  after: Number    // Timestamp for when the callback is finished.
-                   // All timestamps are relative to the process startup time
-                   // and the unit is nanoseconds.
+  init: Number,      // Timestamp for when the async operation is requested.
+  before: [Number],  // Timestamp for when the callback is about to be called.
+                     // This is an array because a callback may be called more
+                     // than once.
+  after: [Number],   // Timestamp for when the callback is finished.
+                     // All timestamps are relative to the process startup time
+                     // and the unit is nanoseconds.
 
-  children: [      // Shows async operations created in the callback
+  children: [        // Shows async operations created in the callback
     Node, ...
   ]
 }
