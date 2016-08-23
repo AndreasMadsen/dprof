@@ -1,23 +1,30 @@
-#dprof
+# dprof
 
-> Sync but mostly async profiling and visualizing done dynamically
+> Dynamic profiling & visualization for sync and async operations
+
+```shell
+node -r dprof my-script.js
+# ...
+gzcat dprof.json.gz | dprof
+```
 
 ## Installation
 
-```sheel
+```shell
 npm install dprof
 npm install -g dprof
 ```
 
 ## Example
 
-* Add `require('dprof')` to the beginning of you script to profile it.
-* Run the script, when done a `dprof.json.gz` is created in your `cwd`.
-* To start the visualizer run `gzcat dprof.json.gz | dprof`
-* Now open [http://localhost:3343](http://localhost:3343) in your browser
+1. Run the script with `-r`/`--require dprof` and wait for it to finish.
+  - When done a `dprof.json.gz` is
+  created in your `cwd`.
+2. To start the visualizer run `gzcat dprof.json.gz | dprof`.
+3. Now open [http://localhost:3343](http://localhost:3343) in your browser.
 
 ```javascript
-require('dprof');
+// my-script.js
 
 var fs = require('fs');
 
@@ -52,16 +59,16 @@ The visualizer is WIP, you are welcome to contribute with major changes to the e
 
 ![Visualizer](https://github.com/AndreasMadsen/dprof/blob/master/visualizer.png)
 
-* Blue: time spend waiting for async response
-* Red: time spend doing callback (sync)
-* Black: Indicates when the async request was made.
+* Blue: time spent waiting for async response.
+* Red: time spent executing the callback code (blocking).
+* Black: when the async request was made.
 
 ## Format
 
 The `dprof.json.gz` file is a GZIP compressed JSON file. It is possible
 to get an uncompressed file, just set the environment variable `NODE_DPROF_DEBUG`.
 
-The format `dprof.json` is simple, there is an initial part:
+There is an initial object containing metadata and a "root" node:
 
 ```javascript
 {
@@ -71,7 +78,7 @@ The format `dprof.json` is simple, there is an initial part:
 }
 ```
 
-Each `Node` then have the format:
+Each nested `Node` has the following format:
 
 ```javascript
 {
