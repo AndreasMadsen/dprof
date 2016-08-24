@@ -1,15 +1,15 @@
 'use strict';
 require('../../dprof.js');
 
-var fs = require('fs');
+const fs = require('fs');
 
 setTimeout(function () {
 
   fs.open(__filename, 'r', function (err1, fd) {
     if (err1) throw err1;
 
-    var count = 0;
-    var a = new Buffer(10);
+    let count = 0;
+    const a = new Buffer(10);
     fs.read(fd, a, 0, 10, 0, function (err2) {
       if (err2) throw err2;
 
@@ -17,7 +17,7 @@ setTimeout(function () {
       if (count === 2) close();
     });
 
-    var b = new Buffer(10);
+    const b = new Buffer(10);
     fs.read(fd, b, 0, 10, 10, function (err2) {
       if (err2) throw err2;
 

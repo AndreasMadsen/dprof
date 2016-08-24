@@ -3,10 +3,12 @@
     "node": true,
     "es6": true
   },
+  "extends": "eslint:recommended",
   "rules": {
     "quotes": [1, "single", "avoid-escape"],
     "curly": 0,
     "strict": [2, "global"],
+    "no-console": 0,
     "no-shadow": 0,
     "no-underscore-dangle": 0,
     "no-use-before-define": [1, "nofunc"],

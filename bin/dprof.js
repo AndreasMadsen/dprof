@@ -63,7 +63,7 @@ async.parallel([
     'debug': true,
     'noParse': [files.d3, files.dump]
   });
-  b.transform("babelify", {presets: ["es2015"]});
+  b.transform('babelify', {presets: ['es2015']});
   b.require(startpoint(datadump), {
     'file': files.dump
   });
