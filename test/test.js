@@ -16,7 +16,7 @@ interpreted({
   source: SCRIPTS_DIR,
   expected: path.resolve(__dirname, 'expected'),
 
-  update: true,
+  update: false,
 
   test: function (name, content, callback) {
     const scriptPath = path.resolve(SCRIPTS_DIR, name + '.js');

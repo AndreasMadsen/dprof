@@ -2,53 +2,59 @@
  "stdout": "hallo world\n",
  "stderr": "",
  "dump": {
-  "total": 16318279,
+  "total": 17749865,
   "version": "0.14.0",
   "root": {
    "name": "root",
    "init": 0,
-   "destroy": 15448303,
+   "destroy": 16341231,
    "before": [
     0
    ],
    "after": [
-    15417388
+    16308872
    ],
    "stack": [
     {
-     "description": "Module._compile (module.js:413:34)",
+     "description": "Module._compile (module.js:541:32)",
      "filename": "module.js",
-     "line": 413,
-     "collum": 34
-    },
-    {
-     "description": "Object.Module._extensions..js (module.js:422:10)",
-     "filename": "module.js",
-     "line": 422,
-     "collum": 10
-    },
-    {
-     "description": "Module.load (module.js:357:32)",
-     "filename": "module.js",
-     "line": 357,
+     "line": 541,
      "collum": 32
     },
     {
-     "description": "Function.Module._load (module.js:314:12)",
+     "description": "Object.Module._extensions..js (module.js:550:10)",
      "filename": "module.js",
-     "line": 314,
+     "line": 550,
+     "collum": 10
+    },
+    {
+     "description": "Module.load (module.js:458:32)",
+     "filename": "module.js",
+     "line": 458,
+     "collum": 32
+    },
+    {
+     "description": "tryModuleLoad (module.js:417:12)",
+     "filename": "module.js",
+     "line": 417,
      "collum": 12
     },
     {
-     "description": "Module.require (module.js:367:17)",
+     "description": "Function.Module._load (module.js:409:3)",
      "filename": "module.js",
-     "line": 367,
+     "line": 409,
+     "collum": 3
+    },
+    {
+     "description": "Module.require (module.js:468:17)",
+     "filename": "module.js",
+     "line": 468,
      "collum": 17
     },
     {
-     "description": "require (internal/module.js:16:19)",
+     "description": "require (internal/module.js:20:19)",
      "filename": "internal/module.js",
-     "line": 16,
+     "line": 20,
      "collum": 19
     },
     {
@@ -58,103 +64,115 @@
      "collum": 1
     },
     {
-     "description": "Module._compile (module.js:413:34)",
+     "description": "Module._compile (module.js:541:32)",
      "filename": "module.js",
-     "line": 413,
-     "collum": 34
-    },
-    {
-     "description": "Object.Module._extensions..js (module.js:422:10)",
-     "filename": "module.js",
-     "line": 422,
-     "collum": 10
-    },
-    {
-     "description": "Module.load (module.js:357:32)",
-     "filename": "module.js",
-     "line": 357,
+     "line": 541,
      "collum": 32
     },
     {
-     "description": "Function.Module._load (module.js:314:12)",
+     "description": "Object.Module._extensions..js (module.js:550:10)",
      "filename": "module.js",
-     "line": 314,
-     "collum": 12
-    },
-    {
-     "description": "Function.Module.runMain (module.js:447:10)",
-     "filename": "module.js",
-     "line": 447,
+     "line": 550,
      "collum": 10
     },
     {
-     "description": "startup (node.js:141:18)",
-     "filename": "node.js",
-     "line": 141,
-     "collum": 18
+     "description": "Module.load (module.js:458:32)",
+     "filename": "module.js",
+     "line": 458,
+     "collum": 32
     },
     {
-     "description": "node.js:933:3",
-     "filename": "node.js",
-     "line": 933,
+     "description": "tryModuleLoad (module.js:417:12)",
+     "filename": "module.js",
+     "line": 417,
+     "collum": 12
+    },
+    {
+     "description": "Function.Module._load (module.js:409:3)",
+     "filename": "module.js",
+     "line": 409,
+     "collum": 3
+    },
+    {
+     "description": "Module.runMain (module.js:575:10)",
+     "filename": "module.js",
+     "line": 575,
+     "collum": 10
+    },
+    {
+     "description": "run (bootstrap_node.js:352:7)",
+     "filename": "bootstrap_node.js",
+     "line": 352,
+     "collum": 7
+    },
+    {
+     "description": "startup (bootstrap_node.js:144:9)",
+     "filename": "bootstrap_node.js",
+     "line": 144,
+     "collum": 9
+    },
+    {
+     "description": "bootstrap_node.js:467:3",
+     "filename": "bootstrap_node.js",
+     "line": 467,
      "collum": 3
     }
    ],
    "children": [
     {
      "name": "Pipe",
-     "init": 11116593,
+     "init": 11480930,
      "destroy": null,
      "before": [],
      "after": [],
      "stack": [
       {
-       "description": "createHandle (net.js:32:31)",
+       "description": "createHandle (net.js:33:31)",
        "filename": "net.js",
-       "line": 32,
+       "line": 33,
        "collum": 31
       },
       {
-       "description": "new Socket (net.js:130:20)",
+       "description": "new Socket (net.js:138:20)",
        "filename": "net.js",
-       "line": 130,
+       "line": 138,
        "collum": 20
       },
       {
-       "description": "createWritableStdioStream (node.js:571:18)",
-       "filename": "node.js",
-       "line": 571,
-       "collum": 18
-      },
-      {
-       "description": "process.stdout (node.js:597:16)",
-       "filename": "node.js",
-       "line": 597,
+       "description": "createWritableStdioStream (internal/process/stdio.js:156:16)",
+       "filename": "internal/process/stdio.js",
+       "line": 156,
        "collum": 16
       },
       {
-       "description": "console.js:93:37",
+       "description": "process.getStdout [as stdout] (internal/process/stdio.js:10:14)",
+       "filename": "internal/process/stdio.js",
+       "line": 10,
+       "collum": 14
+      },
+      {
+       "description": "console.js:100:37",
        "filename": "console.js",
-       "line": 93,
+       "line": 100,
        "collum": 37
       },
       {
-       "description": "NativeModule.compile (node.js:924:5)",
-       "filename": "node.js",
-       "line": 924,
-       "collum": 5
+       "description": "NativeModule.compile (bootstrap_node.js:455:7)",
+       "filename": "bootstrap_node.js",
+       "line": 455,
+       "collum": 7
       },
       {
-       "description": "Function.NativeModule.require (node.js:869:18)",
-       "filename": "node.js",
-       "line": 869,
+       "description": "Function.NativeModule.require (bootstrap_node.js:396:18)",
+       "filename": "bootstrap_node.js",
+       "line": 396,
        "collum": 18
       },
       {
-       "description": "node.js:235:27",
-       "filename": "node.js",
-       "line": 235,
-       "collum": 27
+       "description": "Object.defineProperty.get (bootstrap_node.js:240:29)",
+       "filename": "bootstrap_node.js",
+       "line": 240,
+       "collum": 29
       },
       {
        "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/console-log.js:4:1)",
@@ -163,45 +181,57 @@
        "collum": 1
       },
       {
-       "description": "Module._compile (module.js:413:34)",
+       "description": "Module._compile (module.js:541:32)",
        "filename": "module.js",
-       "line": 413,
-       "collum": 34
-      },
-      {
-       "description": "Object.Module._extensions..js (module.js:422:10)",
-       "filename": "module.js",
-       "line": 422,
-       "collum": 10
-      },
-      {
-       "description": "Module.load (module.js:357:32)",
-       "filename": "module.js",
-       "line": 357,
+       "line": 541,
        "collum": 32
       },
       {
-       "description": "Function.Module._load (module.js:314:12)",
+       "description": "Object.Module._extensions..js (module.js:550:10)",
        "filename": "module.js",
-       "line": 314,
-       "collum": 12
-      },
-      {
-       "description": "Function.Module.runMain (module.js:447:10)",
-       "filename": "module.js",
-       "line": 447,
+       "line": 550,
        "collum": 10
       },
       {
-       "description": "startup (node.js:141:18)",
-       "filename": "node.js",
-       "line": 141,
-       "collum": 18
+       "description": "Module.load (module.js:458:32)",
+       "filename": "module.js",
+       "line": 458,
+       "collum": 32
       },
       {
-       "description": "node.js:933:3",
-       "filename": "node.js",
-       "line": 933,
+       "description": "tryModuleLoad (module.js:417:12)",
+       "filename": "module.js",
+       "line": 417,
+       "collum": 12
+      },
+      {
+       "description": "Function.Module._load (module.js:409:3)",
+       "filename": "module.js",
+       "line": 409,
+       "collum": 3
+      },
+      {
+       "description": "Module.runMain (module.js:575:10)",
+       "filename": "module.js",
+       "line": 575,
+       "collum": 10
+      },
+      {
+       "description": "run (bootstrap_node.js:352:7)",
+       "filename": "bootstrap_node.js",
+       "line": 352,
+       "collum": 7
+      },
+      {
+       "description": "startup (bootstrap_node.js:144:9)",
+       "filename": "bootstrap_node.js",
+       "line": 144,
+       "collum": 9
+      },
+      {
+       "description": "bootstrap_node.js:467:3",
+       "filename": "bootstrap_node.js",
+       "line": 467,
        "collum": 3
       }
      ],
@@ -209,58 +239,58 @@
     },
     {
      "name": "Pipe",
-     "init": 12579878,
+     "init": 13034610,
      "destroy": null,
      "before": [],
      "after": [],
      "stack": [
       {
-       "description": "createHandle (net.js:32:31)",
+       "description": "createHandle (net.js:33:31)",
        "filename": "net.js",
-       "line": 32,
+       "line": 33,
        "collum": 31
       },
       {
-       "description": "new Socket (net.js:130:20)",
+       "description": "new Socket (net.js:138:20)",
        "filename": "net.js",
-       "line": 130,
+       "line": 138,
        "collum": 20
       },
       {
-       "description": "createWritableStdioStream (node.js:571:18)",
-       "filename": "node.js",
-       "line": 571,
-       "collum": 18
-      },
-      {
-       "description": "process.stderr (node.js:612:16)",
-       "filename": "node.js",
-       "line": 612,
+       "description": "createWritableStdioStream (internal/process/stdio.js:156:16)",
+       "filename": "internal/process/stdio.js",
+       "line": 156,
        "collum": 16
       },
       {
-       "description": "console.js:93:53",
+       "description": "process.getStderr [as stderr] (internal/process/stdio.js:23:14)",
+       "filename": "internal/process/stdio.js",
+       "line": 23,
+       "collum": 14
+      },
+      {
+       "description": "console.js:100:53",
        "filename": "console.js",
-       "line": 93,
+       "line": 100,
        "collum": 53
       },
       {
-       "description": "NativeModule.compile (node.js:924:5)",
-       "filename": "node.js",
-       "line": 924,
-       "collum": 5
+       "description": "NativeModule.compile (bootstrap_node.js:455:7)",
+       "filename": "bootstrap_node.js",
+       "line": 455,
+       "collum": 7
       },
       {
-       "description": "Function.NativeModule.require (node.js:869:18)",
-       "filename": "node.js",
-       "line": 869,
+       "description": "Function.NativeModule.require (bootstrap_node.js:396:18)",
+       "filename": "bootstrap_node.js",
+       "line": 396,
        "collum": 18
       },
       {
-       "description": "node.js:235:27",
-       "filename": "node.js",
-       "line": 235,
-       "collum": 27
+       "description": "Object.defineProperty.get (bootstrap_node.js:240:29)",
+       "filename": "bootstrap_node.js",
+       "line": 240,
+       "collum": 29
       },
       {
        "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/console-log.js:4:1)",
@@ -269,45 +299,57 @@
        "collum": 1
       },
       {
-       "description": "Module._compile (module.js:413:34)",
+       "description": "Module._compile (module.js:541:32)",
        "filename": "module.js",
-       "line": 413,
-       "collum": 34
-      },
-      {
-       "description": "Object.Module._extensions..js (module.js:422:10)",
-       "filename": "module.js",
-       "line": 422,
-       "collum": 10
-      },
-      {
-       "description": "Module.load (module.js:357:32)",
-       "filename": "module.js",
-       "line": 357,
+       "line": 541,
        "collum": 32
       },
       {
-       "description": "Function.Module._load (module.js:314:12)",
+       "description": "Object.Module._extensions..js (module.js:550:10)",
        "filename": "module.js",
-       "line": 314,
-       "collum": 12
-      },
-      {
-       "description": "Function.Module.runMain (module.js:447:10)",
-       "filename": "module.js",
-       "line": 447,
+       "line": 550,
        "collum": 10
       },
       {
-       "description": "startup (node.js:141:18)",
-       "filename": "node.js",
-       "line": 141,
-       "collum": 18
+       "description": "Module.load (module.js:458:32)",
+       "filename": "module.js",
+       "line": 458,
+       "collum": 32
       },
       {
-       "description": "node.js:933:3",
-       "filename": "node.js",
-       "line": 933,
+       "description": "tryModuleLoad (module.js:417:12)",
+       "filename": "module.js",
+       "line": 417,
+       "collum": 12
+      },
+      {
+       "description": "Function.Module._load (module.js:409:3)",
+       "filename": "module.js",
+       "line": 409,
+       "collum": 3
+      },
+      {
+       "description": "Module.runMain (module.js:575:10)",
+       "filename": "module.js",
+       "line": 575,
+       "collum": 10
+      },
+      {
+       "description": "run (bootstrap_node.js:352:7)",
+       "filename": "bootstrap_node.js",
+       "line": 352,
+       "collum": 7
+      },
+      {
+       "description": "startup (bootstrap_node.js:144:9)",
+       "filename": "bootstrap_node.js",
+       "line": 144,
+       "collum": 9
+      },
+      {
+       "description": "bootstrap_node.js:467:3",
+       "filename": "bootstrap_node.js",
+       "line": 467,
        "collum": 3
       }
      ],
@@ -315,19 +357,19 @@
     },
     {
      "name": "NextTickWrap",
-     "init": 14976856,
-     "destroy": 15899586,
+     "init": 15453275,
+     "destroy": 17329013,
      "before": [
-      15681275
+      16791406
      ],
      "after": [
-      15836616
+      17153082
      ],
      "stack": [
       {
-       "description": "onwrite (_stream_writable.js:344:15)",
+       "description": "onwrite (_stream_writable.js:350:15)",
        "filename": "_stream_writable.js",
-       "line": 344,
+       "line": 350,
        "collum": 15
       },
       {
@@ -337,45 +379,45 @@
        "collum": 5
       },
       {
-       "description": "Socket._writeGeneric (net.js:688:5)",
+       "description": "Socket._writeGeneric (net.js:714:5)",
        "filename": "net.js",
-       "line": 688,
+       "line": 714,
        "collum": 5
       },
       {
-       "description": "Socket._write (net.js:698:8)",
+       "description": "Socket._write (net.js:724:8)",
        "filename": "net.js",
-       "line": 698,
+       "line": 724,
        "collum": 8
       },
       {
-       "description": "doWrite (_stream_writable.js:301:12)",
+       "description": "doWrite (_stream_writable.js:307:12)",
        "filename": "_stream_writable.js",
-       "line": 301,
+       "line": 307,
        "collum": 12
       },
       {
-       "description": "writeOrBuffer (_stream_writable.js:287:5)",
+       "description": "writeOrBuffer (_stream_writable.js:293:5)",
        "filename": "_stream_writable.js",
-       "line": 287,
+       "line": 293,
        "collum": 5
       },
       {
-       "description": "Socket.Writable.write (_stream_writable.js:215:11)",
+       "description": "Socket.Writable.write (_stream_writable.js:220:11)",
        "filename": "_stream_writable.js",
-       "line": 215,
+       "line": 220,
        "collum": 11
       },
       {
-       "description": "Socket.write (net.js:624:40)",
+       "description": "Socket.write (net.js:650:40)",
        "filename": "net.js",
-       "line": 624,
+       "line": 650,
        "collum": 40
       },
       {
-       "description": "Console.log (console.js:36:16)",
+       "description": "Console.log (console.js:43:16)",
        "filename": "console.js",
-       "line": 36,
+       "line": 43,
        "collum": 16
       },
       {
@@ -385,45 +427,57 @@
        "collum": 9
       },
       {
-       "description": "Module._compile (module.js:413:34)",
+       "description": "Module._compile (module.js:541:32)",
        "filename": "module.js",
-       "line": 413,
-       "collum": 34
-      },
-      {
-       "description": "Object.Module._extensions..js (module.js:422:10)",
-       "filename": "module.js",
-       "line": 422,
-       "collum": 10
-      },
-      {
-       "description": "Module.load (module.js:357:32)",
-       "filename": "module.js",
-       "line": 357,
+       "line": 541,
        "collum": 32
       },
       {
-       "description": "Function.Module._load (module.js:314:12)",
+       "description": "Object.Module._extensions..js (module.js:550:10)",
        "filename": "module.js",
-       "line": 314,
-       "collum": 12
-      },
-      {
-       "description": "Function.Module.runMain (module.js:447:10)",
-       "filename": "module.js",
-       "line": 447,
+       "line": 550,
        "collum": 10
       },
       {
-       "description": "startup (node.js:141:18)",
-       "filename": "node.js",
-       "line": 141,
-       "collum": 18
+       "description": "Module.load (module.js:458:32)",
+       "filename": "module.js",
+       "line": 458,
+       "collum": 32
       },
       {
-       "description": "node.js:933:3",
-       "filename": "node.js",
-       "line": 933,
+       "description": "tryModuleLoad (module.js:417:12)",
+       "filename": "module.js",
+       "line": 417,
+       "collum": 12
+      },
+      {
+       "description": "Function.Module._load (module.js:409:3)",
+       "filename": "module.js",
+       "line": 409,
+       "collum": 3
+      },
+      {
+       "description": "Module.runMain (module.js:575:10)",
+       "filename": "module.js",
+       "line": 575,
+       "collum": 10
+      },
+      {
+       "description": "run (bootstrap_node.js:352:7)",
+       "filename": "bootstrap_node.js",
+       "line": 352,
+       "collum": 7
+      },
+      {
+       "description": "startup (bootstrap_node.js:144:9)",
+       "filename": "bootstrap_node.js",
+       "line": 144,
+       "collum": 9
+      },
+      {
+       "description": "bootstrap_node.js:467:3",
+       "filename": "bootstrap_node.js",
+       "line": 467,
        "collum": 3
       }
      ],

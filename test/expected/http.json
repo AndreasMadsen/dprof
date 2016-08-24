@@ -2,53 +2,59 @@
  "stdout": "",
  "stderr": "",
  "dump": {
-  "total": 53496081,
+  "total": 63100731,
   "version": "0.14.0",
   "root": {
    "name": "root",
    "init": 0,
-   "destroy": 19823951,
+   "destroy": 23510656,
    "before": [
     0
    ],
    "after": [
-    19777160
+    23419099
    ],
    "stack": [
     {
-     "description": "Module._compile (module.js:413:34)",
+     "description": "Module._compile (module.js:541:32)",
      "filename": "module.js",
-     "line": 413,
-     "collum": 34
-    },
-    {
-     "description": "Object.Module._extensions..js (module.js:422:10)",
-     "filename": "module.js",
-     "line": 422,
-     "collum": 10
-    },
-    {
-     "description": "Module.load (module.js:357:32)",
-     "filename": "module.js",
-     "line": 357,
+     "line": 541,
      "collum": 32
     },
     {
-     "description": "Function.Module._load (module.js:314:12)",
+     "description": "Object.Module._extensions..js (module.js:550:10)",
      "filename": "module.js",
-     "line": 314,
+     "line": 550,
+     "collum": 10
+    },
+    {
+     "description": "Module.load (module.js:458:32)",
+     "filename": "module.js",
+     "line": 458,
+     "collum": 32
+    },
+    {
+     "description": "tryModuleLoad (module.js:417:12)",
+     "filename": "module.js",
+     "line": 417,
      "collum": 12
     },
     {
-     "description": "Module.require (module.js:367:17)",
+     "description": "Function.Module._load (module.js:409:3)",
      "filename": "module.js",
-     "line": 367,
+     "line": 409,
+     "collum": 3
+    },
+    {
+     "description": "Module.require (module.js:468:17)",
+     "filename": "module.js",
+     "line": 468,
      "collum": 17
     },
     {
-     "description": "require (internal/module.js:16:19)",
+     "description": "require (internal/module.js:20:19)",
      "filename": "internal/module.js",
-     "line": 16,
+     "line": 20,
      "collum": 19
     },
     {
@@ -58,76 +64,88 @@
      "collum": 1
     },
     {
-     "description": "Module._compile (module.js:413:34)",
+     "description": "Module._compile (module.js:541:32)",
      "filename": "module.js",
-     "line": 413,
-     "collum": 34
-    },
-    {
-     "description": "Object.Module._extensions..js (module.js:422:10)",
-     "filename": "module.js",
-     "line": 422,
-     "collum": 10
-    },
-    {
-     "description": "Module.load (module.js:357:32)",
-     "filename": "module.js",
-     "line": 357,
+     "line": 541,
      "collum": 32
     },
     {
-     "description": "Function.Module._load (module.js:314:12)",
+     "description": "Object.Module._extensions..js (module.js:550:10)",
      "filename": "module.js",
-     "line": 314,
-     "collum": 12
-    },
-    {
-     "description": "Function.Module.runMain (module.js:447:10)",
-     "filename": "module.js",
-     "line": 447,
+     "line": 550,
      "collum": 10
     },
     {
-     "description": "startup (node.js:141:18)",
-     "filename": "node.js",
-     "line": 141,
-     "collum": 18
+     "description": "Module.load (module.js:458:32)",
+     "filename": "module.js",
+     "line": 458,
+     "collum": 32
     },
     {
-     "description": "node.js:933:3",
-     "filename": "node.js",
-     "line": 933,
+     "description": "tryModuleLoad (module.js:417:12)",
+     "filename": "module.js",
+     "line": 417,
+     "collum": 12
+    },
+    {
+     "description": "Function.Module._load (module.js:409:3)",
+     "filename": "module.js",
+     "line": 409,
+     "collum": 3
+    },
+    {
+     "description": "Module.runMain (module.js:575:10)",
+     "filename": "module.js",
+     "line": 575,
+     "collum": 10
+    },
+    {
+     "description": "run (bootstrap_node.js:352:7)",
+     "filename": "bootstrap_node.js",
+     "line": 352,
+     "collum": 7
+    },
+    {
+     "description": "startup (bootstrap_node.js:144:9)",
+     "filename": "bootstrap_node.js",
+     "line": 144,
+     "collum": 9
+    },
+    {
+     "description": "bootstrap_node.js:467:3",
+     "filename": "bootstrap_node.js",
+     "line": 467,
      "collum": 3
     }
    ],
    "children": [
     {
      "name": "GetAddrInfoReqWrap",
-     "init": 18836557,
-     "destroy": 37877697,
+     "init": 22200826,
+     "destroy": 44828600,
      "before": [
-      21324901
+      25181511
      ],
      "after": [
-      28525160
+      33108848
      ],
      "stack": [
       {
-       "description": "Object.lookup (dns.js:165:19)",
+       "description": "Object.lookup (dns.js:167:19)",
        "filename": "dns.js",
-       "line": 165,
+       "line": 167,
        "collum": 19
       },
       {
-       "description": "listenAfterLookup (net.js:1371:20)",
+       "description": "listenAfterLookup (net.js:1393:20)",
        "filename": "net.js",
-       "line": 1371,
+       "line": 1393,
        "collum": 20
       },
       {
-       "description": "Server.listen (net.js:1367:5)",
+       "description": "Server.listen (net.js:1389:5)",
        "filename": "net.js",
-       "line": 1367,
+       "line": 1389,
        "collum": 5
       },
       {
@@ -137,139 +155,814 @@
        "collum": 8
       },
       {
-       "description": "Module._compile (module.js:413:34)",
+       "description": "Module._compile (module.js:541:32)",
        "filename": "module.js",
-       "line": 413,
-       "collum": 34
-      },
-      {
-       "description": "Object.Module._extensions..js (module.js:422:10)",
-       "filename": "module.js",
-       "line": 422,
-       "collum": 10
-      },
-      {
-       "description": "Module.load (module.js:357:32)",
-       "filename": "module.js",
-       "line": 357,
+       "line": 541,
        "collum": 32
       },
       {
-       "description": "Function.Module._load (module.js:314:12)",
+       "description": "Object.Module._extensions..js (module.js:550:10)",
        "filename": "module.js",
-       "line": 314,
-       "collum": 12
-      },
-      {
-       "description": "Function.Module.runMain (module.js:447:10)",
-       "filename": "module.js",
-       "line": 447,
+       "line": 550,
        "collum": 10
       },
       {
-       "description": "startup (node.js:141:18)",
-       "filename": "node.js",
-       "line": 141,
-       "collum": 18
+       "description": "Module.load (module.js:458:32)",
+       "filename": "module.js",
+       "line": 458,
+       "collum": 32
       },
       {
-       "description": "node.js:933:3",
-       "filename": "node.js",
-       "line": 933,
+       "description": "tryModuleLoad (module.js:417:12)",
+       "filename": "module.js",
+       "line": 417,
+       "collum": 12
+      },
+      {
+       "description": "Function.Module._load (module.js:409:3)",
+       "filename": "module.js",
+       "line": 409,
+       "collum": 3
+      },
+      {
+       "description": "Module.runMain (module.js:575:10)",
+       "filename": "module.js",
+       "line": 575,
+       "collum": 10
+      },
+      {
+       "description": "run (bootstrap_node.js:352:7)",
+       "filename": "bootstrap_node.js",
+       "line": 352,
+       "collum": 7
+      },
+      {
+       "description": "startup (bootstrap_node.js:144:9)",
+       "filename": "bootstrap_node.js",
+       "line": 144,
+       "collum": 9
+      },
+      {
+       "description": "bootstrap_node.js:467:3",
+       "filename": "bootstrap_node.js",
+       "line": 467,
        "collum": 3
       }
      ],
      "children": [
       {
        "name": "TCP",
-       "init": 27051874,
-       "destroy": 52985331,
+       "init": 31660046,
+       "destroy": 62149726,
        "before": [
-        37967095
+        44924920
        ],
        "after": [
-        40289868
+        47533951
        ],
        "stack": [
         {
-         "description": "createServerHandle (net.js:1157:14)",
+         "description": "createServerHandle (net.js:1179:14)",
          "filename": "net.js",
-         "line": 1157,
+         "line": 1179,
          "collum": 14
         },
         {
-         "description": "Server._listen2 (net.js:1215:14)",
+         "description": "Server._listen2 (net.js:1236:14)",
          "filename": "net.js",
-         "line": 1215,
+         "line": 1236,
          "collum": 14
         },
         {
-         "description": "listen (net.js:1267:10)",
+         "description": "listen (net.js:1288:10)",
          "filename": "net.js",
-         "line": 1267,
+         "line": 1288,
          "collum": 10
         },
         {
-         "description": "net.js:1376:9",
+         "description": "net.js:1398:9",
          "filename": "net.js",
-         "line": 1376,
+         "line": 1398,
          "collum": 9
         },
         {
-         "description": "GetAddrInfoReqWrap.asyncCallback [as callback] (dns.js:63:16)",
+         "description": "GetAddrInfoReqWrap.asyncCallback [as callback] (dns.js:65:16)",
          "filename": "dns.js",
-         "line": 63,
+         "line": 65,
          "collum": 16
         },
         {
-         "description": "GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:82:10)",
+         "description": "GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:84:10)",
          "filename": "dns.js",
-         "line": 82,
+         "line": 84,
          "collum": 10
         }
        ],
        "children": [
         {
          "name": "TCP",
-         "init": 37949810,
-         "destroy": 49047962,
+         "init": 44908772,
+         "destroy": 56980086,
          "before": [
-          48865080
+          56784723
          ],
          "after": [
-          49040687
+          56976285
          ],
          "stack": [],
          "children": []
         },
         {
-         "name": "NextTickWrap",
-         "init": 40135980,
-         "destroy": 40430297,
+         "name": "HTTPParser",
+         "init": 46918608,
+         "destroy": null,
          "before": [
-          40295308
+          48565917,
+          53452429,
+          54109998
          ],
          "after": [
-          40426947
+          53439652,
+          54104136,
+          54252440
          ],
          "stack": [
           {
-           "description": "resume (_stream_readable.js:719:13)",
-           "filename": "_stream_readable.js",
-           "line": 719,
+           "description": "new <anonymous> (_http_common.js:159:16)",
+           "filename": "_http_common.js",
+           "line": 159,
+           "collum": 16
+          },
+          {
+           "description": "exports.FreeList.alloc (internal/freelist.js:14:46)",
+           "filename": "internal/freelist.js",
+           "line": 14,
+           "collum": 46
+          },
+          {
+           "description": "Server.connectionListener (_http_server.js:316:24)",
+           "filename": "_http_server.js",
+           "line": 316,
+           "collum": 24
+          },
+          {
+           "description": "emitOne (events.js:96:13)",
+           "filename": "events.js",
+           "line": 96,
            "collum": 13
           },
           {
-           "description": "Socket.Readable.resume (_stream_readable.js:711:5)",
+           "description": "Server.emit (events.js:188:7)",
+           "filename": "events.js",
+           "line": 188,
+           "collum": 7
+          },
+          {
+           "description": "TCP.onconnection (net.js:1458:8)",
+           "filename": "net.js",
+           "line": 1458,
+           "collum": 8
+          }
+         ],
+         "children": [
+          {
+           "name": "NextTickWrap",
+           "init": 51821886,
+           "destroy": 54792810,
+           "before": [
+            54256723
+           ],
+           "after": [
+            54788592
+           ],
+           "stack": [
+            {
+             "description": "ServerResponse.OutgoingMessage._writeRaw (_http_outgoing.js:162:17)",
+             "filename": "_http_outgoing.js",
+             "line": 162,
+             "collum": 17
+            },
+            {
+             "description": "ServerResponse.OutgoingMessage._send (_http_outgoing.js:141:15)",
+             "filename": "_http_outgoing.js",
+             "line": 141,
+             "collum": 15
+            },
+            {
+             "description": "ServerResponse.OutgoingMessage.end (_http_outgoing.js:587:16)",
+             "filename": "_http_outgoing.js",
+             "line": 587,
+             "collum": 16
+            },
+            {
+             "description": "Server.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js:8:7)",
+             "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js",
+             "line": 8,
+             "collum": 7
+            },
+            {
+             "description": "emitTwo (events.js:106:13)",
+             "filename": "events.js",
+             "line": 106,
+             "collum": 13
+            },
+            {
+             "description": "Server.emit (events.js:191:7)",
+             "filename": "events.js",
+             "line": 191,
+             "collum": 7
+            },
+            {
+             "description": "HTTPParser.parserOnIncoming [as onIncoming] (_http_server.js:543:12)",
+             "filename": "_http_server.js",
+             "line": 543,
+             "collum": 12
+            },
+            {
+             "description": "HTTPParser.parserOnHeadersComplete (_http_common.js:105:23)",
+             "filename": "_http_common.js",
+             "line": 105,
+             "collum": 23
+            }
+           ],
+           "children": [
+            {
+             "name": "NextTickWrap",
+             "init": 54424408,
+             "destroy": 56646327,
+             "before": [
+              56329871
+             ],
+             "after": [
+              56644028
+             ],
+             "stack": [
+              {
+               "description": "resume (_stream_readable.js:731:13)",
+               "filename": "_stream_readable.js",
+               "line": 731,
+               "collum": 13
+              },
+              {
+               "description": "IncomingMessage.Readable.resume (_stream_readable.js:723:5)",
+               "filename": "_stream_readable.js",
+               "line": 723,
+               "collum": 5
+              },
+              {
+               "description": "IncomingMessage._dump (_http_incoming.js:187:10)",
+               "filename": "_http_incoming.js",
+               "line": 187,
+               "collum": 10
+              },
+              {
+               "description": "ServerResponse.resOnFinish (_http_server.js:508:13)",
+               "filename": "_http_server.js",
+               "line": 508,
+               "collum": 13
+              },
+              {
+               "description": "emitNone (events.js:86:13)",
+               "filename": "events.js",
+               "line": 86,
+               "collum": 13
+              },
+              {
+               "description": "ServerResponse.emit (events.js:185:7)",
+               "filename": "events.js",
+               "line": 185,
+               "collum": 7
+              },
+              {
+               "description": "finish (_http_outgoing.js:580:10)",
+               "filename": "_http_outgoing.js",
+               "line": 580,
+               "collum": 10
+              },
+              {
+               "description": "_combinedTickCallback (internal/process/next_tick.js:67:7)",
+               "filename": "internal/process/next_tick.js",
+               "line": 67,
+               "collum": 7
+              },
+              {
+               "description": "process._tickCallback (internal/process/next_tick.js:98:9)",
+               "filename": "internal/process/next_tick.js",
+               "line": 98,
+               "collum": 9
+              }
+             ],
+             "children": [
+              {
+               "name": "NextTickWrap",
+               "init": 56428496,
+               "destroy": 56710084,
+               "before": [
+                56706322
+               ],
+               "after": [
+                56708828
+               ],
+               "stack": [
+                {
+                 "description": "endReadable (_stream_readable.js:966:13)",
+                 "filename": "_stream_readable.js",
+                 "line": 966,
+                 "collum": 13
+                },
+                {
+                 "description": "IncomingMessage.Readable.read (_stream_readable.js:300:7)",
+                 "filename": "_stream_readable.js",
+                 "line": 300,
+                 "collum": 7
+                },
+                {
+                 "description": "resume_ (_stream_readable.js:738:12)",
+                 "filename": "_stream_readable.js",
+                 "line": 738,
+                 "collum": 12
+                },
+                {
+                 "description": "_combinedTickCallback (internal/process/next_tick.js:74:11)",
+                 "filename": "internal/process/next_tick.js",
+                 "line": 74,
+                 "collum": 11
+                },
+                {
+                 "description": "process._tickCallback (internal/process/next_tick.js:98:9)",
+                 "filename": "internal/process/next_tick.js",
+                 "line": 98,
+                 "collum": 9
+                }
+               ],
+               "children": []
+              },
+              {
+               "name": "NextTickWrap",
+               "init": 56548970,
+               "destroy": 56713630,
+               "before": [
+                56711406
+               ],
+               "after": [
+                56712554
+               ],
+               "stack": [
+                {
+                 "description": "endReadable (_stream_readable.js:966:13)",
+                 "filename": "_stream_readable.js",
+                 "line": 966,
+                 "collum": 13
+                },
+                {
+                 "description": "IncomingMessage.Readable.read (_stream_readable.js:300:7)",
+                 "filename": "_stream_readable.js",
+                 "line": 300,
+                 "collum": 7
+                },
+                {
+                 "description": "flow (_stream_readable.js:762:34)",
+                 "filename": "_stream_readable.js",
+                 "line": 762,
+                 "collum": 34
+                },
+                {
+                 "description": "resume_ (_stream_readable.js:744:3)",
+                 "filename": "_stream_readable.js",
+                 "line": 744,
+                 "collum": 3
+                },
+                {
+                 "description": "_combinedTickCallback (internal/process/next_tick.js:74:11)",
+                 "filename": "internal/process/next_tick.js",
+                 "line": 74,
+                 "collum": 11
+                },
+                {
+                 "description": "process._tickCallback (internal/process/next_tick.js:98:9)",
+                 "filename": "internal/process/next_tick.js",
+                 "line": 98,
+                 "collum": 9
+                }
+               ],
+               "children": []
+              },
+              {
+               "name": "NextTickWrap",
+               "init": 56617130,
+               "destroy": 56718734,
+               "before": [
+                56714790
+               ],
+               "after": [
+                56715810
+               ],
+               "stack": [
+                {
+                 "description": "endReadable (_stream_readable.js:966:13)",
+                 "filename": "_stream_readable.js",
+                 "line": 966,
+                 "collum": 13
+                },
+                {
+                 "description": "IncomingMessage.Readable.read (_stream_readable.js:300:7)",
+                 "filename": "_stream_readable.js",
+                 "line": 300,
+                 "collum": 7
+                },
+                {
+                 "description": "resume_ (_stream_readable.js:746:12)",
+                 "filename": "_stream_readable.js",
+                 "line": 746,
+                 "collum": 12
+                },
+                {
+                 "description": "_combinedTickCallback (internal/process/next_tick.js:74:11)",
+                 "filename": "internal/process/next_tick.js",
+                 "line": 74,
+                 "collum": 11
+                },
+                {
+                 "description": "process._tickCallback (internal/process/next_tick.js:98:9)",
+                 "filename": "internal/process/next_tick.js",
+                 "line": 98,
+                 "collum": 9
+                }
+               ],
+               "children": []
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "name": "NextTickWrap",
+           "init": 52445433,
+           "destroy": 56085759,
+           "before": [
+            54800388
+           ],
+           "after": [
+            56079766
+           ],
+           "stack": [
+            {
+             "description": "onwrite (_stream_writable.js:350:15)",
+             "filename": "_stream_writable.js",
+             "line": 350,
+             "collum": 15
+            },
+            {
+             "description": "WritableState.onwrite (_stream_writable.js:89:5)",
+             "filename": "_stream_writable.js",
+             "line": 89,
+             "collum": 5
+            },
+            {
+             "description": "Socket._writeGeneric (net.js:714:5)",
+             "filename": "net.js",
+             "line": 714,
+             "collum": 5
+            },
+            {
+             "description": "Socket._write (net.js:724:8)",
+             "filename": "net.js",
+             "line": 724,
+             "collum": 8
+            },
+            {
+             "description": "doWrite (_stream_writable.js:307:12)",
+             "filename": "_stream_writable.js",
+             "line": 307,
+             "collum": 12
+            },
+            {
+             "description": "clearBuffer (_stream_writable.js:414:7)",
+             "filename": "_stream_writable.js",
+             "line": 414,
+             "collum": 7
+            },
+            {
+             "description": "Socket.Writable.uncork (_stream_writable.js:243:7)",
+             "filename": "_stream_writable.js",
+             "line": 243,
+             "collum": 7
+            },
+            {
+             "description": "ServerResponse.OutgoingMessage.end (_http_outgoing.js:591:21)",
+             "filename": "_http_outgoing.js",
+             "line": 591,
+             "collum": 21
+            },
+            {
+             "description": "Server.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js:8:7)",
+             "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js",
+             "line": 8,
+             "collum": 7
+            },
+            {
+             "description": "emitTwo (events.js:106:13)",
+             "filename": "events.js",
+             "line": 106,
+             "collum": 13
+            },
+            {
+             "description": "Server.emit (events.js:191:7)",
+             "filename": "events.js",
+             "line": 191,
+             "collum": 7
+            },
+            {
+             "description": "HTTPParser.parserOnIncoming [as onIncoming] (_http_server.js:543:12)",
+             "filename": "_http_server.js",
+             "line": 543,
+             "collum": 12
+            },
+            {
+             "description": "HTTPParser.parserOnHeadersComplete (_http_common.js:105:23)",
+             "filename": "_http_common.js",
+             "line": 105,
+             "collum": 23
+            }
+           ],
+           "children": [
+            {
+             "name": "ShutdownWrap",
+             "init": 55011440,
+             "destroy": 56781843,
+             "before": [
+              56728273
+             ],
+             "after": [
+              56778572
+             ],
+             "stack": [
+              {
+               "description": "Socket.onSocketFinish (net.js:225:26)",
+               "filename": "net.js",
+               "line": 225,
+               "collum": 26
+              },
+              {
+               "description": "emitNone (events.js:91:20)",
+               "filename": "events.js",
+               "line": 91,
+               "collum": 20
+              },
+              {
+               "description": "Socket.emit (events.js:185:7)",
+               "filename": "events.js",
+               "line": 185,
+               "collum": 7
+              },
+              {
+               "description": "finishMaybe (_stream_writable.js:488:14)",
+               "filename": "_stream_writable.js",
+               "line": 488,
+               "collum": 14
+              },
+              {
+               "description": "afterWrite (_stream_writable.js:362:3)",
+               "filename": "_stream_writable.js",
+               "line": 362,
+               "collum": 3
+              },
+              {
+               "description": "_combinedTickCallback (internal/process/next_tick.js:80:20)",
+               "filename": "internal/process/next_tick.js",
+               "line": 80,
+               "collum": 20
+              },
+              {
+               "description": "process._tickCallback (internal/process/next_tick.js:98:9)",
+               "filename": "internal/process/next_tick.js",
+               "line": 98,
+               "collum": 9
+              }
+             ],
+             "children": []
+            },
+            {
+             "name": "Pipe",
+             "init": 55634318,
+             "destroy": null,
+             "before": [],
+             "after": [],
+             "stack": [
+              {
+               "description": "createHandle (net.js:33:31)",
+               "filename": "net.js",
+               "line": 33,
+               "collum": 31
+              },
+              {
+               "description": "new Socket (net.js:138:20)",
+               "filename": "net.js",
+               "line": 138,
+               "collum": 20
+              },
+              {
+               "description": "createWritableStdioStream (internal/process/stdio.js:156:16)",
+               "filename": "internal/process/stdio.js",
+               "line": 156,
+               "collum": 16
+              },
+              {
+               "description": "process.getStderr [as stderr] (internal/process/stdio.js:23:14)",
+               "filename": "internal/process/stdio.js",
+               "line": 23,
+               "collum": 14
+              },
+              {
+               "description": "Socket._destroy (net.js:484:25)",
+               "filename": "net.js",
+               "line": 484,
+               "collum": 25
+              },
+              {
+               "description": "Socket.destroy (net.js:518:8)",
+               "filename": "net.js",
+               "line": 518,
+               "collum": 8
+              },
+              {
+               "description": "Socket.g (events.js:286:16)",
+               "filename": "events.js",
+               "line": 286,
+               "collum": 16
+              },
+              {
+               "description": "emitNone (events.js:91:20)",
+               "filename": "events.js",
+               "line": 91,
+               "collum": 20
+              },
+              {
+               "description": "Socket.emit (events.js:185:7)",
+               "filename": "events.js",
+               "line": 185,
+               "collum": 7
+              },
+              {
+               "description": "finishMaybe (_stream_writable.js:488:14)",
+               "filename": "_stream_writable.js",
+               "line": 488,
+               "collum": 14
+              },
+              {
+               "description": "afterWrite (_stream_writable.js:362:3)",
+               "filename": "_stream_writable.js",
+               "line": 362,
+               "collum": 3
+              },
+              {
+               "description": "_combinedTickCallback (internal/process/next_tick.js:80:20)",
+               "filename": "internal/process/next_tick.js",
+               "line": 80,
+               "collum": 20
+              },
+              {
+               "description": "process._tickCallback (internal/process/next_tick.js:98:9)",
+               "filename": "internal/process/next_tick.js",
+               "line": 98,
+               "collum": 9
+              }
+             ],
+             "children": []
+            }
+           ]
+          },
+          {
+           "name": "NextTickWrap",
+           "init": 53951406,
+           "destroy": 56324296,
+           "before": [
+            56090253
+           ],
+           "after": [
+            56321848
+           ],
+           "stack": [
+            {
+             "description": "emitReadable (_stream_readable.js:425:15)",
+             "filename": "_stream_readable.js",
+             "line": 425,
+             "collum": 15
+            },
+            {
+             "description": "onEofChunk (_stream_readable.js:412:3)",
+             "filename": "_stream_readable.js",
+             "line": 412,
+             "collum": 3
+            },
+            {
+             "description": "readableAddChunk (_stream_readable.js:154:5)",
+             "filename": "_stream_readable.js",
+             "line": 154,
+             "collum": 5
+            },
+            {
+             "description": "IncomingMessage.Readable.push (_stream_readable.js:135:10)",
+             "filename": "_stream_readable.js",
+             "line": 135,
+             "collum": 10
+            },
+            {
+             "description": "HTTPParser.parserOnMessageComplete (_http_common.js:150:12)",
+             "filename": "_http_common.js",
+             "line": 150,
+             "collum": 12
+            }
+           ],
+           "children": [
+            {
+             "name": "NextTickWrap",
+             "init": 56269681,
+             "destroy": 56703589,
+             "before": [
+              56649173
+             ],
+             "after": [
+              56699168
+             ],
+             "stack": [
+              {
+               "description": "endReadable (_stream_readable.js:966:13)",
+               "filename": "_stream_readable.js",
+               "line": 966,
+               "collum": 13
+              },
+              {
+               "description": "IncomingMessage.Readable.read (_stream_readable.js:300:7)",
+               "filename": "_stream_readable.js",
+               "line": 300,
+               "collum": 7
+              },
+              {
+               "description": "IncomingMessage.read (_http_incoming.js:81:15)",
+               "filename": "_http_incoming.js",
+               "line": 81,
+               "collum": 15
+              },
+              {
+               "description": "flow (_stream_readable.js:762:34)",
+               "filename": "_stream_readable.js",
+               "line": 762,
+               "collum": 34
+              },
+              {
+               "description": "emitReadable_ (_stream_readable.js:434:3)",
+               "filename": "_stream_readable.js",
+               "line": 434,
+               "collum": 3
+              },
+              {
+               "description": "_combinedTickCallback (internal/process/next_tick.js:71:11)",
+               "filename": "internal/process/next_tick.js",
+               "line": 71,
+               "collum": 11
+              },
+              {
+               "description": "process._tickCallback (internal/process/next_tick.js:98:9)",
+               "filename": "internal/process/next_tick.js",
+               "line": 98,
+               "collum": 9
+              }
+             ],
+             "children": []
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "name": "NextTickWrap",
+         "init": 47360511,
+         "destroy": 47739043,
+         "before": [
+          47540335
+         ],
+         "after": [
+          47735473
+         ],
+         "stack": [
+          {
+           "description": "resume (_stream_readable.js:731:13)",
            "filename": "_stream_readable.js",
-           "line": 711,
+           "line": 731,
+           "collum": 13
+          },
+          {
+           "description": "Socket.Readable.resume (_stream_readable.js:723:5)",
+           "filename": "_stream_readable.js",
+           "line": 723,
            "collum": 5
           },
           {
-           "description": "Socket.Readable.on (_stream_readable.js:678:10)",
+           "description": "Socket.Readable.on (_stream_readable.js:693:12)",
            "filename": "_stream_readable.js",
-           "line": 678,
-           "collum": 10
+           "line": 693,
+           "collum": 12
           },
           {
            "description": "Server.connectionListener (_http_server.js:334:10)",
@@ -278,21 +971,21 @@
            "collum": 10
           },
           {
-           "description": "emitOne (events.js:90:13)",
+           "description": "emitOne (events.js:96:13)",
            "filename": "events.js",
-           "line": 90,
+           "line": 96,
            "collum": 13
           },
           {
-           "description": "Server.emit (events.js:182:7)",
+           "description": "Server.emit (events.js:188:7)",
            "filename": "events.js",
-           "line": 182,
+           "line": 188,
            "collum": 7
           },
           {
-           "description": "TCP.onconnection (net.js:1436:8)",
+           "description": "TCP.onconnection (net.js:1458:8)",
            "filename": "net.js",
-           "line": 1436,
+           "line": 1458,
            "collum": 8
           }
          ],
@@ -302,88 +995,88 @@
       },
       {
        "name": "NextTickWrap",
-       "init": 28204701,
-       "destroy": 35187238,
+       "init": 32833791,
+       "destroy": 41508494,
        "before": [
-        28582023
+        33199848
        ],
        "after": [
-        35113188
+        41431293
        ],
        "stack": [
         {
-         "description": "Server._listen2 (net.js:1245:11)",
+         "description": "Server._listen2 (net.js:1266:11)",
          "filename": "net.js",
-         "line": 1245,
+         "line": 1266,
          "collum": 11
         },
         {
-         "description": "listen (net.js:1267:10)",
+         "description": "listen (net.js:1288:10)",
          "filename": "net.js",
-         "line": 1267,
+         "line": 1288,
          "collum": 10
         },
         {
-         "description": "net.js:1376:9",
+         "description": "net.js:1398:9",
          "filename": "net.js",
-         "line": 1376,
+         "line": 1398,
          "collum": 9
         },
         {
-         "description": "GetAddrInfoReqWrap.asyncCallback [as callback] (dns.js:63:16)",
+         "description": "GetAddrInfoReqWrap.asyncCallback [as callback] (dns.js:65:16)",
          "filename": "dns.js",
-         "line": 63,
+         "line": 65,
          "collum": 16
         },
         {
-         "description": "GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:82:10)",
+         "description": "GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:84:10)",
          "filename": "dns.js",
-         "line": 82,
+         "line": 84,
          "collum": 10
         }
        ],
        "children": [
         {
          "name": "TCP",
-         "init": 32759076,
-         "destroy": 53385376,
+         "init": 38722881,
+         "destroy": 63010687,
          "before": [
-          49078885,
-          53025274
+          57011673,
+          62375537
          ],
          "after": [
-          50785558,
-          53381504
+          58738053,
+          63002313
          ],
          "stack": [
           {
-           "description": "Socket.connect (net.js:884:40)",
+           "description": "Socket.connect (net.js:913:40)",
            "filename": "net.js",
-           "line": 884,
+           "line": 913,
            "collum": 40
           },
           {
-           "description": "Agent.exports.connect.exports.createConnection (net.js:65:35)",
+           "description": "Agent.exports.connect.exports.createConnection (net.js:70:35)",
            "filename": "net.js",
-           "line": 65,
+           "line": 70,
            "collum": 35
           },
           {
-           "description": "Agent.createSocket (_http_agent.js:179:26)",
+           "description": "Agent.createSocket (_http_agent.js:187:26)",
            "filename": "_http_agent.js",
-           "line": 179,
+           "line": 187,
            "collum": 26
           },
           {
-           "description": "Agent.addRequest (_http_agent.js:141:10)",
+           "description": "Agent.addRequest (_http_agent.js:149:10)",
            "filename": "_http_agent.js",
-           "line": 141,
+           "line": 149,
            "collum": 10
           },
           {
-           "description": "new ClientRequest (_http_client.js:147:16)",
+           "description": "new ClientRequest (_http_client.js:158:16)",
            "filename": "_http_client.js",
-           "line": 147,
+           "line": 158,
            "collum": 16
           },
           {
@@ -399,351 +1092,753 @@
            "collum": 21
           },
           {
-           "description": "Server.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js:13:20)",
+           "description": "Server.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js:13:8)",
            "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js",
            "line": 13,
-           "collum": 20
+           "collum": 8
           },
           {
-           "description": "Server.g (events.js:273:16)",
+           "description": "Server.g (events.js:286:16)",
            "filename": "events.js",
-           "line": 273,
+           "line": 286,
            "collum": 16
           },
           {
-           "description": "emitNone (events.js:80:13)",
+           "description": "emitNone (events.js:86:13)",
            "filename": "events.js",
-           "line": 80,
+           "line": 86,
            "collum": 13
           },
           {
-           "description": "Server.emit (events.js:179:7)",
+           "description": "Server.emit (events.js:185:7)",
            "filename": "events.js",
-           "line": 179,
+           "line": 185,
            "collum": 7
           },
           {
-           "description": "emitListeningNT (net.js:1257:10)",
+           "description": "emitListeningNT (net.js:1278:10)",
            "filename": "net.js",
-           "line": 1257,
+           "line": 1278,
            "collum": 10
           },
           {
-           "description": "_combinedTickCallback (node.js:374:13)",
-           "filename": "node.js",
-           "line": 374,
+           "description": "_combinedTickCallback (internal/process/next_tick.js:71:11)",
+           "filename": "internal/process/next_tick.js",
+           "line": 71,
+           "collum": 11
+          },
+          {
+           "description": "process._tickCallback (internal/process/next_tick.js:98:9)",
+           "filename": "internal/process/next_tick.js",
+           "line": 98,
+           "collum": 9
+          }
+         ],
+         "children": []
+        },
+        {
+         "name": "NextTickWrap",
+         "init": 39608672,
+         "destroy": 42223559,
+         "before": [
+          41656715
+         ],
+         "after": [
+          42177345
+         ],
+         "stack": [
+          {
+           "description": "lookupAndConnect (net.js:961:13)",
+           "filename": "net.js",
+           "line": 961,
            "collum": 13
           },
           {
-           "description": "process._tickCallback (node.js:401:11)",
-           "filename": "node.js",
-           "line": 401,
+           "description": "Socket.connect (net.js:929:5)",
+           "filename": "net.js",
+           "line": 929,
+           "collum": 5
+          },
+          {
+           "description": "Agent.exports.connect.exports.createConnection (net.js:70:35)",
+           "filename": "net.js",
+           "line": 70,
+           "collum": 35
+          },
+          {
+           "description": "Agent.createSocket (_http_agent.js:187:26)",
+           "filename": "_http_agent.js",
+           "line": 187,
+           "collum": 26
+          },
+          {
+           "description": "Agent.addRequest (_http_agent.js:149:10)",
+           "filename": "_http_agent.js",
+           "line": 149,
+           "collum": 10
+          },
+          {
+           "description": "new ClientRequest (_http_client.js:158:16)",
+           "filename": "_http_client.js",
+           "line": 158,
+           "collum": 16
+          },
+          {
+           "description": "Object.exports.request (http.js:31:10)",
+           "filename": "http.js",
+           "line": 31,
+           "collum": 10
+          },
+          {
+           "description": "Object.exports.get (http.js:35:21)",
+           "filename": "http.js",
+           "line": 35,
+           "collum": 21
+          },
+          {
+           "description": "Server.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js:13:8)",
+           "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js",
+           "line": 13,
+           "collum": 8
+          },
+          {
+           "description": "Server.g (events.js:286:16)",
+           "filename": "events.js",
+           "line": 286,
+           "collum": 16
+          },
+          {
+           "description": "emitNone (events.js:86:13)",
+           "filename": "events.js",
+           "line": 86,
+           "collum": 13
+          },
+          {
+           "description": "Server.emit (events.js:185:7)",
+           "filename": "events.js",
+           "line": 185,
+           "collum": 7
+          },
+          {
+           "description": "emitListeningNT (net.js:1278:10)",
+           "filename": "net.js",
+           "line": 1278,
+           "collum": 10
+          },
+          {
+           "description": "_combinedTickCallback (internal/process/next_tick.js:71:11)",
+           "filename": "internal/process/next_tick.js",
+           "line": 71,
            "collum": 11
+          },
+          {
+           "description": "process._tickCallback (internal/process/next_tick.js:98:9)",
+           "filename": "internal/process/next_tick.js",
+           "line": 98,
+           "collum": 9
           }
          ],
          "children": [
           {
-           "name": "NextTickWrap",
-           "init": 49873807,
-           "destroy": 51400981,
+           "name": "TCPConnectWrap",
+           "init": 41990788,
+           "destroy": 48483366,
            "before": [
-            50789471
+            47754115
            ],
            "after": [
-            51397654
+            48478248
            ],
            "stack": [
             {
-             "description": "resume (_stream_readable.js:719:13)",
-             "filename": "_stream_readable.js",
-             "line": 719,
-             "collum": 13
+             "description": "connect (net.js:854:26)",
+             "filename": "net.js",
+             "line": 854,
+             "collum": 26
             },
             {
-             "description": "IncomingMessage.Readable.resume (_stream_readable.js:711:5)",
-             "filename": "_stream_readable.js",
-             "line": 711,
-             "collum": 5
-            },
-            {
-             "description": "ClientRequest.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js:14:9)",
-             "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js",
-             "line": 14,
+             "description": "net.js:963:9",
+             "filename": "net.js",
+             "line": 963,
              "collum": 9
             },
             {
-             "description": "ClientRequest.g (events.js:273:16)",
-             "filename": "events.js",
-             "line": 273,
+             "description": "_combinedTickCallback (internal/process/next_tick.js:67:7)",
+             "filename": "internal/process/next_tick.js",
+             "line": 67,
+             "collum": 7
+            },
+            {
+             "description": "process._tickCallback (internal/process/next_tick.js:98:9)",
+             "filename": "internal/process/next_tick.js",
+             "line": 98,
+             "collum": 9
+            }
+           ],
+           "children": []
+          }
+         ]
+        },
+        {
+         "name": "NextTickWrap",
+         "init": 40426008,
+         "destroy": 44259323,
+         "before": [
+          42253864
+         ],
+         "after": [
+          44255451
+         ],
+         "stack": [
+          {
+           "description": "ClientRequest.onSocket (_http_client.js:566:11)",
+           "filename": "_http_client.js",
+           "line": 566,
+           "collum": 11
+          },
+          {
+           "description": "_http_agent.js:156:11",
+           "filename": "_http_agent.js",
+           "line": 156,
+           "collum": 11
+          },
+          {
+           "description": "oncreate (_http_agent.js:227:5)",
+           "filename": "_http_agent.js",
+           "line": 227,
+           "collum": 5
+          },
+          {
+           "description": "Agent.createSocket (_http_agent.js:189:5)",
+           "filename": "_http_agent.js",
+           "line": 189,
+           "collum": 5
+          },
+          {
+           "description": "Agent.addRequest (_http_agent.js:149:10)",
+           "filename": "_http_agent.js",
+           "line": 149,
+           "collum": 10
+          },
+          {
+           "description": "new ClientRequest (_http_client.js:158:16)",
+           "filename": "_http_client.js",
+           "line": 158,
+           "collum": 16
+          },
+          {
+           "description": "Object.exports.request (http.js:31:10)",
+           "filename": "http.js",
+           "line": 31,
+           "collum": 10
+          },
+          {
+           "description": "Object.exports.get (http.js:35:21)",
+           "filename": "http.js",
+           "line": 35,
+           "collum": 21
+          },
+          {
+           "description": "Server.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js:13:8)",
+           "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js",
+           "line": 13,
+           "collum": 8
+          },
+          {
+           "description": "Server.g (events.js:286:16)",
+           "filename": "events.js",
+           "line": 286,
+           "collum": 16
+          },
+          {
+           "description": "emitNone (events.js:86:13)",
+           "filename": "events.js",
+           "line": 86,
+           "collum": 13
+          },
+          {
+           "description": "Server.emit (events.js:185:7)",
+           "filename": "events.js",
+           "line": 185,
+           "collum": 7
+          },
+          {
+           "description": "emitListeningNT (net.js:1278:10)",
+           "filename": "net.js",
+           "line": 1278,
+           "collum": 10
+          },
+          {
+           "description": "_combinedTickCallback (internal/process/next_tick.js:71:11)",
+           "filename": "internal/process/next_tick.js",
+           "line": 71,
+           "collum": 11
+          },
+          {
+           "description": "process._tickCallback (internal/process/next_tick.js:98:9)",
+           "filename": "internal/process/next_tick.js",
+           "line": 98,
+           "collum": 9
+          }
+         ],
+         "children": [
+          {
+           "name": "HTTPParser",
+           "init": 42612242,
+           "destroy": null,
+           "before": [
+            57328709,
+            58117795,
+            58289753
+           ],
+           "after": [
+            58112691,
+            58285486,
+            58495758
+           ],
+           "stack": [
+            {
+             "description": "new <anonymous> (_http_common.js:159:16)",
+             "filename": "_http_common.js",
+             "line": 159,
              "collum": 16
             },
             {
-             "description": "emitOne (events.js:90:13)",
-             "filename": "events.js",
-             "line": 90,
-             "collum": 13
+             "description": "exports.FreeList.alloc (internal/freelist.js:14:46)",
+             "filename": "internal/freelist.js",
+             "line": 14,
+             "collum": 46
             },
             {
-             "description": "ClientRequest.emit (events.js:182:7)",
-             "filename": "events.js",
-             "line": 182,
-             "collum": 7
-            },
-            {
-             "description": "HTTPParser.parserOnIncomingClient [as onIncoming] (_http_client.js:458:21)",
+             "description": "tickOnSocket (_http_client.js:533:24)",
              "filename": "_http_client.js",
-             "line": 458,
-             "collum": 21
+             "line": 533,
+             "collum": 24
             },
             {
-             "description": "HTTPParser.parserOnHeadersComplete (_http_common.js:103:23)",
-             "filename": "_http_common.js",
-             "line": 103,
-             "collum": 23
-            },
-            {
-             "description": "Socket.socketOnData (_http_client.js:348:20)",
+             "description": "onSocketNT (_http_client.js:574:5)",
              "filename": "_http_client.js",
-             "line": 348,
-             "collum": 20
+             "line": 574,
+             "collum": 5
             },
             {
-             "description": "emitOne (events.js:90:13)",
-             "filename": "events.js",
-             "line": 90,
-             "collum": 13
+             "description": "_combinedTickCallback (internal/process/next_tick.js:74:11)",
+             "filename": "internal/process/next_tick.js",
+             "line": 74,
+             "collum": 11
             },
             {
-             "description": "Socket.emit (events.js:182:7)",
-             "filename": "events.js",
-             "line": 182,
-             "collum": 7
-            },
-            {
-             "description": "readableAddChunk (_stream_readable.js:153:18)",
-             "filename": "_stream_readable.js",
-             "line": 153,
-             "collum": 18
-            },
-            {
-             "description": "Socket.Readable.push (_stream_readable.js:111:10)",
-             "filename": "_stream_readable.js",
-             "line": 111,
-             "collum": 10
-            },
-            {
-             "description": "TCP.onread (net.js:529:20)",
-             "filename": "net.js",
-             "line": 529,
-             "collum": 20
+             "description": "process._tickCallback (internal/process/next_tick.js:98:9)",
+             "filename": "internal/process/next_tick.js",
+             "line": 98,
+             "collum": 9
             }
            ],
            "children": [
             {
              "name": "NextTickWrap",
-             "init": 51037765,
-             "destroy": 52639297,
+             "init": 57894879,
+             "destroy": 59104690,
              "before": [
-              51714285
+              58741958
              ],
              "after": [
-              52636677
+              59102393
              ],
              "stack": [
               {
-               "description": "endReadable (_stream_readable.js:904:13)",
+               "description": "resume (_stream_readable.js:731:13)",
                "filename": "_stream_readable.js",
-               "line": 904,
+               "line": 731,
                "collum": 13
               },
               {
-               "description": "IncomingMessage.Readable.read (_stream_readable.js:365:5)",
+               "description": "IncomingMessage.Readable.resume (_stream_readable.js:723:5)",
                "filename": "_stream_readable.js",
-               "line": 365,
+               "line": 723,
                "collum": 5
               },
               {
-               "description": "flow (_stream_readable.js:751:26)",
-               "filename": "_stream_readable.js",
-               "line": 751,
-               "collum": 26
+               "description": "ClientRequest.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js:14:9)",
+               "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js",
+               "line": 14,
+               "collum": 9
               },
               {
-               "description": "resume_ (_stream_readable.js:731:3)",
-               "filename": "_stream_readable.js",
-               "line": 731,
-               "collum": 3
+               "description": "ClientRequest.g (events.js:286:16)",
+               "filename": "events.js",
+               "line": 286,
+               "collum": 16
               },
               {
-               "description": "_combinedTickCallback (node.js:377:13)",
-               "filename": "node.js",
-               "line": 377,
+               "description": "emitOne (events.js:96:13)",
+               "filename": "events.js",
+               "line": 96,
                "collum": 13
               },
               {
-               "description": "process._tickCallback (node.js:401:11)",
-               "filename": "node.js",
-               "line": 401,
-               "collum": 11
+               "description": "ClientRequest.emit (events.js:188:7)",
+               "filename": "events.js",
+               "line": 188,
+               "collum": 7
+              },
+              {
+               "description": "HTTPParser.parserOnIncomingClient [as onIncoming] (_http_client.js:472:21)",
+               "filename": "_http_client.js",
+               "line": 472,
+               "collum": 21
+              },
+              {
+               "description": "HTTPParser.parserOnHeadersComplete (_http_common.js:105:23)",
+               "filename": "_http_common.js",
+               "line": 105,
+               "collum": 23
+              },
+              {
+               "description": "Socket.socketOnData (_http_client.js:361:20)",
+               "filename": "_http_client.js",
+               "line": 361,
+               "collum": 20
+              },
+              {
+               "description": "emitOne (events.js:96:13)",
+               "filename": "events.js",
+               "line": 96,
+               "collum": 13
+              },
+              {
+               "description": "Socket.emit (events.js:188:7)",
+               "filename": "events.js",
+               "line": 188,
+               "collum": 7
+              },
+              {
+               "description": "readableAddChunk (_stream_readable.js:177:18)",
+               "filename": "_stream_readable.js",
+               "line": 177,
+               "collum": 18
+              },
+              {
+               "description": "Socket.Readable.push (_stream_readable.js:135:10)",
+               "filename": "_stream_readable.js",
+               "line": 135,
+               "collum": 10
+              },
+              {
+               "description": "TCP.onread (net.js:542:20)",
+               "filename": "net.js",
+               "line": 542,
+               "collum": 20
               }
              ],
              "children": [
               {
-               "name": "ShutdownWrap",
-               "init": 52018791,
-               "destroy": 53022222,
+               "name": "NextTickWrap",
+               "init": 58924653,
+               "destroy": 61592422,
                "before": [
-                53011493
+                60296996
                ],
                "after": [
-                53019790
+                61588788
                ],
                "stack": [
                 {
-                 "description": "Socket.onSocketFinish (net.js:214:26)",
-                 "filename": "net.js",
-                 "line": 214,
-                 "collum": 26
-                },
-                {
-                 "description": "emitNone (events.js:80:13)",
-                 "filename": "events.js",
-                 "line": 80,
+                 "description": "endReadable (_stream_readable.js:966:13)",
+                 "filename": "_stream_readable.js",
+                 "line": 966,
                  "collum": 13
                 },
                 {
-                 "description": "Socket.emit (events.js:179:7)",
-                 "filename": "events.js",
-                 "line": 179,
+                 "description": "IncomingMessage.Readable.read (_stream_readable.js:378:7)",
+                 "filename": "_stream_readable.js",
+                 "line": 378,
                  "collum": 7
                 },
                 {
-                 "description": "finishMaybe (_stream_writable.js:478:14)",
-                 "filename": "_stream_writable.js",
-                 "line": 478,
-                 "collum": 14
+                 "description": "flow (_stream_readable.js:762:34)",
+                 "filename": "_stream_readable.js",
+                 "line": 762,
+                 "collum": 34
                 },
                 {
-                 "description": "endWritable (_stream_writable.js:488:3)",
-                 "filename": "_stream_writable.js",
-                 "line": 488,
+                 "description": "resume_ (_stream_readable.js:744:3)",
+                 "filename": "_stream_readable.js",
+                 "line": 744,
                  "collum": 3
                 },
                 {
-                 "description": "Socket.Writable.end (_stream_writable.js:453:5)",
-                 "filename": "_stream_writable.js",
-                 "line": 453,
-                 "collum": 5
+                 "description": "_combinedTickCallback (internal/process/next_tick.js:74:11)",
+                 "filename": "internal/process/next_tick.js",
+                 "line": 74,
+                 "collum": 11
                 },
                 {
-                 "description": "Socket.end (net.js:406:31)",
-                 "filename": "net.js",
-                 "line": 406,
-                 "collum": 31
+                 "description": "process._tickCallback (internal/process/next_tick.js:98:9)",
+                 "filename": "internal/process/next_tick.js",
+                 "line": 98,
+                 "collum": 9
+                }
+               ],
+               "children": [
+                {
+                 "name": "ShutdownWrap",
+                 "init": 60720986,
+                 "destroy": 62167352,
+                 "before": [
+                  62156960
+                 ],
+                 "after": [
+                  62165203
+                 ],
+                 "stack": [
+                  {
+                   "description": "Socket.onSocketFinish (net.js:225:26)",
+                   "filename": "net.js",
+                   "line": 225,
+                   "collum": 26
+                  },
+                  {
+                   "description": "emitNone (events.js:86:13)",
+                   "filename": "events.js",
+                   "line": 86,
+                   "collum": 13
+                  },
+                  {
+                   "description": "Socket.emit (events.js:185:7)",
+                   "filename": "events.js",
+                   "line": 185,
+                   "collum": 7
+                  },
+                  {
+                   "description": "finishMaybe (_stream_writable.js:488:14)",
+                   "filename": "_stream_writable.js",
+                   "line": 488,
+                   "collum": 14
+                  },
+                  {
+                   "description": "endWritable (_stream_writable.js:498:3)",
+                   "filename": "_stream_writable.js",
+                   "line": 498,
+                   "collum": 3
+                  },
+                  {
+                   "description": "Socket.Writable.end (_stream_writable.js:463:5)",
+                   "filename": "_stream_writable.js",
+                   "line": 463,
+                   "collum": 5
+                  },
+                  {
+                   "description": "Socket.end (net.js:422:31)",
+                   "filename": "net.js",
+                   "line": 422,
+                   "collum": 31
+                  },
+                  {
+                   "description": "Socket.destroySoon (net.js:449:10)",
+                   "filename": "net.js",
+                   "line": 449,
+                   "collum": 10
+                  },
+                  {
+                   "description": "responseKeepAlive (_http_client.js:490:14)",
+                   "filename": "_http_client.js",
+                   "line": 490,
+                   "collum": 14
+                  },
+                  {
+                   "description": "IncomingMessage.responseOnEnd (_http_client.js:514:5)",
+                   "filename": "_http_client.js",
+                   "line": 514,
+                   "collum": 5
+                  },
+                  {
+                   "description": "emitNone (events.js:91:20)",
+                   "filename": "events.js",
+                   "line": 91,
+                   "collum": 20
+                  },
+                  {
+                   "description": "IncomingMessage.emit (events.js:185:7)",
+                   "filename": "events.js",
+                   "line": 185,
+                   "collum": 7
+                  },
+                  {
+                   "description": "endReadableNT (_stream_readable.js:975:12)",
+                   "filename": "_stream_readable.js",
+                   "line": 975,
+                   "collum": 12
+                  },
+                  {
+                   "description": "_combinedTickCallback (internal/process/next_tick.js:74:11)",
+                   "filename": "internal/process/next_tick.js",
+                   "line": 74,
+                   "collum": 11
+                  },
+                  {
+                   "description": "process._tickCallback (internal/process/next_tick.js:98:9)",
+                   "filename": "internal/process/next_tick.js",
+                   "line": 98,
+                   "collum": 9
+                  }
+                 ],
+                 "children": []
                 },
                 {
-                 "description": "Socket.destroySoon (net.js:433:10)",
-                 "filename": "net.js",
-                 "line": 433,
-                 "collum": 10
-                },
+                 "name": "NextTickWrap",
+                 "init": 61460445,
+                 "destroy": 62138273,
+                 "before": [
+                  62094676
+                 ],
+                 "after": [
+                  62135821
+                 ],
+                 "stack": [
+                  {
+                   "description": "Server._emitCloseIfDrained (net.js:1542:11)",
+                   "filename": "net.js",
+                   "line": 1542,
+                   "collum": 11
+                  },
+                  {
+                   "description": "Server.close (net.js:1527:10)",
+                   "filename": "net.js",
+                   "line": 1527,
+                   "collum": 10
+                  },
+                  {
+                   "description": "IncomingMessage.g (events.js:286:16)",
+                   "filename": "events.js",
+                   "line": 286,
+                   "collum": 16
+                  },
+                  {
+                   "description": "emitNone (events.js:91:20)",
+                   "filename": "events.js",
+                   "line": 91,
+                   "collum": 20
+                  },
+                  {
+                   "description": "IncomingMessage.emit (events.js:185:7)",
+                   "filename": "events.js",
+                   "line": 185,
+                   "collum": 7
+                  },
+                  {
+                   "description": "endReadableNT (_stream_readable.js:975:12)",
+                   "filename": "_stream_readable.js",
+                   "line": 975,
+                   "collum": 12
+                  },
+                  {
+                   "description": "_combinedTickCallback (internal/process/next_tick.js:74:11)",
+                   "filename": "internal/process/next_tick.js",
+                   "line": 74,
+                   "collum": 11
+                  },
+                  {
+                   "description": "process._tickCallback (internal/process/next_tick.js:98:9)",
+                   "filename": "internal/process/next_tick.js",
+                   "line": 98,
+                   "collum": 9
+                  }
+                 ],
+                 "children": []
+                }
+               ]
+              },
+              {
+               "name": "NextTickWrap",
+               "init": 59004086,
+               "destroy": 62074740,
+               "before": [
+                61642460
+               ],
+               "after": [
+                62068212
+               ],
+               "stack": [
                 {
-                 "description": "IncomingMessage.responseOnEnd (_http_client.js:478:14)",
-                 "filename": "_http_client.js",
-                 "line": 478,
-                 "collum": 14
-                },
-                {
-                 "description": "emitNone (events.js:85:20)",
-                 "filename": "events.js",
-                 "line": 85,
-                 "collum": 20
-                },
-                {
-                 "description": "IncomingMessage.emit (events.js:179:7)",
-                 "filename": "events.js",
-                 "line": 179,
-                 "collum": 7
-                },
-                {
-                 "description": "endReadableNT (_stream_readable.js:913:12)",
+                 "description": "endReadable (_stream_readable.js:966:13)",
                  "filename": "_stream_readable.js",
-                 "line": 913,
-                 "collum": 12
-                },
-                {
-                 "description": "_combinedTickCallback (node.js:377:13)",
-                 "filename": "node.js",
-                 "line": 377,
+                 "line": 966,
                  "collum": 13
                 },
                 {
-                 "description": "process._tickCallback (node.js:401:11)",
-                 "filename": "node.js",
-                 "line": 401,
+                 "description": "IncomingMessage.Readable.read (_stream_readable.js:300:7)",
+                 "filename": "_stream_readable.js",
+                 "line": 300,
+                 "collum": 7
+                },
+                {
+                 "description": "flow (_stream_readable.js:762:34)",
+                 "filename": "_stream_readable.js",
+                 "line": 762,
+                 "collum": 34
+                },
+                {
+                 "description": "resume_ (_stream_readable.js:744:3)",
+                 "filename": "_stream_readable.js",
+                 "line": 744,
+                 "collum": 3
+                },
+                {
+                 "description": "_combinedTickCallback (internal/process/next_tick.js:74:11)",
+                 "filename": "internal/process/next_tick.js",
+                 "line": 74,
                  "collum": 11
+                },
+                {
+                 "description": "process._tickCallback (internal/process/next_tick.js:98:9)",
+                 "filename": "internal/process/next_tick.js",
+                 "line": 98,
+                 "collum": 9
                 }
                ],
                "children": []
               },
               {
                "name": "NextTickWrap",
-               "init": 52588710,
-               "destroy": 52874609,
+               "init": 59072396,
+               "destroy": 62087680,
                "before": [
-                52819118
+                62083158
                ],
                "after": [
-                52871742
+                62086152
                ],
                "stack": [
                 {
-                 "description": "Server._emitCloseIfDrained (net.js:1521:11)",
-                 "filename": "net.js",
-                 "line": 1521,
-                 "collum": 11
-                },
-                {
-                 "description": "Server.close (net.js:1505:10)",
-                 "filename": "net.js",
-                 "line": 1505,
-                 "collum": 10
-                },
-                {
-                 "description": "IncomingMessage.g (events.js:273:16)",
-                 "filename": "events.js",
-                 "line": 273,
-                 "collum": 16
-                },
-                {
-                 "description": "emitNone (events.js:85:20)",
-                 "filename": "events.js",
-                 "line": 85,
-                 "collum": 20
-                },
-                {
-                 "description": "IncomingMessage.emit (events.js:179:7)",
-                 "filename": "events.js",
-                 "line": 179,
-                 "collum": 7
-                },
-                {
-                 "description": "endReadableNT (_stream_readable.js:913:12)",
+                 "description": "endReadable (_stream_readable.js:966:13)",
                  "filename": "_stream_readable.js",
-                 "line": 913,
-                 "collum": 12
-                },
-                {
-                 "description": "_combinedTickCallback (node.js:377:13)",
-                 "filename": "node.js",
-                 "line": 377,
+                 "line": 966,
                  "collum": 13
                 },
                 {
-                 "description": "process._tickCallback (node.js:401:11)",
-                 "filename": "node.js",
-                 "line": 401,
+                 "description": "IncomingMessage.Readable.read (_stream_readable.js:300:7)",
+                 "filename": "_stream_readable.js",
+                 "line": 300,
+                 "collum": 7
+                },
+                {
+                 "description": "resume_ (_stream_readable.js:746:12)",
+                 "filename": "_stream_readable.js",
+                 "line": 746,
+                 "collum": 12
+                },
+                {
+                 "description": "_combinedTickCallback (internal/process/next_tick.js:74:11)",
+                 "filename": "internal/process/next_tick.js",
+                 "line": 74,
                  "collum": 11
+                },
+                {
+                 "description": "process._tickCallback (internal/process/next_tick.js:98:9)",
+                 "filename": "internal/process/next_tick.js",
+                 "line": 98,
+                 "collum": 9
                 }
                ],
                "children": []
@@ -752,643 +1847,189 @@
             },
             {
              "name": "NextTickWrap",
-             "init": 51188622,
-             "destroy": 52645523,
+             "init": 58376568,
+             "destroy": 60189583,
              "before": [
-              52642310
+              59108028
              ],
              "after": [
-              52644300
+              60186140
              ],
              "stack": [
               {
-               "description": "endReadable (_stream_readable.js:904:13)",
+               "description": "emitReadable (_stream_readable.js:425:15)",
                "filename": "_stream_readable.js",
-               "line": 904,
-               "collum": 13
+               "line": 425,
+               "collum": 15
               },
               {
-               "description": "IncomingMessage.Readable.read (_stream_readable.js:285:7)",
+               "description": "onEofChunk (_stream_readable.js:412:3)",
                "filename": "_stream_readable.js",
-               "line": 285,
-               "collum": 7
-              },
-              {
-               "description": "flow (_stream_readable.js:751:26)",
-               "filename": "_stream_readable.js",
-               "line": 751,
-               "collum": 26
-              },
-              {
-               "description": "resume_ (_stream_readable.js:731:3)",
-               "filename": "_stream_readable.js",
-               "line": 731,
+               "line": 412,
                "collum": 3
               },
               {
-               "description": "_combinedTickCallback (node.js:377:13)",
-               "filename": "node.js",
-               "line": 377,
-               "collum": 13
+               "description": "readableAddChunk (_stream_readable.js:154:5)",
+               "filename": "_stream_readable.js",
+               "line": 154,
+               "collum": 5
               },
               {
-               "description": "process._tickCallback (node.js:401:11)",
-               "filename": "node.js",
-               "line": 401,
-               "collum": 11
-              }
-             ],
-             "children": []
-            },
-            {
-             "name": "NextTickWrap",
-             "init": 51307577,
-             "destroy": 52657941,
-             "before": [
-              52651674
-             ],
-             "after": [
-              52653385
-             ],
-             "stack": [
-              {
-               "description": "endReadable (_stream_readable.js:904:13)",
+               "description": "IncomingMessage.Readable.push (_stream_readable.js:135:10)",
                "filename": "_stream_readable.js",
-               "line": 904,
-               "collum": 13
+               "line": 135,
+               "collum": 10
               },
               {
-               "description": "IncomingMessage.Readable.read (_stream_readable.js:285:7)",
-               "filename": "_stream_readable.js",
-               "line": 285,
-               "collum": 7
-              },
-              {
-               "description": "resume_ (_stream_readable.js:733:12)",
-               "filename": "_stream_readable.js",
-               "line": 733,
+               "description": "HTTPParser.parserOnMessageComplete (_http_common.js:150:12)",
+               "filename": "_http_common.js",
+               "line": 150,
                "collum": 12
               },
               {
-               "description": "_combinedTickCallback (node.js:377:13)",
-               "filename": "node.js",
-               "line": 377,
+               "description": "Socket.socketOnData (_http_client.js:361:20)",
+               "filename": "_http_client.js",
+               "line": 361,
+               "collum": 20
+              },
+              {
+               "description": "emitOne (events.js:96:13)",
+               "filename": "events.js",
+               "line": 96,
                "collum": 13
               },
               {
-               "description": "process._tickCallback (node.js:401:11)",
-               "filename": "node.js",
-               "line": 401,
-               "collum": 11
-              }
-             ],
-             "children": []
-            }
-           ]
-          },
-          {
-           "name": "NextTickWrap",
-           "init": 50366121,
-           "destroy": 51498182,
-           "before": [
-            51407843
-           ],
-           "after": [
-            51495428
-           ],
-           "stack": [
-            {
-             "description": "maybeReadMore (_stream_readable.js:433:13)",
-             "filename": "_stream_readable.js",
-             "line": 433,
-             "collum": 13
-            },
-            {
-             "description": "readableAddChunk (_stream_readable.js:168:7)",
-             "filename": "_stream_readable.js",
-             "line": 168,
-             "collum": 7
-            },
-            {
-             "description": "IncomingMessage.Readable.push (_stream_readable.js:111:10)",
-             "filename": "_stream_readable.js",
-             "line": 111,
-             "collum": 10
-            },
-            {
-             "description": "HTTPParser.parserOnBody (_http_common.js:124:22)",
-             "filename": "_http_common.js",
-             "line": 124,
-             "collum": 22
-            },
-            {
-             "description": "Socket.socketOnData (_http_client.js:348:20)",
-             "filename": "_http_client.js",
-             "line": 348,
-             "collum": 20
-            },
-            {
-             "description": "emitOne (events.js:90:13)",
-             "filename": "events.js",
-             "line": 90,
-             "collum": 13
-            },
-            {
-             "description": "Socket.emit (events.js:182:7)",
-             "filename": "events.js",
-             "line": 182,
-             "collum": 7
-            },
-            {
-             "description": "readableAddChunk (_stream_readable.js:153:18)",
-             "filename": "_stream_readable.js",
-             "line": 153,
-             "collum": 18
-            },
-            {
-             "description": "Socket.Readable.push (_stream_readable.js:111:10)",
-             "filename": "_stream_readable.js",
-             "line": 111,
-             "collum": 10
-            },
-            {
-             "description": "TCP.onread (net.js:529:20)",
-             "filename": "net.js",
-             "line": 529,
-             "collum": 20
-            }
-           ],
-           "children": []
-          },
-          {
-           "name": "NextTickWrap",
-           "init": 50515587,
-           "destroy": 51693864,
-           "before": [
-            51501058
-           ],
-           "after": [
-            51691170
-           ],
-           "stack": [
-            {
-             "description": "emitReadable (_stream_readable.js:411:15)",
-             "filename": "_stream_readable.js",
-             "line": 411,
-             "collum": 15
-            },
-            {
-             "description": "onEofChunk (_stream_readable.js:398:3)",
-             "filename": "_stream_readable.js",
-             "line": 398,
-             "collum": 3
-            },
-            {
-             "description": "readableAddChunk (_stream_readable.js:130:5)",
-             "filename": "_stream_readable.js",
-             "line": 130,
-             "collum": 5
-            },
-            {
-             "description": "IncomingMessage.Readable.push (_stream_readable.js:111:10)",
-             "filename": "_stream_readable.js",
-             "line": 111,
-             "collum": 10
-            },
-            {
-             "description": "HTTPParser.parserOnMessageComplete (_http_common.js:145:12)",
-             "filename": "_http_common.js",
-             "line": 145,
-             "collum": 12
-            },
-            {
-             "description": "Socket.socketOnData (_http_client.js:348:20)",
-             "filename": "_http_client.js",
-             "line": 348,
-             "collum": 20
-            },
-            {
-             "description": "emitOne (events.js:90:13)",
-             "filename": "events.js",
-             "line": 90,
-             "collum": 13
-            },
-            {
-             "description": "Socket.emit (events.js:182:7)",
-             "filename": "events.js",
-             "line": 182,
-             "collum": 7
-            },
-            {
-             "description": "readableAddChunk (_stream_readable.js:153:18)",
-             "filename": "_stream_readable.js",
-             "line": 153,
-             "collum": 18
-            },
-            {
-             "description": "Socket.Readable.push (_stream_readable.js:111:10)",
-             "filename": "_stream_readable.js",
-             "line": 111,
-             "collum": 10
-            },
-            {
-             "description": "TCP.onread (net.js:529:20)",
-             "filename": "net.js",
-             "line": 529,
-             "collum": 20
-            }
-           ],
-           "children": [
-            {
-             "name": "NextTickWrap",
-             "init": 51654834,
-             "destroy": 52814703,
-             "before": [
-              52659784
-             ],
-             "after": [
-              52665097
-             ],
-             "stack": [
-              {
-               "description": "endReadable (_stream_readable.js:904:13)",
-               "filename": "_stream_readable.js",
-               "line": 904,
-               "collum": 13
-              },
-              {
-               "description": "IncomingMessage.Readable.read (_stream_readable.js:285:7)",
-               "filename": "_stream_readable.js",
-               "line": 285,
+               "description": "Socket.emit (events.js:188:7)",
+               "filename": "events.js",
+               "line": 188,
                "collum": 7
               },
               {
-               "description": "flow (_stream_readable.js:751:26)",
+               "description": "readableAddChunk (_stream_readable.js:177:18)",
                "filename": "_stream_readable.js",
-               "line": 751,
-               "collum": 26
+               "line": 177,
+               "collum": 18
               },
               {
-               "description": "emitReadable_ (_stream_readable.js:420:3)",
+               "description": "Socket.Readable.push (_stream_readable.js:135:10)",
                "filename": "_stream_readable.js",
-               "line": 420,
-               "collum": 3
+               "line": 135,
+               "collum": 10
               },
               {
-               "description": "_combinedTickCallback (node.js:374:13)",
-               "filename": "node.js",
-               "line": 374,
-               "collum": 13
-              },
-              {
-               "description": "process._tickCallback (node.js:401:11)",
-               "filename": "node.js",
-               "line": 401,
-               "collum": 11
+               "description": "TCP.onread (net.js:542:20)",
+               "filename": "net.js",
+               "line": 542,
+               "collum": 20
               }
              ],
-             "children": []
+             "children": [
+              {
+               "name": "NextTickWrap",
+               "init": 60096274,
+               "destroy": 62092846,
+               "before": [
+                62089957
+               ],
+               "after": [
+                62091466
+               ],
+               "stack": [
+                {
+                 "description": "endReadable (_stream_readable.js:966:13)",
+                 "filename": "_stream_readable.js",
+                 "line": 966,
+                 "collum": 13
+                },
+                {
+                 "description": "IncomingMessage.Readable.read (_stream_readable.js:300:7)",
+                 "filename": "_stream_readable.js",
+                 "line": 300,
+                 "collum": 7
+                },
+                {
+                 "description": "flow (_stream_readable.js:762:34)",
+                 "filename": "_stream_readable.js",
+                 "line": 762,
+                 "collum": 34
+                },
+                {
+                 "description": "emitReadable_ (_stream_readable.js:434:3)",
+                 "filename": "_stream_readable.js",
+                 "line": 434,
+                 "collum": 3
+                },
+                {
+                 "description": "_combinedTickCallback (internal/process/next_tick.js:71:11)",
+                 "filename": "internal/process/next_tick.js",
+                 "line": 71,
+                 "collum": 11
+                },
+                {
+                 "description": "process._tickCallback (internal/process/next_tick.js:98:9)",
+                 "filename": "internal/process/next_tick.js",
+                 "line": 98,
+                 "collum": 9
+                }
+               ],
+               "children": []
+              }
+             ]
             }
            ]
           },
           {
            "name": "NextTickWrap",
-           "init": 50750548,
-           "destroy": 51711926,
+           "init": 42941267,
+           "destroy": 44816731,
            "before": [
-            51697255
+            44263726
            ],
            "after": [
-            51707187
+            44812755
            ],
            "stack": [
             {
-             "description": "maybeReadMore (_stream_readable.js:433:13)",
+             "description": "resume (_stream_readable.js:731:13)",
              "filename": "_stream_readable.js",
-             "line": 433,
+             "line": 731,
              "collum": 13
             },
             {
-             "description": "readableAddChunk (_stream_readable.js:168:7)",
+             "description": "Socket.Readable.resume (_stream_readable.js:723:5)",
              "filename": "_stream_readable.js",
-             "line": 168,
-             "collum": 7
-            },
-            {
-             "description": "Socket.Readable.push (_stream_readable.js:111:10)",
-             "filename": "_stream_readable.js",
-             "line": 111,
-             "collum": 10
-            },
-            {
-             "description": "TCP.onread (net.js:529:20)",
-             "filename": "net.js",
-             "line": 529,
-             "collum": 20
-            }
-           ],
-           "children": []
-          }
-         ]
-        },
-        {
-         "name": "NextTickWrap",
-         "init": 33743949,
-         "destroy": 35688449,
-         "before": [
-          35330391
-         ],
-         "after": [
-          35676708
-         ],
-         "stack": [
-          {
-           "description": "lookupAndConnect (net.js:931:13)",
-           "filename": "net.js",
-           "line": 931,
-           "collum": 13
-          },
-          {
-           "description": "Socket.connect (net.js:901:5)",
-           "filename": "net.js",
-           "line": 901,
-           "collum": 5
-          },
-          {
-           "description": "Agent.exports.connect.exports.createConnection (net.js:65:35)",
-           "filename": "net.js",
-           "line": 65,
-           "collum": 35
-          },
-          {
-           "description": "Agent.createSocket (_http_agent.js:179:26)",
-           "filename": "_http_agent.js",
-           "line": 179,
-           "collum": 26
-          },
-          {
-           "description": "Agent.addRequest (_http_agent.js:141:10)",
-           "filename": "_http_agent.js",
-           "line": 141,
-           "collum": 10
-          },
-          {
-           "description": "new ClientRequest (_http_client.js:147:16)",
-           "filename": "_http_client.js",
-           "line": 147,
-           "collum": 16
-          },
-          {
-           "description": "Object.exports.request (http.js:31:10)",
-           "filename": "http.js",
-           "line": 31,
-           "collum": 10
-          },
-          {
-           "description": "Object.exports.get (http.js:35:21)",
-           "filename": "http.js",
-           "line": 35,
-           "collum": 21
-          },
-          {
-           "description": "Server.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js:13:20)",
-           "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js",
-           "line": 13,
-           "collum": 20
-          },
-          {
-           "description": "Server.g (events.js:273:16)",
-           "filename": "events.js",
-           "line": 273,
-           "collum": 16
-          },
-          {
-           "description": "emitNone (events.js:80:13)",
-           "filename": "events.js",
-           "line": 80,
-           "collum": 13
-          },
-          {
-           "description": "Server.emit (events.js:179:7)",
-           "filename": "events.js",
-           "line": 179,
-           "collum": 7
-          },
-          {
-           "description": "emitListeningNT (net.js:1257:10)",
-           "filename": "net.js",
-           "line": 1257,
-           "collum": 10
-          },
-          {
-           "description": "_combinedTickCallback (node.js:374:13)",
-           "filename": "node.js",
-           "line": 374,
-           "collum": 13
-          },
-          {
-           "description": "process._tickCallback (node.js:401:11)",
-           "filename": "node.js",
-           "line": 401,
-           "collum": 11
-          }
-         ],
-         "children": [
-          {
-           "name": "TCPConnectWrap",
-           "init": 35542219,
-           "destroy": 41103500,
-           "before": [
-            40445859
-           ],
-           "after": [
-            41098872
-           ],
-           "stack": [
-            {
-             "description": "connect (net.js:828:26)",
-             "filename": "net.js",
-             "line": 828,
-             "collum": 26
-            },
-            {
-             "description": "net.js:933:9",
-             "filename": "net.js",
-             "line": 933,
-             "collum": 9
-            },
-            {
-             "description": "_combinedTickCallback (node.js:370:9)",
-             "filename": "node.js",
-             "line": 370,
-             "collum": 9
-            },
-            {
-             "description": "process._tickCallback (node.js:401:11)",
-             "filename": "node.js",
-             "line": 401,
-             "collum": 11
-            }
-           ],
-           "children": []
-          }
-         ]
-        },
-        {
-         "name": "NextTickWrap",
-         "init": 34062987,
-         "destroy": 37269953,
-         "before": [
-          35698324
-         ],
-         "after": [
-          37266220
-         ],
-         "stack": [
-          {
-           "description": "ClientRequest.onSocket (_http_client.js:534:11)",
-           "filename": "_http_client.js",
-           "line": 534,
-           "collum": 11
-          },
-          {
-           "description": "_http_agent.js:148:11",
-           "filename": "_http_agent.js",
-           "line": 148,
-           "collum": 11
-          },
-          {
-           "description": "oncreate (_http_agent.js:219:5)",
-           "filename": "_http_agent.js",
-           "line": 219,
-           "collum": 5
-          },
-          {
-           "description": "Agent.createSocket (_http_agent.js:181:5)",
-           "filename": "_http_agent.js",
-           "line": 181,
-           "collum": 5
-          },
-          {
-           "description": "Agent.addRequest (_http_agent.js:141:10)",
-           "filename": "_http_agent.js",
-           "line": 141,
-           "collum": 10
-          },
-          {
-           "description": "new ClientRequest (_http_client.js:147:16)",
-           "filename": "_http_client.js",
-           "line": 147,
-           "collum": 16
-          },
-          {
-           "description": "Object.exports.request (http.js:31:10)",
-           "filename": "http.js",
-           "line": 31,
-           "collum": 10
-          },
-          {
-           "description": "Object.exports.get (http.js:35:21)",
-           "filename": "http.js",
-           "line": 35,
-           "collum": 21
-          },
-          {
-           "description": "Server.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js:13:20)",
-           "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js",
-           "line": 13,
-           "collum": 20
-          },
-          {
-           "description": "Server.g (events.js:273:16)",
-           "filename": "events.js",
-           "line": 273,
-           "collum": 16
-          },
-          {
-           "description": "emitNone (events.js:80:13)",
-           "filename": "events.js",
-           "line": 80,
-           "collum": 13
-          },
-          {
-           "description": "Server.emit (events.js:179:7)",
-           "filename": "events.js",
-           "line": 179,
-           "collum": 7
-          },
-          {
-           "description": "emitListeningNT (net.js:1257:10)",
-           "filename": "net.js",
-           "line": 1257,
-           "collum": 10
-          },
-          {
-           "description": "_combinedTickCallback (node.js:374:13)",
-           "filename": "node.js",
-           "line": 374,
-           "collum": 13
-          },
-          {
-           "description": "process._tickCallback (node.js:401:11)",
-           "filename": "node.js",
-           "line": 401,
-           "collum": 11
-          }
-         ],
-         "children": [
-          {
-           "name": "NextTickWrap",
-           "init": 36108780,
-           "destroy": 37870584,
-           "before": [
-            37274294
-           ],
-           "after": [
-            37866887
-           ],
-           "stack": [
-            {
-             "description": "resume (_stream_readable.js:719:13)",
-             "filename": "_stream_readable.js",
-             "line": 719,
-             "collum": 13
-            },
-            {
-             "description": "Socket.Readable.resume (_stream_readable.js:711:5)",
-             "filename": "_stream_readable.js",
-             "line": 711,
+             "line": 723,
              "collum": 5
             },
             {
-             "description": "Socket.Readable.on (_stream_readable.js:678:10)",
+             "description": "Socket.Readable.on (_stream_readable.js:693:12)",
              "filename": "_stream_readable.js",
-             "line": 678,
+             "line": 693,
+             "collum": 12
+            },
+            {
+             "description": "tickOnSocket (_http_client.js:559:10)",
+             "filename": "_http_client.js",
+             "line": 559,
              "collum": 10
             },
             {
-             "description": "tickOnSocket (_http_client.js:527:10)",
+             "description": "onSocketNT (_http_client.js:574:5)",
              "filename": "_http_client.js",
-             "line": 527,
-             "collum": 10
-            },
-            {
-             "description": "onSocketNT (_http_client.js:542:5)",
-             "filename": "_http_client.js",
-             "line": 542,
+             "line": 574,
              "collum": 5
             },
             {
-             "description": "_combinedTickCallback (node.js:377:13)",
-             "filename": "node.js",
-             "line": 377,
-             "collum": 13
+             "description": "_combinedTickCallback (internal/process/next_tick.js:74:11)",
+             "filename": "internal/process/next_tick.js",
+             "line": 74,
+             "collum": 11
             },
             {
-             "description": "process._tickCallback (node.js:401:11)",
-             "filename": "node.js",
-             "line": 401,
-             "collum": 11
+             "description": "process._tickCallback (internal/process/next_tick.js:98:9)",
+             "filename": "internal/process/next_tick.js",
+             "line": 98,
+             "collum": 9
             }
            ],
            "children": []
@@ -1401,611 +2042,41 @@
     },
     {
      "name": "NextTickWrap",
-     "init": 43777154,
-     "destroy": 46927554,
+     "init": 58697605,
+     "destroy": 60291770,
      "before": [
-      45717857
+      60193525
      ],
      "after": [
-      46910272
+      60287566
      ],
      "stack": [
       {
-       "description": "ServerResponse.OutgoingMessage._writeRaw (_http_outgoing.js:162:17)",
-       "filename": "_http_outgoing.js",
-       "line": 162,
-       "collum": 17
-      },
-      {
-       "description": "ServerResponse.OutgoingMessage._send (_http_outgoing.js:141:15)",
-       "filename": "_http_outgoing.js",
-       "line": 141,
-       "collum": 15
-      },
-      {
-       "description": "ServerResponse.OutgoingMessage.end (_http_outgoing.js:588:16)",
-       "filename": "_http_outgoing.js",
-       "line": 588,
-       "collum": 16
-      },
-      {
-       "description": "Server.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js:8:7)",
-       "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js",
-       "line": 8,
-       "collum": 7
-      },
-      {
-       "description": "emitTwo (events.js:100:13)",
-       "filename": "events.js",
-       "line": 100,
+       "description": "maybeReadMore (_stream_readable.js:447:13)",
+       "filename": "_stream_readable.js",
+       "line": 447,
        "collum": 13
       },
       {
-       "description": "Server.emit (events.js:185:7)",
-       "filename": "events.js",
-       "line": 185,
-       "collum": 7
-      },
-      {
-       "description": "HTTPParser.parserOnIncoming [as onIncoming] (_http_server.js:537:12)",
-       "filename": "_http_server.js",
-       "line": 537,
-       "collum": 12
-      },
-      {
-       "description": "HTTPParser.parserOnHeadersComplete (_http_common.js:103:23)",
-       "filename": "_http_common.js",
-       "line": 103,
-       "collum": 23
-      }
-     ],
-     "children": [
-      {
-       "name": "NextTickWrap",
-       "init": 45879819,
-       "destroy": 48694191,
-       "before": [
-        48459748
-       ],
-       "after": [
-        48691796
-       ],
-       "stack": [
-        {
-         "description": "resume (_stream_readable.js:719:13)",
-         "filename": "_stream_readable.js",
-         "line": 719,
-         "collum": 13
-        },
-        {
-         "description": "IncomingMessage.Readable.resume (_stream_readable.js:711:5)",
-         "filename": "_stream_readable.js",
-         "line": 711,
-         "collum": 5
-        },
-        {
-         "description": "IncomingMessage._dump (_http_incoming.js:178:10)",
-         "filename": "_http_incoming.js",
-         "line": 178,
-         "collum": 10
-        },
-        {
-         "description": "ServerResponse.resOnFinish (_http_server.js:502:13)",
-         "filename": "_http_server.js",
-         "line": 502,
-         "collum": 13
-        },
-        {
-         "description": "emitNone (events.js:80:13)",
-         "filename": "events.js",
-         "line": 80,
-         "collum": 13
-        },
-        {
-         "description": "ServerResponse.emit (events.js:179:7)",
-         "filename": "events.js",
-         "line": 179,
-         "collum": 7
-        },
-        {
-         "description": "finish (_http_outgoing.js:551:10)",
-         "filename": "_http_outgoing.js",
-         "line": 551,
-         "collum": 10
-        },
-        {
-         "description": "_combinedTickCallback (node.js:370:9)",
-         "filename": "node.js",
-         "line": 370,
-         "collum": 9
-        },
-        {
-         "description": "process._tickCallback (node.js:401:11)",
-         "filename": "node.js",
-         "line": 401,
-         "collum": 11
-        }
-       ],
-       "children": [
-        {
-         "name": "NextTickWrap",
-         "init": 48522648,
-         "destroy": 48759200,
-         "before": [
-          48755130
-         ],
-         "after": [
-          48757954
-         ],
-         "stack": [
-          {
-           "description": "endReadable (_stream_readable.js:904:13)",
-           "filename": "_stream_readable.js",
-           "line": 904,
-           "collum": 13
-          },
-          {
-           "description": "IncomingMessage.Readable.read (_stream_readable.js:285:7)",
-           "filename": "_stream_readable.js",
-           "line": 285,
-           "collum": 7
-          },
-          {
-           "description": "resume_ (_stream_readable.js:726:12)",
-           "filename": "_stream_readable.js",
-           "line": 726,
-           "collum": 12
-          },
-          {
-           "description": "_combinedTickCallback (node.js:377:13)",
-           "filename": "node.js",
-           "line": 377,
-           "collum": 13
-          },
-          {
-           "description": "process._tickCallback (node.js:401:11)",
-           "filename": "node.js",
-           "line": 401,
-           "collum": 11
-          }
-         ],
-         "children": []
-        },
-        {
-         "name": "NextTickWrap",
-         "init": 48606472,
-         "destroy": 48763432,
-         "before": [
-          48760787
-         ],
-         "after": [
-          48762234
-         ],
-         "stack": [
-          {
-           "description": "endReadable (_stream_readable.js:904:13)",
-           "filename": "_stream_readable.js",
-           "line": 904,
-           "collum": 13
-          },
-          {
-           "description": "IncomingMessage.Readable.read (_stream_readable.js:285:7)",
-           "filename": "_stream_readable.js",
-           "line": 285,
-           "collum": 7
-          },
-          {
-           "description": "flow (_stream_readable.js:751:26)",
-           "filename": "_stream_readable.js",
-           "line": 751,
-           "collum": 26
-          },
-          {
-           "description": "resume_ (_stream_readable.js:731:3)",
-           "filename": "_stream_readable.js",
-           "line": 731,
-           "collum": 3
-          },
-          {
-           "description": "_combinedTickCallback (node.js:377:13)",
-           "filename": "node.js",
-           "line": 377,
-           "collum": 13
-          },
-          {
-           "description": "process._tickCallback (node.js:401:11)",
-           "filename": "node.js",
-           "line": 401,
-           "collum": 11
-          }
-         ],
-         "children": []
-        },
-        {
-         "name": "NextTickWrap",
-         "init": 48669186,
-         "destroy": 48769554,
-         "before": [
-          48764880
-         ],
-         "after": [
-          48768277
-         ],
-         "stack": [
-          {
-           "description": "endReadable (_stream_readable.js:904:13)",
-           "filename": "_stream_readable.js",
-           "line": 904,
-           "collum": 13
-          },
-          {
-           "description": "IncomingMessage.Readable.read (_stream_readable.js:285:7)",
-           "filename": "_stream_readable.js",
-           "line": 285,
-           "collum": 7
-          },
-          {
-           "description": "resume_ (_stream_readable.js:733:12)",
-           "filename": "_stream_readable.js",
-           "line": 733,
-           "collum": 12
-          },
-          {
-           "description": "_combinedTickCallback (node.js:377:13)",
-           "filename": "node.js",
-           "line": 377,
-           "collum": 13
-          },
-          {
-           "description": "process._tickCallback (node.js:401:11)",
-           "filename": "node.js",
-           "line": 401,
-           "collum": 11
-          }
-         ],
-         "children": []
-        }
-       ]
-      }
-     ]
-    },
-    {
-     "name": "NextTickWrap",
-     "init": 44617553,
-     "destroy": 48108056,
-     "before": [
-      46952020
-     ],
-     "after": [
-      48104188
-     ],
-     "stack": [
-      {
-       "description": "onwrite (_stream_writable.js:344:15)",
-       "filename": "_stream_writable.js",
-       "line": 344,
-       "collum": 15
-      },
-      {
-       "description": "WritableState.onwrite (_stream_writable.js:89:5)",
-       "filename": "_stream_writable.js",
-       "line": 89,
-       "collum": 5
-      },
-      {
-       "description": "Socket._writeGeneric (net.js:688:5)",
-       "filename": "net.js",
-       "line": 688,
-       "collum": 5
-      },
-      {
-       "description": "Socket._write (net.js:698:8)",
-       "filename": "net.js",
-       "line": 698,
-       "collum": 8
-      },
-      {
-       "description": "doWrite (_stream_writable.js:301:12)",
-       "filename": "_stream_writable.js",
-       "line": 301,
-       "collum": 12
-      },
-      {
-       "description": "clearBuffer (_stream_writable.js:404:7)",
-       "filename": "_stream_writable.js",
-       "line": 404,
-       "collum": 7
-      },
-      {
-       "description": "Socket.Writable.uncork (_stream_writable.js:238:7)",
-       "filename": "_stream_writable.js",
-       "line": 238,
-       "collum": 7
-      },
-      {
-       "description": "ServerResponse.OutgoingMessage.end (_http_outgoing.js:592:21)",
-       "filename": "_http_outgoing.js",
-       "line": 592,
-       "collum": 21
-      },
-      {
-       "description": "Server.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js:8:7)",
-       "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js",
-       "line": 8,
-       "collum": 7
-      },
-      {
-       "description": "emitTwo (events.js:100:13)",
-       "filename": "events.js",
-       "line": 100,
-       "collum": 13
-      },
-      {
-       "description": "Server.emit (events.js:185:7)",
-       "filename": "events.js",
-       "line": 185,
-       "collum": 7
-      },
-      {
-       "description": "HTTPParser.parserOnIncoming [as onIncoming] (_http_server.js:537:12)",
-       "filename": "_http_server.js",
-       "line": 537,
-       "collum": 12
-      },
-      {
-       "description": "HTTPParser.parserOnHeadersComplete (_http_common.js:103:23)",
-       "filename": "_http_common.js",
-       "line": 103,
-       "collum": 23
-      }
-     ],
-     "children": [
-      {
-       "name": "ShutdownWrap",
-       "init": 47201102,
-       "destroy": 48861846,
-       "before": [
-        48778388
-       ],
-       "after": [
-        48858636
-       ],
-       "stack": [
-        {
-         "description": "Socket.onSocketFinish (net.js:214:26)",
-         "filename": "net.js",
-         "line": 214,
-         "collum": 26
-        },
-        {
-         "description": "emitNone (events.js:85:20)",
-         "filename": "events.js",
-         "line": 85,
-         "collum": 20
-        },
-        {
-         "description": "Socket.emit (events.js:179:7)",
-         "filename": "events.js",
-         "line": 179,
-         "collum": 7
-        },
-        {
-         "description": "finishMaybe (_stream_writable.js:478:14)",
-         "filename": "_stream_writable.js",
-         "line": 478,
-         "collum": 14
-        },
-        {
-         "description": "afterWrite (_stream_writable.js:356:3)",
-         "filename": "_stream_writable.js",
-         "line": 356,
-         "collum": 3
-        },
-        {
-         "description": "_combinedTickCallback (node.js:383:22)",
-         "filename": "node.js",
-         "line": 383,
-         "collum": 22
-        },
-        {
-         "description": "process._tickCallback (node.js:401:11)",
-         "filename": "node.js",
-         "line": 401,
-         "collum": 11
-        }
-       ],
-       "children": []
-      },
-      {
-       "name": "Pipe",
-       "init": 47765704,
-       "destroy": null,
-       "before": [],
-       "after": [],
-       "stack": [
-        {
-         "description": "createHandle (net.js:32:31)",
-         "filename": "net.js",
-         "line": 32,
-         "collum": 31
-        },
-        {
-         "description": "new Socket (net.js:130:20)",
-         "filename": "net.js",
-         "line": 130,
-         "collum": 20
-        },
-        {
-         "description": "createWritableStdioStream (node.js:571:18)",
-         "filename": "node.js",
-         "line": 571,
-         "collum": 18
-        },
-        {
-         "description": "process.stderr (node.js:612:16)",
-         "filename": "node.js",
-         "line": 612,
-         "collum": 16
-        },
-        {
-         "description": "Socket._destroy (net.js:470:25)",
-         "filename": "net.js",
-         "line": 470,
-         "collum": 25
-        },
-        {
-         "description": "Socket.destroy (net.js:501:8)",
-         "filename": "net.js",
-         "line": 501,
-         "collum": 8
-        },
-        {
-         "description": "Socket.g (events.js:273:16)",
-         "filename": "events.js",
-         "line": 273,
-         "collum": 16
-        },
-        {
-         "description": "emitNone (events.js:85:20)",
-         "filename": "events.js",
-         "line": 85,
-         "collum": 20
-        },
-        {
-         "description": "Socket.emit (events.js:179:7)",
-         "filename": "events.js",
-         "line": 179,
-         "collum": 7
-        },
-        {
-         "description": "finishMaybe (_stream_writable.js:478:14)",
-         "filename": "_stream_writable.js",
-         "line": 478,
-         "collum": 14
-        },
-        {
-         "description": "afterWrite (_stream_writable.js:356:3)",
-         "filename": "_stream_writable.js",
-         "line": 356,
-         "collum": 3
-        },
-        {
-         "description": "_combinedTickCallback (node.js:383:22)",
-         "filename": "node.js",
-         "line": 383,
-         "collum": 22
-        },
-        {
-         "description": "process._tickCallback (node.js:401:11)",
-         "filename": "node.js",
-         "line": 401,
-         "collum": 11
-        }
-       ],
-       "children": []
-      }
-     ]
-    },
-    {
-     "name": "NextTickWrap",
-     "init": 45400631,
-     "destroy": 48456514,
-     "before": [
-      48112800
-     ],
-     "after": [
-      48453627
-     ],
-     "stack": [
-      {
-       "description": "emitReadable (_stream_readable.js:411:15)",
+       "description": "readableAddChunk (_stream_readable.js:192:7)",
        "filename": "_stream_readable.js",
-       "line": 411,
-       "collum": 15
+       "line": 192,
+       "collum": 7
       },
       {
-       "description": "onEofChunk (_stream_readable.js:398:3)",
+       "description": "Socket.Readable.push (_stream_readable.js:135:10)",
        "filename": "_stream_readable.js",
-       "line": 398,
-       "collum": 3
-      },
-      {
-       "description": "readableAddChunk (_stream_readable.js:130:5)",
-       "filename": "_stream_readable.js",
-       "line": 130,
-       "collum": 5
-      },
-      {
-       "description": "IncomingMessage.Readable.push (_stream_readable.js:111:10)",
-       "filename": "_stream_readable.js",
-       "line": 111,
+       "line": 135,
        "collum": 10
       },
       {
-       "description": "HTTPParser.parserOnMessageComplete (_http_common.js:145:12)",
-       "filename": "_http_common.js",
-       "line": 145,
-       "collum": 12
+       "description": "TCP.onread (net.js:542:20)",
+       "filename": "net.js",
+       "line": 542,
+       "collum": 20
       }
      ],
-     "children": [
-      {
-       "name": "NextTickWrap",
-       "init": 48359361,
-       "destroy": 48752506,
-       "before": [
-        48697040
-       ],
-       "after": [
-        48747715
-       ],
-       "stack": [
-        {
-         "description": "endReadable (_stream_readable.js:904:13)",
-         "filename": "_stream_readable.js",
-         "line": 904,
-         "collum": 13
-        },
-        {
-         "description": "IncomingMessage.Readable.read (_stream_readable.js:285:7)",
-         "filename": "_stream_readable.js",
-         "line": 285,
-         "collum": 7
-        },
-        {
-         "description": "IncomingMessage.read (_http_incoming.js:72:15)",
-         "filename": "_http_incoming.js",
-         "line": 72,
-         "collum": 15
-        },
-        {
-         "description": "flow (_stream_readable.js:751:26)",
-         "filename": "_stream_readable.js",
-         "line": 751,
-         "collum": 26
-        },
-        {
-         "description": "emitReadable_ (_stream_readable.js:420:3)",
-         "filename": "_stream_readable.js",
-         "line": 420,
-         "collum": 3
-        },
-        {
-         "description": "_combinedTickCallback (node.js:374:13)",
-         "filename": "node.js",
-         "line": 374,
-         "collum": 13
-        },
-        {
-         "description": "process._tickCallback (node.js:401:11)",
-         "filename": "node.js",
-         "line": 401,
-         "collum": 11
-        }
-       ],
-       "children": []
-      }
-     ]
+     "children": []
     }
    ]
   }
