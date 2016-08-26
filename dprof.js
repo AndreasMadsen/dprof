@@ -147,7 +147,20 @@ asyncHook.enable();
 // Print result
 //
 
-process.on('exit', function () {
+if (process.argv.indexOf('--dprof-no-sigint') === -1 &&
+    !process.env.hasOwnProperty('DPROF_NO_SIGINT')) {
+  process.on('SIGINT', function handleSIGINT() {
+    writeDataFile();
+
+    // Trigger node's default handler
+    process.removeAllListeners('SIGINT');
+    process.kill(process.pid, 'SIGINT');
+  });
+}
+
+process.on('exit', writeDataFile);
+
+function writeDataFile() {
   // even though zlib is sync, it still fires async_wrap events,
   // so disable asyncWrap just to be sure.
   asyncHook.disable();
@@ -163,4 +176,4 @@ process.on('exit', function () {
   } else {
     fs.writeFileSync('./dprof.json.gz', zlib.gzipSync(JSON.stringify(data)));
   }
-});
+}
