@@ -1,0 +1,419 @@
+{
+ "stdout": "",
+ "stderr": "",
+ "dump": {
+  "total": 214077411,
+  "version": "0.14.0",
+  "root": {
+   "name": "root",
+   "init": 0,
+   "destroy": 6904321,
+   "before": [
+    0
+   ],
+   "after": [
+    6872481
+   ],
+   "stack": [
+    {
+     "description": "Module._compile (module.js:556:32)",
+     "filename": "module.js",
+     "line": 556,
+     "collum": 32
+    },
+    {
+     "description": "Object.Module._extensions..js (module.js:565:10)",
+     "filename": "module.js",
+     "line": 565,
+     "collum": 10
+    },
+    {
+     "description": "Module.load (module.js:473:32)",
+     "filename": "module.js",
+     "line": 473,
+     "collum": 32
+    },
+    {
+     "description": "tryModuleLoad (module.js:432:12)",
+     "filename": "module.js",
+     "line": 432,
+     "collum": 12
+    },
+    {
+     "description": "Function.Module._load (module.js:424:3)",
+     "filename": "module.js",
+     "line": 424,
+     "collum": 3
+    },
+    {
+     "description": "Module.require (module.js:483:17)",
+     "filename": "module.js",
+     "line": 483,
+     "collum": 17
+    },
+    {
+     "description": "require (internal/module.js:20:19)",
+     "filename": "internal/module.js",
+     "line": 20,
+     "collum": 19
+    },
+    {
+     "description": "Object.<anonymous> (/Users/Jeremiah/Documents/dprof/test/scripts/sigint.js:6:1)",
+     "filename": "/test/scripts/sigint.js",
+     "line": 6,
+     "collum": 1
+    },
+    {
+     "description": "Module._compile (module.js:556:32)",
+     "filename": "module.js",
+     "line": 556,
+     "collum": 32
+    },
+    {
+     "description": "Object.Module._extensions..js (module.js:565:10)",
+     "filename": "module.js",
+     "line": 565,
+     "collum": 10
+    },
+    {
+     "description": "Module.load (module.js:473:32)",
+     "filename": "module.js",
+     "line": 473,
+     "collum": 32
+    },
+    {
+     "description": "tryModuleLoad (module.js:432:12)",
+     "filename": "module.js",
+     "line": 432,
+     "collum": 12
+    },
+    {
+     "description": "Function.Module._load (module.js:424:3)",
+     "filename": "module.js",
+     "line": 424,
+     "collum": 3
+    },
+    {
+     "description": "Module.runMain (module.js:590:10)",
+     "filename": "module.js",
+     "line": 590,
+     "collum": 10
+    },
+    {
+     "description": "run (bootstrap_node.js:394:7)",
+     "filename": "bootstrap_node.js",
+     "line": 394,
+     "collum": 7
+    },
+    {
+     "description": "startup (bootstrap_node.js:149:9)",
+     "filename": "bootstrap_node.js",
+     "line": 149,
+     "collum": 9
+    },
+    {
+     "description": "bootstrap_node.js:509:3",
+     "filename": "bootstrap_node.js",
+     "line": 509,
+     "collum": 3
+    }
+   ],
+   "children": [
+    {
+     "name": "Signal",
+     "init": 3415803,
+     "destroy": null,
+     "before": [
+      213732420
+     ],
+     "after": [],
+     "stack": [
+      {
+       "description": "process.<anonymous> (internal/process.js:195:18)",
+       "filename": "internal/process.js",
+       "line": 195,
+       "collum": 18
+      },
+      {
+       "description": "emitTwo (events.js:106:13)",
+       "filename": "events.js",
+       "line": 106,
+       "collum": 13
+      },
+      {
+       "description": "process.emit (events.js:191:7)",
+       "filename": "events.js",
+       "line": 191,
+       "collum": 7
+      },
+      {
+       "description": "_addListener (events.js:226:14)",
+       "filename": "events.js",
+       "line": 226,
+       "collum": 14
+      },
+      {
+       "description": "process.addListener (events.js:270:10)",
+       "filename": "events.js",
+       "line": 270,
+       "collum": 10
+      },
+      {
+       "description": "Object.<anonymous> (/Users/Jeremiah/Documents/dprof/dprof.js:152:11)",
+       "filename": "/dprof.js",
+       "line": 152,
+       "collum": 11
+      },
+      {
+       "description": "Module._compile (module.js:556:32)",
+       "filename": "module.js",
+       "line": 556,
+       "collum": 32
+      },
+      {
+       "description": "Object.Module._extensions..js (module.js:565:10)",
+       "filename": "module.js",
+       "line": 565,
+       "collum": 10
+      },
+      {
+       "description": "Module.load (module.js:473:32)",
+       "filename": "module.js",
+       "line": 473,
+       "collum": 32
+      },
+      {
+       "description": "tryModuleLoad (module.js:432:12)",
+       "filename": "module.js",
+       "line": 432,
+       "collum": 12
+      },
+      {
+       "description": "Function.Module._load (module.js:424:3)",
+       "filename": "module.js",
+       "line": 424,
+       "collum": 3
+      },
+      {
+       "description": "Module.require (module.js:483:17)",
+       "filename": "module.js",
+       "line": 483,
+       "collum": 17
+      },
+      {
+       "description": "require (internal/module.js:20:19)",
+       "filename": "internal/module.js",
+       "line": 20,
+       "collum": 19
+      },
+      {
+       "description": "Object.<anonymous> (/Users/Jeremiah/Documents/dprof/test/scripts/sigint.js:6:1)",
+       "filename": "/test/scripts/sigint.js",
+       "line": 6,
+       "collum": 1
+      },
+      {
+       "description": "Module._compile (module.js:556:32)",
+       "filename": "module.js",
+       "line": 556,
+       "collum": 32
+      },
+      {
+       "description": "Object.Module._extensions..js (module.js:565:10)",
+       "filename": "module.js",
+       "line": 565,
+       "collum": 10
+      },
+      {
+       "description": "Module.load (module.js:473:32)",
+       "filename": "module.js",
+       "line": 473,
+       "collum": 32
+      },
+      {
+       "description": "tryModuleLoad (module.js:432:12)",
+       "filename": "module.js",
+       "line": 432,
+       "collum": 12
+      },
+      {
+       "description": "Function.Module._load (module.js:424:3)",
+       "filename": "module.js",
+       "line": 424,
+       "collum": 3
+      },
+      {
+       "description": "Module.runMain (module.js:590:10)",
+       "filename": "module.js",
+       "line": 590,
+       "collum": 10
+      },
+      {
+       "description": "run (bootstrap_node.js:394:7)",
+       "filename": "bootstrap_node.js",
+       "line": 394,
+       "collum": 7
+      },
+      {
+       "description": "startup (bootstrap_node.js:149:9)",
+       "filename": "bootstrap_node.js",
+       "line": 149,
+       "collum": 9
+      },
+      {
+       "description": "bootstrap_node.js:509:3",
+       "filename": "bootstrap_node.js",
+       "line": 509,
+       "collum": 3
+      }
+     ],
+     "children": []
+    },
+    {
+     "name": "IntervalWrap",
+     "init": 4989219,
+     "destroy": null,
+     "before": [],
+     "after": [],
+     "stack": [
+      {
+       "description": "Object.<anonymous> (/Users/Jeremiah/Documents/dprof/test/scripts/sigint.js:8:1)",
+       "filename": "/test/scripts/sigint.js",
+       "line": 8,
+       "collum": 1
+      },
+      {
+       "description": "Module._compile (module.js:556:32)",
+       "filename": "module.js",
+       "line": 556,
+       "collum": 32
+      },
+      {
+       "description": "Object.Module._extensions..js (module.js:565:10)",
+       "filename": "module.js",
+       "line": 565,
+       "collum": 10
+      },
+      {
+       "description": "Module.load (module.js:473:32)",
+       "filename": "module.js",
+       "line": 473,
+       "collum": 32
+      },
+      {
+       "description": "tryModuleLoad (module.js:432:12)",
+       "filename": "module.js",
+       "line": 432,
+       "collum": 12
+      },
+      {
+       "description": "Function.Module._load (module.js:424:3)",
+       "filename": "module.js",
+       "line": 424,
+       "collum": 3
+      },
+      {
+       "description": "Module.runMain (module.js:590:10)",
+       "filename": "module.js",
+       "line": 590,
+       "collum": 10
+      },
+      {
+       "description": "run (bootstrap_node.js:394:7)",
+       "filename": "bootstrap_node.js",
+       "line": 394,
+       "collum": 7
+      },
+      {
+       "description": "startup (bootstrap_node.js:149:9)",
+       "filename": "bootstrap_node.js",
+       "line": 149,
+       "collum": 9
+      },
+      {
+       "description": "bootstrap_node.js:509:3",
+       "filename": "bootstrap_node.js",
+       "line": 509,
+       "collum": 3
+      }
+     ],
+     "children": []
+    },
+    {
+     "name": "TimeoutWrap",
+     "init": 6128250,
+     "destroy": 213510462,
+     "before": [
+      212504102
+     ],
+     "after": [
+      213147727
+     ],
+     "stack": [
+      {
+       "description": "Object.<anonymous> (/Users/Jeremiah/Documents/dprof/test/scripts/sigint.js:9:1)",
+       "filename": "/test/scripts/sigint.js",
+       "line": 9,
+       "collum": 1
+      },
+      {
+       "description": "Module._compile (module.js:556:32)",
+       "filename": "module.js",
+       "line": 556,
+       "collum": 32
+      },
+      {
+       "description": "Object.Module._extensions..js (module.js:565:10)",
+       "filename": "module.js",
+       "line": 565,
+       "collum": 10
+      },
+      {
+       "description": "Module.load (module.js:473:32)",
+       "filename": "module.js",
+       "line": 473,
+       "collum": 32
+      },
+      {
+       "description": "tryModuleLoad (module.js:432:12)",
+       "filename": "module.js",
+       "line": 432,
+       "collum": 12
+      },
+      {
+       "description": "Function.Module._load (module.js:424:3)",
+       "filename": "module.js",
+       "line": 424,
+       "collum": 3
+      },
+      {
+       "description": "Module.runMain (module.js:590:10)",
+       "filename": "module.js",
+       "line": 590,
+       "collum": 10
+      },
+      {
+       "description": "run (bootstrap_node.js:394:7)",
+       "filename": "bootstrap_node.js",
+       "line": 394,
+       "collum": 7
+      },
+      {
+       "description": "startup (bootstrap_node.js:149:9)",
+       "filename": "bootstrap_node.js",
+       "line": 149,
+       "collum": 9
+      },
+      {
+       "description": "bootstrap_node.js:509:3",
+       "filename": "bootstrap_node.js",
+       "line": 509,
+       "collum": 3
+      }
+     ],
+     "children": []
+    }
+   ]
+  }
+ }
+}

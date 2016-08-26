@@ -63,6 +63,22 @@ The visualizer is WIP, you are welcome to contribute with major changes to the e
 * Red: time spent executing the callback code (blocking).
 * Black: when the async request was made.
 
+## SIGINT (Ctrl-C) Behavior
+
+To help debug process that may not have a defined exit, or may have a
+problematic handle keeping them open, dprof registers a `SIGINT` handler
+by default.
+This allows dprof to capture when a process is interrupted by the user,
+and it will write the JSON data and terminate.
+
+If this overriding terminate behavior is undesired, or interferes with an
+existing handler in a program, either a `--dprof-no-sigint` flag can be
+provided to the program, or a `DPROF_NO_SIGINT=1` environment variable.
+
+```
+node -r dprof my-script.js --dprof-no-sigint
+```
+
 ## Format
 
 The `dprof.json.gz` file is a GZIP compressed JSON file. It is possible
