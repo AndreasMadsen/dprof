@@ -2,17 +2,17 @@
  "stdout": "",
  "stderr": "",
  "dump": {
-  "total": 7816808,
+  "total": 7593346,
   "version": "0.14.0",
   "root": {
    "name": "root",
    "init": 0,
-   "destroy": 4671795,
+   "destroy": 4346887,
    "before": [
     0
    ],
    "after": [
-    4644245
+    4316288
    ],
    "stack": [
     {
@@ -59,7 +59,7 @@
     },
     {
      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js:2:1)",
-     "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js",
+     "filename": "/test/scripts/example.js",
      "line": 2,
      "collum": 1
     },
@@ -121,18 +121,18 @@
    "children": [
     {
      "name": "TimeoutWrap",
-     "init": 3249488,
-     "destroy": 6583202,
+     "init": 3234326,
+     "destroy": 6324392,
      "before": [
-      5243134
+      4910358
      ],
      "after": [
-      6415811
+      6090412
      ],
      "stack": [
       {
        "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js:6:1)",
-       "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js",
+       "filename": "/test/scripts/example.js",
        "line": 6,
        "collum": 1
       },
@@ -194,13 +194,13 @@
      "children": [
       {
        "name": "FSReqWrap",
-       "init": 5482801,
-       "destroy": 7155452,
+       "init": 5137186,
+       "destroy": 6927139,
        "before": [
-        6668067
+        6418801
        ],
        "after": [
-        7143803
+        6911356
        ],
        "stack": [
         {
@@ -211,7 +211,7 @@
         },
         {
          "description": "Timeout.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js:8:6)",
-         "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js",
+         "filename": "/test/scripts/example.js",
          "line": 8,
          "collum": 6
         },
@@ -231,13 +231,13 @@
        "children": [
         {
          "name": "FSReqWrap",
-         "init": 6973293,
-         "destroy": 7412891,
+         "init": 6736433,
+         "destroy": 7184487,
          "before": [
-          7352756
+          7124834
          ],
          "after": [
-          7409371
+          7180561
          ],
          "stack": [
           {
@@ -248,7 +248,7 @@
           },
           {
            "description": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js:13:8",
-           "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js",
+           "filename": "/test/scripts/example.js",
            "line": 13,
            "collum": 8
           },
@@ -263,13 +263,13 @@
         },
         {
          "name": "FSReqWrap",
-         "init": 7092038,
-         "destroy": 7603222,
+         "init": 6858905,
+         "destroy": 7374832,
          "before": [
-          7416872
+          7188483
          ],
          "after": [
-          7599030
+          7370699
          ],
          "stack": [
           {
@@ -280,7 +280,7 @@
           },
           {
            "description": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js:21:8",
-           "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js",
+           "filename": "/test/scripts/example.js",
            "line": 21,
            "collum": 8
           },
@@ -294,13 +294,13 @@
          "children": [
           {
            "name": "FSReqWrap",
-           "init": 7537925,
-           "destroy": 7680476,
+           "init": 7307910,
+           "destroy": 7453932,
            "before": [
-            7632264
+            7414926
            ],
            "after": [
-            7676511
+            7449866
            ],
            "stack": [
             {
@@ -311,13 +311,13 @@
             },
             {
              "description": "close (/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js:29:10)",
-             "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js",
+             "filename": "/test/scripts/example.js",
              "line": 29,
              "collum": 10
             },
             {
              "description": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js:25:24",
-             "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js",
+             "filename": "/test/scripts/example.js",
              "line": 25,
              "collum": 24
             },
@@ -336,13 +336,13 @@
       },
       {
        "name": "FSReqWrap",
-       "init": 6158672,
-       "destroy": 7255084,
+       "init": 5775829,
+       "destroy": 7027928,
        "before": [
-        7223003
+        6995428
        ],
        "after": [
-        7250988
+        7023671
        ],
        "stack": [
         {
@@ -353,7 +353,7 @@
         },
         {
          "description": "Timeout.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js:35:6)",
-         "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js",
+         "filename": "/test/scripts/example.js",
          "line": 35,
          "collum": 6
         },

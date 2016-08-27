@@ -2,17 +2,17 @@
  "stdout": "",
  "stderr": "",
  "dump": {
-  "total": 63100731,
+  "total": 61569666,
   "version": "0.14.0",
   "root": {
    "name": "root",
    "init": 0,
-   "destroy": 23510656,
+   "destroy": 19378501,
    "before": [
     0
    ],
    "after": [
-    23419099
+    19289173
    ],
    "stack": [
     {
@@ -59,7 +59,7 @@
     },
     {
      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js:3:1)",
-     "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js",
+     "filename": "/test/scripts/http.js",
      "line": 3,
      "collum": 1
     },
@@ -121,13 +121,13 @@
    "children": [
     {
      "name": "GetAddrInfoReqWrap",
-     "init": 22200826,
-     "destroy": 44828600,
+     "init": 18517849,
+     "destroy": 38949479,
      "before": [
-      25181511
+      20958695
      ],
      "after": [
-      33108848
+      28008213
      ],
      "stack": [
       {
@@ -150,7 +150,7 @@
       },
       {
        "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js:11:8)",
-       "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js",
+       "filename": "/test/scripts/http.js",
        "line": 11,
        "collum": 8
       },
@@ -212,13 +212,13 @@
      "children": [
       {
        "name": "TCP",
-       "init": 31660046,
-       "destroy": 62149726,
+       "init": 26264851,
+       "destroy": 61010376,
        "before": [
-        44924920
+        39040817
        ],
        "after": [
-        47533951
+        42960185
        ],
        "stack": [
         {
@@ -261,30 +261,30 @@
        "children": [
         {
          "name": "TCP",
-         "init": 44908772,
-         "destroy": 56980086,
+         "init": 39024922,
+         "destroy": 56224761,
          "before": [
-          56784723
+          56026138
          ],
          "after": [
-          56976285
+          56221075
          ],
          "stack": [],
          "children": []
         },
         {
          "name": "HTTPParser",
-         "init": 46918608,
+         "init": 41729219,
          "destroy": null,
          "before": [
-          48565917,
-          53452429,
-          54109998
+          44937440,
+          52023280,
+          52862186
          ],
          "after": [
-          53439652,
-          54104136,
-          54252440
+          52008828,
+          52854040,
+          53042334
          ],
          "stack": [
           {
@@ -327,13 +327,13 @@
          "children": [
           {
            "name": "NextTickWrap",
-           "init": 51821886,
-           "destroy": 54792810,
+           "init": 50050339,
+           "destroy": 53750171,
            "before": [
-            54256723
+            53048159
            ],
            "after": [
-            54788592
+            53745321
            ],
            "stack": [
             {
@@ -356,7 +356,7 @@
             },
             {
              "description": "Server.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js:8:7)",
-             "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js",
+             "filename": "/test/scripts/http.js",
              "line": 8,
              "collum": 7
             },
@@ -388,13 +388,13 @@
            "children": [
             {
              "name": "NextTickWrap",
-             "init": 54424408,
-             "destroy": 56646327,
+             "init": 53269784,
+             "destroy": 55891258,
              "before": [
-              56329871
+              55556430
              ],
              "after": [
-              56644028
+              55889050
              ],
              "stack": [
               {
@@ -455,13 +455,13 @@
              "children": [
               {
                "name": "NextTickWrap",
-               "init": 56428496,
-               "destroy": 56710084,
+               "init": 55658810,
+               "destroy": 55950972,
                "before": [
-                56706322
+                55947325
                ],
                "after": [
-                56708828
+                55949772
                ],
                "stack": [
                 {
@@ -499,13 +499,13 @@
               },
               {
                "name": "NextTickWrap",
-               "init": 56548970,
-               "destroy": 56713630,
+               "init": 55783739,
+               "destroy": 55954333,
                "before": [
-                56711406
+                55952298
                ],
                "after": [
-                56712554
+                55953369
                ],
                "stack": [
                 {
@@ -549,13 +549,13 @@
               },
               {
                "name": "NextTickWrap",
-               "init": 56617130,
-               "destroy": 56718734,
+               "init": 55862075,
+               "destroy": 55959248,
                "before": [
-                56714790
+                55955499
                ],
                "after": [
-                56715810
+                55956453
                ],
                "stack": [
                 {
@@ -597,13 +597,13 @@
           },
           {
            "name": "NextTickWrap",
-           "init": 52445433,
-           "destroy": 56085759,
+           "init": 50873828,
+           "destroy": 55294346,
            "before": [
-            54800388
+            53759361
            ],
            "after": [
-            56079766
+            55287071
            ],
            "stack": [
             {
@@ -656,7 +656,7 @@
             },
             {
              "description": "Server.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js:8:7)",
-             "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js",
+             "filename": "/test/scripts/http.js",
              "line": 8,
              "collum": 7
             },
@@ -688,13 +688,13 @@
            "children": [
             {
              "name": "ShutdownWrap",
-             "init": 55011440,
-             "destroy": 56781843,
+             "init": 54030037,
+             "destroy": 56023077,
              "before": [
-              56728273
+              55969638
              ],
              "after": [
-              56778572
+              56019933
              ],
              "stack": [
               {
@@ -744,7 +744,7 @@
             },
             {
              "name": "Pipe",
-             "init": 55634318,
+             "init": 54825176,
              "destroy": null,
              "before": [],
              "after": [],
@@ -834,13 +834,13 @@
           },
           {
            "name": "NextTickWrap",
-           "init": 53951406,
-           "destroy": 56324296,
+           "init": 52649300,
+           "destroy": 55550851,
            "before": [
-            56090253
+            55298910
            ],
            "after": [
-            56321848
+            55548379
            ],
            "stack": [
             {
@@ -877,13 +877,13 @@
            "children": [
             {
              "name": "NextTickWrap",
-             "init": 56269681,
-             "destroy": 56703589,
+             "init": 55492947,
+             "destroy": 55944819,
              "before": [
-              56649173
+              55893888
              ],
              "after": [
-              56699168
+              55939566
              ],
              "stack": [
               {
@@ -937,13 +937,13 @@
         },
         {
          "name": "NextTickWrap",
-         "init": 47360511,
-         "destroy": 47739043,
+         "init": 42572969,
+         "destroy": 43375927,
          "before": [
-          47540335
+          42972794
          ],
          "after": [
-          47735473
+          43368856
          ],
          "stack": [
           {
@@ -995,13 +995,13 @@
       },
       {
        "name": "NextTickWrap",
-       "init": 32833791,
-       "destroy": 41508494,
+       "init": 27654767,
+       "destroy": 36103093,
        "before": [
-        33199848
+        28120391
        ],
        "after": [
-        41431293
+        36029459
        ],
        "stack": [
         {
@@ -1038,15 +1038,15 @@
        "children": [
         {
          "name": "TCP",
-         "init": 38722881,
-         "destroy": 63010687,
+         "init": 33314177,
+         "destroy": 61467859,
          "before": [
-          57011673,
-          62375537
+          56255571,
+          61031679
          ],
          "after": [
-          58738053,
-          63002313
+          57919607,
+          61460267
          ],
          "stack": [
           {
@@ -1093,7 +1093,7 @@
           },
           {
            "description": "Server.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js:13:8)",
-           "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js",
+           "filename": "/test/scripts/http.js",
            "line": 13,
            "collum": 8
           },
@@ -1138,13 +1138,13 @@
         },
         {
          "name": "NextTickWrap",
-         "init": 39608672,
-         "destroy": 42223559,
+         "init": 34205198,
+         "destroy": 36624766,
          "before": [
-          41656715
+          36251887
          ],
          "after": [
-          42177345
+          36612655
          ],
          "stack": [
           {
@@ -1197,7 +1197,7 @@
           },
           {
            "description": "Server.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js:13:8)",
-           "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js",
+           "filename": "/test/scripts/http.js",
            "line": 13,
            "collum": 8
           },
@@ -1241,13 +1241,13 @@
          "children": [
           {
            "name": "TCPConnectWrap",
-           "init": 41990788,
-           "destroy": 48483366,
+           "init": 36480495,
+           "destroy": 44789436,
            "before": [
-            47754115
+            43405487
            ],
            "after": [
-            48478248
+            44778909
            ],
            "stack": [
             {
@@ -1281,13 +1281,13 @@
         },
         {
          "name": "NextTickWrap",
-         "init": 40426008,
-         "destroy": 44259323,
+         "init": 35034297,
+         "destroy": 38393805,
          "before": [
-          42253864
+          36639382
          ],
          "after": [
-          44255451
+          38389815
          ],
          "stack": [
           {
@@ -1340,7 +1340,7 @@
           },
           {
            "description": "Server.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js:13:8)",
-           "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js",
+           "filename": "/test/scripts/http.js",
            "line": 13,
            "collum": 8
           },
@@ -1384,17 +1384,17 @@
          "children": [
           {
            "name": "HTTPParser",
-           "init": 42612242,
+           "init": 36891413,
            "destroy": null,
            "before": [
-            57328709,
-            58117795,
-            58289753
+            56509851,
+            57296676,
+            57469731
            ],
            "after": [
-            58112691,
-            58285486,
-            58495758
+            57291690,
+            57465575,
+            57676873
            ],
            "stack": [
             {
@@ -1437,13 +1437,13 @@
            "children": [
             {
              "name": "NextTickWrap",
-             "init": 57894879,
-             "destroy": 59104690,
+             "init": 57077839,
+             "destroy": 58275636,
              "before": [
-              58741958
+              57923196
              ],
              "after": [
-              59102393
+              58273394
              ],
              "stack": [
               {
@@ -1460,7 +1460,7 @@
               },
               {
                "description": "ClientRequest.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js:14:9)",
-               "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/http.js",
+               "filename": "/test/scripts/http.js",
                "line": 14,
                "collum": 9
               },
@@ -1534,13 +1534,13 @@
              "children": [
               {
                "name": "NextTickWrap",
-               "init": 58924653,
-               "destroy": 61592422,
+               "init": 58096378,
+               "destroy": 60705157,
                "before": [
-                60296996
+                59464099
                ],
                "after": [
-                61588788
+                60701616
                ],
                "stack": [
                 {
@@ -1583,13 +1583,13 @@
                "children": [
                 {
                  "name": "ShutdownWrap",
-                 "init": 60720986,
-                 "destroy": 62167352,
+                 "init": 59846512,
+                 "destroy": 61026740,
                  "before": [
-                  62156960
+                  61017390
                  ],
                  "after": [
-                  62165203
+                  61024713
                  ],
                  "stack": [
                   {
@@ -1687,13 +1687,13 @@
                 },
                 {
                  "name": "NextTickWrap",
-                 "init": 61460445,
-                 "destroy": 62138273,
+                 "init": 60587874,
+                 "destroy": 61001736,
                  "before": [
-                  62094676
+                  60950627
                  ],
                  "after": [
-                  62135821
+                  60999083
                  ],
                  "stack": [
                   {
@@ -1751,13 +1751,13 @@
               },
               {
                "name": "NextTickWrap",
-               "init": 59004086,
-               "destroy": 62074740,
+               "init": 58173760,
+               "destroy": 60927527,
                "before": [
-                61642460
+                60709112
                ],
                "after": [
-                62068212
+                60922817
                ],
                "stack": [
                 {
@@ -1801,13 +1801,13 @@
               },
               {
                "name": "NextTickWrap",
-               "init": 59072396,
-               "destroy": 62087680,
+               "init": 58241216,
+               "destroy": 60944083,
                "before": [
-                62083158
+                60939936
                ],
                "after": [
-                62086152
+                60942546
                ],
                "stack": [
                 {
@@ -1847,13 +1847,13 @@
             },
             {
              "name": "NextTickWrap",
-             "init": 58376568,
-             "destroy": 60189583,
+             "init": 57574511,
+             "destroy": 59362098,
              "before": [
-              59108028
+              58278808
              ],
              "after": [
-              60186140
+              59358792
              ],
              "stack": [
               {
@@ -1926,13 +1926,13 @@
              "children": [
               {
                "name": "NextTickWrap",
-               "init": 60096274,
-               "destroy": 62092846,
+               "init": 59266490,
+               "destroy": 60948817,
                "before": [
-                62089957
+                60946043
                ],
                "after": [
-                62091466
+                60947545
                ],
                "stack": [
                 {
@@ -1980,13 +1980,13 @@
           },
           {
            "name": "NextTickWrap",
-           "init": 42941267,
-           "destroy": 44816731,
+           "init": 37171172,
+           "destroy": 38937286,
            "before": [
-            44263726
+            38398034
            ],
            "after": [
-            44812755
+            38933403
            ],
            "stack": [
             {
@@ -2042,13 +2042,13 @@
     },
     {
      "name": "NextTickWrap",
-     "init": 58697605,
-     "destroy": 60291770,
+     "init": 57879136,
+     "destroy": 59457818,
      "before": [
-      60193525
+      59366080
      ],
      "after": [
-      60287566
+      59453817
      ],
      "stack": [
       {

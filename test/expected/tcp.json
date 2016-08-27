@@ -2,17 +2,17 @@
  "stdout": "",
  "stderr": "",
  "dump": {
-  "total": 37445194,
+  "total": 32053239,
   "version": "0.14.0",
   "root": {
    "name": "root",
    "init": 0,
-   "destroy": 16710026,
+   "destroy": 11926529,
    "before": [
     0
    ],
    "after": [
-    16662962
+    11872868
    ],
    "stack": [
     {
@@ -59,7 +59,7 @@
     },
     {
      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/tcp.js:2:1)",
-     "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/tcp.js",
+     "filename": "/test/scripts/tcp.js",
      "line": 2,
      "collum": 1
     },
@@ -121,13 +121,13 @@
    "children": [
     {
      "name": "GetAddrInfoReqWrap",
-     "init": 15798090,
-     "destroy": 28201604,
+     "init": 11141187,
+     "destroy": 23410302,
      "before": [
-      18212219
+      13395768
      ],
      "after": [
-      24961837
+      20119402
      ],
      "stack": [
       {
@@ -150,7 +150,7 @@
       },
       {
        "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/tcp.js:10:8)",
-       "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/tcp.js",
+       "filename": "/test/scripts/tcp.js",
        "line": 10,
        "collum": 8
       },
@@ -212,13 +212,13 @@
      "children": [
       {
        "name": "TCP",
-       "init": 23529855,
-       "destroy": 36099766,
+       "init": 18739151,
+       "destroy": 30704760,
        "before": [
-        29670815
+        24804028
        ],
        "after": [
-        32035887
+        26956833
        ],
        "stack": [
         {
@@ -261,27 +261,27 @@
        "children": [
         {
          "name": "TCP",
-         "init": 29646767,
-         "destroy": 37356012,
+         "init": 24785316,
+         "destroy": 31965143,
          "before": [
-          36109332,
-          37349790
+          30713839,
+          31958640
          ],
          "after": [
-          37224314,
-          37353907
+          31831628,
+          31962822
          ],
          "stack": [],
          "children": [
           {
            "name": "NextTickWrap",
-           "init": 36403410,
-           "destroy": 37265608,
+           "init": 31006347,
+           "destroy": 31874301,
            "before": [
-            37229253
+            31836694
            ],
            "after": [
-            37263068
+            31871544
            ],
            "stack": [
             {
@@ -319,13 +319,13 @@
           },
           {
            "name": "NextTickWrap",
-           "init": 36570522,
-           "destroy": 37343445,
+           "init": 31172620,
+           "destroy": 31952345,
            "before": [
-            37268432
+            31876952
            ],
            "after": [
-            37340894
+            31949836
            ],
            "stack": [
             {
@@ -377,13 +377,13 @@
         },
         {
          "name": "NextTickWrap",
-         "init": 31749411,
-         "destroy": 32406209,
+         "init": 26677552,
+         "destroy": 27325552,
          "before": [
-          32045015
+          26965840
          ],
          "after": [
-          32403402
+          27322657
          ],
          "stack": [
           {
@@ -448,7 +448,7 @@
           },
           {
            "description": "Server.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/tcp.js:7:10)",
-           "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/tcp.js",
+           "filename": "/test/scripts/tcp.js",
            "line": 7,
            "collum": 10
           },
@@ -474,13 +474,13 @@
          "children": [
           {
            "name": "ShutdownWrap",
-           "init": 32355398,
-           "destroy": 32630078,
+           "init": 27274980,
+           "destroy": 27495387,
            "before": [
-            32437917
+            27356390
            ],
            "after": [
-            32623953
+            27491433
            ],
            "stack": [
             {
@@ -534,13 +534,13 @@
       },
       {
        "name": "NextTickWrap",
-       "init": 24692365,
-       "destroy": 27687485,
+       "init": 19843479,
+       "destroy": 22889996,
        "before": [
-        25046874
+        20204739
        ],
        "after": [
-        27608845
+        22812032
        ],
        "stack": [
         {
@@ -577,17 +577,17 @@
        "children": [
         {
          "name": "TCP",
-         "init": 26870610,
-         "destroy": 36093893,
+         "init": 22073337,
+         "destroy": 30699066,
          "before": [
-          32664912,
-          33848457,
-          36064311
+          27523497,
+          28547871,
+          30668504
          ],
          "after": [
-          33678921,
-          35822207,
-          36090878
+          28400511,
+          30430718,
+          30695740
          ],
          "stack": [
           {
@@ -604,7 +604,7 @@
           },
           {
            "description": "Server.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/tcp.js:12:22)",
-           "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/tcp.js",
+           "filename": "/test/scripts/tcp.js",
            "line": 12,
            "collum": 22
           },
@@ -648,13 +648,13 @@
          "children": [
           {
            "name": "NextTickWrap",
-           "init": 33589815,
-           "destroy": 33833941,
+           "init": 28324334,
+           "destroy": 28534413,
            "before": [
-            33690741
+            28410301
            ],
            "after": [
-            33817712
+            28518665
            ],
            "stack": [
             {
@@ -686,13 +686,13 @@
           },
           {
            "name": "NextTickWrap",
-           "init": 34400394,
-           "destroy": 36057348,
+           "init": 29043457,
+           "destroy": 30661386,
            "before": [
-            35828366
+            30436921
            ],
            "after": [
-            36053812
+            30657865
            ],
            "stack": [
             {
@@ -736,7 +736,7 @@
           },
           {
            "name": "Pipe",
-           "init": 35306892,
+           "init": 29917100,
            "destroy": null,
            "before": [],
            "after": [],
@@ -856,13 +856,13 @@
         },
         {
          "name": "NextTickWrap",
-         "init": 27524525,
-         "destroy": 28190082,
+         "init": 22726947,
+         "destroy": 23398110,
          "before": [
-          27843525
+          23045240
          ],
          "after": [
-          28178225
+          23386402
          ],
          "stack": [
           {
@@ -885,7 +885,7 @@
           },
           {
            "description": "Server.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/tcp.js:12:22)",
-           "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/tcp.js",
+           "filename": "/test/scripts/tcp.js",
            "line": 12,
            "collum": 22
           },
@@ -929,13 +929,13 @@
          "children": [
           {
            "name": "TCPConnectWrap",
-           "init": 28066572,
-           "destroy": 29558367,
+           "init": 23268103,
+           "destroy": 24718380,
            "before": [
-            28253754
+            23453571
            ],
            "after": [
-            29356920
+            24583240
            ],
            "stack": [
             {
@@ -966,13 +966,13 @@
            "children": [
             {
              "name": "NextTickWrap",
-             "init": 28590724,
-             "destroy": 29551376,
+             "init": 23803811,
+             "destroy": 24713421,
              "before": [
-              29363932
+              24590497
              ],
              "after": [
-              29546275
+              24709979
              ],
              "stack": [
               {
@@ -989,7 +989,7 @@
               },
               {
                "description": "Socket.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/tcp.js:13:12)",
-               "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/tcp.js",
+               "filename": "/test/scripts/tcp.js",
                "line": 13,
                "collum": 12
               },

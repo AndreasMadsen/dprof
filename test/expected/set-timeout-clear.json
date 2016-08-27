@@ -2,17 +2,17 @@
  "stdout": "",
  "stderr": "",
  "dump": {
-  "total": 109473348,
+  "total": 106408878,
   "version": "0.14.0",
   "root": {
    "name": "root",
    "init": 0,
-   "destroy": 4922164,
+   "destroy": 5541408,
    "before": [
     0
    ],
    "after": [
-    4890429
+    5509761
    ],
    "stack": [
     {
@@ -59,7 +59,7 @@
     },
     {
      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout-clear.js:2:1)",
-     "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout-clear.js",
+     "filename": "/test/scripts/set-timeout-clear.js",
      "line": 2,
      "collum": 1
     },
@@ -121,14 +121,14 @@
    "children": [
     {
      "name": "TimeoutWrap",
-     "init": 3127920,
-     "destroy": 19231277,
+     "init": 3605127,
+     "destroy": 18373855,
      "before": [],
      "after": [],
      "stack": [
       {
        "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout-clear.js:4:15)",
-       "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout-clear.js",
+       "filename": "/test/scripts/set-timeout-clear.js",
        "line": 4,
        "collum": 15
       },
@@ -191,18 +191,18 @@
     },
     {
      "name": "TimeoutWrap",
-     "init": 4217402,
-     "destroy": 19804730,
+     "init": 4807971,
+     "destroy": 18948924,
      "before": [
-      18701797
+      17835801
      ],
      "after": [
-      19771399
+      18909695
      ],
      "stack": [
       {
        "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout-clear.js:6:1)",
-       "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout-clear.js",
+       "filename": "/test/scripts/set-timeout-clear.js",
        "line": 6,
        "collum": 1
       },
@@ -265,18 +265,18 @@
     },
     {
      "name": "TimeoutWrap",
-     "init": 4598071,
-     "destroy": 109109697,
+     "init": 5196815,
+     "destroy": 106090301,
      "before": [
-      109018492
+      105986156
      ],
      "after": [
-      109094433
+      106074000
      ],
      "stack": [
       {
        "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout-clear.js:10:1)",
-       "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout-clear.js",
+       "filename": "/test/scripts/set-timeout-clear.js",
        "line": 10,
        "collum": 1
       },

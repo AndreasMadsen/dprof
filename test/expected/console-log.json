@@ -2,17 +2,17 @@
  "stdout": "hallo world\n",
  "stderr": "",
  "dump": {
-  "total": 17749865,
+  "total": 17721958,
   "version": "0.14.0",
   "root": {
    "name": "root",
    "init": 0,
-   "destroy": 16341231,
+   "destroy": 16861533,
    "before": [
     0
    ],
    "after": [
-    16308872
+    16828301
    ],
    "stack": [
     {
@@ -59,7 +59,7 @@
     },
     {
      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/console-log.js:2:1)",
-     "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/console-log.js",
+     "filename": "/test/scripts/console-log.js",
      "line": 2,
      "collum": 1
     },
@@ -121,7 +121,7 @@
    "children": [
     {
      "name": "Pipe",
-     "init": 11480930,
+     "init": 12106868,
      "destroy": null,
      "before": [],
      "after": [],
@@ -176,7 +176,7 @@
       },
       {
        "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/console-log.js:4:1)",
-       "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/console-log.js",
+       "filename": "/test/scripts/console-log.js",
        "line": 4,
        "collum": 1
       },
@@ -239,7 +239,7 @@
     },
     {
      "name": "Pipe",
-     "init": 13034610,
+     "init": 13508583,
      "destroy": null,
      "before": [],
      "after": [],
@@ -294,7 +294,7 @@
       },
       {
        "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/console-log.js:4:1)",
-       "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/console-log.js",
+       "filename": "/test/scripts/console-log.js",
        "line": 4,
        "collum": 1
       },
@@ -357,13 +357,13 @@
     },
     {
      "name": "NextTickWrap",
-     "init": 15453275,
-     "destroy": 17329013,
+     "init": 15894965,
+     "destroy": 17356000,
      "before": [
-      16791406
+      17116499
      ],
      "after": [
-      17153082
+      17290064
      ],
      "stack": [
       {
@@ -422,7 +422,7 @@
       },
       {
        "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/console-log.js:4:9)",
-       "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/console-log.js",
+       "filename": "/test/scripts/console-log.js",
        "line": 4,
        "collum": 9
       },

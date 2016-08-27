@@ -2,17 +2,17 @@
  "stdout": "",
  "stderr": "",
  "dump": {
-  "total": 28647793,
+  "total": 27966898,
   "version": "0.14.0",
   "root": {
    "name": "root",
    "init": 0,
-   "destroy": 4298018,
+   "destroy": 4603226,
    "before": [
     0
    ],
    "after": [
-    4267707
+    4572081
    ],
    "stack": [
     {
@@ -59,7 +59,7 @@
     },
     {
      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout.js:2:1)",
-     "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout.js",
+     "filename": "/test/scripts/set-timeout.js",
      "line": 2,
      "collum": 1
     },
@@ -121,18 +121,18 @@
    "children": [
     {
      "name": "TimeoutWrap",
-     "init": 3184580,
-     "destroy": 16916940,
+     "init": 3164538,
+     "destroy": 16663804,
      "before": [
-      15048560
+      14824758
      ],
      "after": [
-      16598093
+      16338533
      ],
      "stack": [
       {
        "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout.js:4:1)",
-       "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout.js",
+       "filename": "/test/scripts/set-timeout.js",
        "line": 4,
        "collum": 1
       },
@@ -194,18 +194,18 @@
      "children": [
       {
        "name": "TimeoutWrap",
-       "init": 15383758,
-       "destroy": 28106238,
+       "init": 15113933,
+       "destroy": 27305424,
        "before": [
-        27986653
+        27200889
        ],
        "after": [
-        28065538
+        27277780
        ],
        "stack": [
         {
          "description": "Timeout.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout.js:5:3)",
-         "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout.js",
+         "filename": "/test/scripts/set-timeout.js",
          "line": 5,
          "collum": 3
         },
@@ -226,18 +226,18 @@
       },
       {
        "name": "TimeoutWrap",
-       "init": 16210682,
-       "destroy": 28157978,
+       "init": 15963249,
+       "destroy": 27355113,
        "before": [
-        28120640
+        27318605
        ],
        "after": [
-        28150400
+        27347931
        ],
        "stack": [
         {
          "description": "Timeout.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout.js:7:3)",
-         "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout.js",
+         "filename": "/test/scripts/set-timeout.js",
          "line": 7,
          "collum": 3
         },

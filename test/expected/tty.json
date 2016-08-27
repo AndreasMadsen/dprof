@@ -2,17 +2,17 @@
  "stdout": "'use strict';\nrequire('../../dprof.js');\n\nconst fs = require('fs');\n\nfs.createReadStream(__filename).pipe(process.stdout);\n",
  "stderr": "",
  "dump": {
-  "total": 20414882,
+  "total": 20065808,
   "version": "0.14.0",
   "root": {
    "name": "root",
    "init": 0,
-   "destroy": 14304808,
+   "destroy": 14258639,
    "before": [
     0
    ],
    "after": [
-    14267640
+    14226362
    ],
    "stack": [
     {
@@ -59,7 +59,7 @@
     },
     {
      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/tty.js:2:1)",
-     "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/tty.js",
+     "filename": "/test/scripts/tty.js",
      "line": 2,
      "collum": 1
     },
@@ -121,13 +121,13 @@
    "children": [
     {
      "name": "FSReqWrap",
-     "init": 3327527,
-     "destroy": 17166545,
+     "init": 3316682,
+     "destroy": 16787239,
      "before": [
-      15906405
+      15535016
      ],
      "after": [
-      17154386
+      16771731
      ],
      "stack": [
       {
@@ -156,7 +156,7 @@
       },
       {
        "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/tty.js:6:4)",
-       "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/tty.js",
+       "filename": "/test/scripts/tty.js",
        "line": 6,
        "collum": 4
       },
@@ -218,13 +218,13 @@
      "children": [
       {
        "name": "FSReqWrap",
-       "init": 16483777,
-       "destroy": 19346263,
+       "init": 16100291,
+       "destroy": 18979753,
        "before": [
-        17185941
+        16808643
        ],
        "after": [
-        19153366
+        18788531
        ],
        "stack": [
         {
@@ -279,13 +279,13 @@
        "children": [
         {
          "name": "NextTickWrap",
-         "init": 18427683,
-         "destroy": 19279376,
+         "init": 18040975,
+         "destroy": 18914878,
          "before": [
-          19164025
+          18799651
          ],
          "after": [
-          19275360
+          18910284
          ],
          "stack": [
           {
@@ -383,13 +383,13 @@
         },
         {
          "name": "FSReqWrap",
-         "init": 18901799,
-         "destroy": 20280808,
+         "init": 18526317,
+         "destroy": 19930630,
          "before": [
-          19355971
+          18989607
          ],
          "after": [
-          19628963
+          19278966
          ],
          "stack": [
           {
@@ -438,13 +438,13 @@
          "children": [
           {
            "name": "NextTickWrap",
-           "init": 19574050,
-           "destroy": 20275892,
+           "init": 19219619,
+           "destroy": 19925509,
            "before": [
-            19636705
+            19284734
            ],
            "after": [
-            20272264
+            19921988
            ],
            "stack": [
             {
@@ -511,13 +511,13 @@
            "children": [
             {
              "name": "FSReqWrap",
-             "init": 19970019,
-             "destroy": 20333081,
+             "init": 19616407,
+             "destroy": 19983022,
              "before": [
-              20289617
+              19939471
              ],
              "after": [
-              20330055
+              19979927
              ],
              "stack": [
               {
@@ -589,13 +589,13 @@
         },
         {
          "name": "NextTickWrap",
-         "init": 19077426,
-         "destroy": 19339131,
+         "init": 18707846,
+         "destroy": 18972566,
          "before": [
-          19283015
+          18918485
          ],
          "after": [
-          19334504
+          18970078
          ],
          "stack": [
           {
@@ -637,7 +637,7 @@
     },
     {
      "name": "Pipe",
-     "init": 12229485,
+     "init": 12387964,
      "destroy": null,
      "before": [],
      "after": [],
@@ -668,7 +668,7 @@
       },
       {
        "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/tty.js:6:45)",
-       "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/tty.js",
+       "filename": "/test/scripts/tty.js",
        "line": 6,
        "collum": 45
       },
@@ -731,13 +731,13 @@
     },
     {
      "name": "NextTickWrap",
-     "init": 13375780,
-     "destroy": 15545777,
+     "init": 13541317,
+     "destroy": 15230135,
      "before": [
-      14602487
+      14513957
      ],
      "after": [
-      15453023
+      15159279
      ],
      "stack": [
       {
@@ -766,7 +766,7 @@
       },
       {
        "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/tty.js:6:33)",
-       "filename": "/Users/Andreas/Sites/node_modules/dprof/test/scripts/tty.js",
+       "filename": "/test/scripts/tty.js",
        "line": 6,
        "collum": 33
       },

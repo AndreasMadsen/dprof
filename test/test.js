@@ -43,7 +43,7 @@ interpreted({
         callback(null, {
           stdout: results.stdout.toString('ascii'),
           stderr: results.stderr.toString('ascii'),
-          dump: JSON.parse(dump.toString('ascii'))
+          dump: testUtil.prepearDump(JSON.parse(dump.toString('ascii')))
         });
       });
     });

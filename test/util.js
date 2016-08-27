@@ -1,5 +1,25 @@
 'use strict';
 
+const path = require('path');
+
+const userPath = path.resolve(__dirname, '..');
+function removeUserPath(cite) {
+  const filename = cite.filename;
+  if (filename.includes('/') && filename.slice(0, 9) !== 'internal/') {
+    cite.filename = filename.slice(userPath.length);
+  }
+}
+
+function prepearDump(dump) {
+  (function recursive(node) {
+    node.stack.forEach((cite) => removeUserPath(cite));
+    node.children.forEach(recursive);
+  })(dump.root);
+
+  return dump;
+}
+exports.prepearDump = prepearDump;
+
 function simplifyDump(dump) {
   return (function recursive(node) {
     return {
