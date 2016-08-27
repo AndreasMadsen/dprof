@@ -19,31 +19,35 @@ interpreted({
   update: false,
 
   test: function (name, content, callback) {
-    const scriptPath = path.resolve(SCRIPTS_DIR, name + '.js');
-    const proc = spawn(process.execPath, [
-      '--stack_trace_limit=100', scriptPath
-    ], {
-      cwd: __dirname,
-      env: Object.assign({ NODE_DPROF_DEBUG: '1' }, process.env)
-    });
+    fs.unlink(DPROF_DUMP, function (err) {
+      if (err && err.code !== 'ENOENT') return callback(err);
 
-    async.parallel({
-      stderr(done) {
-        proc.stderr.pipe(endpoint(done));
-      },
-      stdout(done) {
-        proc.stdout.pipe(endpoint(done));
-      }
-    }, function (err, results) {
-      if (err) return callback(err);
+      const scriptPath = path.resolve(SCRIPTS_DIR, name + '.js');
+      const proc = spawn(process.execPath, [
+        '--stack_trace_limit=100', scriptPath
+      ], {
+        cwd: __dirname,
+        env: Object.assign({ NODE_DPROF_DEBUG: '1' }, process.env)
+      });
 
-      fs.readFile(DPROF_DUMP, function (err, dump) {
+      async.parallel({
+        stderr(done) {
+          proc.stderr.pipe(endpoint(done));
+        },
+        stdout(done) {
+          proc.stdout.pipe(endpoint(done));
+        }
+      }, function (err, results) {
         if (err) return callback(err);
 
-        callback(null, {
-          stdout: results.stdout.toString('ascii'),
-          stderr: results.stderr.toString('ascii'),
-          dump: testUtil.prepearDump(JSON.parse(dump.toString('ascii')))
+        fs.readFile(DPROF_DUMP, function (err, dump) {
+          if (err) return callback(err);
+
+          callback(null, {
+            stdout: results.stdout.toString('ascii'),
+            stderr: results.stderr.toString('ascii'),
+            dump: testUtil.prepearDump(JSON.parse(dump.toString('ascii')))
+          });
         });
       });
     });
@@ -56,6 +60,7 @@ interpreted({
 
         t.strictEqual(actual.stdout, expected.stdout);
         t.strictEqual(actual.stderr, expected.stderr);
+
         t.strictDeepEqual(
           testUtil.simplifyDump(actual.dump),
           testUtil.simplifyDump(expected.dump)
