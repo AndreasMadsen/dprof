@@ -115,6 +115,8 @@ Each nested `Node` has the following format:
                      // All timestamps are relative to the process startup time
                      // and the unit is nanoseconds.
 
+  unrefed: Boolean,  // `true` if the handle will not keep the event loop open.
+
   children: [        // Shows async operations created in the callback
     Node, ...
   ]
