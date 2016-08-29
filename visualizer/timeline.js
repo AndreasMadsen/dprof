@@ -190,7 +190,10 @@ TimelineLayout.prototype._drawTimelines = function () {
   // Insert groups
   const barEnter = bar
     .enter().append('g')
-      .attr('class', 'timeline');
+      .attr('class', 'timeline')
+      // Change bar opacity if unrefed
+      .classed('unrefed', (d) => d.unrefed);
+
 
   // Draw background line
   barEnter.append('path')
