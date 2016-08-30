@@ -29,16 +29,25 @@ function timestamp() {
   return t[0] * 1e9 + t[1];
 }
 
-function Node(name, stack) {
-  this.name = name;
+function Node(handle, stack) {
+  this.name = handle.constructor.name;
   this._init = timestamp();
   this._destroy = Infinity;
   this._before = [];
   this._after = [];
+  this.unrefed = this.name === 'TTY' || this.name === 'Pipe';
   this.children = [];
   this.stack = stack.map(function (site) {
     return new Site(site);
   });
+
+  asyncHook.disable();
+  if (!this.unrefed && typeof handle.hasRef === 'function') {
+    process.nextTick(() => {
+      this.unrefed = !handle.hasRef();
+    });
+  }
+  asyncHook.enable();
 }
 
 function getCallSites(skip) {
@@ -56,7 +65,7 @@ function getCallSites(skip) {
 }
 
 Node.prototype.add = function (handle) {
-  const node = new Node(handle.constructor.name, getCallSites(3));
+  const node = new Node(handle, getCallSites(3));
   this.children.push(node);
   return node;
 };
@@ -80,6 +89,7 @@ Node.prototype.toJSON = function () {
     destroy: this._destroy,
     before: this._before,
     after: this._after,
+    unrefed: this.unrefed,
     stack: this.stack,
     children: this.children
   };
@@ -100,7 +110,7 @@ asyncHook.addHooks({
   destroy: asyncDestroy
 });
 
-const root = new Node('root', getCallSites(2));
+const root = new Node({ constructor: { name: 'root' } }, getCallSites(2));
       root.rootIntialize();
 
 const stateMap = new Map();

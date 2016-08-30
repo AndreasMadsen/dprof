@@ -41,6 +41,7 @@ StatsLayout.prototype.draw = function () {
 
     stats += '\n' +
       `handle: ${this._node.name}\n` +
+      `weak (unrefed): ${this._node.unrefed}\n` +
       `start: ${this._node.init.toFixed(8)} sec\n` +
       `wait: ${toms(wait, 11)} ms\n` +
       `callback: ${toms(callback, 7)} ms`;

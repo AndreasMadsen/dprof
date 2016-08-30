@@ -27,6 +27,7 @@ function Node(parent, node, index) {
   // Info
   this.name = node.name;
   this.stack = node.stack;
+  this.unrefed = node.unrefed;
 
   // Convert init time
   this.init = node.init * ns2s;
