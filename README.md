@@ -1,6 +1,6 @@
 # dprof
 
-> Dynamic profiling & visualization for sync and async operations
+> Dynamic/structured profiling & visualization for sync and async operations
 
 ```shell
 node -r dprof my-script.js

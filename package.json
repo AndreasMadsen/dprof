@@ -1,6 +1,6 @@
 {
   "name": "dprof",
-  "description": "Dynamic profiling for node",
+  "description": "Dynamic/structured profiling & visualization for sync and async operations",
   "version": "0.15.0",
   "author": "Andreas Madsen <amwebdk@gmail.com>",
   "main": "./dprof.js",
