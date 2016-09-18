@@ -10,28 +10,36 @@ function removeUserPath(cite) {
   }
 }
 
-function prepearDump(dump) {
-  (function recursive(node) {
-    node.stack.forEach((cite) => removeUserPath(cite));
-    node.children.forEach(recursive);
-  })(dump.root);
+function prepareNode(node) {
+  node.stack.forEach((cite) => removeUserPath(cite));
+}
 
+function prepareDump(dump) {
+  prepareNode(dump.root);
+  dump.nodes.forEach(prepareNode);
   return dump;
 }
-exports.prepearDump = prepearDump;
+exports.prepareDump = prepareDump;
+
+function simplifyNode(node) {
+  return {
+    name: node.name,
+    uid: node.uid,
+    parent: node.parent,
+    init: node.init === null ? 'null' : typeof node.init,
+    destroy: node.destroy === null ? 'null' : typeof node.destroy,
+    before: `Array(${node.before.length})`,
+    after: `Array(${node.after.length})`,
+    unrefed: `${node.unrefed}`,
+    stack: node.stack.map((cite) => cite.filename),
+    children: node.children
+  };
+}
 
 function simplifyDump(dump) {
-  return (function recursive(node) {
-    return {
-      name: node.name,
-      init: node.init === null ? 'null' : typeof node.init,
-      destroy: node.destroy === null ? 'null' : typeof node.destroy,
-      before: `Array(${node.before.length})`,
-      after: `Array(${node.after.length})`,
-      unrefed: `${node.unrefed}`,
-      stack: node.stack.map((cite) => cite.filename),
-      children: node.children.map(recursive)
-    };
-  })(dump.root);
+  return {
+    root: simplifyNode(dump.root),
+    nodes: dump.nodes.map(simplifyNode)
+  }
 }
 exports.simplifyDump = simplifyDump;
