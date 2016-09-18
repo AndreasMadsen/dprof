@@ -8,20 +8,77 @@ const ns2s = 1e-9;
 // Flatten datastructure
 //
 function Flatten(data) {
-  this.tree = new Node(null, data.root, 0);
+  const root = new Node(data.root);
+
+  // Construct map of all nodes
+  const nodes = new Map([[0, root]]);
+  for (const node of data.nodes) {
+    nodes.set(node.uid, new Node(node));
+  }
+
+  // Cross reference children and parents
+  for (const node of nodes.values()) {
+    node.parent = node.parent === null ? null : nodes.get(node.parent);
+    node.children = node.children.map((uid) => nodes.get(uid));
+  }
+
+  // To calculate the node.total value all children must be processed,
+  // so walk backward from leafs to root.
+  // TODO: Because the nodecore uid are created in an incrementing order
+  // one could construct post-order walkthough of the DAG by simply looping
+  // from `max(uids)` to 0. However `async_hook` (not nodecore) extends
+  // the uids with negative values, so that is not possibol right now.
+  // In the future when only nodecore is used, this can be simplified.
+  backwardDAGWalk(nodes, (node) => node.updateTotal());
+
+  this.tree = root;
   this.allNodes = this.nodes();
 
   this.total = data.total * ns2s;
   this.version = data.version;
 }
 
-let idCounter = 0;
+function backwardDAGWalk(nodes, handler) {
+  // Create a queue of all nodes whos children have been processed,
+  // and create a counter for all other nodes counting how many children
+  // that needs to be processed
+  const childCounter = new Map();
+  const nodeQueue = new Set();
 
-function Node(parent, node, index) {
+  // Initialize the counter and queue
+  for (const node of nodes.values()) {
+    if (node.children.length === 0) {
+      nodeQueue.add(node);
+    } else {
+      childCounter.set(node.id, node.children.length);
+    }
+  }
+
+  // Process nodes whos children have been processed, until there are no
+  // more nodes.
+  for (const node of nodeQueue.values()) {
+    handler(node);
+
+    // The root node doesn't have any children, so skip the backward walk
+    if (node.parent === null) continue;
+
+    // the number of children that has not been processed
+    const missingChildren = childCounter.get(node.parent.id) - 1;
+
+    if (missingChildren === 0) {
+      // parent is ready to be processed, so add to queue
+      nodeQueue.add(node.parent);
+      childCounter.delete(node.parent.id);
+    } else {
+      childCounter.set(node.parent.id, missingChildren);
+    }
+  }
+}
+
+function Node(node) {
   // Meta
-  this.index = idCounter; // related to top position
-  this.id = index; // d3 id, doesn't change
-  this.parent = parent;
+  this.id = node.uid; // d3 id, doesn't change
+  this.parent = node.parent; // will be replaced by a Node reference
   this.collapsed = false;
 
   // Info
@@ -38,23 +95,25 @@ function Node(parent, node, index) {
   // Convert before and after time
   this.before = node.before.map((v) => v * ns2s);
   this.after = node.after.map((v) => v * ns2s);
-
+  // Total time, including all children will be updated.
   this.total = 0;
-  this.top = this.index + 0.5;
 
-  // Create children and maintain an array containing the total lifespan
-  // for each child.
-  const totals = [this.destroy];
-  this.children = node.children.map(function (child) {
-    child = new Node(this, child, ++idCounter);
-    totals.push(child.total);
-    return child;
-  }, this);
+  // top position, will be updated
+  this.index = NaN;
+  this.top = NaN;
 
+   // will be replaced by a list of Node references
+  this.children = node.children;
+}
+
+Node.prototype.updateTotal = function () {
   // Update total, to be the max of the childrens total and the after time
   // of this node.
-  this.total = Math.max(...totals);
-}
+  this.total = this.destroy;
+  for (const child of this.children) {
+    this.total = Math.max(this.total, child.total);
+  }
+};
 
 Node.prototype.setIndex = function (index) {
   this.index = index;
@@ -69,11 +128,16 @@ Flatten.prototype.nodes = function () {
   // Flatten out the nodes, removed children of collapsed nodes and calculate
   // index.
   const nodes = [];
-  (function recursive(node) {
+
+  // This is implemented as an non-recursive preorder walker, to prevent
+  // stack overflow.
+  const stack = [this.tree];
+  while (stack.length > 0) {
+    const node = stack.pop();
     node.setIndex(nodes.length);
     nodes.push(node);
-    if (!node.collapsed) node.children.forEach(recursive);
-  })(this.tree);
+    if (!node.collapsed) stack.push(...node.children.slice(0).reverse());
+  }
 
   return nodes;
 };
