@@ -1,6 +1,18 @@
 'use strict';
 
-const asyncHook = require('async-hook');
+const async_hooks = require('async_hooks');
+// process._rawDebug('>>> currentId:', async_hooks.currentId());
+
+// const preHook = async_hooks.createHook({
+//   init (uid) {
+//     process._rawDebug('preInit', uid, (new Error()).stack.substring(6))
+//   },
+//   before(){},
+//   after(){},
+//   destroy(){}
+// })
+// preHook.enable();
+
 const chain = require('stack-chain');
 const zlib = require('zlib');
 const fs = require('fs');
@@ -12,6 +24,17 @@ const processStart = process.hrtime();
 if (process.execArgv.indexOf('--stack_trace_limit') === -1 && Error.stackTraceLimit === 10) {
   Error.stackTraceLimit = 8;
 }
+
+// preHook.disable()
+//
+// Setup hooks
+//
+const asyncHook = async_hooks.createHook({
+  init: asyncInit,
+  before: asyncBefore,
+  after: asyncAfter,
+  destroy: asyncDestroy
+});
 
 //
 // Define node class
@@ -29,27 +52,44 @@ function timestamp() {
   return t[0] * 1e9 + t[1];
 }
 
-function Node(uid, handle, stack, parent) {
+function Node(uid, handle, name, stack, parent) {
   this.parent = parent === null ? null : parent.uid;
+  this.name = name;
   this.uid = uid;
-  this.name = handle.constructor.name;
   this._init = timestamp();
   this._destroy = Infinity;
   this._before = [];
   this._after = [];
-  this.unrefed = this.name === 'TTY' || this.name === 'Pipe';
+  this.unrefed = this.name === 'TTY' || this.name === 'Pipe' || handle._timerUnref === true;
   this.children = [];
   this.stack = stack.map(function (site) {
     return new Site(site);
   });
 
-  asyncHook.disable();
-  if (!this.unrefed && typeof handle.hasRef === 'function') {
-    process.nextTick(() => {
-      this.unrefed = !handle.hasRef();
-    });
+  if (typeof handle.unref === 'function') {
+    const unref = handle.unref;
+    handle.unref = () => {
+      const ret = unref.call(handle);
+      this.unrefed = true;
+      return ret;
+    }
   }
-  asyncHook.enable();
+  if (typeof handle.ref === 'function') {
+    const ref = handle.ref;
+    handle.ref = () => {
+      const ret = ref.call(handle);
+      this.unrefed = false;
+      return ret;
+    }
+  }
+
+  // asyncHook.disable();
+  // if (!this.unrefed && typeof handle.hasRef === 'function') {
+  //   process.nextTick(() => {
+  //     this.unrefed = !handle.hasRef();
+  //   });
+  // }
+  // asyncHook.enable();
 }
 
 function getCallSites(skip) {
@@ -66,8 +106,8 @@ function getCallSites(skip) {
   return stack;
 }
 
-Node.prototype.add = function (uid, handle) {
-  const node = new Node(uid, handle, getCallSites(3), this);
+Node.prototype.add = function (uid, handle, type) {
+  const node = new Node(uid, handle, type, getCallSites(3), this);
   this.children.push(uid);
   return node;
 };
@@ -104,18 +144,10 @@ Node.prototype.rootIntialize = function () {
   this._before.push(0);
 };
 
-//
-// Setup hooks
-//
-asyncHook.addHooks({
-  init: asyncInit,
-  pre: asyncBefore,
-  post: asyncAfter,
-  destroy: asyncDestroy
-});
-
 const root = new Node(
-  0, { 'constructor': { name: 'root' } },
+  0,
+  {},
+  'root',
   getCallSites(2),
   null
 );
@@ -124,15 +156,31 @@ root.rootIntialize();
 const nodes = new Map();
 let currState = root;
 
-function asyncInit(uid, handle, provider, parentUid) {
+function asyncInit(uid, type, parentUid, handle) {
+  // process._rawDebug('init:' + uid, parentUid);
+
+  // Ignore our nextTick for the root duration
+  // TODO(Fishrock123): detect this better.
+  if (uid === 2) return
+
+  // if (type === 'Timeout') {
+  //   process._rawDebug('Timeout', uid, handle._idleTimeout)
+  // }
+
   // get parent state
-  const state = (parentUid === null ? currState : nodes.get(parentUid));
+  // root is always UID 1
+  const state = (parentUid === 1 ? currState : nodes.get(parentUid));
 
   // add new state node
-  nodes.set(uid, state.add(uid, handle));
+  // process._rawDebug('>>> UID:', uid)
+  nodes.set(uid, state.add(uid, handle, type));
 }
 
 function asyncBefore(uid) {
+  // Ignore our nextTick for the root duration
+  // TODO(Fishrock123): detect this better.
+  if (uid === 2) return
+
   const state = nodes.get(uid);
 
   state.before();
@@ -140,6 +188,10 @@ function asyncBefore(uid) {
 }
 
 function asyncAfter(uid) {
+  // Ignore our nextTick for the root duration
+  // TODO(Fishrock123): detect this better.
+  if (uid === 2) return
+
   const state = nodes.get(uid);
 
   state.after();
@@ -147,7 +199,17 @@ function asyncAfter(uid) {
 }
 
 function asyncDestroy(uid) {
+  // Ignore our nextTick for the root duration
+  // TODO(Fishrock123): detect this better.
+  if (uid === 2) return
+
+  // process._rawDebug('destroy:' + uid)
   const state = nodes.get(uid);
+  // if (state === undefined) return
+
+  // if (!state) {
+  //   process._rawDebug('>>>>', uid)
+  // }
 
   state.destroy();
 }

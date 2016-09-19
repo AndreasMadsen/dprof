@@ -83,6 +83,7 @@ function Node(node) {
 
   // Info
   this.name = node.name;
+  this.uid = node.uid;
   this.stack = node.stack;
   this.unrefed = node.unrefed;
 
