@@ -29,7 +29,6 @@
     "babelify": "^7.3.0",
     "babel-preset-es2015": "^6.13.2",
     "startpoint": "0.3.x",
-    "async-hook": "^1.6.0",
     "stack-chain": "^1.3.7"
   },
   "devDependencies": {
