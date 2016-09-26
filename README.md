@@ -87,7 +87,7 @@ to get an uncompressed file, just set the environment variable `NODE_DPROF_DEBUG
 There is an initial object containing metadata and a "root" node:
 
 ```javascript
-{
+Root {
   version: String,   // the version of dprof there generated this JSON file
   total: Number,     // execution time in nanoseconds
   root: Node,        // The root node, has uid 0
@@ -100,7 +100,7 @@ There is an initial object containing metadata and a "root" node:
 Each nested `Node` has the following format:
 
 ```javascript
-{
+Node {
   name: String,      // Handle name of the async operation
   uid: Number,       // Unique identifier for each node (from asyncHook)
   parent: Number,    // Uid for the parent node
