@@ -29,7 +29,9 @@ function timestamp() {
   return t[0] * 1e9 + t[1];
 }
 
-function Node(handle, stack) {
+function Node(uid, handle, stack, parent) {
+  this.parent = parent === null ? null : parent.uid;
+  this.uid = uid;
   this.name = handle.constructor.name;
   this._init = timestamp();
   this._destroy = Infinity;
@@ -64,9 +66,9 @@ function getCallSites(skip) {
   return stack;
 }
 
-Node.prototype.add = function (handle) {
-  const node = new Node(handle, getCallSites(3));
-  this.children.push(node);
+Node.prototype.add = function (uid, handle) {
+  const node = new Node(uid, handle, getCallSites(3), this);
+  this.children.push(uid);
   return node;
 };
 
@@ -85,6 +87,8 @@ Node.prototype.destroy = function () {
 Node.prototype.toJSON = function () {
   return {
     name: this.name,
+    parent: this.parent,
+    uid: this.uid,
     init: this._init,
     destroy: this._destroy,
     before: this._before,
@@ -110,39 +114,42 @@ asyncHook.addHooks({
   destroy: asyncDestroy
 });
 
-const root = new Node({ constructor: { name: 'root' } }, getCallSites(2));
-      root.rootIntialize();
+const root = new Node(
+  0, { 'constructor': { name: 'root' } },
+  getCallSites(2),
+  null
+);
+root.rootIntialize();
 
-const stateMap = new Map();
+const nodes = new Map();
 let currState = root;
 
 function asyncInit(uid, handle, provider, parentUid) {
   // get parent state
-  const state = (parentUid === null ? currState : stateMap.get(parentUid));
+  const state = (parentUid === null ? currState : nodes.get(parentUid));
 
   // add new state node
-  stateMap.set(uid, state.add(handle));
+  nodes.set(uid, state.add(uid, handle));
 }
 
 function asyncBefore(uid) {
-  const state = stateMap.get(uid);
+  const state = nodes.get(uid);
 
   state.before();
   currState = state;
 }
 
 function asyncAfter(uid) {
-  const state = stateMap.get(uid);
+  const state = nodes.get(uid);
 
   state.after();
   currState = root;
 }
 
 function asyncDestroy(uid) {
-  const state = stateMap.get(uid);
+  const state = nodes.get(uid);
 
   state.destroy();
-  stateMap.delete(uid);
 }
 
 // The root job is done when process.nextTick is called
@@ -178,7 +185,8 @@ function writeDataFile() {
   const data = {
     'total': timestamp(),
     'version': version,
-    'root': root
+    'root': root,
+    'nodes': Array.from(nodes.values())
   };
 
   if (process.env.NODE_DPROF_DEBUG) {

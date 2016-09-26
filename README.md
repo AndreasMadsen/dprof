@@ -88,9 +88,12 @@ There is an initial object containing metadata and a "root" node:
 
 ```javascript
 {
-  version: String, // the version of dprof there generated this JSON file
-  total: Number, // execution time in nanoseconds
-  root: Node
+  version: String,   // the version of dprof there generated this JSON file
+  total: Number,     // execution time in nanoseconds
+  root: Node,        // The root node, has uid 0
+  nodes: [           // List of all non-root nodes
+    Node, ...
+  ]
 }
 ```
 
@@ -99,6 +102,9 @@ Each nested `Node` has the following format:
 ```javascript
 {
   name: String,      // Handle name of the async operation
+  uid: Number,       // Unique identifier for each node (from asyncHook)
+  parent: Number,    // Uid for the parent node
+
   stack: [           // Contains the stack leading up to the async operation
     {
       description: String,
@@ -107,6 +113,7 @@ Each nested `Node` has the following format:
       line: Number
     }, ...
   ],
+
   init: Number,      // Timestamp for when the async operation is requested.
   before: [Number],  // Timestamp for when the callback is about to be called.
                      // This is an array because a callback may be called more
@@ -118,7 +125,7 @@ Each nested `Node` has the following format:
   unrefed: Boolean,  // `true` if the handle will not keep the event loop open.
 
   children: [        // Shows async operations created in the callback
-    Node, ...
+    Number(uid), ...
   ]
 }
 ```
