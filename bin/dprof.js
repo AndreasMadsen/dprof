@@ -70,7 +70,7 @@ async.parallel([
   b.add(files.visualizer);
 
   server.on('request', function (req, res) {
-    if (req.url === '/visualizer.js') {
+    if (req.url === '/visualizer.build.js') {
       res.setHeader('content-type', 'application/javascript');
       b.bundle().pipe(res);
     } else if (req.url === '/favicon.ico') {
