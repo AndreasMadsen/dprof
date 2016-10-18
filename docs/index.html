@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>dprof - structured profiling</title>
+  <meta charset="utf8">
+  <link rel="stylesheet" href="fonts/import.css"></link>
+  <link rel="stylesheet" href="normalize.css"></link>
+  <link rel="stylesheet" href="style.css"></link>
+  <script src="script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>dprof</h1>
+    <ul id="navigration">
+      <li data-show="viewer" class="selected">Viewer</li>
+      <li data-show="example">Example</li>
+    </ul>
+  </header>
+  <section id="viewer">
+    <div id="drop-zone">
+      <p class="text">Drop <span class="tech">dprof.json.gz</span> here.</p>
+      <p class="error"></p>
+    </div>
+  </section>
+  <section id="example" hidden>
+    <h2>Example</h2>
+    Install <span class="tech">dprof</span> and run your node program with
+    <span class="tech">-r dprof</span>:
+    <code class="content">
+      npm install dprof
+      node -r dprof my-script.js
+    </code>
+    <p>
+      Content of <span class="tech">my-script.js</span>:
+    </p>
+    <code class="content">
+      <span class="keyword">const</span> fs = <span class="function">require</span>(<span class="string">'fs'</span>);
+
+      fs.<span class="function">open</span>(__filename, <span class="string">'r'</span>, <span class="keyword">function</span> (err, fd) {
+
+        <span class="keyword">let</span> count = 0;
+        <span class="keyword">const</span> a = <span class="keyword">new</span> <span class="function">Buffer</span>(<span class="number">10</span>);
+        fs.<span class="function">read</span>(fd, a, <span class="number">0</span>, <span class="number">10</span>, <span class="number">0</span>, <span class="keyword">function</span> (err2) {
+          if (++count === <span class="number">2</span>) <span class="function">close</span>();
+        });
+
+        <span class="keyword">const</span> b = new Buffer(<span class="number">10</span>);
+        fs.<span class="function">read</span>(fd, b, <span class="number">0</span>, <span class="number">10</span>, <span class="number">10</span>, <span class="keyword">function</span> (err2) {
+          if (++count === <span class="number">2</span>) <span class="function">close</span>();
+        });
+
+        <span class="keyword">function</span> <span class="function">close</span>() {
+          fs.close(fd, <span class="keyword">function</span> (err) {
+
+          });
+        }
+      });
+    </code>
+    View using <span class="tech">gzcat dprof.json.gz | dprof</span>, or use the online viewer (<a href="javascript:viewExample()">try this example</a>).
+  </section>
+  <footer>
+    <a href="https://github.com/AndreasMadsen/dprof">dprof</a> is made by
+    <a href="https://github.com/AndreasMadsen" rel="author">Andreas Madsen</a> &amp;
+    <a href="https://github.com/Fishrock123" rel="author">Jeremiah Senkpiel</a>.
+  </footer>
+  <script>
+    Array.from(document.querySelectorAll('.content')).forEach(function (node) {
+      var lines = node.innerHTML.split('\n').slice(1);
+      var indent = lines[0].match(/^\s+/)[0].length;
+
+      node.innerHTML = lines.map(function (line) {
+        return line.slice(indent);
+      }).join('\n');
+    });
+  </script>
+</body>
+</html>

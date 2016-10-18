@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "tap": "^6.3.2",
+    "pako": "^1.0.3",
     "interpreted": "0.7.x"
   },
   "license": "MIT"
