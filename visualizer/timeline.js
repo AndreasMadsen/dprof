@@ -139,35 +139,89 @@ TimelineLayout.prototype._calcBackgroundLine = function (node) {
          `H${this._xScale(flatten.total)}`; // Horizontal line to
 };
 
-TimelineLayout.prototype._calcWaitLine = function (node) {
-  const path = [];
+TimelineLayout.prototype._calcStateLines = function (self) {
 
-  // Between (init - before) and (after - before)
-  let prevTime = node.init;
-  for (let i = 0; i < node.before.length; i++) {
-    path.push(`M${this._xScale(prevTime)} ${node.top * timelineHeight} ` + // Move to
-              `H${this._xScale(node.before[i])}`); // Horizontal line to
-    prevTime = node.after[i];
+  // Wrap our d3 callback so we can pass our instance as "self"
+  return function(node) {
+    // Get our bar element
+    const path = d3.select(this)
+
+    // Create lists to populate path segments
+    const wait = []
+    const wait_unref = []
+    const callback = []
+
+    let prevTime = node.init;
+    // Set the initial unref value
+    let unrefed = node._unrefed;
+    let inCallback = false;
+
+    // Iterate over the state changes
+    for (const state of node.stateChanges) {
+      let endPoint = null;
+      let pathPart = null;
+
+      // Check the stat change and grab both the endPoint time
+      // and which path we should be drawing to
+      if (state[1] === 'unref') {
+        if (unrefed) continue;
+        unrefed = true;
+        if (inCallback) continue;
+
+        endPoint = state[0];
+        pathPart = wait;
+      }
+      if (state[1] === 'ref') {
+        if (!unrefed) continue;
+        unrefed = false;
+        if (inCallback) continue;
+
+        endPoint = state[0];
+        pathPart = wait_unref;
+      }
+      if (state[1] === 'before') {
+        inCallback = true;
+        endPoint = state[0];
+        if (unrefed) {
+          pathPart = wait_unref;
+        } else {
+          pathPart = wait;
+        }
+      }
+      if (state[1] === 'after') {
+        inCallback = false;
+        endPoint = state[0];
+        pathPart = callback;
+      }
+      if (endPoint === null ||
+          pathPart === null) {
+        // Maybe a future API added new dprof data? Skip.
+        continue;
+      }
+
+      // Append to the chosen path
+      pathPart.push(`M${self._xScale(prevTime)} ${node.top * timelineHeight} ` + // Move to
+                    `H${self._xScale(endPoint)}`); // Horizontal line to
+
+      prevTime = endPoint;
+    }
+
+    // Figure out which path we need to add the end to
+    let pathPart = wait;
+    if (unrefed) {
+      pathPart = wait_unref;
+    }
+
+    // Append the end up to destroy on the chosen path
+    pathPart.push(`M${self._xScale(prevTime)} ${node.top * timelineHeight} ` + // Move to
+                  `H${self._xScale(node.destroy)}`); // Horizontal line to
+
+    // Sett the path attributes
+    path.select('.wait').attr('d', wait.join(' '));
+    path.select('.wait-unref').attr('d', wait_unref.join(' '));
+    path.select('.callback').attr('d', callback.join(' '));
   }
-
-  // Between (init/after - destroy)
-  path.push(`M${this._xScale(prevTime)} ${node.top * timelineHeight} ` + // Move to
-            `H${this._xScale(node.destroy)}`); // Horizontal line to
-
-  return path.join(' ');
-};
-
-TimelineLayout.prototype._calcCallbackLine = function (node) {
-  const path = [];
-
-  // Between (before - after)
-  for (let i = 0; i < node.before.length; i++) {
-    path.push(`M${this._xScale(node.before[i])} ${node.top * timelineHeight} ` + // Move to
-              `H${this._xScale(node.after[i])}`); // Horizontal line to
-  }
-
-  return path.join(' ');
-};
+}
 
 TimelineLayout.prototype._calcTotalLine = function (node) {
   if (!node.collapsed) return '';
@@ -191,9 +245,6 @@ TimelineLayout.prototype._drawTimelines = function () {
   const barEnter = bar
     .enter().append('g')
       .attr('class', 'timeline')
-      // Change bar opacity if unrefed
-      .classed('unrefed', (d) => d.unrefed);
-
 
   // Draw background line
   barEnter.append('path')
@@ -213,23 +264,28 @@ TimelineLayout.prototype._drawTimelines = function () {
   bar.select('.init')
     .attr('d', this._calcInitLine.bind(this));
 
-  // Draw before line
+  // add before (unref) line
+  barEnter.append('path')
+    .attr('class', 'wait-unref');
+
+  // Add before (ref) line
   barEnter.append('path')
     .attr('class', 'wait');
-  bar.select('.wait')
-    .attr('d', this._calcWaitLine.bind(this));
 
-  // Draw after line
+  // Add after line
   barEnter.append('path')
     .attr('class', 'callback');
-  bar.select('.callback')
-    .attr('d', this._calcCallbackLine.bind(this));
 
   // Draw after line
   barEnter.append('path')
     .attr('class', 'total');
   bar.select('.total')
     .attr('d', this._calcTotalLine.bind(this));
+
+  // Draw before (un/ref) and after lines
+  // _calcStateLines returns a d3 callback that also has a ref to
+  // the TimelineLayout instance
+  bar.each(this._calcStateLines(this));
 
   //
   // Order elements
