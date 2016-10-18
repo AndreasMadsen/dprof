@@ -84,7 +84,7 @@ function Node(node) {
   // Info
   this.name = node.name;
   this.stack = node.stack;
-  this.unrefed = node.unrefed;
+  this._unrefed = node.unrefed;
 
   // Convert init time
   this.init = node.init * ns2s;
@@ -95,6 +95,27 @@ function Node(node) {
   // Convert before and after time
   this.before = node.before.map((v) => v * ns2s);
   this.after = node.after.map((v) => v * ns2s);
+  this.unref = node.unref.map((v) => v * ns2s);
+  this.ref = node.ref.map((v) => v * ns2s);
+
+  // Compile a list of state changes
+  this.stateChanges = []
+  for (const v of this.before) {
+    this.stateChanges.push([v, 'before'])
+  }
+  for (const v of this.after) {
+    this.stateChanges.push([v, 'after'])
+  }
+  for (const v of this.unref) {
+    this.stateChanges.push([v, 'unref'])
+  }
+  for (const v of this.ref) {
+    this.stateChanges.push([v, 'ref'])
+  }
+
+  // Sort the state in order of time
+  this.stateChanges.sort((a, b) => a[0] - b[0])
+
   // Total time, including all children will be updated.
   this.total = 0;
 
