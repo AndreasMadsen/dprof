@@ -60,7 +60,9 @@ function Node(uid, handle, name, stack, parent) {
   this._destroy = Infinity;
   this._before = [];
   this._after = [];
-  this.unrefed = this.name === 'TTY' || this.name === 'Pipe' || handle._timerUnref === true;
+  this._unref = [];
+  this._ref = [];
+  this.unrefed = this.name === 'TTYWRAP' || this.name === 'PIPEWRAP' || handle._timerUnref === true;
   this.children = [];
   this.stack = stack.map(function (site) {
     return new Site(site);
@@ -70,7 +72,7 @@ function Node(uid, handle, name, stack, parent) {
     const unref = handle.unref;
     handle.unref = () => {
       const ret = unref.call(handle);
-      this.unrefed = true;
+      this._unref.push(timestamp())
       return ret;
     }
   }
@@ -78,7 +80,7 @@ function Node(uid, handle, name, stack, parent) {
     const ref = handle.ref;
     handle.ref = () => {
       const ret = ref.call(handle);
-      this.unrefed = false;
+      this._ref.push(timestamp())
       return ret;
     }
   }
@@ -133,6 +135,8 @@ Node.prototype.toJSON = function () {
     destroy: this._destroy,
     before: this._before,
     after: this._after,
+    unref: this._unref,
+    ref: this._ref,
     unrefed: this.unrefed,
     stack: this.stack,
     children: this.children
