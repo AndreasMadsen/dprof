@@ -1,0 +1,304 @@
+{
+ "total": 7970814,
+ "version": "0.16.0",
+ "root": {
+  "name": "root",
+  "parent": null,
+  "uid": 0,
+  "init": 0,
+  "destroy": 6182228,
+  "before": [
+   0
+  ],
+  "after": [
+   6020950
+  ],
+  "unrefed": false,
+  "stack": [
+   {
+    "description": "Module._compile (module.js:541:32)",
+    "filename": "module.js",
+    "line": 541,
+    "collum": 32
+   },
+   {
+    "description": "Object.Module._extensions..js (module.js:550:10)",
+    "filename": "module.js",
+    "line": 550,
+    "collum": 10
+   },
+   {
+    "description": "Module.load (module.js:458:32)",
+    "filename": "module.js",
+    "line": 458,
+    "collum": 32
+   },
+   {
+    "description": "tryModuleLoad (module.js:417:12)",
+    "filename": "module.js",
+    "line": 417,
+    "collum": 12
+   },
+   {
+    "description": "Function.Module._load (module.js:409:3)",
+    "filename": "module.js",
+    "line": 409,
+    "collum": 3
+   },
+   {
+    "description": "Module.require (module.js:468:17)",
+    "filename": "module.js",
+    "line": 468,
+    "collum": 17
+   },
+   {
+    "description": "module.js:631:12",
+    "filename": "module.js",
+    "line": 631,
+    "collum": 12
+   },
+   {
+    "description": "Array.forEach (native)",
+    "filename": "native array.js",
+    "line": 960,
+    "collum": 1
+   }
+  ],
+  "children": [
+   1,
+   2
+  ]
+ },
+ "nodes": [
+  {
+   "name": "Signal",
+   "parent": 0,
+   "uid": 1,
+   "init": 3589655,
+   "destroy": null,
+   "before": [],
+   "after": [],
+   "unrefed": true,
+   "stack": [
+    {
+     "description": "process.<anonymous> (internal/process.js:195:18)",
+     "filename": "internal/process.js",
+     "line": 195,
+     "collum": 18
+    },
+    {
+     "description": "emitTwo (events.js:106:13)",
+     "filename": "events.js",
+     "line": 106,
+     "collum": 13
+    },
+    {
+     "description": "process.emit (events.js:191:7)",
+     "filename": "events.js",
+     "line": 191,
+     "collum": 7
+    },
+    {
+     "description": "_addListener (events.js:226:14)",
+     "filename": "events.js",
+     "line": 226,
+     "collum": 14
+    },
+    {
+     "description": "process.addListener (events.js:270:10)",
+     "filename": "events.js",
+     "line": 270,
+     "collum": 10
+    },
+    {
+     "description": "Object.<anonymous> (/dprof.js:169:11)",
+     "filename": "/dprof.js",
+     "line": 169,
+     "collum": 11
+    },
+    {
+     "description": "Module._compile (module.js:541:32)",
+     "filename": "module.js",
+     "line": 541,
+     "collum": 32
+    }
+   ],
+   "children": []
+  },
+  {
+   "name": "FSReqWrap",
+   "parent": 0,
+   "uid": 2,
+   "init": 5369207,
+   "destroy": 7384790,
+   "before": [
+    6629128
+   ],
+   "after": [
+    7309944
+   ],
+   "unrefed": false,
+   "stack": [
+    {
+     "description": "Object.fs.open (fs.js:631:11)",
+     "filename": "fs.js",
+     "line": 631,
+     "collum": 11
+    },
+    {
+     "description": "Object.<anonymous> (/docs/example/example.js:4:4)",
+     "filename": "/docs/example/example.js",
+     "line": 4,
+     "collum": 4
+    },
+    {
+     "description": "Module._compile (module.js:541:32)",
+     "filename": "module.js",
+     "line": 541,
+     "collum": 32
+    },
+    {
+     "description": "Object.Module._extensions..js (module.js:550:10)",
+     "filename": "module.js",
+     "line": 550,
+     "collum": 10
+    },
+    {
+     "description": "Module.load (module.js:458:32)",
+     "filename": "module.js",
+     "line": 458,
+     "collum": 32
+    },
+    {
+     "description": "tryModuleLoad (module.js:417:12)",
+     "filename": "module.js",
+     "line": 417,
+     "collum": 12
+    },
+    {
+     "description": "Function.Module._load (module.js:409:3)",
+     "filename": "module.js",
+     "line": 409,
+     "collum": 3
+    }
+   ],
+   "children": [
+    3,
+    4
+   ]
+  },
+  {
+   "name": "FSReqWrap",
+   "parent": 2,
+   "uid": 3,
+   "init": 6940856,
+   "destroy": 7540374,
+   "before": [
+    7462258
+   ],
+   "after": [
+    7531528
+   ],
+   "unrefed": false,
+   "stack": [
+    {
+     "description": "Object.fs.read (fs.js:687:11)",
+     "filename": "fs.js",
+     "line": 687,
+     "collum": 11
+    },
+    {
+     "description": "/docs/example/example.js:8:6",
+     "filename": "/docs/example/example.js",
+     "line": 8,
+     "collum": 6
+    },
+    {
+     "description": "FSReqWrap.oncomplete (fs.js:123:15)",
+     "filename": "fs.js",
+     "line": 123,
+     "collum": 15
+    }
+   ],
+   "children": []
+  },
+  {
+   "name": "FSReqWrap",
+   "parent": 2,
+   "uid": 4,
+   "init": 7170514,
+   "destroy": 7718275,
+   "before": [
+    7543680
+   ],
+   "after": [
+    7713918
+   ],
+   "unrefed": false,
+   "stack": [
+    {
+     "description": "Object.fs.read (fs.js:687:11)",
+     "filename": "fs.js",
+     "line": 687,
+     "collum": 11
+    },
+    {
+     "description": "/docs/example/example.js:13:6",
+     "filename": "/docs/example/example.js",
+     "line": 13,
+     "collum": 6
+    },
+    {
+     "description": "FSReqWrap.oncomplete (fs.js:123:15)",
+     "filename": "fs.js",
+     "line": 123,
+     "collum": 15
+    }
+   ],
+   "children": [
+    5
+   ]
+  },
+  {
+   "name": "FSReqWrap",
+   "parent": 4,
+   "uid": 5,
+   "init": 7652801,
+   "destroy": 7821042,
+   "before": [
+    7776817
+   ],
+   "after": [
+    7817378
+   ],
+   "unrefed": false,
+   "stack": [
+    {
+     "description": "Object.fs.close (fs.js:605:11)",
+     "filename": "fs.js",
+     "line": 605,
+     "collum": 11
+    },
+    {
+     "description": "close (/docs/example/example.js:18:8)",
+     "filename": "/docs/example/example.js",
+     "line": 18,
+     "collum": 8
+    },
+    {
+     "description": "/docs/example/example.js:14:24",
+     "filename": "/docs/example/example.js",
+     "line": 14,
+     "collum": 24
+    },
+    {
+     "description": "FSReqWrap.wrapper [as oncomplete] (fs.js:681:17)",
+     "filename": "fs.js",
+     "line": 681,
+     "collum": 17
+    }
+   ],
+   "children": []
+  }
+ ]
+}

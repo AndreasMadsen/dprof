@@ -1,5 +1,4 @@
-test/dprof.json
-dprof.json
-dprof.json.gz
-node_modules/
-
+/test/dprof.json
+/dprof.json
+/dprof.json.gz
+/node_modules/

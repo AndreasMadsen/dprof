@@ -63,6 +63,17 @@ The visualizer is WIP, you are welcome to contribute with major changes to the e
 * Red: time spent executing the callback code (blocking).
 * Black: when the async request was made.
 
+## Github Gists sharing
+
+You can easily share a `dprof` dump with someone who doesn't have `dprof`
+installed. Just pipe it to `dprof upload` and it will upload it to an anonymous
+gists.
+
+```shell
+gzcat dprof.json.gz | dprof upload
+view at: https://andreasmadsen.github.io/dprof/gists/#5e423de3fd6d787d4bcab35fa9cebc7a
+```
+
 ## SIGINT (Ctrl-C) Behavior
 
 To help debug process that may not have a defined exit, or may have a
