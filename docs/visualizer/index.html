@@ -1,1 +1,144 @@
-../../visualizer/index.html
+<!DOCTYPE html>
+<meta charset="utf8">
+<title>dprof visualizer</title>
+
+<style>
+  /* general page layout */
+  html, body {
+    margin: 0;
+    height: 100%;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  section#info {
+    flex: 0 0 119px;
+    background: #F3F3F3;
+    border-bottom: 1px solid #666;
+  }
+  div#content-box {
+    flex-grow: 1;
+    overflow-y: scroll;
+    overflow-x: scroll;
+  }
+  svg {
+    display: block;
+    width: 100%;
+  }
+  svg#overview {
+    flex: 0 0 69px;
+    background: #F3F3F3;
+    border-bottom: 1px solid #000;
+  }
+  svg#ticks {
+    flex: 0 0 25px;
+  }
+  svg#content {
+    box-sizing: border-box;
+    height: 0px; /* default will be overwriten dynamically */
+  }
+
+  /* info style */
+  section#info {
+    font-family: monospace;
+    font-size: 8pt;
+  }
+  section#info #stacktrace {
+    float: left;
+    width: calc(100% - 155px);
+    height: 119px;
+    white-space: pre-wrap;
+    padding: 10px 10px 5px 10px;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+  section#info #stats {
+    float: right;
+    width: 155px;
+    height: 119px;
+    white-space: pre-wrap;
+    padding: 10px 10px 5px 10px;
+    box-sizing: border-box;
+  }
+
+  /* overview style */
+  svg#overview path {
+    fill: SteelBlue;
+    shape-rendering: crispEdges;
+  }
+
+  svg#overview .brush {
+    stroke: #fff;
+    fill: #000;
+    fill-opacity: .125;
+    shape-rendering: crispEdges;
+  }
+
+  svg#overview .brush rect {
+    transform: translateY(-1px);
+  }
+
+  /* chart style */
+  .axis text {
+    font: 10px sans-serif;
+  }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+
+  .timeline path {
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    shape-rendering: crispEdges;
+  }
+
+  .timeline .background {
+    stroke-width: 20px;
+  }
+  .timeline .background.odd {
+    stroke: #F3F3F3;
+  }
+  .timeline .background.selected {
+    stroke: #D0D0D0;
+  }
+
+  .timeline.unrefed .wait,
+  .timeline.unrefed .callback {
+    opacity: 0.5;
+  }
+
+  .timeline .init {
+    stroke-width: 2px;
+    stroke: rgba(0, 0, 0, 0.7);
+  }
+  .timeline .wait {
+    stroke-width: 6px;
+    stroke: SteelBlue;
+  }
+  .timeline .callback {
+    stroke-width: 12px;
+    stroke: IndianRed;
+  }
+  .timeline .total {
+    stroke-width: 6px;
+    stroke: RebeccaPurple;
+  }
+</style>
+
+<section id="info">
+  <div id="stacktrace"></div>
+  <div id="stats"></div>
+</section>
+<svg id="overview"></svg>
+<svg id="ticks"></svg>
+<div id="content-box">
+  <svg id="content"></svg>
+</div>
+
+
+<script src="visualizer.build.js" charset="utf8" defer></script>

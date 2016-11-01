@@ -1,5 +1,5 @@
 
-all: docs/example/dprof.json docs/visualizer/visualizer.build.js
+all: docs/visualizer/index.html docs/example/dprof.json docs/visualizer/visualizer.build.js
 
 clean:
 	rm -f docs/example/dprof.json
@@ -15,3 +15,6 @@ docs/visualizer/visualizer.build.js: visualizer/dump.js visualizer/flatten.js \
 	./node_modules/.bin/browserify visualizer/visualizer.js \
 		--outfile docs/visualizer/visualizer.build.js \
 		--transform [ babelify --presets [ es2015 ] ]
+
+docs/visualizer/index.html: visualizer/index.html
+	cp visualizer/index.html docs/visualizer/index.html
