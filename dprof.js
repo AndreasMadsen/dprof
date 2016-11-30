@@ -41,7 +41,9 @@ function Node(uid, handle, stack, parent) {
   this._after = [];
   this._unref = [];
   this._ref = [];
-  this.unrefed = this.name === 'TTY' || this.name === 'Pipe' || handle._timerUnref === true;
+  this._initRef = !(
+    this.name === 'TTY' || this.name === 'Pipe' || handle._timerUnref === true
+  );
   this.children = [];
   this.stack = stack.map(function (site) {
     return new Site(site);
@@ -108,7 +110,7 @@ Node.prototype.toJSON = function () {
     after: this._after,
     unref: this._unref,
     ref: this._ref,
-    unrefed: this.unrefed,
+    initRef: this._initRef,
     stack: this.stack,
     children: this.children
   };
