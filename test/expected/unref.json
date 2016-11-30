@@ -1,0 +1,844 @@
+{
+ "stdout": "",
+ "stderr": "",
+ "dump": {
+  "total": 342601939,
+  "version": "0.16.0",
+  "root": {
+   "name": "root",
+   "parent": null,
+   "uid": 0,
+   "init": 0,
+   "destroy": 18302402,
+   "before": [
+    0
+   ],
+   "after": [
+    18245325
+   ],
+   "unref": [],
+   "ref": [],
+   "unrefed": false,
+   "stack": [
+    {
+     "description": "Module._compile (module.js:541:32)",
+     "filename": "module.js",
+     "line": 541,
+     "collum": 32
+    },
+    {
+     "description": "Object.Module._extensions..js (module.js:550:10)",
+     "filename": "module.js",
+     "line": 550,
+     "collum": 10
+    },
+    {
+     "description": "Module.load (module.js:458:32)",
+     "filename": "module.js",
+     "line": 458,
+     "collum": 32
+    },
+    {
+     "description": "tryModuleLoad (module.js:417:12)",
+     "filename": "module.js",
+     "line": 417,
+     "collum": 12
+    },
+    {
+     "description": "Function.Module._load (module.js:409:3)",
+     "filename": "module.js",
+     "line": 409,
+     "collum": 3
+    },
+    {
+     "description": "Module.require (module.js:468:17)",
+     "filename": "module.js",
+     "line": 468,
+     "collum": 17
+    },
+    {
+     "description": "require (internal/module.js:20:19)",
+     "filename": "internal/module.js",
+     "line": 20,
+     "collum": 19
+    },
+    {
+     "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/unref.js:2:1)",
+     "filename": "/test/scripts/unref.js",
+     "line": 2,
+     "collum": 1
+    },
+    {
+     "description": "Module._compile (module.js:541:32)",
+     "filename": "module.js",
+     "line": 541,
+     "collum": 32
+    },
+    {
+     "description": "Object.Module._extensions..js (module.js:550:10)",
+     "filename": "module.js",
+     "line": 550,
+     "collum": 10
+    },
+    {
+     "description": "Module.load (module.js:458:32)",
+     "filename": "module.js",
+     "line": 458,
+     "collum": 32
+    },
+    {
+     "description": "tryModuleLoad (module.js:417:12)",
+     "filename": "module.js",
+     "line": 417,
+     "collum": 12
+    },
+    {
+     "description": "Function.Module._load (module.js:409:3)",
+     "filename": "module.js",
+     "line": 409,
+     "collum": 3
+    },
+    {
+     "description": "Module.runMain (module.js:575:10)",
+     "filename": "module.js",
+     "line": 575,
+     "collum": 10
+    },
+    {
+     "description": "run (bootstrap_node.js:352:7)",
+     "filename": "bootstrap_node.js",
+     "line": 352,
+     "collum": 7
+    },
+    {
+     "description": "startup (bootstrap_node.js:144:9)",
+     "filename": "bootstrap_node.js",
+     "line": 144,
+     "collum": 9
+    },
+    {
+     "description": "bootstrap_node.js:467:3",
+     "filename": "bootstrap_node.js",
+     "line": 467,
+     "collum": 3
+    }
+   ],
+   "children": [
+    1,
+    2
+   ]
+  },
+  "nodes": [
+   {
+    "name": "Signal",
+    "parent": 0,
+    "uid": 1,
+    "init": 4715831,
+    "destroy": null,
+    "before": [],
+    "after": [],
+    "unref": [
+     5847671
+    ],
+    "ref": [],
+    "unrefed": false,
+    "stack": [
+     {
+      "description": "process.<anonymous> (internal/process.js:195:18)",
+      "filename": "internal/process.js",
+      "line": 195,
+      "collum": 18
+     },
+     {
+      "description": "emitTwo (events.js:106:13)",
+      "filename": "events.js",
+      "line": 106,
+      "collum": 13
+     },
+     {
+      "description": "process.emit (events.js:191:7)",
+      "filename": "events.js",
+      "line": 191,
+      "collum": 7
+     },
+     {
+      "description": "_addListener (events.js:226:14)",
+      "filename": "events.js",
+      "line": 226,
+      "collum": 14
+     },
+     {
+      "description": "process.addListener (events.js:270:10)",
+      "filename": "events.js",
+      "line": 270,
+      "collum": 10
+     },
+     {
+      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/dprof.js:184:11)",
+      "filename": "/dprof.js",
+      "line": 184,
+      "collum": 11
+     },
+     {
+      "description": "Module._compile (module.js:541:32)",
+      "filename": "module.js",
+      "line": 541,
+      "collum": 32
+     },
+     {
+      "description": "Object.Module._extensions..js (module.js:550:10)",
+      "filename": "module.js",
+      "line": 550,
+      "collum": 10
+     },
+     {
+      "description": "Module.load (module.js:458:32)",
+      "filename": "module.js",
+      "line": 458,
+      "collum": 32
+     },
+     {
+      "description": "tryModuleLoad (module.js:417:12)",
+      "filename": "module.js",
+      "line": 417,
+      "collum": 12
+     },
+     {
+      "description": "Function.Module._load (module.js:409:3)",
+      "filename": "module.js",
+      "line": 409,
+      "collum": 3
+     },
+     {
+      "description": "Module.require (module.js:468:17)",
+      "filename": "module.js",
+      "line": 468,
+      "collum": 17
+     },
+     {
+      "description": "require (internal/module.js:20:19)",
+      "filename": "internal/module.js",
+      "line": 20,
+      "collum": 19
+     },
+     {
+      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/unref.js:2:1)",
+      "filename": "/test/scripts/unref.js",
+      "line": 2,
+      "collum": 1
+     },
+     {
+      "description": "Module._compile (module.js:541:32)",
+      "filename": "module.js",
+      "line": 541,
+      "collum": 32
+     },
+     {
+      "description": "Object.Module._extensions..js (module.js:550:10)",
+      "filename": "module.js",
+      "line": 550,
+      "collum": 10
+     },
+     {
+      "description": "Module.load (module.js:458:32)",
+      "filename": "module.js",
+      "line": 458,
+      "collum": 32
+     },
+     {
+      "description": "tryModuleLoad (module.js:417:12)",
+      "filename": "module.js",
+      "line": 417,
+      "collum": 12
+     },
+     {
+      "description": "Function.Module._load (module.js:409:3)",
+      "filename": "module.js",
+      "line": 409,
+      "collum": 3
+     },
+     {
+      "description": "Module.runMain (module.js:575:10)",
+      "filename": "module.js",
+      "line": 575,
+      "collum": 10
+     },
+     {
+      "description": "run (bootstrap_node.js:352:7)",
+      "filename": "bootstrap_node.js",
+      "line": 352,
+      "collum": 7
+     },
+     {
+      "description": "startup (bootstrap_node.js:144:9)",
+      "filename": "bootstrap_node.js",
+      "line": 144,
+      "collum": 9
+     },
+     {
+      "description": "bootstrap_node.js:467:3",
+      "filename": "bootstrap_node.js",
+      "line": 467,
+      "collum": 3
+     }
+    ],
+    "children": []
+   },
+   {
+    "name": "GetAddrInfoReqWrap",
+    "parent": 0,
+    "uid": 2,
+    "init": 17589378,
+    "destroy": 33282896,
+    "before": [
+     20701483
+    ],
+    "after": [
+     27726498
+    ],
+    "unref": [],
+    "ref": [],
+    "unrefed": false,
+    "stack": [
+     {
+      "description": "Object.lookup (dns.js:167:19)",
+      "filename": "dns.js",
+      "line": 167,
+      "collum": 19
+     },
+     {
+      "description": "listenAfterLookup (net.js:1393:20)",
+      "filename": "net.js",
+      "line": 1393,
+      "collum": 20
+     },
+     {
+      "description": "Server.listen (net.js:1389:5)",
+      "filename": "net.js",
+      "line": 1389,
+      "collum": 5
+     },
+     {
+      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/unref.js:21:8)",
+      "filename": "/test/scripts/unref.js",
+      "line": 21,
+      "collum": 8
+     },
+     {
+      "description": "Module._compile (module.js:541:32)",
+      "filename": "module.js",
+      "line": 541,
+      "collum": 32
+     },
+     {
+      "description": "Object.Module._extensions..js (module.js:550:10)",
+      "filename": "module.js",
+      "line": 550,
+      "collum": 10
+     },
+     {
+      "description": "Module.load (module.js:458:32)",
+      "filename": "module.js",
+      "line": 458,
+      "collum": 32
+     },
+     {
+      "description": "tryModuleLoad (module.js:417:12)",
+      "filename": "module.js",
+      "line": 417,
+      "collum": 12
+     },
+     {
+      "description": "Function.Module._load (module.js:409:3)",
+      "filename": "module.js",
+      "line": 409,
+      "collum": 3
+     },
+     {
+      "description": "Module.runMain (module.js:575:10)",
+      "filename": "module.js",
+      "line": 575,
+      "collum": 10
+     },
+     {
+      "description": "run (bootstrap_node.js:352:7)",
+      "filename": "bootstrap_node.js",
+      "line": 352,
+      "collum": 7
+     },
+     {
+      "description": "startup (bootstrap_node.js:144:9)",
+      "filename": "bootstrap_node.js",
+      "line": 144,
+      "collum": 9
+     },
+     {
+      "description": "bootstrap_node.js:467:3",
+      "filename": "bootstrap_node.js",
+      "line": 467,
+      "collum": 3
+     }
+    ],
+    "children": [
+     3,
+     -1
+    ]
+   },
+   {
+    "name": "TCP",
+    "parent": 2,
+    "uid": 3,
+    "init": 26097477,
+    "destroy": 37832823,
+    "before": [
+     33414985
+    ],
+    "after": [
+     37411078
+    ],
+    "unref": [],
+    "ref": [],
+    "unrefed": false,
+    "stack": [
+     {
+      "description": "createServerHandle (net.js:1179:14)",
+      "filename": "net.js",
+      "line": 1179,
+      "collum": 14
+     },
+     {
+      "description": "Server._listen2 (net.js:1236:14)",
+      "filename": "net.js",
+      "line": 1236,
+      "collum": 14
+     },
+     {
+      "description": "listen (net.js:1288:10)",
+      "filename": "net.js",
+      "line": 1288,
+      "collum": 10
+     },
+     {
+      "description": "net.js:1398:9",
+      "filename": "net.js",
+      "line": 1398,
+      "collum": 9
+     },
+     {
+      "description": "GetAddrInfoReqWrap.asyncCallback [as callback] (dns.js:65:16)",
+      "filename": "dns.js",
+      "line": 65,
+      "collum": 16
+     },
+     {
+      "description": "GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:84:10)",
+      "filename": "dns.js",
+      "line": 84,
+      "collum": 10
+     }
+    ],
+    "children": [
+     6,
+     -3,
+     -4,
+     -5
+    ]
+   },
+   {
+    "name": "NextTickWrap",
+    "parent": 2,
+    "uid": -1,
+    "init": 27429897,
+    "destroy": 32756934,
+    "before": [
+     27830538
+    ],
+    "after": [
+     32553657
+    ],
+    "unref": [],
+    "ref": [],
+    "unrefed": false,
+    "stack": [
+     {
+      "description": "Server._listen2 (net.js:1266:11)",
+      "filename": "net.js",
+      "line": 1266,
+      "collum": 11
+     },
+     {
+      "description": "listen (net.js:1288:10)",
+      "filename": "net.js",
+      "line": 1288,
+      "collum": 10
+     },
+     {
+      "description": "net.js:1398:9",
+      "filename": "net.js",
+      "line": 1398,
+      "collum": 9
+     },
+     {
+      "description": "GetAddrInfoReqWrap.asyncCallback [as callback] (dns.js:65:16)",
+      "filename": "dns.js",
+      "line": 65,
+      "collum": 16
+     },
+     {
+      "description": "GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:84:10)",
+      "filename": "dns.js",
+      "line": 84,
+      "collum": 10
+     }
+    ],
+    "children": [
+     4,
+     -2
+    ]
+   },
+   {
+    "name": "TCP",
+    "parent": -1,
+    "uid": 4,
+    "init": 30535008,
+    "destroy": null,
+    "before": [],
+    "after": [],
+    "unref": [
+     37637915
+    ],
+    "ref": [],
+    "unrefed": false,
+    "stack": [
+     {
+      "description": "Socket.connect (net.js:913:40)",
+      "filename": "net.js",
+      "line": 913,
+      "collum": 40
+     },
+     {
+      "description": "Object.exports.connect.exports.createConnection (net.js:70:35)",
+      "filename": "net.js",
+      "line": 70,
+      "collum": 35
+     },
+     {
+      "description": "Server.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/unref.js:23:22)",
+      "filename": "/test/scripts/unref.js",
+      "line": 23,
+      "collum": 22
+     },
+     {
+      "description": "Server.g (events.js:286:16)",
+      "filename": "events.js",
+      "line": 286,
+      "collum": 16
+     },
+     {
+      "description": "emitNone (events.js:86:13)",
+      "filename": "events.js",
+      "line": 86,
+      "collum": 13
+     },
+     {
+      "description": "Server.emit (events.js:185:7)",
+      "filename": "events.js",
+      "line": 185,
+      "collum": 7
+     },
+     {
+      "description": "emitListeningNT (net.js:1278:10)",
+      "filename": "net.js",
+      "line": 1278,
+      "collum": 10
+     },
+     {
+      "description": "_combinedTickCallback (internal/process/next_tick.js:71:11)",
+      "filename": "internal/process/next_tick.js",
+      "line": 71,
+      "collum": 11
+     },
+     {
+      "description": "process._tickCallback (internal/process/next_tick.js:98:9)",
+      "filename": "internal/process/next_tick.js",
+      "line": 98,
+      "collum": 9
+     }
+    ],
+    "children": []
+   },
+   {
+    "name": "NextTickWrap",
+    "parent": -1,
+    "uid": -2,
+    "init": 32262253,
+    "destroy": 33269262,
+    "before": [
+     32838214
+    ],
+    "after": [
+     33242136
+    ],
+    "unref": [],
+    "ref": [],
+    "unrefed": false,
+    "stack": [
+     {
+      "description": "lookupAndConnect (net.js:961:13)",
+      "filename": "net.js",
+      "line": 961,
+      "collum": 13
+     },
+     {
+      "description": "Socket.connect (net.js:929:5)",
+      "filename": "net.js",
+      "line": 929,
+      "collum": 5
+     },
+     {
+      "description": "Object.exports.connect.exports.createConnection (net.js:70:35)",
+      "filename": "net.js",
+      "line": 70,
+      "collum": 35
+     },
+     {
+      "description": "Server.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/unref.js:23:22)",
+      "filename": "/test/scripts/unref.js",
+      "line": 23,
+      "collum": 22
+     },
+     {
+      "description": "Server.g (events.js:286:16)",
+      "filename": "events.js",
+      "line": 286,
+      "collum": 16
+     },
+     {
+      "description": "emitNone (events.js:86:13)",
+      "filename": "events.js",
+      "line": 86,
+      "collum": 13
+     },
+     {
+      "description": "Server.emit (events.js:185:7)",
+      "filename": "events.js",
+      "line": 185,
+      "collum": 7
+     },
+     {
+      "description": "emitListeningNT (net.js:1278:10)",
+      "filename": "net.js",
+      "line": 1278,
+      "collum": 10
+     },
+     {
+      "description": "_combinedTickCallback (internal/process/next_tick.js:71:11)",
+      "filename": "internal/process/next_tick.js",
+      "line": 71,
+      "collum": 11
+     },
+     {
+      "description": "process._tickCallback (internal/process/next_tick.js:98:9)",
+      "filename": "internal/process/next_tick.js",
+      "line": 98,
+      "collum": 9
+     }
+    ],
+    "children": [
+     5
+    ]
+   },
+   {
+    "name": "TCPConnectWrap",
+    "parent": -2,
+    "uid": 5,
+    "init": 33109173,
+    "destroy": 37828198,
+    "before": [
+     37439419
+    ],
+    "after": [
+     37821834
+    ],
+    "unref": [],
+    "ref": [],
+    "unrefed": false,
+    "stack": [
+     {
+      "description": "connect (net.js:854:26)",
+      "filename": "net.js",
+      "line": 854,
+      "collum": 26
+     },
+     {
+      "description": "net.js:963:9",
+      "filename": "net.js",
+      "line": 963,
+      "collum": 9
+     },
+     {
+      "description": "_combinedTickCallback (internal/process/next_tick.js:67:7)",
+      "filename": "internal/process/next_tick.js",
+      "line": 67,
+      "collum": 7
+     },
+     {
+      "description": "process._tickCallback (internal/process/next_tick.js:98:9)",
+      "filename": "internal/process/next_tick.js",
+      "line": 98,
+      "collum": 9
+     }
+    ],
+    "children": []
+   },
+   {
+    "name": "TCP",
+    "parent": 3,
+    "uid": 6,
+    "init": 33380469,
+    "destroy": null,
+    "before": [],
+    "after": [],
+    "unref": [
+     35772766,
+     242688264
+    ],
+    "ref": [
+     141866641
+    ],
+    "unrefed": false,
+    "stack": [],
+    "children": []
+   },
+   {
+    "name": "TimeoutWrap",
+    "parent": 3,
+    "uid": -3,
+    "init": 36029405,
+    "destroy": 142075643,
+    "before": [
+     141762359
+    ],
+    "after": [
+     141890983
+    ],
+    "unref": [],
+    "ref": [],
+    "unrefed": false,
+    "stack": [
+     {
+      "description": "Server.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/unref.js:10:3)",
+      "filename": "/test/scripts/unref.js",
+      "line": 10,
+      "collum": 3
+     },
+     {
+      "description": "emitOne (events.js:96:13)",
+      "filename": "events.js",
+      "line": 96,
+      "collum": 13
+     },
+     {
+      "description": "Server.emit (events.js:188:7)",
+      "filename": "events.js",
+      "line": 188,
+      "collum": 7
+     },
+     {
+      "description": "TCP.onconnection (net.js:1458:8)",
+      "filename": "net.js",
+      "line": 1458,
+      "collum": 8
+     }
+    ],
+    "children": []
+   },
+   {
+    "name": "TimeoutWrap",
+    "parent": 3,
+    "uid": -4,
+    "init": 36914610,
+    "destroy": 242722580,
+    "before": [
+     242578178
+    ],
+    "after": [
+     242702140
+    ],
+    "unref": [],
+    "ref": [],
+    "unrefed": false,
+    "stack": [
+     {
+      "description": "Server.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/unref.js:13:3)",
+      "filename": "/test/scripts/unref.js",
+      "line": 13,
+      "collum": 3
+     },
+     {
+      "description": "emitOne (events.js:96:13)",
+      "filename": "events.js",
+      "line": 96,
+      "collum": 13
+     },
+     {
+      "description": "Server.emit (events.js:188:7)",
+      "filename": "events.js",
+      "line": 188,
+      "collum": 7
+     },
+     {
+      "description": "TCP.onconnection (net.js:1458:8)",
+      "filename": "net.js",
+      "line": 1458,
+      "collum": 8
+     }
+    ],
+    "children": []
+   },
+   {
+    "name": "TimeoutWrap",
+    "parent": 3,
+    "uid": -5,
+    "init": 37341430,
+    "destroy": 342311399,
+    "before": [
+     342236206
+    ],
+    "after": [
+     342299109
+    ],
+    "unref": [],
+    "ref": [],
+    "unrefed": false,
+    "stack": [
+     {
+      "description": "Server.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/unref.js:16:3)",
+      "filename": "/test/scripts/unref.js",
+      "line": 16,
+      "collum": 3
+     },
+     {
+      "description": "emitOne (events.js:96:13)",
+      "filename": "events.js",
+      "line": 96,
+      "collum": 13
+     },
+     {
+      "description": "Server.emit (events.js:188:7)",
+      "filename": "events.js",
+      "line": 188,
+      "collum": 7
+     },
+     {
+      "description": "TCP.onconnection (net.js:1458:8)",
+      "filename": "net.js",
+      "line": 1458,
+      "collum": 8
+     }
+    ],
+    "children": []
+   }
+  ]
+ }
+}
