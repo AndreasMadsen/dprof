@@ -2,21 +2,23 @@
  "stdout": "",
  "stderr": "",
  "dump": {
-  "total": 212956557,
-  "version": "0.15.1",
+  "total": 212337626,
+  "version": "0.16.0",
   "root": {
    "name": "root",
    "parent": null,
    "uid": 0,
    "init": 0,
-   "destroy": 6441442,
+   "destroy": 5807584,
    "before": [
     0
    ],
    "after": [
-    6408856
+    5777541
    ],
-   "unrefed": false,
+   "unref": [],
+   "ref": [],
+   "initRef": true,
    "stack": [
     {
      "description": "Module._compile (module.js:541:32)",
@@ -132,13 +134,17 @@
     "name": "Signal",
     "parent": 0,
     "uid": 1,
-    "init": 3673559,
+    "init": 3000393,
     "destroy": null,
     "before": [
-     212645845
+     212023642
     ],
     "after": [],
-    "unrefed": true,
+    "unref": [
+     3597263
+    ],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "process.<anonymous> (internal/process.js:195:18)",
@@ -171,9 +177,9 @@
       "collum": 10
      },
      {
-      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/dprof.js:169:11)",
+      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/dprof.js:186:11)",
       "filename": "/dprof.js",
-      "line": 169,
+      "line": 186,
       "collum": 11
      },
      {
@@ -285,11 +291,13 @@
     "name": "IntervalWrap",
     "parent": 0,
     "uid": -1,
-    "init": 4793836,
+    "init": 4131964,
     "destroy": null,
     "before": [],
     "after": [],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/sigint.js:8:1)",
@@ -358,15 +366,17 @@
     "name": "TimeoutWrap",
     "parent": 0,
     "uid": -2,
-    "init": 5773061,
-    "destroy": 212467024,
+    "init": 5168593,
+    "destroy": 211841714,
     "before": [
-     211769121
+     211129906
     ],
     "after": [
-     212176859
+     211544807
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/sigint.js:9:1)",

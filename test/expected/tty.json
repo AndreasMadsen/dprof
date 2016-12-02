@@ -2,21 +2,23 @@
  "stdout": "'use strict';\nrequire('../../dprof.js');\n\nconst fs = require('fs');\n\nfs.createReadStream(__filename).pipe(process.stdout);\n",
  "stderr": "",
  "dump": {
-  "total": 21164738,
-  "version": "0.15.1",
+  "total": 22350963,
+  "version": "0.16.0",
   "root": {
    "name": "root",
    "parent": null,
    "uid": 0,
    "init": 0,
-   "destroy": 15337738,
+   "destroy": 16162497,
    "before": [
     0
    ],
    "after": [
-    15307508
+    16140326
    ],
-   "unrefed": false,
+   "unref": [],
+   "ref": [],
+   "initRef": true,
    "stack": [
     {
      "description": "Module._compile (module.js:541:32)",
@@ -133,11 +135,15 @@
     "name": "Signal",
     "parent": 0,
     "uid": 1,
-    "init": 3050024,
+    "init": 3600540,
     "destroy": null,
     "before": [],
     "after": [],
-    "unrefed": true,
+    "unref": [
+     4202822
+    ],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "process.<anonymous> (internal/process.js:195:18)",
@@ -170,9 +176,9 @@
       "collum": 10
      },
      {
-      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/dprof.js:169:11)",
+      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/dprof.js:186:11)",
       "filename": "/dprof.js",
-      "line": 169,
+      "line": 186,
       "collum": 11
      },
      {
@@ -284,15 +290,17 @@
     "name": "FSReqWrap",
     "parent": 0,
     "uid": 2,
-    "init": 4314841,
-    "destroy": 17333868,
+    "init": 4918904,
+    "destroy": 18223343,
     "before": [
-     16525029
+     17409857
     ],
     "after": [
-     17322076
+     18211131
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "Object.fs.open (fs.js:631:11)",
@@ -387,11 +395,13 @@
     "name": "Pipe",
     "parent": 0,
     "uid": 3,
-    "init": 13139156,
+    "init": 13931119,
     "destroy": null,
     "before": [],
     "after": [],
-    "unrefed": true,
+    "unref": [],
+    "ref": [],
+    "initRef": false,
     "stack": [
      {
       "description": "createHandle (net.js:33:31)",
@@ -484,15 +494,17 @@
     "name": "NextTickWrap",
     "parent": 0,
     "uid": -1,
-    "init": 14855823,
-    "destroy": 16334635,
+    "init": 15672009,
+    "destroy": 17213893,
     "before": [
-     15615097
+     16418742
     ],
     "after": [
-     16263861
+     17147996
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "resume (_stream_readable.js:731:13)",
@@ -585,15 +597,17 @@
     "name": "FSReqWrap",
     "parent": 2,
     "uid": 4,
-    "init": 17047310,
-    "destroy": 19505118,
+    "init": 17925930,
+    "destroy": 20477102,
     "before": [
-     17349238
+     18238679
     ],
     "after": [
-     19319102
+     20256660
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "Object.fs.read (fs.js:687:11)",
@@ -654,15 +668,17 @@
     "name": "NextTickWrap",
     "parent": 4,
     "uid": -2,
-    "init": 18583519,
-    "destroy": 19445957,
+    "init": 19522243,
+    "destroy": 20412277,
     "before": [
-     19328958
+     20270843
     ],
     "after": [
-     19442120
+     20408328
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "onwrite (_stream_writable.js:350:15)",
@@ -761,15 +777,17 @@
     "name": "FSReqWrap",
     "parent": 4,
     "uid": 5,
-    "init": 19057144,
-    "destroy": 21024465,
+    "init": 20002383,
+    "destroy": 22175035,
     "before": [
-     19517221
+     20486043
     ],
     "after": [
-     19859175
+     20822094
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "Object.fs.read (fs.js:687:11)",
@@ -822,15 +840,17 @@
     "name": "NextTickWrap",
     "parent": 4,
     "uid": -3,
-    "init": 19240424,
-    "destroy": 19499355,
+    "init": 20178578,
+    "destroy": 20470996,
     "before": [
-     19448881
+     20415336
     ],
     "after": [
-     19497059
+     20468517
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "maybeReadMore (_stream_readable.js:447:13)",
@@ -869,15 +889,17 @@
     "name": "NextTickWrap",
     "parent": 5,
     "uid": -4,
-    "init": 19742916,
-    "destroy": 21019838,
+    "init": 20705178,
+    "destroy": 22168423,
     "before": [
-     19866538
+     20826489
     ],
     "after": [
-     21016265
+     22163218
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "endReadable (_stream_readable.js:966:13)",
@@ -948,15 +970,17 @@
     "name": "FSReqWrap",
     "parent": -4,
     "uid": 6,
-    "init": 20232271,
-    "destroy": 21082227,
+    "init": 21203453,
+    "destroy": 22239866,
     "before": [
-     21033636
+     22186452
     ],
     "after": [
-     21075633
+     22236118
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "Object.fs.close (fs.js:605:11)",

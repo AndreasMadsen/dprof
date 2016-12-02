@@ -2,19 +2,19 @@
  "stdout": "",
  "stderr": "",
  "dump": {
-  "total": 335948057,
+  "total": 336610829,
   "version": "0.16.0",
   "root": {
    "name": "root",
    "parent": null,
    "uid": 0,
    "init": 0,
-   "destroy": 12733556,
+   "destroy": 12903200,
    "before": [
     0
    ],
    "after": [
-    12682655
+    12856023
    ],
    "unref": [],
    "ref": [],
@@ -133,12 +133,12 @@
     "name": "Signal",
     "parent": 0,
     "uid": 1,
-    "init": 3010981,
+    "init": 3028677,
     "destroy": null,
     "before": [],
     "after": [],
     "unref": [
-     3703284
+     3608279
     ],
     "ref": [],
     "initRef": true,
@@ -174,9 +174,9 @@
       "collum": 10
      },
      {
-      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/dprof.js:184:11)",
+      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/dprof.js:186:11)",
       "filename": "/dprof.js",
-      "line": 184,
+      "line": 186,
       "collum": 11
      },
      {
@@ -288,13 +288,13 @@
     "name": "GetAddrInfoReqWrap",
     "parent": 0,
     "uid": 2,
-    "init": 12034877,
-    "destroy": 26707888,
+    "init": 12173939,
+    "destroy": 27277712,
     "before": [
-     15097699
+     15444364
     ],
     "after": [
-     22243027
+     22661964
     ],
     "unref": [],
     "ref": [],
@@ -388,13 +388,13 @@
     "name": "TCP",
     "parent": 2,
     "uid": 3,
-    "init": 20622808,
-    "destroy": 30134720,
+    "init": 20993532,
+    "destroy": 31076772,
     "before": [
-     27393728
+     28068419
     ],
     "after": [
-     30128485
+     31070252
     ],
     "unref": [],
     "ref": [],
@@ -448,13 +448,13 @@
     "name": "NextTickWrap",
     "parent": 2,
     "uid": -1,
-    "init": 21953830,
-    "destroy": 26223908,
+    "init": 22355800,
+    "destroy": 26772542,
     "before": [
-     22350756
+     22772155
     ],
     "after": [
-     26126277
+     26678012
     ],
     "unref": [],
     "ref": [],
@@ -500,12 +500,12 @@
     "name": "TCP",
     "parent": -1,
     "uid": 4,
-    "init": 24573788,
+    "init": 25031972,
     "destroy": null,
     "before": [],
     "after": [],
     "unref": [
-     26904164
+     27502484
     ],
     "ref": [],
     "initRef": true,
@@ -571,13 +571,13 @@
     "name": "NextTickWrap",
     "parent": -1,
     "uid": -2,
-    "init": 26017549,
-    "destroy": 26698184,
+    "init": 26568942,
+    "destroy": 27265200,
     "before": [
-     26286023
+     26834088
     ],
     "after": [
-     26680574
+     27237712
     ],
     "unref": [],
     "ref": [],
@@ -652,13 +652,13 @@
     "name": "TCPConnectWrap",
     "parent": -2,
     "uid": 5,
-    "init": 26545993,
-    "destroy": 27290180,
+    "init": 27097034,
+    "destroy": 27950755,
     "before": [
-     26734127
+     27311666
     ],
     "after": [
-     27282740
+     27945852
     ],
     "unref": [],
     "ref": [],
@@ -695,16 +695,16 @@
     "name": "TCP",
     "parent": 3,
     "uid": 6,
-    "init": 27367249,
+    "init": 28040847,
     "destroy": null,
     "before": [],
     "after": [],
     "unref": [
-     28729250,
-     232043725
+     29566410,
+     233688646
     ],
     "ref": [
-     132957304
+     136101196
     ],
     "initRef": true,
     "stack": [],
@@ -714,13 +714,13 @@
     "name": "TimeoutWrap",
     "parent": 3,
     "uid": -3,
-    "init": 28926364,
-    "destroy": 133165938,
+    "init": 29791790,
+    "destroy": 136313576,
     "before": [
-     132838320
+     135990689
     ],
     "after": [
-     132974427
+     136124152
     ],
     "unref": [],
     "ref": [],
@@ -757,13 +757,13 @@
     "name": "TimeoutWrap",
     "parent": 3,
     "uid": -4,
-    "init": 29699487,
-    "destroy": 232074610,
+    "init": 30614533,
+    "destroy": 233719517,
     "before": [
-     231949754
+     233593735
     ],
     "after": [
-     232055028
+     233700098
     ],
     "unref": [],
     "ref": [],
@@ -800,13 +800,13 @@
     "name": "TimeoutWrap",
     "parent": 3,
     "uid": -5,
-    "init": 30069882,
-    "destroy": 335639539,
+    "init": 31009732,
+    "destroy": 336302364,
     "before": [
-     335575190
+     336223410
     ],
     "after": [
-     335627863
+     336290469
     ],
     "unref": [],
     "ref": [],

@@ -2,21 +2,23 @@
  "stdout": "",
  "stderr": "",
  "dump": {
-  "total": 33357402,
-  "version": "0.15.1",
+  "total": 35349467,
+  "version": "0.16.0",
   "root": {
    "name": "root",
    "parent": null,
    "uid": 0,
    "init": 0,
-   "destroy": 12649140,
+   "destroy": 12637228,
    "before": [
     0
    ],
    "after": [
-    12470669
+    12595072
    ],
-   "unrefed": false,
+   "unref": [],
+   "ref": [],
+   "initRef": true,
    "stack": [
     {
      "description": "Module._compile (module.js:541:32)",
@@ -131,11 +133,15 @@
     "name": "Signal",
     "parent": 0,
     "uid": 1,
-    "init": 2955615,
+    "init": 2982732,
     "destroy": null,
     "before": [],
     "after": [],
-    "unrefed": true,
+    "unref": [
+     3601747
+    ],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "process.<anonymous> (internal/process.js:195:18)",
@@ -168,9 +174,9 @@
       "collum": 10
      },
      {
-      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/dprof.js:169:11)",
+      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/dprof.js:186:11)",
       "filename": "/dprof.js",
-      "line": 169,
+      "line": 186,
       "collum": 11
      },
      {
@@ -282,15 +288,17 @@
     "name": "GetAddrInfoReqWrap",
     "parent": 0,
     "uid": 2,
-    "init": 11839733,
-    "destroy": 24533507,
+    "init": 11966368,
+    "destroy": 26462973,
     "before": [
-     14196347
+     15099489
     ],
     "after": [
-     21002773
+     22124211
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "Object.lookup (dns.js:167:19)",
@@ -380,15 +388,17 @@
     "name": "TCP",
     "parent": 2,
     "uid": 3,
-    "init": 19691119,
-    "destroy": 32559076,
+    "init": 20477787,
+    "destroy": 34522314,
     "before": [
-     25666075
+     27530609
     ],
     "after": [
-     27833127
+     29704488
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "createServerHandle (net.js:1179:14)",
@@ -436,15 +446,17 @@
     "name": "NextTickWrap",
     "parent": 2,
     "uid": -1,
-    "init": 20823859,
-    "destroy": 24114084,
+    "init": 21826180,
+    "destroy": 26002633,
     "before": [
-     21141673
+     22233928
     ],
     "after": [
-     24031618
+     25906617
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "Server._listen2 (net.js:1266:11)",
@@ -486,19 +498,21 @@
     "name": "TCP",
     "parent": -1,
     "uid": 4,
-    "init": 23022423,
-    "destroy": 32556881,
+    "init": 24486002,
+    "destroy": 34520160,
     "before": [
-     28393736,
-     29361280,
-     32525569
+     30279166,
+     31245315,
+     34488077
     ],
     "after": [
-     29285101,
-     32272454,
-     32553760
+     31172476,
+     34240724,
+     34516934
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "Socket.connect (net.js:913:40)",
@@ -565,15 +579,17 @@
     "name": "NextTickWrap",
     "parent": -1,
     "uid": -2,
-    "init": 23950962,
-    "destroy": 24525072,
+    "init": 25734408,
+    "destroy": 26453889,
     "before": [
-     24171290
+     26071922
     ],
     "after": [
-     24510818
+     26436274
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "lookupAndConnect (net.js:961:13)",
@@ -644,15 +660,17 @@
     "name": "TCPConnectWrap",
     "parent": -2,
     "uid": 5,
-    "init": 24394692,
-    "destroy": 25570859,
+    "init": 26300926,
+    "destroy": 27425469,
     "before": [
-     24617278
+     26491360
     ],
     "after": [
-     25432397
+     27293094
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "connect (net.js:854:26)",
@@ -687,15 +705,17 @@
     "name": "NextTickWrap",
     "parent": 5,
     "uid": -3,
-    "init": 24895141,
-    "destroy": 25566167,
+    "init": 26766410,
+    "destroy": 27421523,
     "before": [
-     25439373
+     27302934
     ],
     "after": [
-     25562811
+     27418393
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "Socket.Readable.on (_stream_readable.js:700:17)",
@@ -746,17 +766,19 @@
     "name": "TCP",
     "parent": 3,
     "uid": 6,
-    "init": 25643251,
-    "destroy": 33271280,
+    "init": 27502728,
+    "destroy": 35254440,
     "before": [
-     32568838,
-     33265678
+     34531440,
+     35248762
     ],
     "after": [
-     33141844,
-     33269365
+     35124966,
+     35252591
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [],
     "children": [
      -7,
@@ -767,15 +789,17 @@
     "name": "NextTickWrap",
     "parent": 3,
     "uid": -4,
-    "init": 27548732,
-    "destroy": 28194516,
+    "init": 29418406,
+    "destroy": 30059010,
     "before": [
-     27844457
+     29714993
     ],
     "after": [
-     28191758
+     30056272
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "onwrite (_stream_writable.js:350:15)",
@@ -870,15 +894,17 @@
     "name": "ShutdownWrap",
     "parent": -4,
     "uid": 7,
-    "init": 28139332,
-    "destroy": 28366378,
+    "init": 30000640,
+    "destroy": 30248440,
     "before": [
-     28223881
+     30097448
     ],
     "after": [
-     28362566
+     30244650
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "Socket.onSocketFinish (net.js:225:26)",
@@ -929,15 +955,17 @@
     "name": "NextTickWrap",
     "parent": 4,
     "uid": -5,
-    "init": 29207279,
-    "destroy": 29350420,
+    "init": 31094796,
+    "destroy": 31234843,
     "before": [
-     29294645
+     31178968
     ],
     "after": [
-     29347645
+     31232159
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "maybeReadMore (_stream_readable.js:447:13)",
@@ -970,15 +998,17 @@
     "name": "NextTickWrap",
     "parent": 4,
     "uid": -6,
-    "init": 29820379,
-    "destroy": 32518842,
+    "init": 31803530,
+    "destroy": 34481400,
     "before": [
-     32279819
+     34247966
     ],
     "after": [
-     32514885
+     34477669
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "endReadable (_stream_readable.js:966:13)",
@@ -1023,11 +1053,13 @@
     "name": "Pipe",
     "parent": 4,
     "uid": 8,
-    "init": 30702093,
+    "init": 32722037,
     "destroy": null,
     "before": [],
     "after": [],
-    "unrefed": true,
+    "unref": [],
+    "ref": [],
+    "initRef": false,
     "stack": [
      {
       "description": "createHandle (net.js:33:31)",
@@ -1144,15 +1176,17 @@
     "name": "NextTickWrap",
     "parent": 6,
     "uid": -7,
-    "init": 32875796,
-    "destroy": 33184285,
+    "init": 34846439,
+    "destroy": 35167289,
     "before": [
-     33145696
+     35128693
     ],
     "after": [
-     33181889
+     35164869
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "Server._emitCloseIfDrained (net.js:1542:11)",
@@ -1191,15 +1225,17 @@
     "name": "NextTickWrap",
     "parent": 6,
     "uid": -8,
-    "init": 33042578,
-    "destroy": 33261038,
+    "init": 35026907,
+    "destroy": 35244213,
     "before": [
-     33186177
+     35169151
     ],
     "after": [
-     33258611
+     35241868
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "endReadable (_stream_readable.js:966:13)",

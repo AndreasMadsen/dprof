@@ -30,7 +30,9 @@ function simplifyNode(node) {
     destroy: node.destroy === null ? 'null' : typeof node.destroy,
     before: `Array(${node.before.length})`,
     after: `Array(${node.after.length})`,
-    unrefed: `${node.unrefed}`,
+    initRef: `${node.initRef}`,
+    ref: `Array(${node.ref.length})`,
+    unref: `Array(${node.unref.length})`,
     stack: node.stack.map((cite) => cite.filename),
     children: node.children
   };
