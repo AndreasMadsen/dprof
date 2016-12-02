@@ -18695,7 +18695,7 @@ function Node(node) {
   // Info
   this.name = node.name;
   this.stack = node.stack;
-  this.unrefed = node.unrefed;
+  this.initRef = node.initRef;
 
   // Convert init time
   this.init = node.init * ns2s;
@@ -18710,6 +18710,35 @@ function Node(node) {
   this.after = node.after.map(function (v) {
     return v * ns2s;
   });
+  this.unref = node.unref.map(function (v) {
+    return v * ns2s;
+  });
+  this.ref = node.ref.map(function (v) {
+    return v * ns2s;
+  });
+
+  // Compile a list of state changes
+  var changes = [].concat(this.before.map(function (time) {
+    return new StateChange(time, 'sync', true);
+  }), this.after.map(function (time) {
+    return new StateChange(time, 'sync', false);
+  }), this.unref.map(function (time) {
+    return new StateChange(time, 'ref', false);
+  }), this.ref.map(function (time) {
+    return new StateChange(time, 'ref', true);
+  }));
+  // Sort the state in order of time
+  // TODO: use merge instead of sort for O(n) performance over O(n log(n))
+  changes.sort(function (a, b) {
+    return a.time - b.time;
+  });
+
+  // Compile a list of states
+  var states = new States(this.init, false, this.initRef);
+  states.changes(changes);
+  states.end(this.destroy);
+  this.states = states.list;
+
   // Total time, including all children will be updated.
   this.total = 0;
 
@@ -18721,19 +18750,49 @@ function Node(node) {
   this.children = node.children;
 }
 
-Node.prototype.updateTotal = function () {
-  // Update total, to be the max of the childrens total and the after time
-  // of this node.
-  this.total = this.destroy;
+function StateChange(time, type, update) {
+  this.time = time;
+  this.type = type;
+  this.update = update;
+}
+
+function State(start, sync, ref) {
+  this.start = start;
+  this.end = 0;
+  this.sync = sync;
+  this.ref = ref;
+  this.type = (this.sync ? 'callback' : 'wait') + ' ' + (this.ref ? 'ref' : 'unref');
+}
+
+function States(time, sync, ref) {
+  this.list = [new State(time, sync, ref)];
+  this.last = this.list[0];
+}
+
+States.prototype.add = function (time, sync, ref) {
+  this.last.end = time;
+  this.last = new State(time, sync, ref);
+  this.list.push(this.last);
+};
+
+States.prototype.end = function (time) {
+  this.last.end = time;
+};
+
+States.prototype.changes = function (changes) {
   var _iteratorNormalCompletion5 = true;
   var _didIteratorError5 = false;
   var _iteratorError5 = undefined;
 
   try {
-    for (var _iterator5 = this.children[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
-      var child = _step5.value;
+    for (var _iterator5 = changes[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
+      var change = _step5.value;
 
-      this.total = Math.max(this.total, child.total);
+      if (change.type === 'sync') {
+        this.add(change.time, change.update, this.last.ref);
+      } else if (change.type === 'ref') {
+        this.add(change.time, this.last.sync, change.update);
+      }
     }
   } catch (err) {
     _didIteratorError5 = true;
@@ -18746,6 +18805,36 @@ Node.prototype.updateTotal = function () {
     } finally {
       if (_didIteratorError5) {
         throw _iteratorError5;
+      }
+    }
+  }
+};
+
+Node.prototype.updateTotal = function () {
+  // Update total, to be the max of the childrens total and the after time
+  // of this node.
+  this.total = this.destroy;
+  var _iteratorNormalCompletion6 = true;
+  var _didIteratorError6 = false;
+  var _iteratorError6 = undefined;
+
+  try {
+    for (var _iterator6 = this.children[Symbol.iterator](), _step6; !(_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {
+      var child = _step6.value;
+
+      this.total = Math.max(this.total, child.total);
+    }
+  } catch (err) {
+    _didIteratorError6 = true;
+    _iteratorError6 = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion6 && _iterator6.return) {
+        _iterator6.return();
+      }
+    } finally {
+      if (_didIteratorError6) {
+        throw _iteratorError6;
       }
     }
   }
@@ -18853,7 +18942,7 @@ StatsLayout.prototype.draw = function () {
     }
     wait += this._node.destroy - prevSyncTime;
 
-    stats += '\n' + ('handle: ' + this._node.name + '\n') + ('weak (unrefed): ' + this._node.unrefed + '\n') + ('start: ' + this._node.init.toFixed(8) + ' sec\n') + ('wait: ' + toms(wait, 11) + ' ms\n') + ('callback: ' + toms(callback, 7) + ' ms');
+    stats += '\n' + ('handle: ' + this._node.name + '\n') + ('uid: ' + this._node.uid + '\n') + ('start: ' + this._node.init.toFixed(8) + ' sec\n') + ('wait: ' + toms(wait, 11) + ' ms\n') + ('callback: ' + toms(callback, 7) + ' ms');
 
     trace += this._node.stack.map(function (site) {
       return ' at ' + site.description;
@@ -19064,34 +19153,56 @@ TimelineLayout.prototype._calcBackgroundLine = function (node) {
   'H' + this._xScale(flatten.total)); // Horizontal line to
 };
 
-TimelineLayout.prototype._calcWaitLine = function (node) {
-  var path = [];
+TimelineLayout.prototype._calcStateLines = function () {
+  var self = this;
 
-  // Between (init - before) and (after - before)
-  var prevTime = node.init;
-  for (var i = 0; i < node.before.length; i++) {
-    path.push('M' + this._xScale(prevTime) + ' ' + node.top * timelineHeight + ' ' + ( // Move to
-    'H' + this._xScale(node.before[i]))); // Horizontal line to
-    prevTime = node.after[i];
-  }
+  // The d3 callback is wraped, such the timeline instance can be passed
+  return function (node) {
+    // Get the bar node
+    var bar = d3.select(this);
 
-  // Between (init/after - destroy)
-  path.push('M' + this._xScale(prevTime) + ' ' + node.top * timelineHeight + ' ' + ( // Move to
-  'H' + this._xScale(node.destroy))); // Horizontal line to
+    // Sett the path attributes
+    var types = {
+      'wait ref': [],
+      'wait unref': [],
+      'callback ref': [],
+      'callback unref': []
+    };
 
-  return path.join(' ');
-};
+    // Iterate over the state changes
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
 
-TimelineLayout.prototype._calcCallbackLine = function (node) {
-  var path = [];
+    try {
+      for (var _iterator = node.states[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        var state = _step.value;
 
-  // Between (before - after)
-  for (var i = 0; i < node.before.length; i++) {
-    path.push('M' + this._xScale(node.before[i]) + ' ' + node.top * timelineHeight + ' ' + ( // Move to
-    'H' + this._xScale(node.after[i]))); // Horizontal line to
-  }
+        types[state.type].push('M' + self._xScale(state.start) + ' ' + node.top * timelineHeight + ' ' + ( // Move to
+        'H' + self._xScale(state.end)));
+      }
 
-  return path.join(' ');
+      // Sett the path attributes
+    } catch (err) {
+      _didIteratorError = true;
+      _iteratorError = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion && _iterator.return) {
+          _iterator.return();
+        }
+      } finally {
+        if (_didIteratorError) {
+          throw _iteratorError;
+        }
+      }
+    }
+
+    bar.select('.wait:not(.unref)').attr('d', types['wait ref'].join(' '));
+    bar.select('.wait.unref').attr('d', types['wait unref'].join(' '));
+    bar.select('.callback:not(.unref)').attr('d', types['callback ref'].join(' '));
+    bar.select('.callback.unref').attr('d', types['callback unref'].join(' '));
+  };
 };
 
 TimelineLayout.prototype._calcTotalLine = function (node) {
@@ -19113,11 +19224,7 @@ TimelineLayout.prototype._drawTimelines = function () {
 
   //
   // Insert groups
-  var barEnter = bar.enter().append('g').attr('class', 'timeline')
-  // Change bar opacity if unrefed
-  .classed('unrefed', function (d) {
-    return d.unrefed;
-  });
+  var barEnter = bar.enter().append('g').attr('class', 'timeline');
 
   // Draw background line
   barEnter.append('path').attr('class', function (d, i) {
@@ -19137,17 +19244,22 @@ TimelineLayout.prototype._drawTimelines = function () {
   }).append('path').attr('class', 'init');
   bar.select('.init').attr('d', this._calcInitLine.bind(this));
 
-  // Draw before line
+  // Add before lines
   barEnter.append('path').attr('class', 'wait');
-  bar.select('.wait').attr('d', this._calcWaitLine.bind(this));
+  barEnter.append('path').attr('class', 'wait unref');
 
-  // Draw after line
+  // Add after line
   barEnter.append('path').attr('class', 'callback');
-  bar.select('.callback').attr('d', this._calcCallbackLine.bind(this));
+  barEnter.append('path').attr('class', 'callback unref');
 
   // Draw after line
   barEnter.append('path').attr('class', 'total');
   bar.select('.total').attr('d', this._calcTotalLine.bind(this));
+
+  // Draw before (un/ref) and after lines
+  // _calcStateLines returns a d3 callback that also has a ref to
+  // the TimelineLayout instance
+  bar.each(this._calcStateLines());
 
   //
   // Order elements
