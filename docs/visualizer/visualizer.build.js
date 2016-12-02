@@ -18625,7 +18625,7 @@ function backwardDAGWalk(nodes, handler) {
       if (node.children.length === 0) {
         nodeQueue.add(node);
       } else {
-        childCounter.set(node.id, node.children.length);
+        childCounter.set(node.uid, node.children.length);
       }
     }
 
@@ -18660,14 +18660,14 @@ function backwardDAGWalk(nodes, handler) {
       if (_node2.parent === null) continue;
 
       // the number of children that has not been processed
-      var missingChildren = childCounter.get(_node2.parent.id) - 1;
+      var missingChildren = childCounter.get(_node2.parent.uid) - 1;
 
       if (missingChildren === 0) {
         // parent is ready to be processed, so add to queue
         nodeQueue.add(_node2.parent);
-        childCounter.delete(_node2.parent.id);
+        childCounter.delete(_node2.parent.uid);
       } else {
-        childCounter.set(_node2.parent.id, missingChildren);
+        childCounter.set(_node2.parent.uid, missingChildren);
       }
     }
   } catch (err) {
@@ -18688,7 +18688,7 @@ function backwardDAGWalk(nodes, handler) {
 
 function Node(node) {
   // Meta
-  this.id = node.uid; // d3 id, doesn't change
+  this.uid = node.uid; // d3 id, doesn't change
   this.parent = node.parent; // will be replaced by a Node reference
   this.collapsed = false;
 
@@ -19215,7 +19215,7 @@ TimelineLayout.prototype._calcTotalLine = function (node) {
 TimelineLayout.prototype._drawTimelines = function () {
   // Setup d3 selection
   var bar = this._contentElem.selectAll('g').data(this._nodes, function (d) {
-    return d.id;
+    return d.uid;
   });
 
   //
