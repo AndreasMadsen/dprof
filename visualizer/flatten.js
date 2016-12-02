@@ -50,7 +50,7 @@ function backwardDAGWalk(nodes, handler) {
     if (node.children.length === 0) {
       nodeQueue.add(node);
     } else {
-      childCounter.set(node.id, node.children.length);
+      childCounter.set(node.uid, node.children.length);
     }
   }
 
@@ -63,21 +63,21 @@ function backwardDAGWalk(nodes, handler) {
     if (node.parent === null) continue;
 
     // the number of children that has not been processed
-    const missingChildren = childCounter.get(node.parent.id) - 1;
+    const missingChildren = childCounter.get(node.parent.uid) - 1;
 
     if (missingChildren === 0) {
       // parent is ready to be processed, so add to queue
       nodeQueue.add(node.parent);
-      childCounter.delete(node.parent.id);
+      childCounter.delete(node.parent.uid);
     } else {
-      childCounter.set(node.parent.id, missingChildren);
+      childCounter.set(node.parent.uid, missingChildren);
     }
   }
 }
 
 function Node(node) {
   // Meta
-  this.id = node.uid; // d3 id, doesn't change
+  this.uid = node.uid; // d3 id, doesn't change
   this.parent = node.parent; // will be replaced by a Node reference
   this.collapsed = false;
 

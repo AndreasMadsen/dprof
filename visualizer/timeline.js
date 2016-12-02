@@ -186,7 +186,7 @@ TimelineLayout.prototype._drawTimelines = function () {
   // Setup d3 selection
   const bar = this._contentElem
     .selectAll('g')
-      .data(this._nodes, function (d) { return d.id; });
+      .data(this._nodes, function (d) { return d.uid; });
 
   //
   // Remove groups
