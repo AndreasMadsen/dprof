@@ -2,21 +2,23 @@
  "stdout": "",
  "stderr": "",
  "dump": {
-  "total": 32493626,
-  "version": "0.15.1",
+  "total": 31126116,
+  "version": "0.16.0",
   "root": {
    "name": "root",
    "parent": null,
    "uid": 0,
    "init": 0,
-   "destroy": 5884752,
+   "destroy": 5214901,
    "before": [
     0
    ],
    "after": [
-    5785633
+    5178861
    ],
-   "unrefed": false,
+   "unref": [],
+   "ref": [],
+   "initRef": true,
    "stack": [
     {
      "description": "Module._compile (module.js:541:32)",
@@ -131,11 +133,15 @@
     "name": "Signal",
     "parent": 0,
     "uid": 1,
-    "init": 2922406,
+    "init": 2991384,
     "destroy": null,
     "before": [],
     "after": [],
-    "unrefed": true,
+    "unref": [
+     3582728
+    ],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "process.<anonymous> (internal/process.js:195:18)",
@@ -168,9 +174,9 @@
       "collum": 10
      },
      {
-      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/dprof.js:169:11)",
+      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/dprof.js:186:11)",
       "filename": "/dprof.js",
-      "line": 169,
+      "line": 186,
       "collum": 11
      },
      {
@@ -282,15 +288,17 @@
     "name": "TimeoutWrap",
     "parent": 0,
     "uid": -1,
-    "init": 4240727,
-    "destroy": 20078953,
+    "init": 4116289,
+    "destroy": 19442791,
     "before": [
-     18463911
+     17771689
     ],
     "after": [
-     19756584
+     19135424
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout.js:4:1)",
@@ -362,15 +370,17 @@
     "name": "TimeoutWrap",
     "parent": -1,
     "uid": -2,
-    "init": 18746478,
-    "destroy": 31958580,
+    "init": 18033211,
+    "destroy": 30573873,
     "before": [
-     31837926
+     30468491
     ],
     "after": [
-     31929593
+     30544718
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "Timeout.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout.js:5:3)",
@@ -397,15 +407,17 @@
     "name": "TimeoutWrap",
     "parent": -1,
     "uid": -3,
-    "init": 19524876,
-    "destroy": 31997856,
+    "init": 18829045,
+    "destroy": 30611609,
     "before": [
-     31965776
+     30581086
     ],
     "after": [
-     31991104
+     30604564
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "Timeout.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/set-timeout.js:7:3)",

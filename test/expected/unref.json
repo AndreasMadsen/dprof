@@ -2,19 +2,19 @@
  "stdout": "",
  "stderr": "",
  "dump": {
-  "total": 35349467,
+  "total": 336610829,
   "version": "0.16.0",
   "root": {
    "name": "root",
    "parent": null,
    "uid": 0,
    "init": 0,
-   "destroy": 12637228,
+   "destroy": 12903200,
    "before": [
     0
    ],
    "after": [
-    12595072
+    12856023
    ],
    "unref": [],
    "ref": [],
@@ -63,8 +63,8 @@
      "collum": 19
     },
     {
-     "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/tcp.js:2:1)",
-     "filename": "/test/scripts/tcp.js",
+     "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/unref.js:2:1)",
+     "filename": "/test/scripts/unref.js",
      "line": 2,
      "collum": 1
     },
@@ -133,12 +133,12 @@
     "name": "Signal",
     "parent": 0,
     "uid": 1,
-    "init": 2982732,
+    "init": 3028677,
     "destroy": null,
     "before": [],
     "after": [],
     "unref": [
-     3601747
+     3608279
     ],
     "ref": [],
     "initRef": true,
@@ -222,8 +222,8 @@
       "collum": 19
      },
      {
-      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/tcp.js:2:1)",
-      "filename": "/test/scripts/tcp.js",
+      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/unref.js:2:1)",
+      "filename": "/test/scripts/unref.js",
       "line": 2,
       "collum": 1
      },
@@ -288,13 +288,13 @@
     "name": "GetAddrInfoReqWrap",
     "parent": 0,
     "uid": 2,
-    "init": 11966368,
-    "destroy": 26462973,
+    "init": 12173939,
+    "destroy": 27277712,
     "before": [
-     15099489
+     15444364
     ],
     "after": [
-     22124211
+     22661964
     ],
     "unref": [],
     "ref": [],
@@ -319,9 +319,9 @@
       "collum": 5
      },
      {
-      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/tcp.js:10:8)",
-      "filename": "/test/scripts/tcp.js",
-      "line": 10,
+      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/unref.js:21:8)",
+      "filename": "/test/scripts/unref.js",
+      "line": 21,
       "collum": 8
      },
      {
@@ -388,13 +388,13 @@
     "name": "TCP",
     "parent": 2,
     "uid": 3,
-    "init": 20477787,
-    "destroy": 34522314,
+    "init": 20993532,
+    "destroy": 31076772,
     "before": [
-     27530609
+     28068419
     ],
     "after": [
-     29704488
+     31070252
     ],
     "unref": [],
     "ref": [],
@@ -439,20 +439,22 @@
     ],
     "children": [
      6,
-     -4
+     -3,
+     -4,
+     -5
     ]
    },
    {
     "name": "NextTickWrap",
     "parent": 2,
     "uid": -1,
-    "init": 21826180,
-    "destroy": 26002633,
+    "init": 22355800,
+    "destroy": 26772542,
     "before": [
-     22233928
+     22772155
     ],
     "after": [
-     25906617
+     26678012
     ],
     "unref": [],
     "ref": [],
@@ -498,19 +500,13 @@
     "name": "TCP",
     "parent": -1,
     "uid": 4,
-    "init": 24486002,
-    "destroy": 34520160,
-    "before": [
-     30279166,
-     31245315,
-     34488077
+    "init": 25031972,
+    "destroy": null,
+    "before": [],
+    "after": [],
+    "unref": [
+     27502484
     ],
-    "after": [
-     31172476,
-     34240724,
-     34516934
-    ],
-    "unref": [],
     "ref": [],
     "initRef": true,
     "stack": [
@@ -527,9 +523,9 @@
       "collum": 35
      },
      {
-      "description": "Server.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/tcp.js:12:22)",
-      "filename": "/test/scripts/tcp.js",
-      "line": 12,
+      "description": "Server.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/unref.js:23:22)",
+      "filename": "/test/scripts/unref.js",
+      "line": 23,
       "collum": 22
      },
      {
@@ -569,23 +565,19 @@
       "collum": 9
      }
     ],
-    "children": [
-     -5,
-     -6,
-     8
-    ]
+    "children": []
    },
    {
     "name": "NextTickWrap",
     "parent": -1,
     "uid": -2,
-    "init": 25734408,
-    "destroy": 26453889,
+    "init": 26568942,
+    "destroy": 27265200,
     "before": [
-     26071922
+     26834088
     ],
     "after": [
-     26436274
+     27237712
     ],
     "unref": [],
     "ref": [],
@@ -610,9 +602,9 @@
       "collum": 35
      },
      {
-      "description": "Server.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/tcp.js:12:22)",
-      "filename": "/test/scripts/tcp.js",
-      "line": 12,
+      "description": "Server.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/unref.js:23:22)",
+      "filename": "/test/scripts/unref.js",
+      "line": 23,
       "collum": 22
      },
      {
@@ -660,13 +652,13 @@
     "name": "TCPConnectWrap",
     "parent": -2,
     "uid": 5,
-    "init": 26300926,
-    "destroy": 27425469,
+    "init": 27097034,
+    "destroy": 27950755,
     "before": [
-     26491360
+     27311666
     ],
     "after": [
-     27293094
+     27945852
     ],
     "unref": [],
     "ref": [],
@@ -697,175 +689,48 @@
       "collum": 9
      }
     ],
-    "children": [
-     -3
-    ]
-   },
-   {
-    "name": "NextTickWrap",
-    "parent": 5,
-    "uid": -3,
-    "init": 26766410,
-    "destroy": 27421523,
-    "before": [
-     27302934
-    ],
-    "after": [
-     27418393
-    ],
-    "unref": [],
-    "ref": [],
-    "initRef": true,
-    "stack": [
-     {
-      "description": "Socket.Readable.on (_stream_readable.js:700:17)",
-      "filename": "_stream_readable.js",
-      "line": 700,
-      "collum": 17
-     },
-     {
-      "description": "Socket.once (events.js:296:8)",
-      "filename": "events.js",
-      "line": 296,
-      "collum": 8
-     },
-     {
-      "description": "Socket.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/tcp.js:13:12)",
-      "filename": "/test/scripts/tcp.js",
-      "line": 13,
-      "collum": 12
-     },
-     {
-      "description": "Socket.g (events.js:286:16)",
-      "filename": "events.js",
-      "line": 286,
-      "collum": 16
-     },
-     {
-      "description": "emitNone (events.js:86:13)",
-      "filename": "events.js",
-      "line": 86,
-      "collum": 13
-     },
-     {
-      "description": "Socket.emit (events.js:185:7)",
-      "filename": "events.js",
-      "line": 185,
-      "collum": 7
-     },
-     {
-      "description": "TCPConnectWrap.afterConnect [as oncomplete] (net.js:1067:10)",
-      "filename": "net.js",
-      "line": 1067,
-      "collum": 10
-     }
-    ],
     "children": []
    },
    {
     "name": "TCP",
     "parent": 3,
     "uid": 6,
-    "init": 27502728,
-    "destroy": 35254440,
-    "before": [
-     34531440,
-     35248762
+    "init": 28040847,
+    "destroy": null,
+    "before": [],
+    "after": [],
+    "unref": [
+     29566410,
+     233688646
     ],
-    "after": [
-     35124966,
-     35252591
+    "ref": [
+     136101196
     ],
-    "unref": [],
-    "ref": [],
     "initRef": true,
     "stack": [],
-    "children": [
-     -7,
-     -8
-    ]
+    "children": []
    },
    {
-    "name": "NextTickWrap",
+    "name": "TimeoutWrap",
     "parent": 3,
-    "uid": -4,
-    "init": 29418406,
-    "destroy": 30059010,
+    "uid": -3,
+    "init": 29791790,
+    "destroy": 136313576,
     "before": [
-     29714993
+     135990689
     ],
     "after": [
-     30056272
+     136124152
     ],
     "unref": [],
     "ref": [],
     "initRef": true,
     "stack": [
      {
-      "description": "onwrite (_stream_writable.js:350:15)",
-      "filename": "_stream_writable.js",
-      "line": 350,
-      "collum": 15
-     },
-     {
-      "description": "WritableState.onwrite (_stream_writable.js:89:5)",
-      "filename": "_stream_writable.js",
-      "line": 89,
-      "collum": 5
-     },
-     {
-      "description": "Socket._writeGeneric (net.js:714:5)",
-      "filename": "net.js",
-      "line": 714,
-      "collum": 5
-     },
-     {
-      "description": "Socket._write (net.js:724:8)",
-      "filename": "net.js",
-      "line": 724,
-      "collum": 8
-     },
-     {
-      "description": "doWrite (_stream_writable.js:307:12)",
-      "filename": "_stream_writable.js",
-      "line": 307,
-      "collum": 12
-     },
-     {
-      "description": "writeOrBuffer (_stream_writable.js:293:5)",
-      "filename": "_stream_writable.js",
-      "line": 293,
-      "collum": 5
-     },
-     {
-      "description": "Socket.Writable.write (_stream_writable.js:220:11)",
-      "filename": "_stream_writable.js",
-      "line": 220,
-      "collum": 11
-     },
-     {
-      "description": "Socket.write (net.js:650:40)",
-      "filename": "net.js",
-      "line": 650,
-      "collum": 40
-     },
-     {
-      "description": "Socket.Writable.end (_stream_writable.js:453:10)",
-      "filename": "_stream_writable.js",
-      "line": 453,
-      "collum": 10
-     },
-     {
-      "description": "Socket.end (net.js:422:31)",
-      "filename": "net.js",
-      "line": 422,
-      "collum": 31
-     },
-     {
-      "description": "Server.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/tcp.js:7:10)",
-      "filename": "/test/scripts/tcp.js",
-      "line": 7,
-      "collum": 10
+      "description": "Server.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/unref.js:10:3)",
+      "filename": "/test/scripts/unref.js",
+      "line": 10,
+      "collum": 3
      },
      {
       "description": "emitOne (events.js:96:13)",
@@ -886,397 +751,89 @@
       "collum": 8
      }
     ],
-    "children": [
-     7
-    ]
+    "children": []
    },
    {
-    "name": "ShutdownWrap",
-    "parent": -4,
-    "uid": 7,
-    "init": 30000640,
-    "destroy": 30248440,
+    "name": "TimeoutWrap",
+    "parent": 3,
+    "uid": -4,
+    "init": 30614533,
+    "destroy": 233719517,
     "before": [
-     30097448
+     233593735
     ],
     "after": [
-     30244650
+     233700098
     ],
     "unref": [],
     "ref": [],
     "initRef": true,
     "stack": [
      {
-      "description": "Socket.onSocketFinish (net.js:225:26)",
-      "filename": "net.js",
-      "line": 225,
-      "collum": 26
-     },
-     {
-      "description": "emitNone (events.js:86:13)",
-      "filename": "events.js",
-      "line": 86,
-      "collum": 13
-     },
-     {
-      "description": "Socket.emit (events.js:185:7)",
-      "filename": "events.js",
-      "line": 185,
-      "collum": 7
-     },
-     {
-      "description": "finishMaybe (_stream_writable.js:488:14)",
-      "filename": "_stream_writable.js",
-      "line": 488,
-      "collum": 14
-     },
-     {
-      "description": "afterWrite (_stream_writable.js:362:3)",
-      "filename": "_stream_writable.js",
-      "line": 362,
+      "description": "Server.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/unref.js:13:3)",
+      "filename": "/test/scripts/unref.js",
+      "line": 13,
       "collum": 3
      },
      {
-      "description": "_combinedTickCallback (internal/process/next_tick.js:80:20)",
-      "filename": "internal/process/next_tick.js",
-      "line": 80,
-      "collum": 20
+      "description": "emitOne (events.js:96:13)",
+      "filename": "events.js",
+      "line": 96,
+      "collum": 13
      },
      {
-      "description": "process._tickCallback (internal/process/next_tick.js:98:9)",
-      "filename": "internal/process/next_tick.js",
-      "line": 98,
-      "collum": 9
+      "description": "Server.emit (events.js:188:7)",
+      "filename": "events.js",
+      "line": 188,
+      "collum": 7
+     },
+     {
+      "description": "TCP.onconnection (net.js:1458:8)",
+      "filename": "net.js",
+      "line": 1458,
+      "collum": 8
      }
     ],
     "children": []
    },
    {
-    "name": "NextTickWrap",
-    "parent": 4,
+    "name": "TimeoutWrap",
+    "parent": 3,
     "uid": -5,
-    "init": 31094796,
-    "destroy": 31234843,
+    "init": 31009732,
+    "destroy": 336302364,
     "before": [
-     31178968
+     336223410
     ],
     "after": [
-     31232159
+     336290469
     ],
     "unref": [],
     "ref": [],
     "initRef": true,
     "stack": [
      {
-      "description": "maybeReadMore (_stream_readable.js:447:13)",
-      "filename": "_stream_readable.js",
-      "line": 447,
-      "collum": 13
-     },
-     {
-      "description": "readableAddChunk (_stream_readable.js:192:7)",
-      "filename": "_stream_readable.js",
-      "line": 192,
-      "collum": 7
-     },
-     {
-      "description": "Socket.Readable.push (_stream_readable.js:135:10)",
-      "filename": "_stream_readable.js",
-      "line": 135,
-      "collum": 10
-     },
-     {
-      "description": "TCP.onread (net.js:542:20)",
-      "filename": "net.js",
-      "line": 542,
-      "collum": 20
-     }
-    ],
-    "children": []
-   },
-   {
-    "name": "NextTickWrap",
-    "parent": 4,
-    "uid": -6,
-    "init": 31803530,
-    "destroy": 34481400,
-    "before": [
-     34247966
-    ],
-    "after": [
-     34477669
-    ],
-    "unref": [],
-    "ref": [],
-    "initRef": true,
-    "stack": [
-     {
-      "description": "endReadable (_stream_readable.js:966:13)",
-      "filename": "_stream_readable.js",
-      "line": 966,
-      "collum": 13
-     },
-     {
-      "description": "Socket.Readable.read (_stream_readable.js:300:7)",
-      "filename": "_stream_readable.js",
-      "line": 300,
-      "collum": 7
-     },
-     {
-      "description": "Socket.onSocketEnd (net.js:267:10)",
-      "filename": "net.js",
-      "line": 267,
-      "collum": 10
-     },
-     {
-      "description": "emitNone (events.js:86:13)",
-      "filename": "events.js",
-      "line": 86,
-      "collum": 13
-     },
-     {
-      "description": "Socket.emit (events.js:185:7)",
-      "filename": "events.js",
-      "line": 185,
-      "collum": 7
-     },
-     {
-      "description": "TCP.onread (net.js:579:8)",
-      "filename": "net.js",
-      "line": 579,
-      "collum": 8
-     }
-    ],
-    "children": []
-   },
-   {
-    "name": "Pipe",
-    "parent": 4,
-    "uid": 8,
-    "init": 32722037,
-    "destroy": null,
-    "before": [],
-    "after": [],
-    "unref": [],
-    "ref": [],
-    "initRef": false,
-    "stack": [
-     {
-      "description": "createHandle (net.js:33:31)",
-      "filename": "net.js",
-      "line": 33,
-      "collum": 31
-     },
-     {
-      "description": "new Socket (net.js:138:20)",
-      "filename": "net.js",
-      "line": 138,
-      "collum": 20
-     },
-     {
-      "description": "createWritableStdioStream (internal/process/stdio.js:156:16)",
-      "filename": "internal/process/stdio.js",
-      "line": 156,
-      "collum": 16
-     },
-     {
-      "description": "process.getStderr [as stderr] (internal/process/stdio.js:23:14)",
-      "filename": "internal/process/stdio.js",
-      "line": 23,
-      "collum": 14
-     },
-     {
-      "description": "Socket._destroy (net.js:484:25)",
-      "filename": "net.js",
-      "line": 484,
-      "collum": 25
-     },
-     {
-      "description": "Socket.destroy (net.js:518:8)",
-      "filename": "net.js",
-      "line": 518,
-      "collum": 8
-     },
-     {
-      "description": "Socket.onSocketFinish (net.js:213:17)",
-      "filename": "net.js",
-      "line": 213,
-      "collum": 17
-     },
-     {
-      "description": "emitNone (events.js:86:13)",
-      "filename": "events.js",
-      "line": 86,
-      "collum": 13
-     },
-     {
-      "description": "Socket.emit (events.js:185:7)",
-      "filename": "events.js",
-      "line": 185,
-      "collum": 7
-     },
-     {
-      "description": "finishMaybe (_stream_writable.js:488:14)",
-      "filename": "_stream_writable.js",
-      "line": 488,
-      "collum": 14
-     },
-     {
-      "description": "endWritable (_stream_writable.js:498:3)",
-      "filename": "_stream_writable.js",
-      "line": 498,
+      "description": "Server.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/unref.js:16:3)",
+      "filename": "/test/scripts/unref.js",
+      "line": 16,
       "collum": 3
      },
      {
-      "description": "Socket.Writable.end (_stream_writable.js:463:5)",
-      "filename": "_stream_writable.js",
-      "line": 463,
-      "collum": 5
-     },
-     {
-      "description": "Socket.end (net.js:422:31)",
-      "filename": "net.js",
-      "line": 422,
-      "collum": 31
-     },
-     {
-      "description": "Socket.destroySoon (net.js:449:10)",
-      "filename": "net.js",
-      "line": 449,
-      "collum": 10
-     },
-     {
-      "description": "Socket.onSocketEnd (net.js:272:10)",
-      "filename": "net.js",
-      "line": 272,
-      "collum": 10
-     },
-     {
-      "description": "emitNone (events.js:86:13)",
+      "description": "emitOne (events.js:96:13)",
       "filename": "events.js",
-      "line": 86,
+      "line": 96,
       "collum": 13
      },
      {
-      "description": "Socket.emit (events.js:185:7)",
+      "description": "Server.emit (events.js:188:7)",
       "filename": "events.js",
-      "line": 185,
+      "line": 188,
       "collum": 7
      },
      {
-      "description": "TCP.onread (net.js:579:8)",
+      "description": "TCP.onconnection (net.js:1458:8)",
       "filename": "net.js",
-      "line": 579,
-      "collum": 8
-     }
-    ],
-    "children": []
-   },
-   {
-    "name": "NextTickWrap",
-    "parent": 6,
-    "uid": -7,
-    "init": 34846439,
-    "destroy": 35167289,
-    "before": [
-     35128693
-    ],
-    "after": [
-     35164869
-    ],
-    "unref": [],
-    "ref": [],
-    "initRef": true,
-    "stack": [
-     {
-      "description": "Server._emitCloseIfDrained (net.js:1542:11)",
-      "filename": "net.js",
-      "line": 1542,
-      "collum": 11
-     },
-     {
-      "description": "Socket._destroy (net.js:510:20)",
-      "filename": "net.js",
-      "line": 510,
-      "collum": 20
-     },
-     {
-      "description": "Socket.destroy (net.js:518:8)",
-      "filename": "net.js",
-      "line": 518,
-      "collum": 8
-     },
-     {
-      "description": "maybeDestroy (net.js:442:12)",
-      "filename": "net.js",
-      "line": 442,
-      "collum": 12
-     },
-     {
-      "description": "TCP.onread (net.js:570:5)",
-      "filename": "net.js",
-      "line": 570,
-      "collum": 5
-     }
-    ],
-    "children": []
-   },
-   {
-    "name": "NextTickWrap",
-    "parent": 6,
-    "uid": -8,
-    "init": 35026907,
-    "destroy": 35244213,
-    "before": [
-     35169151
-    ],
-    "after": [
-     35241868
-    ],
-    "unref": [],
-    "ref": [],
-    "initRef": true,
-    "stack": [
-     {
-      "description": "endReadable (_stream_readable.js:966:13)",
-      "filename": "_stream_readable.js",
-      "line": 966,
-      "collum": 13
-     },
-     {
-      "description": "Socket.Readable.read (_stream_readable.js:300:7)",
-      "filename": "_stream_readable.js",
-      "line": 300,
-      "collum": 7
-     },
-     {
-      "description": "Socket.read (net.js:299:43)",
-      "filename": "net.js",
-      "line": 299,
-      "collum": 43
-     },
-     {
-      "description": "Socket.onSocketEnd (net.js:267:10)",
-      "filename": "net.js",
-      "line": 267,
-      "collum": 10
-     },
-     {
-      "description": "emitNone (events.js:91:20)",
-      "filename": "events.js",
-      "line": 91,
-      "collum": 20
-     },
-     {
-      "description": "Socket.emit (events.js:185:7)",
-      "filename": "events.js",
-      "line": 185,
-      "collum": 7
-     },
-     {
-      "description": "TCP.onread (net.js:579:8)",
-      "filename": "net.js",
-      "line": 579,
+      "line": 1458,
       "collum": 8
      }
     ],

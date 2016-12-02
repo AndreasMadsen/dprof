@@ -30,6 +30,8 @@ function timestamp() {
 }
 
 function Node(uid, handle, stack, parent) {
+  const self = this;
+
   this.parent = parent === null ? null : parent.uid;
   this.uid = uid;
   this.name = handle.constructor.name;
@@ -37,19 +39,32 @@ function Node(uid, handle, stack, parent) {
   this._destroy = Infinity;
   this._before = [];
   this._after = [];
-  this.unrefed = this.name === 'TTY' || this.name === 'Pipe';
+  this._unref = [];
+  this._ref = [];
+  this._initRef = !(
+    this.name === 'TTY' || this.name === 'Pipe' || handle._timerUnref === true
+  );
   this.children = [];
   this.stack = stack.map(function (site) {
     return new Site(site);
   });
 
-  asyncHook.disable();
-  if (!this.unrefed && typeof handle.hasRef === 'function') {
-    process.nextTick(() => {
-      this.unrefed = !handle.hasRef();
-    });
+  if (typeof handle.unref === 'function') {
+    const unref = handle.unref;
+    handle.unref = function () {
+      const ret = unref.call(handle);
+      self._unref.push(timestamp());
+      return ret;
+    };
   }
-  asyncHook.enable();
+  if (typeof handle.ref === 'function') {
+    const ref = handle.ref;
+    handle.ref = function () {
+      const ret = ref.call(handle);
+      self._ref.push(timestamp());
+      return ret;
+    };
+  }
 }
 
 function getCallSites(skip) {
@@ -93,7 +108,9 @@ Node.prototype.toJSON = function () {
     destroy: this._destroy,
     before: this._before,
     after: this._after,
-    unrefed: this.unrefed,
+    unref: this._unref,
+    ref: this._ref,
+    initRef: this._initRef,
     stack: this.stack,
     children: this.children
   };

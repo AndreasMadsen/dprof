@@ -2,21 +2,23 @@
  "stdout": "",
  "stderr": "",
  "dump": {
-  "total": 12408505,
-  "version": "0.15.1",
+  "total": 13270133,
+  "version": "0.16.0",
   "root": {
    "name": "root",
    "parent": null,
    "uid": 0,
    "init": 0,
-   "destroy": 5935875,
+   "destroy": 7882439,
    "before": [
     0
    ],
    "after": [
-    5838484
+    7810042
    ],
-   "unrefed": false,
+   "unref": [],
+   "ref": [],
+   "initRef": true,
    "stack": [
     {
      "description": "Module._compile (module.js:541:32)",
@@ -131,11 +133,15 @@
     "name": "Signal",
     "parent": 0,
     "uid": 1,
-    "init": 3695636,
+    "init": 3113686,
     "destroy": null,
     "before": [],
     "after": [],
-    "unrefed": true,
+    "unref": [
+     4273220
+    ],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "process.<anonymous> (internal/process.js:195:18)",
@@ -168,9 +174,9 @@
       "collum": 10
      },
      {
-      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/dprof.js:169:11)",
+      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/dprof.js:186:11)",
       "filename": "/dprof.js",
-      "line": 169,
+      "line": 186,
       "collum": 11
      },
      {
@@ -282,15 +288,17 @@
     "name": "TimeoutWrap",
     "parent": 0,
     "uid": -1,
-    "init": 4831343,
-    "destroy": 7663738,
+    "init": 5321376,
+    "destroy": 11067224,
     "before": [
-     6469870
+     8886852
     ],
     "after": [
-     7493891
+     10764772
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/test/scripts/example.js:6:1)",
@@ -362,15 +370,17 @@
     "name": "FSReqWrap",
     "parent": -1,
     "uid": 3,
-    "init": 6706709,
-    "destroy": 8259994,
+    "init": 9331418,
+    "destroy": 11971380,
     "before": [
-     7753298
+     11247124
     ],
     "after": [
-     8248901
+     11957551
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "Object.fs.open (fs.js:631:11)",
@@ -406,15 +416,17 @@
     "name": "FSReqWrap",
     "parent": -1,
     "uid": 4,
-    "init": 7322437,
-    "destroy": 8354982,
+    "init": 10442602,
+    "destroy": 12094160,
     "before": [
-     8325903
+     12050112
     ],
     "after": [
-     8350818
+     12088382
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "Object.fs.readdir (fs.js:941:11)",
@@ -447,15 +459,17 @@
     "name": "FSReqWrap",
     "parent": 3,
     "uid": 5,
-    "init": 8070301,
-    "destroy": 8524643,
+    "init": 11735793,
+    "destroy": 12311390,
     "before": [
-     8461562
+     12223427
     ],
     "after": [
-     8520967
+     12306259
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "Object.fs.read (fs.js:687:11)",
@@ -482,15 +496,17 @@
     "name": "FSReqWrap",
     "parent": 3,
     "uid": 6,
-    "init": 8195529,
-    "destroy": 9002631,
+    "init": 11891367,
+    "destroy": 12905946,
     "before": [
-     8527071
+     12315170
     ],
     "after": [
-     8964059
+     12899959
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "Object.fs.read (fs.js:687:11)",
@@ -519,15 +535,17 @@
     "name": "FSReqWrap",
     "parent": 6,
     "uid": 7,
-    "init": 8793690,
-    "destroy": 12244546,
+    "init": 12661502,
+    "destroy": 13080882,
     "before": [
-     9088183
+     13040010
     ],
     "after": [
-     9115882
+     13076526
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "Object.fs.close (fs.js:605:11)",

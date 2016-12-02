@@ -2,21 +2,23 @@
  "stdout": "hallo world\n",
  "stderr": "",
  "dump": {
-  "total": 17883063,
-  "version": "0.15.1",
+  "total": 17403949,
+  "version": "0.16.0",
   "root": {
    "name": "root",
    "parent": null,
    "uid": 0,
    "init": 0,
-   "destroy": 17080252,
+   "destroy": 16620078,
    "before": [
     0
    ],
    "after": [
-    17054521
+    16598346
    ],
-   "unrefed": false,
+   "unref": [],
+   "ref": [],
+   "initRef": true,
    "stack": [
     {
      "description": "Module._compile (module.js:541:32)",
@@ -133,11 +135,15 @@
     "name": "Signal",
     "parent": 0,
     "uid": 1,
-    "init": 2959340,
+    "init": 2953842,
     "destroy": null,
     "before": [],
     "after": [],
-    "unrefed": true,
+    "unref": [
+     3520584
+    ],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "process.<anonymous> (internal/process.js:195:18)",
@@ -170,9 +176,9 @@
       "collum": 10
      },
      {
-      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/dprof.js:169:11)",
+      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/dprof.js:186:11)",
       "filename": "/dprof.js",
-      "line": 169,
+      "line": 186,
       "collum": 11
      },
      {
@@ -284,11 +290,13 @@
     "name": "Pipe",
     "parent": 0,
     "uid": 2,
-    "init": 12390366,
+    "init": 12021958,
     "destroy": null,
     "before": [],
     "after": [],
-    "unrefed": true,
+    "unref": [],
+    "ref": [],
+    "initRef": false,
     "stack": [
      {
       "description": "createHandle (net.js:33:31)",
@@ -405,11 +413,13 @@
     "name": "Pipe",
     "parent": 0,
     "uid": 3,
-    "init": 13813318,
+    "init": 13525058,
     "destroy": null,
     "before": [],
     "after": [],
-    "unrefed": true,
+    "unref": [],
+    "ref": [],
+    "initRef": false,
     "stack": [
      {
       "description": "createHandle (net.js:33:31)",
@@ -526,15 +536,17 @@
     "name": "NextTickWrap",
     "parent": 0,
     "uid": -1,
-    "init": 16682653,
-    "destroy": 17589057,
+    "init": 16206147,
+    "destroy": 17112641,
     "before": [
-     17354559
+     16882330
     ],
     "after": [
-     17527524
+     17044167
     ],
-    "unrefed": false,
+    "unref": [],
+    "ref": [],
+    "initRef": true,
     "stack": [
      {
       "description": "onwrite (_stream_writable.js:350:15)",

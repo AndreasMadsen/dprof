@@ -127,13 +127,15 @@ Each nested `Node` has the following format:
 
   init: Number,      // Timestamp for when the async operation is requested.
   before: [Number],  // Timestamp for when the callback is about to be called.
-                     // This is an array because a callback may be called more
-                     // than once.
+                     // This is an array because a callback may be called
+                     // more than once.
   after: [Number],   // Timestamp for when the callback is finished.
-                     // All timestamps are relative to the process startup time
-                     // and the unit is nanoseconds.
+                     // All timestamps are relative to the process startup
+                     // time and the unit is nanoseconds.
 
-  unrefed: Boolean,  // `true` if the handle will not keep the event loop open.
+   unref: [Number],  // Timestamp for when the handle was unrefed
+   ref: [Number],    // Timestamp for when the handle was refed
+   initRef: Boolean, // `false` if the handle was initially unrefed
 
   children: [        // Shows async operations created in the callback
     Number(uid), ...

@@ -139,35 +139,41 @@ TimelineLayout.prototype._calcBackgroundLine = function (node) {
          `H${this._xScale(flatten.total)}`; // Horizontal line to
 };
 
-TimelineLayout.prototype._calcWaitLine = function (node) {
-  const path = [];
+TimelineLayout.prototype._calcStateLines = function () {
+  const self = this;
 
-  // Between (init - before) and (after - before)
-  let prevTime = node.init;
-  for (let i = 0; i < node.before.length; i++) {
-    path.push(`M${this._xScale(prevTime)} ${node.top * timelineHeight} ` + // Move to
-              `H${this._xScale(node.before[i])}`); // Horizontal line to
-    prevTime = node.after[i];
+  // The d3 callback is wraped, such the timeline instance can be passed
+  return function(node) {
+    // Get the bar node
+    const bar = d3.select(this);
+
+    // Sett the path attributes
+    const types = {
+      'wait ref': [],
+      'wait unref': [],
+      'callback ref': [],
+      'callback unref': []
+    };
+
+    // Iterate over the state changes
+    for (const state of node.states) {
+      types[state.type].push(
+        `M${self._xScale(state.start)} ${node.top * timelineHeight} ` + // Move to
+        `H${self._xScale(state.end)}`
+      );
+    }
+
+    // Sett the path attributes
+    bar.select('.wait:not(.unref)')
+      .attr('d', types['wait ref'].join(' '));
+    bar.select('.wait.unref')
+      .attr('d', types['wait unref'].join(' '));
+    bar.select('.callback:not(.unref)')
+      .attr('d', types['callback ref'].join(' '));
+    bar.select('.callback.unref')
+      .attr('d', types['callback unref'].join(' '));
   }
-
-  // Between (init/after - destroy)
-  path.push(`M${this._xScale(prevTime)} ${node.top * timelineHeight} ` + // Move to
-            `H${this._xScale(node.destroy)}`); // Horizontal line to
-
-  return path.join(' ');
-};
-
-TimelineLayout.prototype._calcCallbackLine = function (node) {
-  const path = [];
-
-  // Between (before - after)
-  for (let i = 0; i < node.before.length; i++) {
-    path.push(`M${this._xScale(node.before[i])} ${node.top * timelineHeight} ` + // Move to
-              `H${this._xScale(node.after[i])}`); // Horizontal line to
-  }
-
-  return path.join(' ');
-};
+}
 
 TimelineLayout.prototype._calcTotalLine = function (node) {
   if (!node.collapsed) return '';
@@ -191,9 +197,6 @@ TimelineLayout.prototype._drawTimelines = function () {
   const barEnter = bar
     .enter().append('g')
       .attr('class', 'timeline')
-      // Change bar opacity if unrefed
-      .classed('unrefed', (d) => d.unrefed);
-
 
   // Draw background line
   barEnter.append('path')
@@ -213,23 +216,28 @@ TimelineLayout.prototype._drawTimelines = function () {
   bar.select('.init')
     .attr('d', this._calcInitLine.bind(this));
 
-  // Draw before line
+  // Add before lines
   barEnter.append('path')
     .attr('class', 'wait');
-  bar.select('.wait')
-    .attr('d', this._calcWaitLine.bind(this));
+  barEnter.append('path')
+    .attr('class', 'wait unref');
 
-  // Draw after line
+  // Add after line
   barEnter.append('path')
     .attr('class', 'callback');
-  bar.select('.callback')
-    .attr('d', this._calcCallbackLine.bind(this));
+  barEnter.append('path')
+    .attr('class', 'callback unref');
 
   // Draw after line
   barEnter.append('path')
     .attr('class', 'total');
   bar.select('.total')
     .attr('d', this._calcTotalLine.bind(this));
+
+  // Draw before (un/ref) and after lines
+  // _calcStateLines returns a d3 callback that also has a ref to
+  // the TimelineLayout instance
+  bar.each(this._calcStateLines());
 
   //
   // Order elements

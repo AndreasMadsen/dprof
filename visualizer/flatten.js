@@ -84,7 +84,7 @@ function Node(node) {
   // Info
   this.name = node.name;
   this.stack = node.stack;
-  this.unrefed = node.unrefed;
+  this.initRef = node.initRef;
 
   // Convert init time
   this.init = node.init * ns2s;
@@ -95,6 +95,26 @@ function Node(node) {
   // Convert before and after time
   this.before = node.before.map((v) => v * ns2s);
   this.after = node.after.map((v) => v * ns2s);
+  this.unref = node.unref.map((v) => v * ns2s);
+  this.ref = node.ref.map((v) => v * ns2s);
+
+  // Compile a list of state changes
+  const changes = [].concat(
+    this.before.map((time) => new StateChange(time, 'sync', true)),
+    this.after.map((time) => new StateChange(time, 'sync', false)),
+    this.unref.map((time) => new StateChange(time, 'ref', false)),
+    this.ref.map((time) => new StateChange(time, 'ref', true))
+  );
+  // Sort the state in order of time
+  // TODO: use merge instead of sort for O(n) performance over O(n log(n))
+  changes.sort((a, b) => a.time - b.time);
+
+  // Compile a list of states
+  const states = new States(this.init, false, this.initRef);
+  states.changes(changes);
+  states.end(this.destroy);
+  this.states = states.list;
+
   // Total time, including all children will be updated.
   this.total = 0;
 
@@ -105,6 +125,45 @@ function Node(node) {
    // will be replaced by a list of Node references
   this.children = node.children;
 }
+
+function StateChange(time, type, update) {
+  this.time = time;
+  this.type = type;
+  this.update = update;
+}
+
+function State(start, sync, ref) {
+  this.start = start;
+  this.end = 0;
+  this.sync = sync;
+  this.ref = ref;
+  this.type = (this.sync ? 'callback' : 'wait') + ' ' + (this.ref ? 'ref' : 'unref');
+}
+
+function States(time, sync, ref) {
+  this.list = [new State(time, sync, ref)];
+  this.last = this.list[0];
+}
+
+States.prototype.add = function (time, sync, ref) {
+  this.last.end = time;
+  this.last = new State(time, sync, ref)
+  this.list.push(this.last);
+};
+
+States.prototype.end = function (time) {
+  this.last.end = time;
+};
+
+States.prototype.changes = function (changes) {
+  for (const change of changes) {
+    if (change.type === 'sync') {
+      this.add(change.time, change.update, this.last.ref);
+    } else if (change.type === 'ref') {
+      this.add(change.time, this.last.sync, change.update);
+    }
+  }
+};
 
 Node.prototype.updateTotal = function () {
   // Update total, to be the max of the childrens total and the after time
