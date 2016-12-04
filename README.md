@@ -133,9 +133,9 @@ Node {
                      // All timestamps are relative to the process startup
                      // time and the unit is nanoseconds.
 
-   unref: [Number],  // Timestamp for when the handle was unrefed
-   ref: [Number],    // Timestamp for when the handle was refed
-   initRef: Boolean, // `false` if the handle was initially unrefed
+  unref: [Number],   // Timestamp for when the handle was unrefed
+  ref: [Number],     // Timestamp for when the handle was refed
+  initRef: Boolean,  // `false` if the handle was initially unrefed
 
   children: [        // Shows async operations created in the callback
     Number(uid), ...
