@@ -9,6 +9,8 @@ const startpoint = require('startpoint');
 const endpoint = require('endpoint');
 const async = require('async');
 
+const dumpStream = require('./dump_stream.js');
+
 const version = require('../package.json').version;
 const server = http.createServer();
 
@@ -22,13 +24,7 @@ const files = {
 
 async.parallel([
   function (done) {
-    process.stdin.pipe(endpoint(done));
-    process.stdin.unref();
-
-    const noStdin = setTimeout(done, 100);
-    process.stdin.once('data', function () {
-      clearTimeout(noStdin);
-    });
+    dumpStream().pipe(endpoint(done));
   },
   function (done) {
     server.listen(0xd0f, '127.0.0.1', done);

@@ -3,6 +3,7 @@
 const zlib = require('zlib');
 const https = require('https');
 const endpoint = require('endpoint');
+const dumpStream = require('./dump_stream.js');
 
 getGzipFile(function (err, dump) {
   if (err) throw err;
@@ -15,12 +16,7 @@ getGzipFile(function (err, dump) {
 });
 
 function getGzipFile(callback) {
-  process.stdin.pipe(zlib.createGzip()).pipe(endpoint(callback));
-
-  const noStdin = setTimeout(callback, 100);
-  process.stdin.once('data', function () {
-    clearTimeout(noStdin);
-  });
+  dumpStream().pipe(zlib.createGzip()).pipe(endpoint(callback));
 }
 
 function uploadGits(dump, callback) {
