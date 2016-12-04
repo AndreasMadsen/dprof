@@ -11,7 +11,7 @@ getGzipFile(function (err, dump) {
   uploadGits(dump, function (err, id) {
     if (err) throw err;
 
-    console.log('view at: https://andreasmadsen.github.io/dprof/gists/#' + id);
+    console.log('view at: https://dprof.js.org/gists/#' + id);
   });
 });
 

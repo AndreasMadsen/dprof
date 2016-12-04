@@ -71,7 +71,7 @@ gists.
 
 ```shell
 gzcat dprof.json.gz | dprof upload
-view at: https://andreasmadsen.github.io/dprof/gists/#5e423de3fd6d787d4bcab35fa9cebc7a
+https://dprof.js.org/gists/#6ad16f91d3e599649912315e48ebd1cb
 ```
 
 ## SIGINT (Ctrl-C) Behavior
