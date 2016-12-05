@@ -139,11 +139,12 @@ const root = new Node(
 root.rootIntialize();
 
 const nodes = new Map();
-let currState = root;
+const stateStack = [root];
 
 function asyncInit(uid, handle, provider, parentUid) {
   // get parent state
-  const state = (parentUid === null ? currState : nodes.get(parentUid));
+  const topState = stateStack[stateStack.length - 1];
+  const state = (parentUid === null ? topState : nodes.get(parentUid));
 
   // add new state node
   nodes.set(uid, state.add(uid, handle));
@@ -153,14 +154,14 @@ function asyncBefore(uid) {
   const state = nodes.get(uid);
 
   state.before();
-  currState = state;
+  stateStack.push(state);
 }
 
 function asyncAfter(uid) {
   const state = nodes.get(uid);
 
   state.after();
-  currState = root;
+  stateStack.pop();
 }
 
 function asyncDestroy(uid) {
