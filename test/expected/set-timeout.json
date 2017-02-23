@@ -2,58 +2,58 @@
  "stdout": "",
  "stderr": "",
  "dump": {
-  "total": 31126116,
-  "version": "0.16.0",
+  "total": 32791061,
+  "version": "0.18.2",
   "root": {
    "name": "root",
    "parent": null,
    "uid": 0,
    "init": 0,
-   "destroy": 5214901,
+   "destroy": 6178414,
    "before": [
     0
    ],
    "after": [
-    5178861
+    6137814
    ],
    "unref": [],
    "ref": [],
    "initRef": true,
    "stack": [
     {
-     "description": "Module._compile (module.js:541:32)",
+     "description": "Module._compile (module.js:571:32)",
      "filename": "module.js",
-     "line": 541,
+     "line": 571,
      "collum": 32
     },
     {
-     "description": "Object.Module._extensions..js (module.js:550:10)",
+     "description": "Object.Module._extensions..js (module.js:580:10)",
      "filename": "module.js",
-     "line": 550,
+     "line": 580,
      "collum": 10
     },
     {
-     "description": "Module.load (module.js:458:32)",
+     "description": "Module.load (module.js:488:32)",
      "filename": "module.js",
-     "line": 458,
+     "line": 488,
      "collum": 32
     },
     {
-     "description": "tryModuleLoad (module.js:417:12)",
+     "description": "tryModuleLoad (module.js:447:12)",
      "filename": "module.js",
-     "line": 417,
+     "line": 447,
      "collum": 12
     },
     {
-     "description": "Function.Module._load (module.js:409:3)",
+     "description": "Function.Module._load (module.js:439:3)",
      "filename": "module.js",
-     "line": 409,
+     "line": 439,
      "collum": 3
     },
     {
-     "description": "Module.require (module.js:468:17)",
+     "description": "Module.require (module.js:498:17)",
      "filename": "module.js",
-     "line": 468,
+     "line": 498,
      "collum": 17
     },
     {
@@ -69,57 +69,57 @@
      "collum": 1
     },
     {
-     "description": "Module._compile (module.js:541:32)",
+     "description": "Module._compile (module.js:571:32)",
      "filename": "module.js",
-     "line": 541,
+     "line": 571,
      "collum": 32
     },
     {
-     "description": "Object.Module._extensions..js (module.js:550:10)",
+     "description": "Object.Module._extensions..js (module.js:580:10)",
      "filename": "module.js",
-     "line": 550,
+     "line": 580,
      "collum": 10
     },
     {
-     "description": "Module.load (module.js:458:32)",
+     "description": "Module.load (module.js:488:32)",
      "filename": "module.js",
-     "line": 458,
+     "line": 488,
      "collum": 32
     },
     {
-     "description": "tryModuleLoad (module.js:417:12)",
+     "description": "tryModuleLoad (module.js:447:12)",
      "filename": "module.js",
-     "line": 417,
+     "line": 447,
      "collum": 12
     },
     {
-     "description": "Function.Module._load (module.js:409:3)",
+     "description": "Function.Module._load (module.js:439:3)",
      "filename": "module.js",
-     "line": 409,
+     "line": 439,
      "collum": 3
     },
     {
-     "description": "Module.runMain (module.js:575:10)",
+     "description": "Module.runMain (module.js:605:10)",
      "filename": "module.js",
-     "line": 575,
+     "line": 605,
      "collum": 10
     },
     {
-     "description": "run (bootstrap_node.js:352:7)",
+     "description": "run (bootstrap_node.js:420:7)",
      "filename": "bootstrap_node.js",
-     "line": 352,
+     "line": 420,
      "collum": 7
     },
     {
-     "description": "startup (bootstrap_node.js:144:9)",
+     "description": "startup (bootstrap_node.js:139:9)",
      "filename": "bootstrap_node.js",
-     "line": 144,
+     "line": 139,
      "collum": 9
     },
     {
-     "description": "bootstrap_node.js:467:3",
+     "description": "bootstrap_node.js:535:3",
      "filename": "bootstrap_node.js",
-     "line": 467,
+     "line": 535,
      "collum": 3
     }
    ],
@@ -133,21 +133,21 @@
     "name": "Signal",
     "parent": 0,
     "uid": 1,
-    "init": 2991384,
+    "init": 2594585,
     "destroy": null,
     "before": [],
     "after": [],
     "unref": [
-     3582728
+     3749487
     ],
     "ref": [],
     "initRef": true,
     "stack": [
      {
-      "description": "process.<anonymous> (internal/process.js:195:18)",
+      "description": "process.<anonymous> (internal/process.js:196:20)",
       "filename": "internal/process.js",
-      "line": 195,
-      "collum": 18
+      "line": 196,
+      "collum": 20
      },
      {
       "description": "emitTwo (events.js:106:13)",
@@ -168,51 +168,51 @@
       "collum": 14
      },
      {
-      "description": "process.addListener (events.js:270:10)",
+      "description": "process.addListener (events.js:276:10)",
       "filename": "events.js",
-      "line": 270,
+      "line": 276,
       "collum": 10
      },
      {
-      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/dprof.js:186:11)",
+      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/dprof.js:187:11)",
       "filename": "/dprof.js",
-      "line": 186,
+      "line": 187,
       "collum": 11
      },
      {
-      "description": "Module._compile (module.js:541:32)",
+      "description": "Module._compile (module.js:571:32)",
       "filename": "module.js",
-      "line": 541,
+      "line": 571,
       "collum": 32
      },
      {
-      "description": "Object.Module._extensions..js (module.js:550:10)",
+      "description": "Object.Module._extensions..js (module.js:580:10)",
       "filename": "module.js",
-      "line": 550,
+      "line": 580,
       "collum": 10
      },
      {
-      "description": "Module.load (module.js:458:32)",
+      "description": "Module.load (module.js:488:32)",
       "filename": "module.js",
-      "line": 458,
+      "line": 488,
       "collum": 32
      },
      {
-      "description": "tryModuleLoad (module.js:417:12)",
+      "description": "tryModuleLoad (module.js:447:12)",
       "filename": "module.js",
-      "line": 417,
+      "line": 447,
       "collum": 12
      },
      {
-      "description": "Function.Module._load (module.js:409:3)",
+      "description": "Function.Module._load (module.js:439:3)",
       "filename": "module.js",
-      "line": 409,
+      "line": 439,
       "collum": 3
      },
      {
-      "description": "Module.require (module.js:468:17)",
+      "description": "Module.require (module.js:498:17)",
       "filename": "module.js",
-      "line": 468,
+      "line": 498,
       "collum": 17
      },
      {
@@ -228,57 +228,57 @@
       "collum": 1
      },
      {
-      "description": "Module._compile (module.js:541:32)",
+      "description": "Module._compile (module.js:571:32)",
       "filename": "module.js",
-      "line": 541,
+      "line": 571,
       "collum": 32
      },
      {
-      "description": "Object.Module._extensions..js (module.js:550:10)",
+      "description": "Object.Module._extensions..js (module.js:580:10)",
       "filename": "module.js",
-      "line": 550,
+      "line": 580,
       "collum": 10
      },
      {
-      "description": "Module.load (module.js:458:32)",
+      "description": "Module.load (module.js:488:32)",
       "filename": "module.js",
-      "line": 458,
+      "line": 488,
       "collum": 32
      },
      {
-      "description": "tryModuleLoad (module.js:417:12)",
+      "description": "tryModuleLoad (module.js:447:12)",
       "filename": "module.js",
-      "line": 417,
+      "line": 447,
       "collum": 12
      },
      {
-      "description": "Function.Module._load (module.js:409:3)",
+      "description": "Function.Module._load (module.js:439:3)",
       "filename": "module.js",
-      "line": 409,
+      "line": 439,
       "collum": 3
      },
      {
-      "description": "Module.runMain (module.js:575:10)",
+      "description": "Module.runMain (module.js:605:10)",
       "filename": "module.js",
-      "line": 575,
+      "line": 605,
       "collum": 10
      },
      {
-      "description": "run (bootstrap_node.js:352:7)",
+      "description": "run (bootstrap_node.js:420:7)",
       "filename": "bootstrap_node.js",
-      "line": 352,
+      "line": 420,
       "collum": 7
      },
      {
-      "description": "startup (bootstrap_node.js:144:9)",
+      "description": "startup (bootstrap_node.js:139:9)",
       "filename": "bootstrap_node.js",
-      "line": 144,
+      "line": 139,
       "collum": 9
      },
      {
-      "description": "bootstrap_node.js:467:3",
+      "description": "bootstrap_node.js:535:3",
       "filename": "bootstrap_node.js",
-      "line": 467,
+      "line": 535,
       "collum": 3
      }
     ],
@@ -288,13 +288,13 @@
     "name": "TimeoutWrap",
     "parent": 0,
     "uid": -1,
-    "init": 4116289,
-    "destroy": 19442791,
+    "init": 4610501,
+    "destroy": 20534947,
     "before": [
-     17771689
+     18917496
     ],
     "after": [
-     19135424
+     20201212
     ],
     "unref": [],
     "ref": [],
@@ -307,57 +307,57 @@
       "collum": 1
      },
      {
-      "description": "Module._compile (module.js:541:32)",
+      "description": "Module._compile (module.js:571:32)",
       "filename": "module.js",
-      "line": 541,
+      "line": 571,
       "collum": 32
      },
      {
-      "description": "Object.Module._extensions..js (module.js:550:10)",
+      "description": "Object.Module._extensions..js (module.js:580:10)",
       "filename": "module.js",
-      "line": 550,
+      "line": 580,
       "collum": 10
      },
      {
-      "description": "Module.load (module.js:458:32)",
+      "description": "Module.load (module.js:488:32)",
       "filename": "module.js",
-      "line": 458,
+      "line": 488,
       "collum": 32
      },
      {
-      "description": "tryModuleLoad (module.js:417:12)",
+      "description": "tryModuleLoad (module.js:447:12)",
       "filename": "module.js",
-      "line": 417,
+      "line": 447,
       "collum": 12
      },
      {
-      "description": "Function.Module._load (module.js:409:3)",
+      "description": "Function.Module._load (module.js:439:3)",
       "filename": "module.js",
-      "line": 409,
+      "line": 439,
       "collum": 3
      },
      {
-      "description": "Module.runMain (module.js:575:10)",
+      "description": "Module.runMain (module.js:605:10)",
       "filename": "module.js",
-      "line": 575,
+      "line": 605,
       "collum": 10
      },
      {
-      "description": "run (bootstrap_node.js:352:7)",
+      "description": "run (bootstrap_node.js:420:7)",
       "filename": "bootstrap_node.js",
-      "line": 352,
+      "line": 420,
       "collum": 7
      },
      {
-      "description": "startup (bootstrap_node.js:144:9)",
+      "description": "startup (bootstrap_node.js:139:9)",
       "filename": "bootstrap_node.js",
-      "line": 144,
+      "line": 139,
       "collum": 9
      },
      {
-      "description": "bootstrap_node.js:467:3",
+      "description": "bootstrap_node.js:535:3",
       "filename": "bootstrap_node.js",
-      "line": 467,
+      "line": 535,
       "collum": 3
      }
     ],
@@ -370,13 +370,13 @@
     "name": "TimeoutWrap",
     "parent": -1,
     "uid": -2,
-    "init": 18033211,
-    "destroy": 30573873,
+    "init": 19235039,
+    "destroy": 32402647,
     "before": [
-     30468491
+     32262949
     ],
     "after": [
-     30544718
+     32337361
     ],
     "unref": [],
     "ref": [],
@@ -389,15 +389,21 @@
       "collum": 3
      },
      {
-      "description": "tryOnTimeout (timers.js:228:11)",
+      "description": "ontimeout (timers.js:365:14)",
       "filename": "timers.js",
-      "line": 228,
-      "collum": 11
+      "line": 365,
+      "collum": 14
      },
      {
-      "description": "Timer.listOnTimeout (timers.js:202:5)",
+      "description": "tryOnTimeout (timers.js:237:5)",
       "filename": "timers.js",
-      "line": 202,
+      "line": 237,
+      "collum": 5
+     },
+     {
+      "description": "Timer.listOnTimeout (timers.js:207:5)",
+      "filename": "timers.js",
+      "line": 207,
       "collum": 5
      }
     ],
@@ -407,13 +413,13 @@
     "name": "TimeoutWrap",
     "parent": -1,
     "uid": -3,
-    "init": 18829045,
-    "destroy": 30611609,
+    "init": 19946509,
+    "destroy": 32457845,
     "before": [
-     30581086
+     32412574
     ],
     "after": [
-     30604564
+     32443334
     ],
     "unref": [],
     "ref": [],
@@ -426,15 +432,21 @@
       "collum": 3
      },
      {
-      "description": "tryOnTimeout (timers.js:228:11)",
+      "description": "ontimeout (timers.js:365:14)",
       "filename": "timers.js",
-      "line": 228,
-      "collum": 11
+      "line": 365,
+      "collum": 14
      },
      {
-      "description": "Timer.listOnTimeout (timers.js:202:5)",
+      "description": "tryOnTimeout (timers.js:237:5)",
       "filename": "timers.js",
-      "line": 202,
+      "line": 237,
+      "collum": 5
+     },
+     {
+      "description": "Timer.listOnTimeout (timers.js:207:5)",
+      "filename": "timers.js",
+      "line": 207,
       "collum": 5
      }
     ],
