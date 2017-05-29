@@ -18531,7 +18531,7 @@ function Flatten(data) {
   var root = new Node(data.root);
 
   // Construct map of all nodes
-  var nodes = new Map([[0, root]]);
+  var nodes = new Map([[1, root]]);
   var _iteratorNormalCompletion = true;
   var _didIteratorError = false;
   var _iteratorError = undefined;
@@ -18694,6 +18694,7 @@ function Node(node) {
 
   // Info
   this.name = node.name;
+  this.uid = node.uid;
   this.stack = node.stack;
   this.initRef = node.initRef;
 
@@ -18942,7 +18943,9 @@ StatsLayout.prototype.draw = function () {
     }
     wait += this._node.destroy - prevSyncTime;
 
-    stats += '\n' + ('handle: ' + this._node.name + '\n') + ('uid: ' + this._node.uid + '\n') + ('start: ' + this._node.init.toFixed(8) + ' sec\n') + ('wait: ' + toms(wait, 11) + ' ms\n') + ('callback: ' + toms(callback, 7) + ' ms');
+    stats += '\n' + ('handle: ' + this._node.name + '\n') + ('uid: ' + this._node.uid + '\n') + (
+    // `weak (unrefed): ${this._node.unrefed}\n` +
+    'start: ' + this._node.init.toFixed(8) + ' sec\n') + ('wait: ' + toms(wait, 11) + ' ms\n') + ('callback: ' + toms(callback, 7) + ' ms');
 
     trace += this._node.stack.map(function (site) {
       return ' at ' + site.description;
