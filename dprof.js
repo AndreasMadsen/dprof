@@ -1,17 +1,6 @@
 'use strict';
 
-const async_hooks = require('async_hooks');
-// process._rawDebug('>>> currentId:', async_hooks.currentId());
-
-// const preHook = async_hooks.createHook({
-//   init (uid) {
-//     process._rawDebug('preInit', uid, (new Error()).stack.substring(6))
-//   },
-//   before(){},
-//   after(){},
-//   destroy(){}
-// })
-// preHook.enable();
+const asyncHook = require('async_hooks');
 
 const chain = require('stack-chain');
 const zlib = require('zlib');
@@ -25,11 +14,10 @@ if (process.execArgv.indexOf('--stack_trace_limit') === -1 && Error.stackTraceLi
   Error.stackTraceLimit = 8;
 }
 
-// preHook.disable()
 //
 // Setup hooks
 //
-const asyncHook = async_hooks.createHook({
+const hooks = asyncHook.createHook({
   init: asyncInit,
   before: asyncBefore,
   after: asyncAfter,
@@ -39,7 +27,6 @@ const asyncHook = async_hooks.createHook({
 //
 // Define node class
 //
-
 function Site(site) {
   this.description = site.toString();
   this.filename = site.getFileName();
@@ -87,14 +74,6 @@ function Node(uid, handle, name, stack, parent) {
       return ret;
     };
   }
-
-  // asyncHook.disable();
-  // if (!this.unrefed && typeof handle.hasRef === 'function') {
-  //   process.nextTick(() => {
-  //     this.unrefed = !handle.hasRef();
-  //   });
-  // }
-  // asyncHook.enable();
 }
 
 function getCallSites(skip) {
@@ -152,7 +131,7 @@ Node.prototype.rootIntialize = function () {
 };
 
 const root = new Node(
-  0,
+  1,
   {},
   'root',
   getCallSites(2),
@@ -161,74 +140,62 @@ const root = new Node(
 root.rootIntialize();
 
 const nodes = new Map();
-const stateStack = [root];
 
-function asyncInit(uid, type, parentUid, handle) {
-  // process._rawDebug('init:' + uid, parentUid);
+// Setup the root: fake hook events
+hooks.disable();
+process.nextTick(function () {
+  root.after();
+  root.destroy();
+});
+hooks.enable();
 
-  // Ignore our nextTick for the root duration
-  // TODO(Fishrock123): detect this better.
-  if (uid === 2) return
 
-  // if (type === 'Timeout') {
-  //   process._rawDebug('Timeout', uid, handle._idleTimeout)
-  // }
+function asyncInit(uid, type, triggerId, handle) {
+  process._rawDebug('init', {uid, type, triggerId});
 
-  // get parent state
-  const topState = stateStack[stateStack.length - 1];
-  // root is always UID 1
-  const state = (parentUid === 1/*null*/ ? topState : nodes.get(parentUid));
+  // get initializing state
+  let state;
+  if (triggerId === 0 || triggerId === 1) {
+    // 1 is always root
+    // 0 is not root, but unknown. Use root for now.
+    state = root;
+  } else {
+    state = nodes.get(triggerId);
+  }
 
   // add new state node
-  // process._rawDebug('>>> UID:', uid)
   nodes.set(uid, state.add(uid, handle, type));
 }
 
 function asyncBefore(uid) {
   // Ignore our nextTick for the root duration
-  // TODO(Fishrock123): detect this better.
-  if (uid === 2) return
+  if (!nodes.has(uid)) return;
+  process._rawDebug('before', {uid});
 
   const state = nodes.get(uid);
 
   state.before();
-  stateStack.push(state);
 }
 
 function asyncAfter(uid) {
   // Ignore our nextTick for the root duration
-  // TODO(Fishrock123): detect this better.
-  if (uid === 2) return
+  if (!nodes.has(uid)) return;
+  process._rawDebug('after', {uid});
 
   const state = nodes.get(uid);
 
   state.after();
-  stateStack.pop();
 }
 
 function asyncDestroy(uid) {
   // Ignore our nextTick for the root duration
-  // TODO(Fishrock123): detect this better.
-  if (uid === 2) return
+  if (!nodes.has(uid)) return;
+  process._rawDebug('destroy', {uid});
 
-  // process._rawDebug('destroy:' + uid)
   const state = nodes.get(uid);
-  // if (state === undefined) return
-
-  // if (!state) {
-  //   process._rawDebug('>>>>', uid)
-  // }
 
   state.destroy();
 }
-
-// The root job is done when process.nextTick is called
-asyncHook.disable();
-process.nextTick(function () {
-  root.after();
-  root.destroy();
-});
-asyncHook.enable();
 
 //
 // Print result
@@ -248,9 +215,9 @@ if (process.argv.indexOf('--dprof-no-sigint') === -1 &&
 process.on('exit', writeDataFile);
 
 function writeDataFile() {
-  // even though zlib is sync, it still fires async_wrap events,
-  // so disable asyncWrap just to be sure.
-  asyncHook.disable();
+  // even though zlib is sync, it still fires async_hook events,
+  // so disable the hooks just to be sure.
+  hooks.disable();
 
   const data = {
     'total': timestamp(),
