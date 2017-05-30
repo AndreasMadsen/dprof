@@ -11,7 +11,7 @@ function Flatten(data) {
   const root = new Node(data.root);
 
   // Construct map of all nodes
-  const nodes = new Map([[0, root]]);
+  const nodes = new Map([[1, root]]);
   for (const node of data.nodes) {
     nodes.set(node.uid, new Node(node));
   }
@@ -83,6 +83,7 @@ function Node(node) {
 
   // Info
   this.name = node.name;
+  this.uid = node.uid;
   this.stack = node.stack;
   this.initRef = node.initRef;
 

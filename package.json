@@ -1,7 +1,7 @@
 {
   "name": "dprof",
   "description": "Dynamic/structured profiling & visualization for sync and async operations",
-  "version": "0.18.2",
+  "version": "1.0.0",
   "author": "Andreas Madsen <amwebdk@gmail.com>",
   "main": "./dprof.js",
   "bin": {
@@ -29,7 +29,6 @@
     "babelify": "^7.3.0",
     "babel-preset-es2015": "^6.13.2",
     "startpoint": "0.3.x",
-    "async-hook": "^1.6.0",
     "stack-chain": "^1.3.7"
   },
   "devDependencies": {
@@ -37,5 +36,8 @@
     "pako": "^1.0.3",
     "interpreted": "0.7.x"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "node": "^8.0"
+  }
 }

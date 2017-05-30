@@ -1,6 +1,7 @@
 'use strict';
 
-const asyncHook = require('async-hook');
+const asyncHook = require('async_hooks');
+
 const chain = require('stack-chain');
 const zlib = require('zlib');
 const fs = require('fs');
@@ -14,9 +15,18 @@ if (process.execArgv.indexOf('--stack_trace_limit') === -1 && Error.stackTraceLi
 }
 
 //
+// Setup hooks
+//
+const hooks = asyncHook.createHook({
+  init: asyncInit,
+  before: asyncBefore,
+  after: asyncAfter,
+  destroy: asyncDestroy
+});
+
+//
 // Define node class
 //
-
 function Site(site) {
   this.description = site.toString();
   this.filename = site.getFileName();
@@ -29,12 +39,11 @@ function timestamp() {
   return t[0] * 1e9 + t[1];
 }
 
-function Node(uid, handle, stack, parent) {
+function Node(uid, handle, name, stack, parent) {
   const self = this;
-
   this.parent = parent === null ? null : parent.uid;
+  this.name = name;
   this.uid = uid;
-  this.name = handle.constructor.name;
   this._init = timestamp();
   this._destroy = Infinity;
   this._before = [];
@@ -81,8 +90,8 @@ function getCallSites(skip) {
   return stack;
 }
 
-Node.prototype.add = function (uid, handle) {
-  const node = new Node(uid, handle, getCallSites(3), this);
+Node.prototype.add = function (uid, handle, type) {
+  const node = new Node(uid, handle, type, getCallSites(3), this);
   this.children.push(uid);
   return node;
 };
@@ -121,62 +130,72 @@ Node.prototype.rootIntialize = function () {
   this._before.push(0);
 };
 
-//
-// Setup hooks
-//
-asyncHook.addHooks({
-  init: asyncInit,
-  pre: asyncBefore,
-  post: asyncAfter,
-  destroy: asyncDestroy
-});
-
 const root = new Node(
-  0, { 'constructor': { name: 'root' } },
+  1,
+  {},
+  'root',
   getCallSites(2),
   null
 );
 root.rootIntialize();
 
 const nodes = new Map();
-const stateStack = [root];
 
-function asyncInit(uid, handle, provider, parentUid) {
-  // get parent state
-  const topState = stateStack[stateStack.length - 1];
-  const state = (parentUid === null ? topState : nodes.get(parentUid));
-
-  // add new state node
-  nodes.set(uid, state.add(uid, handle));
-}
-
-function asyncBefore(uid) {
-  const state = nodes.get(uid);
-
-  state.before();
-  stateStack.push(state);
-}
-
-function asyncAfter(uid) {
-  const state = nodes.get(uid);
-
-  state.after();
-  stateStack.pop();
-}
-
-function asyncDestroy(uid) {
-  const state = nodes.get(uid);
-
-  state.destroy();
-}
-
-// The root job is done when process.nextTick is called
-asyncHook.disable();
+// Setup the root: fake hook events
+hooks.disable();
 process.nextTick(function () {
   root.after();
   root.destroy();
 });
-asyncHook.enable();
+hooks.enable();
+
+
+function asyncInit(uid, type, triggerId, handle) {
+  process._rawDebug('init', {uid, type, triggerId});
+
+  // get initializing state
+  let state;
+  if (triggerId === 0 || triggerId === 1) {
+    // 1 is always root
+    // 0 is not root, but unknown. Use root for now.
+    state = root;
+  } else {
+    state = nodes.get(triggerId);
+  }
+
+  // add new state node
+  nodes.set(uid, state.add(uid, handle, type));
+}
+
+function asyncBefore(uid) {
+  // Ignore our nextTick for the root duration
+  if (!nodes.has(uid)) return;
+  process._rawDebug('before', {uid});
+
+  const state = nodes.get(uid);
+
+  state.before();
+}
+
+function asyncAfter(uid) {
+  // Ignore our nextTick for the root duration
+  if (!nodes.has(uid)) return;
+  process._rawDebug('after', {uid});
+
+  const state = nodes.get(uid);
+
+  state.after();
+}
+
+function asyncDestroy(uid) {
+  // Ignore our nextTick for the root duration
+  if (!nodes.has(uid)) return;
+  process._rawDebug('destroy', {uid});
+
+  const state = nodes.get(uid);
+
+  state.destroy();
+}
 
 //
 // Print result
@@ -196,9 +215,9 @@ if (process.argv.indexOf('--dprof-no-sigint') === -1 &&
 process.on('exit', writeDataFile);
 
 function writeDataFile() {
-  // even though zlib is sync, it still fires async_wrap events,
-  // so disable asyncWrap just to be sure.
-  asyncHook.disable();
+  // even though zlib is sync, it still fires async_hook events,
+  // so disable the hooks just to be sure.
+  hooks.disable();
 
   const data = {
     'total': timestamp(),
