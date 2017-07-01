@@ -1,20 +1,20 @@
 {
  "stdout": "",
- "stderr": "init { uid: 3, type: 'SIGNALWRAP', triggerId: 1 }\ninit { uid: 4, type: 'Timeout', triggerId: 1 }\ninit { uid: 5, type: 'TIMERWRAP', triggerId: 1 }\nbefore { uid: 5 }\nbefore { uid: 4 }\ninit { uid: 6, type: 'FSREQWRAP', triggerId: 4 }\ninit { uid: 7, type: 'FSREQWRAP', triggerId: 4 }\nafter { uid: 4 }\nafter { uid: 5 }\ndestroy { uid: 4 }\nbefore { uid: 6 }\ninit { uid: 8, type: 'FSREQWRAP', triggerId: 6 }\ninit { uid: 9, type: 'FSREQWRAP', triggerId: 6 }\nafter { uid: 6 }\nbefore { uid: 7 }\nafter { uid: 7 }\ndestroy { uid: 6 }\ndestroy { uid: 7 }\ndestroy { uid: 5 }\nbefore { uid: 8 }\nafter { uid: 8 }\nbefore { uid: 9 }\ninit { uid: 10, type: 'FSREQWRAP', triggerId: 9 }\nafter { uid: 9 }\ndestroy { uid: 8 }\ndestroy { uid: 9 }\nbefore { uid: 10 }\nafter { uid: 10 }\n",
+ "stderr": "",
  "dump": {
-  "total": 11137811,
+  "total": 6753882,
   "version": "1.0.0",
   "root": {
    "name": "root",
    "parent": null,
    "uid": 1,
    "init": 0,
-   "destroy": 7160864,
+   "destroy": 4240660,
    "before": [
     0
    ],
    "after": [
-    7137257
+    4222927
    ],
    "unref": [],
    "ref": [],
@@ -128,32 +128,26 @@
     "name": "SIGNALWRAP",
     "parent": 1,
     "uid": 3,
-    "init": 4585227,
+    "init": 2456020,
     "destroy": null,
     "before": [],
     "after": [],
     "unref": [
-     4958484
+     2811600
     ],
     "ref": [],
     "initRef": true,
     "stack": [
      {
-      "description": "runInitCallback (async_hooks.js:459:5)",
+      "description": "Signal.init (async_hooks.js:465:43)",
       "filename": "async_hooks.js",
-      "line": 459,
-      "collum": 5
+      "line": 465,
+      "collum": 43
      },
      {
-      "description": "Signal.init (async_hooks.js:441:7)",
-      "filename": "async_hooks.js",
-      "line": 441,
-      "collum": 7
-     },
-     {
-      "description": "process.<anonymous> (internal/process.js:203:20)",
+      "description": "process.<anonymous> (internal/process.js:212:20)",
       "filename": "internal/process.js",
-      "line": 203,
+      "line": 212,
       "collum": 20
      },
      {
@@ -181,9 +175,9 @@
       "collum": 10
      },
      {
-      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/dprof.js:206:11)",
+      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/dprof.js:201:11)",
       "filename": "/dprof.js",
-      "line": 206,
+      "line": 201,
       "collum": 11
      },
      {
@@ -289,29 +283,29 @@
     "name": "Timeout",
     "parent": 1,
     "uid": 4,
-    "init": 5946491,
-    "destroy": 9238938,
+    "init": 3176354,
+    "destroy": 5820613,
     "before": [
-     7863577
+     4877047
     ],
     "after": [
-     8967755
+     5787807
     ],
     "unref": [],
     "ref": [],
     "initRef": true,
     "stack": [
      {
-      "description": "runInitCallback (async_hooks.js:459:5)",
+      "description": "init (async_hooks.js:465:43)",
       "filename": "async_hooks.js",
-      "line": 459,
-      "collum": 5
+      "line": 465,
+      "collum": 43
      },
      {
-      "description": "emitInitS (async_hooks.js:327:7)",
+      "description": "emitInitS (async_hooks.js:335:3)",
       "filename": "async_hooks.js",
-      "line": 327,
-      "collum": 7
+      "line": 335,
+      "collum": 3
      },
      {
       "description": "new Timeout (timers.js:592:5)",
@@ -395,29 +389,23 @@
     "name": "TIMERWRAP",
     "parent": 1,
     "uid": 5,
-    "init": 6457662,
-    "destroy": 10303826,
+    "init": 3576630,
+    "destroy": 6272765,
     "before": [
-     7501415
+     4576494
     ],
     "after": [
-     9052702
+     5812790
     ],
     "unref": [],
     "ref": [],
     "initRef": true,
     "stack": [
      {
-      "description": "runInitCallback (async_hooks.js:459:5)",
+      "description": "Timer.init (async_hooks.js:465:43)",
       "filename": "async_hooks.js",
-      "line": 459,
-      "collum": 5
-     },
-     {
-      "description": "Timer.init (async_hooks.js:441:7)",
-      "filename": "async_hooks.js",
-      "line": 441,
-      "collum": 7
+      "line": 465,
+      "collum": 43
      },
      {
       "description": "new TimersList (timers.js:218:17)",
@@ -516,34 +504,28 @@
     "name": "FSREQWRAP",
     "parent": 4,
     "uid": 6,
-    "init": 8217378,
-    "destroy": 10249748,
+    "init": 5156067,
+    "destroy": 6270276,
     "before": [
-     9338523
+     5860097
     ],
     "after": [
-     9989018
+     6261190
     ],
     "unref": [],
     "ref": [],
     "initRef": true,
     "stack": [
      {
-      "description": "runInitCallback (async_hooks.js:459:5)",
+      "description": "FSReqWrap.init (async_hooks.js:465:43)",
       "filename": "async_hooks.js",
-      "line": 459,
-      "collum": 5
+      "line": 465,
+      "collum": 43
      },
      {
-      "description": "FSReqWrap.init (async_hooks.js:441:7)",
-      "filename": "async_hooks.js",
-      "line": 441,
-      "collum": 7
-     },
-     {
-      "description": "Object.fs.open (fs.js:696:11)",
+      "description": "Object.fs.open (fs.js:641:11)",
       "filename": "fs.js",
-      "line": 696,
+      "line": 641,
       "collum": 11
      },
      {
@@ -580,34 +562,28 @@
     "name": "FSREQWRAP",
     "parent": 4,
     "uid": 7,
-    "init": 8764424,
-    "destroy": 10277906,
+    "init": 5658642,
+    "destroy": 6547554,
     "before": [
-     10109890
+     6329716
     ],
     "after": [
-     10196767
+     6351657
     ],
     "unref": [],
     "ref": [],
     "initRef": true,
     "stack": [
      {
-      "description": "runInitCallback (async_hooks.js:459:5)",
+      "description": "FSReqWrap.init (async_hooks.js:465:43)",
       "filename": "async_hooks.js",
-      "line": 459,
-      "collum": 5
+      "line": 465,
+      "collum": 43
      },
      {
-      "description": "FSReqWrap.init (async_hooks.js:441:7)",
-      "filename": "async_hooks.js",
-      "line": 441,
-      "collum": 7
-     },
-     {
-      "description": "Object.fs.readdir (fs.js:957:11)",
+      "description": "Object.fs.readdir (fs.js:902:11)",
       "filename": "fs.js",
-      "line": 957,
+      "line": 902,
       "collum": 11
      },
      {
@@ -641,34 +617,28 @@
     "name": "FSREQWRAP",
     "parent": 6,
     "uid": 8,
-    "init": 9735938,
-    "destroy": 10827068,
+    "init": 6142126,
+    "destroy": 6550371,
     "before": [
-     10355725
+     6357113
     ],
     "after": [
-     10477443
+     6402739
     ],
     "unref": [],
     "ref": [],
     "initRef": true,
     "stack": [
      {
-      "description": "runInitCallback (async_hooks.js:459:5)",
+      "description": "FSReqWrap.init (async_hooks.js:465:43)",
       "filename": "async_hooks.js",
-      "line": 459,
-      "collum": 5
+      "line": 465,
+      "collum": 43
      },
      {
-      "description": "FSReqWrap.init (async_hooks.js:441:7)",
-      "filename": "async_hooks.js",
-      "line": 441,
-      "collum": 7
-     },
-     {
-      "description": "Object.fs.read (fs.js:724:11)",
+      "description": "Object.fs.read (fs.js:669:11)",
       "filename": "fs.js",
-      "line": 724,
+      "line": 669,
       "collum": 11
      },
      {
@@ -690,34 +660,28 @@
     "name": "FSREQWRAP",
     "parent": 6,
     "uid": 9,
-    "init": 9901091,
-    "destroy": 10853013,
+    "init": 6217468,
+    "destroy": 6552293,
     "before": [
-     10511291
+     6407796
     ],
     "after": [
-     10783782
+     6542083
     ],
     "unref": [],
     "ref": [],
     "initRef": true,
     "stack": [
      {
-      "description": "runInitCallback (async_hooks.js:459:5)",
+      "description": "FSReqWrap.init (async_hooks.js:465:43)",
       "filename": "async_hooks.js",
-      "line": 459,
-      "collum": 5
+      "line": 465,
+      "collum": 43
      },
      {
-      "description": "FSReqWrap.init (async_hooks.js:441:7)",
-      "filename": "async_hooks.js",
-      "line": 441,
-      "collum": 7
-     },
-     {
-      "description": "Object.fs.read (fs.js:724:11)",
+      "description": "Object.fs.read (fs.js:669:11)",
       "filename": "fs.js",
-      "line": 724,
+      "line": 669,
       "collum": 11
      },
      {
@@ -741,34 +705,28 @@
     "name": "FSREQWRAP",
     "parent": 9,
     "uid": 10,
-    "init": 10695098,
-    "destroy": null,
+    "init": 6495140,
+    "destroy": 6586789,
     "before": [
-     10886457
+     6560093
     ],
     "after": [
-     10956570
+     6582611
     ],
     "unref": [],
     "ref": [],
     "initRef": true,
     "stack": [
      {
-      "description": "runInitCallback (async_hooks.js:459:5)",
+      "description": "FSReqWrap.init (async_hooks.js:465:43)",
       "filename": "async_hooks.js",
-      "line": 459,
-      "collum": 5
+      "line": 465,
+      "collum": 43
      },
      {
-      "description": "FSReqWrap.init (async_hooks.js:441:7)",
-      "filename": "async_hooks.js",
-      "line": 441,
-      "collum": 7
-     },
-     {
-      "description": "Object.fs.close (fs.js:668:11)",
+      "description": "Object.fs.close (fs.js:613:11)",
       "filename": "fs.js",
-      "line": 668,
+      "line": 613,
       "collum": 11
      },
      {
@@ -784,9 +742,9 @@
       "collum": 24
      },
      {
-      "description": "FSReqWrap.wrapper [as oncomplete] (fs.js:718:17)",
+      "description": "FSReqWrap.wrapper [as oncomplete] (fs.js:663:17)",
       "filename": "fs.js",
-      "line": 718,
+      "line": 663,
       "collum": 17
      }
     ],

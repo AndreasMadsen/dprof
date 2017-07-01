@@ -1,20 +1,20 @@
 {
  "stdout": "hallo world\n",
- "stderr": "init { uid: 3, type: 'SIGNALWRAP', triggerId: 1 }\ninit { uid: 4, type: 'PIPEWRAP', triggerId: 1 }\ninit { uid: 5, type: 'PIPEWRAP', triggerId: 1 }\ninit { uid: 6, type: 'TickObject', triggerId: 1 }\nbefore { uid: 6 }\nafter { uid: 6 }\n",
+ "stderr": "",
  "dump": {
-  "total": 18018695,
+  "total": 18017799,
   "version": "1.0.0",
   "root": {
    "name": "root",
    "parent": null,
    "uid": 1,
    "init": 0,
-   "destroy": 17320854,
+   "destroy": 17023600,
    "before": [
     0
    ],
    "after": [
-    17301899
+    16989458
    ],
    "unref": [],
    "ref": [],
@@ -129,32 +129,26 @@
     "name": "SIGNALWRAP",
     "parent": 1,
     "uid": 3,
-    "init": 4722145,
+    "init": 2025331,
     "destroy": null,
     "before": [],
     "after": [],
     "unref": [
-     5118111
+     2369901
     ],
     "ref": [],
     "initRef": true,
     "stack": [
      {
-      "description": "runInitCallback (async_hooks.js:459:5)",
+      "description": "Signal.init (async_hooks.js:465:43)",
       "filename": "async_hooks.js",
-      "line": 459,
-      "collum": 5
+      "line": 465,
+      "collum": 43
      },
      {
-      "description": "Signal.init (async_hooks.js:441:7)",
-      "filename": "async_hooks.js",
-      "line": 441,
-      "collum": 7
-     },
-     {
-      "description": "process.<anonymous> (internal/process.js:203:20)",
+      "description": "process.<anonymous> (internal/process.js:212:20)",
       "filename": "internal/process.js",
-      "line": 203,
+      "line": 212,
       "collum": 20
      },
      {
@@ -182,9 +176,9 @@
       "collum": 10
      },
      {
-      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/dprof.js:206:11)",
+      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/dprof.js:201:11)",
       "filename": "/dprof.js",
-      "line": 206,
+      "line": 201,
       "collum": 11
      },
      {
@@ -290,7 +284,7 @@
     "name": "PIPEWRAP",
     "parent": 1,
     "uid": 4,
-    "init": 13509999,
+    "init": 13251221,
     "destroy": null,
     "before": [],
     "after": [],
@@ -299,27 +293,21 @@
     "initRef": true,
     "stack": [
      {
-      "description": "runInitCallback (async_hooks.js:459:5)",
+      "description": "Pipe.init (async_hooks.js:465:43)",
       "filename": "async_hooks.js",
-      "line": 459,
-      "collum": 5
+      "line": 465,
+      "collum": 43
      },
      {
-      "description": "Pipe.init (async_hooks.js:441:7)",
-      "filename": "async_hooks.js",
-      "line": 441,
-      "collum": 7
-     },
-     {
-      "description": "createHandle (net.js:58:31)",
+      "description": "createHandle (net.js:59:31)",
       "filename": "net.js",
-      "line": 58,
+      "line": 59,
       "collum": 31
      },
      {
-      "description": "new Socket (net.js:203:20)",
+      "description": "new Socket (net.js:204:20)",
       "filename": "net.js",
-      "line": 203,
+      "line": 204,
       "collum": 20
      },
      {
@@ -335,9 +323,9 @@
       "collum": 14
      },
      {
-      "description": "console.js:171:37",
+      "description": "console.js:170:37",
       "filename": "console.js",
-      "line": 171,
+      "line": 170,
       "collum": 37
      },
      {
@@ -425,7 +413,7 @@
     "name": "PIPEWRAP",
     "parent": 1,
     "uid": 5,
-    "init": 14292286,
+    "init": 14063920,
     "destroy": null,
     "before": [],
     "after": [],
@@ -434,27 +422,21 @@
     "initRef": true,
     "stack": [
      {
-      "description": "runInitCallback (async_hooks.js:459:5)",
+      "description": "Pipe.init (async_hooks.js:465:43)",
       "filename": "async_hooks.js",
-      "line": 459,
-      "collum": 5
+      "line": 465,
+      "collum": 43
      },
      {
-      "description": "Pipe.init (async_hooks.js:441:7)",
-      "filename": "async_hooks.js",
-      "line": 441,
-      "collum": 7
-     },
-     {
-      "description": "createHandle (net.js:58:31)",
+      "description": "createHandle (net.js:59:31)",
       "filename": "net.js",
-      "line": 58,
+      "line": 59,
       "collum": 31
      },
      {
-      "description": "new Socket (net.js:203:20)",
+      "description": "new Socket (net.js:204:20)",
       "filename": "net.js",
-      "line": 203,
+      "line": 204,
       "collum": 20
      },
      {
@@ -470,9 +452,9 @@
       "collum": 14
      },
      {
-      "description": "console.js:171:53",
+      "description": "console.js:170:53",
       "filename": "console.js",
-      "line": 171,
+      "line": 170,
       "collum": 53
      },
      {
@@ -560,58 +542,52 @@
     "name": "TickObject",
     "parent": 1,
     "uid": 6,
-    "init": 16514839,
-    "destroy": null,
+    "init": 15878022,
+    "destroy": 17834349,
     "before": [
-     17560460
+     17352501
     ],
     "after": [
-     17757400
+     17563150
     ],
     "unref": [],
     "ref": [],
     "initRef": true,
     "stack": [
      {
-      "description": "runInitCallback (async_hooks.js:459:5)",
+      "description": "init (async_hooks.js:465:43)",
       "filename": "async_hooks.js",
-      "line": 459,
-      "collum": 5
+      "line": 465,
+      "collum": 43
      },
      {
-      "description": "emitInitS (async_hooks.js:327:7)",
+      "description": "emitInitS (async_hooks.js:335:3)",
       "filename": "async_hooks.js",
-      "line": 327,
+      "line": 335,
+      "collum": 3
+     },
+     {
+      "description": "process.nextTick (internal/process/next_tick.js:291:7)",
+      "filename": "internal/process/next_tick.js",
+      "line": 291,
       "collum": 7
      },
      {
-      "description": "setupInit (internal/process/next_tick.js:225:7)",
-      "filename": "internal/process/next_tick.js",
-      "line": 225,
-      "collum": 7
-     },
-     {
-      "description": "process.nextTick (internal/process/next_tick.js:247:5)",
-      "filename": "internal/process/next_tick.js",
-      "line": 247,
-      "collum": 5
-     },
-     {
-      "description": "onwrite (_stream_writable.js:419:15)",
+      "description": "onwrite (_stream_writable.js:427:15)",
       "filename": "_stream_writable.js",
-      "line": 419,
+      "line": 427,
       "collum": 15
      },
      {
-      "description": "Socket._writeGeneric (net.js:768:5)",
+      "description": "Socket._writeGeneric (net.js:771:5)",
       "filename": "net.js",
-      "line": 768,
+      "line": 771,
       "collum": 5
      },
      {
-      "description": "Socket._write (net.js:778:8)",
+      "description": "Socket._write (net.js:781:8)",
       "filename": "net.js",
-      "line": 778,
+      "line": 781,
       "collum": 8
      },
      {
@@ -633,9 +609,9 @@
       "collum": 11
      },
      {
-      "description": "Socket.write (net.js:696:40)",
+      "description": "Socket.write (net.js:699:40)",
       "filename": "net.js",
-      "line": 696,
+      "line": 699,
       "collum": 40
      },
      {

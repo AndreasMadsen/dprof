@@ -151,8 +151,6 @@ hooks.enable();
 
 
 function asyncInit(uid, type, triggerId, handle) {
-  process._rawDebug('init', {uid, type, triggerId});
-
   // get initializing state
   let state;
   if (triggerId === 0 || triggerId === 1) {
@@ -170,7 +168,6 @@ function asyncInit(uid, type, triggerId, handle) {
 function asyncBefore(uid) {
   // Ignore our nextTick for the root duration
   if (!nodes.has(uid)) return;
-  process._rawDebug('before', {uid});
 
   const state = nodes.get(uid);
 
@@ -180,7 +177,6 @@ function asyncBefore(uid) {
 function asyncAfter(uid) {
   // Ignore our nextTick for the root duration
   if (!nodes.has(uid)) return;
-  process._rawDebug('after', {uid});
 
   const state = nodes.get(uid);
 
@@ -190,7 +186,6 @@ function asyncAfter(uid) {
 function asyncDestroy(uid) {
   // Ignore our nextTick for the root duration
   if (!nodes.has(uid)) return;
-  process._rawDebug('destroy', {uid});
 
   const state = nodes.get(uid);
 

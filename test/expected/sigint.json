@@ -1,20 +1,20 @@
 {
  "stdout": "",
- "stderr": "init { uid: 3, type: 'SIGNALWRAP', triggerId: 1 }\ninit { uid: 4, type: 'Timeout', triggerId: 1 }\ninit { uid: 5, type: 'TIMERWRAP', triggerId: 1 }\ninit { uid: 6, type: 'Timeout', triggerId: 1 }\ninit { uid: 7, type: 'TIMERWRAP', triggerId: 1 }\nbefore { uid: 7 }\nbefore { uid: 6 }\nafter { uid: 6 }\nafter { uid: 7 }\ndestroy { uid: 6 }\nbefore { uid: 3 }\n",
+ "stderr": "",
  "dump": {
-  "total": 217401553,
+  "total": 212844341,
   "version": "1.0.0",
   "root": {
    "name": "root",
    "parent": null,
    "uid": 1,
    "init": 0,
-   "destroy": 11341900,
+   "destroy": 6661167,
    "before": [
     0
    ],
    "after": [
-    11317122
+    6633842
    ],
    "unref": [],
    "ref": [],
@@ -130,34 +130,28 @@
     "name": "SIGNALWRAP",
     "parent": 1,
     "uid": 3,
-    "init": 5923476,
+    "init": 3001287,
     "destroy": null,
     "before": [
-     217041102
+     212520216
     ],
     "after": [],
     "unref": [
-     6645007
+     3553795
     ],
     "ref": [],
     "initRef": true,
     "stack": [
      {
-      "description": "runInitCallback (async_hooks.js:459:5)",
+      "description": "Signal.init (async_hooks.js:465:43)",
       "filename": "async_hooks.js",
-      "line": 459,
-      "collum": 5
+      "line": 465,
+      "collum": 43
      },
      {
-      "description": "Signal.init (async_hooks.js:441:7)",
-      "filename": "async_hooks.js",
-      "line": 441,
-      "collum": 7
-     },
-     {
-      "description": "process.<anonymous> (internal/process.js:203:20)",
+      "description": "process.<anonymous> (internal/process.js:212:20)",
       "filename": "internal/process.js",
-      "line": 203,
+      "line": 212,
       "collum": 20
      },
      {
@@ -185,9 +179,9 @@
       "collum": 10
      },
      {
-      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/dprof.js:206:11)",
+      "description": "Object.<anonymous> (/Users/Andreas/Sites/node_modules/dprof/dprof.js:201:11)",
       "filename": "/dprof.js",
-      "line": 206,
+      "line": 201,
       "collum": 11
      },
      {
@@ -293,7 +287,7 @@
     "name": "Timeout",
     "parent": 1,
     "uid": 4,
-    "init": 8822396,
+    "init": 4063515,
     "destroy": null,
     "before": [],
     "after": [],
@@ -302,16 +296,16 @@
     "initRef": true,
     "stack": [
      {
-      "description": "runInitCallback (async_hooks.js:459:5)",
+      "description": "init (async_hooks.js:465:43)",
       "filename": "async_hooks.js",
-      "line": 459,
-      "collum": 5
+      "line": 465,
+      "collum": 43
      },
      {
-      "description": "emitInitS (async_hooks.js:327:7)",
+      "description": "emitInitS (async_hooks.js:335:3)",
       "filename": "async_hooks.js",
-      "line": 327,
-      "collum": 7
+      "line": 335,
+      "collum": 3
      },
      {
       "description": "new Timeout (timers.js:592:5)",
@@ -392,7 +386,7 @@
     "name": "TIMERWRAP",
     "parent": 1,
     "uid": 5,
-    "init": 9475984,
+    "init": 4661975,
     "destroy": null,
     "before": [],
     "after": [],
@@ -401,16 +395,10 @@
     "initRef": true,
     "stack": [
      {
-      "description": "runInitCallback (async_hooks.js:459:5)",
+      "description": "Timer.init (async_hooks.js:465:43)",
       "filename": "async_hooks.js",
-      "line": 459,
-      "collum": 5
-     },
-     {
-      "description": "Timer.init (async_hooks.js:441:7)",
-      "filename": "async_hooks.js",
-      "line": 441,
-      "collum": 7
+      "line": 465,
+      "collum": 43
      },
      {
       "description": "new TimersList (timers.js:218:17)",
@@ -509,29 +497,29 @@
     "name": "Timeout",
     "parent": 1,
     "uid": 6,
-    "init": 10063463,
-    "destroy": 216929715,
+    "init": 5264940,
+    "destroy": 212484661,
     "before": [
-     216101042
+     211994954
     ],
     "after": [
-     216674453
+     212421817
     ],
     "unref": [],
     "ref": [],
     "initRef": true,
     "stack": [
      {
-      "description": "runInitCallback (async_hooks.js:459:5)",
+      "description": "init (async_hooks.js:465:43)",
       "filename": "async_hooks.js",
-      "line": 459,
-      "collum": 5
+      "line": 465,
+      "collum": 43
      },
      {
-      "description": "emitInitS (async_hooks.js:327:7)",
+      "description": "emitInitS (async_hooks.js:335:3)",
       "filename": "async_hooks.js",
-      "line": 327,
-      "collum": 7
+      "line": 335,
+      "collum": 3
      },
      {
       "description": "new Timeout (timers.js:592:5)",
@@ -612,29 +600,23 @@
     "name": "TIMERWRAP",
     "parent": 1,
     "uid": 7,
-    "init": 10310313,
+    "init": 5521153,
     "destroy": null,
     "before": [
-     215366922
+     211299455
     ],
     "after": [
-     216819400
+     212469787
     ],
     "unref": [],
     "ref": [],
     "initRef": true,
     "stack": [
      {
-      "description": "runInitCallback (async_hooks.js:459:5)",
+      "description": "Timer.init (async_hooks.js:465:43)",
       "filename": "async_hooks.js",
-      "line": 459,
-      "collum": 5
-     },
-     {
-      "description": "Timer.init (async_hooks.js:441:7)",
-      "filename": "async_hooks.js",
-      "line": 441,
-      "collum": 7
+      "line": 465,
+      "collum": 43
      },
      {
       "description": "new TimersList (timers.js:218:17)",
